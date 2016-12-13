@@ -1,0 +1,62 @@
+.giftBotResultsHeader {
+
+	.fixed {
+		background-color: $offwhite;
+	}
+	.top-bar {
+		background-color: $offwhite;
+		ul {
+			width: 100%;
+		}
+		h1 {
+			margin: 0;
+		}
+		label {
+			display: inline;
+		}
+		.fa .fa-thumbs-up .fa-2 {
+			font-size: 2em;
+		}
+	}
+}
+#giftBotResults {
+	margin-top: 5rem;
+	.giftBotSearchResults {
+		max-width: 62.5rem;
+		#likeMoreIdeas {
+			margin: 2rem 0;
+		}
+		.product {
+			margin-bottom: 3rem;
+			.responsively-lazy:not(img){
+				position:relative;
+				height:0
+			}
+			.responsively-lazy:not(img) img{
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height: auto;
+				&.voteBtns {
+					position: relative;
+					width: auto;
+				}
+			}
+			.votingContainer {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				padding-bottom: .75rem;
+			}
+			.preventReflow {
+				overflow: hidden;
+				padding-bottom: 100%;
+			}
+			.upvotedBorder {
+				border: 10px solid $active-dark-mix;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,399 @@
+button.placeHolder{
+	margin:0;
+	padding:0;
+	width:0;
+	min-width:0;
+	border-color:transparent;
+}
+.editShare{
+	& .shareList:hover,
+	& .editList:hover,
+	& .deleteList:hover{
+		cursor:pointer;
+	}
+	& .editList+.shareList{
+		margin-left: .75rem;
+		padding-left: .75rem;		
+	}
+	& .editList+.shareList{
+		border-left: 1px solid $primary;
+	}
+	& .deleteList{
+		display:none;
+	}
+	& .deleteList,
+	& .deleteList .icon-trash::before{
+		color:$highlight;
+		font-weight:bold;
+		&:hover{
+			cursor:pointer;
+		}
+	}
+	.editingList & .deleteList{
+		display:inline;
+	}
+	.editingList & .shareList,
+	.editingList & .editList,
+	.sharingList & .shareList,
+	.sharingList & .editList{
+		display:none;
+	}
+	padding:.75rem 0;
+	clear:both;
+	& span{
+		margin-bottom:0;
+	}
+	& span::before{
+		color:$brand-primary;
+	}
+	& span.icon-sm{
+		margin-right: .75rem;
+	}
+	& .deleteList::before{
+		color:$highlight;
+	}
+}
+#wishlistNav{
+	background-color:#FFF;
+	margin-top:0;
+	padding-top:2rem;
+	&.tabs .tab-title.active::after {
+		background-color:$offwhite-lightened;
+	}
+}
+#newBlankListHolder{
+	margin-top:2rem;
+	margin-bottom:2rem;
+	& #newBlankList{
+		margin:auto;
+	}
+}
+#listNameContainer h1{
+	margin-top:2rem;
+}
+h1 .inputGroup{
+	max-width:20rem;
+	margin-left:auto;
+	margin-right:auto;
+}
+.wishlist h3 {
+	height:2.75rem;
+	margin-bottom:0;
+	@media #{$medium-up}{
+		height:2.5rem;
+	}
+}
+.wished > div,
+.wishlist > div{
+	background-color:#FFF;
+	box-shadow: 0 0 6px -1px $secondary;
+	padding:.75rem;
+	margin-bottom:2rem;
+    @media #{$medium-up}{
+        margin-bottom:.75rem;
+    }
+	& .icon-close:hover{
+		cursor:pointer;
+	}
+}
+@media #{$small-only}{
+     .wished:first-child div {
+        margin-top: 1rem;
+     }
+}
+.wishlist > div{
+	padding-top:.75rem;
+}
+#newBlankListHolder .inputGroup input,
+#newBlankListHolder .inputGroup button,
+.wishlist .inputGroup input,
+.wishlist .inputGroup button,
+.editingList .inputGroup input,
+.editingList .inputGroup button,
+.sharingList .inputGroup input,
+.sharingList .inputGroup button{
+	margin-bottom:0
+}
+#shareurl{
+	border:1px solid $inactive;
+	background-color:#FFF;
+}
+.inputGroup .icon-close{
+	margin-right:0;
+	margin-left:.75rem;
+	color:$secondary;
+	position:relative;
+	&::before{
+		top: 50%;
+		position: absolute;
+		-webkit-transform:translateY(-50%);
+		transform: translateY(-50%);
+		left: 0;
+	}
+}
+.wishlist{
+	&.editingList h3 a:hover{
+		text-decoration:none;
+	}
+	&:not(.empty):hover{
+		cursor:pointer;
+	}
+	& img:nth-of-type(1) {
+    	width: 100%!important;
+    	float: none;
+    	margin:.75rem 0;
+	}
+	& img {
+    	width: 50%;
+	    float: left;
+	    background-color: #FFF;
+	}
+    &.empty img{
+        width: calc(50% - .375rem);
+        background-color:$offwhite;
+    }
+    &.empty img:nth-of-type(3) {
+        margin-left:.75rem;
+    }
+	&:not(.empty) h3{
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	/*
+	&.editingList h3{
+		display:none;
+	}
+	*/
+	&.editingList img{
+		opacity:.13;
+	}
+	&.editingList h3{
+		overflow:visible;
+	}
+	&.editingList label.error{
+		white-space:normal;
+		z-index:1
+	}
+	&.editingList h3 a::after{
+		display:none;
+	}
+	/* TEMPORARY HIDE */
+	& .shareList{
+		display:none;
+	}
+}
+.wished,
+.wished > div{
+	flex:0 0 auto;
+    display:flex;
+    align-items:stretch;
+    flex-direction:column;
+    justify-content: space-between;
+    &:not(.wished){
+        flex:1 0 auto;
+    }
+    & button{
+        margin-bottom:0;
+    }
+}
+.removeWished{
+	position:absolute;
+	top:0;
+	right:.375rem;
+	display:none;
+	text-align:center;
+	width:1.5rem;
+	height:1.5rem;
+	background-color:$inactive;
+	color:#FFF;
+	:hover{
+		cursor:pointer;
+	}
+	.wished:hover &{
+		display:block;
+	}
+	@media #{$small-only}{
+		display:block;
+	}
+	& span{
+		margin-right: 0px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform:translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+#wlRecommendationsContainer{
+	margin-top:2rem;
+	padding-top:2rem;
+	background-color:#FFF;
+	& li{
+		text-align:center;
+	}
+	& .recommendedImg{
+		position:relative;
+	}
+	& .fakeRecommend{
+		position:absolute;
+		top:50%;
+		left:50%;
+		-webkit-transform:translate(-50%, -50%);
+		transform:translate(-50%, -50%);
+		color:#FFF;
+		z-index:1;
+	}
+	& a{
+		position:relative;
+		z-index:2;
+	}
+	& img{
+		border:1px solid $offwhite;
+		transition:opacity .5s;
+		width:100%;
+		display:block;
+		position:relative;
+		z-index:2;
+	}
+	& .recAddBtns{
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+	}
+	& h4{
+		margin-top:.75rem;
+	}
+	& button{
+		white-space:nowrap;
+		z-index:3;
+	}	
+	& .moving .recommendedImg{
+		background-color:$TBD;
+	}
+	& .moving img{
+		opacity:0; /* also set transition? */
+	}
+	& .moving h4,
+	& .moving .body-small.price,
+	& .moving button,
+	& .choosingSKU h4,
+	& .choosingSKU .body-small.price{
+		visibility:hidden;
+	}
+	& .choosingSKU select{
+		display:block!important;
+		margin-top:.75rem;
+	}
+	& .choosingSKU button{
+		background-color:$TBD;
+	}
+}
+#suggestions{
+	/* empty list */
+	margin-bottom:2rem;
+	& div{
+		margin-top: 1rem;
+	}
+	& a{
+		color: $active;
+		text-align: center;
+		display: block;
+		background-image: url("/images/frame/watercolorBG_1280_2_SM.jpg");
+		background-size: cover;
+		background-position: center;
+		font-size:1.5rem;
+		box-shadow: 0 0 6px -1px $secondary;
+	}
+	& a > span {
+		padding: 2.75rem 0;
+		display: block;
+		font-family: $font-family-serif;;
+	}
+	/*
+	& span:after {
+		content: "\203A  \203A";
+		font-family: $font-family-sans-serif;;
+		font-weight: 300;
+		letter-spacing: -2px;
+		margin-left: 0.25rem;
+		position: absolute;
+	}
+	*/
+}
+#wishlists:not(:empty){
+	margin-bottom:2rem;
+}
+#wishlists:not(:empty)::after{
+	content:" ";
+	display:block;
+	clear:both;
+}
+.no#wishlists .wishlist{
+	& > div{
+		background-image: url("/images/frame/watercolorBG_1280_2_SM.jpg");
+		background-size: cover;
+		background-position: center;
+		padding:2rem .75rem;
+		box-shadow: 0 0 6px -1px $secondary;
+	}
+	& > a{
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+	}
+	& h2{
+		color:$active!important;
+		margin-bottom:0;
+	}
+}
+#wishedItems{
+	display:flex;
+	flex-wrap:wrap;
+	align-items:stretch;
+}
+/* need to do custom for personalize/add to cart combo since foundation breaks margin. it's okay since long term everything will be custom on mobile */
+ @media #{$medium-up}{ 
+	#wishedItems button+button{
+		display:block;
+		height:0;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+	}
+}
+/*
+@media only screen and (min-width: 30em) {	
+	.columns.wishlist, .columns.wished, .columns.wished.small-centered:last-child{
+		width:50%;
+		float:left!important;
+	}
+}
+@media only screen and (min-width: 40.063em){
+.columns.wishlist, .columns.wished {
+  width: 25%;
+}
+}
+.no .columns.wishlist{
+	width:33.333333%!important;
+}
+@media only screen and (max-width: 29.90em){
+	.no .columns.wishlist{
+	width:91.66667%!important;
+	}
+}
+@media only screen and (min-width:30em) and (max-width:40em){
+	#wlRecommendations > li{
+		width:33.33%;
+	}
+	#wlRecommendations > li:nth-of-type(n){
+		clear:none;
+	}
+	#wlRecommendations > li:nth-of-type(3n+1){
+		clear:both
+	}
+}
+*/

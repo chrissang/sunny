@@ -1,0 +1,355 @@
+ul.products{
+	margin:0 -.375rem;
+	@media #{$xlarge-up} {
+		margin:0 -1rem;
+	}
+}
+ul.products li{
+	clear:none!important;
+	display: block;
+    float: left;
+    height: auto;
+    /*padding: 0px 0.625rem 1.25rem;*/
+    padding:0 .375rem 1.5rem;
+    @media #{$medium-only} {
+    	padding:0 0.625rem .75rem
+	}
+    @media #{$large-only} {
+    	padding:0 0.75rem .75rem
+	}
+	@media #{$xlarge-up} {
+		padding:0 1rem 1rem;
+	}
+}
+/* this currently defaults to 2 given the code above, maybe make that a thing with '0' as breakpoint? */
+/* show X items across started at Y em wide  (X, Y) */
+@each $across, $ACbreakpoint in (2, 0),
+								(3, 56),
+								(4, 72),
+								(5, 120){
+	@media only screen and (min-width:#{$ACbreakpoint}em){
+		
+			ul.products li{
+				width: percentage(1/$across)!important;
+			}			
+		
+		@if $across == 2 {
+			ul.products li:nth-of-type(1n){
+  				clear:none!important;
+  			 }
+		}
+		
+		$i: 2;
+		@while $i <= 6 {
+  			 @if $i != $across {
+  			 	ul.products li:nth-of-type(#{$i}n+1){
+  			 		clear:none!important;
+  			 	}
+  			 }
+  			$i: $i + 1;
+		}
+		ul.products li:nth-of-type(#{$across}n+1){
+   			clear:both!important;
+		}
+	}
+}
+article.product{
+    position:relative;
+    max-width:22.5rem;
+}
+article.product > *,
+article.product div > *{
+	margin-bottom:.25rem;
+}
+article.product div *,
+article.product div *::before,
+article.product div *::after{
+	vertical-align:top;
+}
+article.product > a:first-child{
+	height:0;
+	position:relative;
+	padding-bottom:100%;
+	width:100%;
+	display:block;
+    background: none!important;
+}
+article.product img{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	border:1px solid $offwhite;
+}
+article.product .icon-loveIt{
+    position:absolute;
+    top: 0;
+    right: 0;
+    margin:0;
+    width:2.75rem;
+    height:2.75rem;
+	@media #{$medium-up} {
+		width:2.3125rem;
+        height:2.3125rem;
+	}
+    &:before,
+    &:after{
+        @extend [class^="icon-"].icon-md;
+    }
+    &:hover{
+        cursor:pointer;
+    }
+}
+.newFlag,
+.stockFlag{
+	background-color:$active;
+	color:$white;
+	height:1.125rem;
+	line-height:1.125rem;
+	padding:0 .1875rem;
+	@media #{$medium-up} {
+		padding:0.0625rem .25rem;
+	}
+}
+.customFlag{
+	@extend .newFlag;
+	background-color:$active-light-mix;
+	color:$primary;
+	position:relative;
+	margin-right:.5rem;
+}
+
+	.customFlag:before,
+	.customFlag:after {
+		width: 5px;
+		height: 50%;
+		position: absolute;
+		left: 100%;
+		content: "";
+	}
+
+	.customFlag:before {
+		top: 50%;
+		background: linear-gradient(to right top, $active-light-mix 50%, transparent 50%)
+	}
+
+	.customFlag:after {
+		top: 0;
+		background: linear-gradient(to right bottom, $active-light-mix 50%, transparent 50%)
+	}
+
+/*
+.newFlag+.customFlag,
+.stockFlag+.customFlag{
+	margin-left:.25rem;
+}
+*/
+span[class^='fontStars-']{
+	font-size:.5265rem;
+	color:$reviews;
+	font-family: 'UncommonGoods';
+	letter-spacing: .5rem;
+	&.fontStars-0,
+    &.fontStars-0_0{
+		color:$offwhite;
+	}
+}
+.fontStars-0::before,
+.fontStars-0_0::before{
+	content:"\55\55\55\55\55";
+}
+.fontStars-0_5::before{
+	content:"\5a\41\41\41\41";
+}	
+.fontStars-1::before,
+.fontStars-1_0::before,
+.fontStars-1_1::before,
+.fontStars-1_2::before{
+	content:"\55\41\41\41\41";
+}
+.fontStars-1_3::before,
+.fontStars-1_4::before,
+.fontStars-1_5::before,
+.fontStars-1_6::before,
+.fontStars-1_7::before{
+	content:"\55\5a\41\41\41";
+}
+.fontStars-1_8::before,
+.fontStars-1_9::before,
+.fontStars-2::before,
+.fontStars-2_0::before,
+.fontStars-2_1::before,
+.fontStars-2_2::before{
+	content:"\55\55\41\41\41";
+}
+.fontStars-2_3::before,
+.fontStars-2_4::before,
+.fontStars-2_5::before,
+.fontStars-2_6::before,
+.fontStars-2_7::before{
+	content:"\55\55\5a\41\41";
+}
+.fontStars-2_8::before,
+.fontStars-2-9::before,
+.fontStars-3::before,
+.fontStars-3_0::before,
+.fontStars-3_1::before,
+.fontStars-3_2::before{
+	content:"\55\55\55\41\41";
+}
+.fontStars-3_3::before,
+.fontStars-3_4::before,
+.fontStars-3_5::before,
+.fontStars-3_6::before,
+.fontStars-3_7::before{
+	content:"\55\55\55\5a\41";
+}
+.fontStars-3_8::before,
+.fontStars-3_9::before,
+.fontStars-4::before,
+.fontStars-4_0::before,
+.fontStars-4_1::before,
+.fontStars-4_2::before{
+	content:"\55\55\55\55\41";
+}	
+.fontStars-4_3::before,
+.fontStars-4_4::before,
+.fontStars-4_5::before,
+.fontStars-4_6::before,
+.fontStars-4_7::before{
+	content:"\55\55\55\55\5a";
+}
+.fontStars-4_8::before,
+.fontStars-4_9::before,
+.fontStars-5::before,
+.fontStars-5_0::before{
+	content:"\55\55\55\55\55";
+}
+
+
+
+
+/*
+figure{
+	margin:0;
+}
+
+figure img{
+	border:1px solid #e0e0e0;
+	display:block;
+	margin:auto;
+}
+figcaption{
+	max-width:200px;
+	margin-left:auto;
+	margin-right:auto;
+}
+figure .itemName, figure .itemName a, figure .itemPrice, figure .prSnippetNumberOfRatingsText{
+	line-height: 1em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	text-align:center;
+	font-size:.75rem;
+}
+figure .prSnippetNumberOfRatingsText{
+	text-align:right;
+}
+figure .itemName a{
+	text-decoration:none;
+	font-weight:bold;
+	color:$primary!important;
+}
+figure .itemPrice del{
+	margin-right:.5em;
+}
+figure .itemPrice ins{
+	margin-left:.5em;
+	text-decoration:none;
+	color:#FF4B4D;
+}
+figcaption .row.collapse{
+	width:100%!important;
+}
+figcaption .pr-stars {
+	background-image:url("/images/reviews/stars_small.png") !important;
+    background-image: url("/images/stars.svg") !important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    height: 0!important;
+	margin:0!important;
+    padding: 0 0 19%!important;
+    display:block!important;
+    width:100%!important;
+}
+*/
+.pr-stars-0-sm {
+    background-position: 0 0 !important;
+}
+.pr-stars-0_5-sm {
+    background-position: 0 10% !important;
+}
+.pr-stars-1-sm,
+.pr-stars-1_0-sm,
+.pr-stars-1_1-sm,
+.pr-stars-1_2-sm {
+    background-position: 0 20% !important;
+}
+.pr-stars-1_3-sm,
+.pr-stars-1_4-sm,
+.pr-stars-1_5-sm,
+.pr-stars-1_6-sm,
+.pr-stars-1_7-sm {
+    background-position: 0 30% !important;
+}
+.pr-stars-1_8-sm,
+.pr-stars-1_9-sm,
+.pr-stars-2-sm,
+.pr-stars-2_0-sm,
+.pr-stars-2_1-sm,
+.pr-stars-2_2-sm {
+    background-position: 0 40% !important;
+}
+.pr-stars-2_3-sm,
+.pr-stars-2_4-sm,
+.pr-stars-2_5-sm,
+.pr-stars-2_6-sm,
+.pr-stars-2_7-sm {
+    background-position: 0 50% !important;
+}
+.pr-stars-2_8-sm,
+.pr-stars-2_9-sm,
+.pr-stars-3-sm,
+.pr-stars-3_0-sm,
+.pr-stars-3_1-sm,
+.pr-stars-3_2-sm {
+    background-position: 0 60% !important;
+}
+.pr-stars-3_3-sm,
+.pr-stars-3_4-sm,
+.pr-stars-3_5-sm,
+.pr-stars-3_6-sm,
+.pr-stars-3_7-sm {
+    background-position: 0 70% !important;
+}
+.pr-stars-3_8-sm,
+.pr-stars-3_9-sm,
+.pr-stars-4-sm,
+.pr-stars-4_0-sm,
+.pr-stars-4_1-sm,
+.pr-stars-4_2-sm {
+    background-position: 0 80% !important;
+}
+.pr-stars-4_3-sm,
+.pr-stars-4_4-sm,
+.pr-stars-4_5-sm,
+.pr-stars-4_6-sm,
+.pr-stars-4_7-sm {
+    background-position: 0 90% !important;
+}
+.pr-stars-4_8-sm,
+.pr-stars-4_9-sm,
+.pr-stars-5-sm,
+.pr-stars-5_0-sm {
+    background-position: 0 100% !important;
+}

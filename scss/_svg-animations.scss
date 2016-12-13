@@ -1,0 +1,87 @@
+svg#ticking_clock{
+	fill:$active-secondary;
+}
+svg#ticking_clock g{
+ animation:ticking 5s steps(8) infinite;
+}
+@keyframes ticking {
+  from{
+    transform:translateX(0)
+  }
+  to{
+    transform:translateX(-280px)
+  }
+}
+
+svg#loader g path{
+	fill:$active;
+}
+svg#loader g{
+    transform-origin:center;
+    animation:loaderTick 2.128s infinite; 
+    opacity:0;
+}
+@keyframes loaderTick {
+	0%{
+		opacity:1;
+		transform:scale(0,0);
+	}
+	12.5%{
+		opacity:1;
+		transform:scale(1,1);
+	}
+	56.25%{
+		opacity:0;
+	}
+	100%{
+		opacity:0;
+	}
+}
+svg#loader #pip-1-1{
+	animation-delay:.133333s
+}
+svg#loader #pip-1-2{
+	animation-delay:.266667s
+}
+svg#loader #pip-1-3{
+	animation-delay:.4s
+}	
+svg#loader #pip-1-4{
+	animation-delay:.53333s
+}
+svg#loader #pip-1-5{
+	animation-delay:.66667s
+}
+svg#loader #pip-1-6{
+	animation-delay:.8s
+}
+svg#loader #pip-1-7{
+	animation-delay:.93333s
+}
+svg#loader #pip-1-8{
+	animation-delay:1.06667s;
+}
+svg#loader #pip-2-1{
+	animation-delay:1.2s;
+}
+svg#loader #pip-2-2{
+	animation-delay:1.33333s;
+}	
+svg#loader #pip-2-3{
+	animation-delay:1.46667s;
+}
+svg#loader #pip-2-4{
+	animation-delay:1.6s;
+}
+svg#loader #pip-2-5{
+	animation-delay:1.73333s;	
+}
+svg#loader #pip-2-6{
+	animation-delay:1.86667s;	
+}
+svg#loader #pip-2-7{
+	animation-delay:2s;	
+}
+svg#loader #pip-2-8{
+	animation-delay:2.13333s;	
+}

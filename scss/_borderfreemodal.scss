@@ -1,0 +1,62 @@
+/*
+  #tinybox{
+    left:50%!important;
+    transform: translateX(-50%)!important;
+    top:2rem!important;
+    @media #{$small-only} {
+    	height:auto;
+  	}
+  }
+  */
+  #tinymask,
+  #tinybox{
+  	@media #{$small-only} {
+		display:none!important;
+  	}
+  }
+  /*
+  #tinybox,
+  #tinycontent, 
+  #modal{
+    width:100%!important;
+    max-width:45rem!important;
+    display:block;
+  }
+  #tinycontent #language{
+    left:auto!important;
+    right:10px!important;
+  }
+  .Hebrew #tinycontent #language,
+  .Arabic #tinycontent #language,
+  .Urdu #tinycontent #language{
+  	right:auto!important;
+    left:10px!important;
+  }
+  #tinycontent #subheadline{
+    margin-right:90px!important;
+  }
+  */
+  #tinycontent{
+  	box-sizing:content-box;
+  }
+  #tinycontent #button{
+    background:none;
+  }
+  #tinycontent #button button{
+    background-color: $active;
+    font-size:1rem;
+  }
+  #tinycontent #button button::after,
+  #tinycontent #button button::before{
+    display:none;
+  }
+  #tinycontent a#closeButton{
+    background:none!important;
+    text-indent:0!important;
+    margin-right:10px;
+  }
+  #tinycontent #closeButton::before{
+    content:"\45"!important;
+    font-family:"UncommonGoods"!important;
+  }
+  

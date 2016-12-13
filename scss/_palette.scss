@@ -1,0 +1,93 @@
+//color pallete -- todo probably switch 'primary' and 'brand-primary' 
+$primary: #4C463F;
+$secondary: #817B73;
+$active: #048D8A;
+$active-secondary:#93C9C8;
+$inactive: #A8A098;
+$white: #FFFFFF;
+$highlight: #F86966;
+$reviews: #FBD568;
+$offwhite: #E8E4DF;
+$collection: #E5F0F0;
+$brand-primary: #387C9B;
+$brand-secondary: #85B77D;
+$TBD:#03507B;
+/*$active-disabled: #CAE3E2;*/
+
+
+$inactive-lightened: lighten($offwhite , 17);
+
+$offwhite-lightened: mix(white, $offwhite, 44%);
+$offwhite-darkened: mix(black, $offwhite, 4%);
+
+$secondary-lightened: mix(white, $secondary, 44%);
+
+$active-light-mix: mix(white, $active, 63%);
+$active-dark-mix: mix(black, $active, 36%);
+$active-muted-mix: desaturate(mix(white, $active-light-mix, 12%), 18%);
+
+
+$active-secondary:$active-light-mix;
+$active-lightened:$active-light-mix;
+
+
+.color-box.active-secondary-mix{
+	background-color:$active-light-mix;
+}
+.color-box.active-dark-mix{
+	background-color:$active-dark-mix;
+}
+.color-box.active-muted-mix{
+	background-color:$active-muted-mix;
+}
+
+.color-box.primary{
+	background-color: $primary	
+}
+.color-box.secondary{
+	background-color: $secondary;
+}
+.color-box.active{
+	background-color:$active;
+}
+.color-box.active-light-mix{
+	background-color: $active-light-mix;
+}
+.color-box.active-dark-mix{
+	background-color: $active-dark-mix;
+}
+.color-box.active-secondary{
+	background-color: $active-secondary;
+}
+.color-box.inactive{
+	background-color: $inactive;
+}
+.color-box.white{
+	background-color:$white
+}
+.color-box.highlight{
+	background-color:$highlight
+}
+.color-box.reviews{
+	background-color:$reviews
+}
+.color-box.offwhite{
+	background-color:$offwhite
+}
+.color-box.collection{
+	background-color:$collection
+}
+.color-box.brand-primary{
+	background-color:$brand-primary
+}
+.color-box.brand-secondary{
+	background-color:$brand-secondary
+}
+
+
+
+$facebook:#3b5998;
+$pinterest:#bd081c;
+$twitter: #55acee;
+$instagram: #125688;
+$googleplus:#dd4b39;
