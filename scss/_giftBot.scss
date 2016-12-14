@@ -20,7 +20,7 @@
 	}
 }
 #giftBotResults {
-	margin-top: 5rem;
+	margin-top: 2rem;
 	.giftBotSearchResults {
 		max-width: 62.5rem;
 		#likeMoreIdeas {
@@ -55,6 +55,9 @@
 			}
 			.upvotedBorder {
 				border: 10px solid $active-dark-mix;
+			}
+			.downvotedBorder {
+				border: 10px solid $highlight;
 			}
 		}
 	}

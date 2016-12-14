@@ -30,7 +30,6 @@ ko.components.register('gift-bot-results-container', {
             //         i++;
             //     }
             // };
-            this.isUpvoted = ko.observable(false);
             this.viewItemModel = function(item) {
                 console.log('item ',item);
                 console.log(this);
@@ -39,23 +38,24 @@ ko.components.register('gift-bot-results-container', {
             this.downVote = function(item) {
                 this.isAllowedMoreItems(true);
                 console.log('down vote ',item);
+                var downVotedImage = event.target.parentNode.parentNode.parentNode.querySelector('a img');
+                var votedContainer = event.target.parentNode.parentNode;
+                var upVoteBtn = event.target.parentNode.parentNode.querySelector('a .upVote');
+
+                $(downVotedImage).attr('class', 'downvotedBorder');
+                $(upVoteBtn).css('display', 'none');
+                $(votedContainer).css('top', 0);
             }
             this.upVote = function(item, event) {
                 this.isAllowedMoreItems(true);
                 console.log('up vote ',item);
-                this.isUpvoted(true);
-                // console.log('event ',event.target.parentNode.parentNode.parentNode.className);
-                //event.target.parentNode.parentNode.parentNode.css('border', '10px solid #025A58');
-                // console.log('event ',event.target.parentNode.parentNode.parentNode);
                 var upvotedImage = event.target.parentNode.parentNode.parentNode.querySelector('a img');
-                var upvotedContainer = event.target.parentNode.parentNode;
+                var votedContainer = event.target.parentNode.parentNode;
                 var downVoteBtn = event.target.parentNode.parentNode.querySelector('a .downVote');
 
                 $(upvotedImage).attr('class', 'upvotedBorder');
                 $(downVoteBtn).css('display', 'none');
-                $(upvotedContainer).css('top', 0);
-                console.log('event ',event.target.parentNode.parentNode.querySelector('a .downVote'));
-
+                $(votedContainer).css('top', 0);
             }
 
 
@@ -126,6 +126,7 @@ ko.components.register('gift-bot-results-container', {
         }
     },
     template: `
+        <!-- Fixed Header -->
         <div class="row giftBotResultsHeader">
             <div class="small-12 columns">
                 <div class="contain-to-grid fixed">
@@ -144,8 +145,11 @@ ko.components.register('gift-bot-results-container', {
             </div>
         </div>
 
+        <!-- Search Results -->
         <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
             <div class="small-12 small-centered columns giftBotSearchResults">
+                <span data-tooltip="" aria-haspopup="true" class="has-tip" data-selector="tooltip-iwo22i2p0" title="">small</span>
+                <span data-selector="tooltip-iwo22i2p0" class="tooltip" style="visibility: visible; display: none; width: auto; top: 3709px; bottom: auto; left: 560.266px; right: auto;">Testing documents received, filed and up-to-date<span class="nub"></span></span>
                 <ul class="small-block-grid-1 medium-block-grid-3" data-bind="foreach: displaySearchResults()">
                     <li>
                         <article class="product">
@@ -182,7 +186,7 @@ ko.components.register('gift-bot-results-container', {
             </div>
         </div>
 
-
+        <!-- Quick View -->
         <div id="quickViewModal" class="reveal-modal" data-reveal="" aria-hidden="true" role="dialog" style="max-width: 100%;">
             <div class="row">
                 <div class="small-12 medium-7 columns">
@@ -196,8 +200,13 @@ ko.components.register('gift-bot-results-container', {
                     </div>
                 </div>
             </div>
-
         </div>
+
+
+
+
+
+
     `, synchronous: true
 });
 

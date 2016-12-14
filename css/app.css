@@ -17799,7 +17799,7 @@ body:before {
 
 /* line 22, ../scss/_giftBot.scss */
 #giftBotResults {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 /* line 24, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults {
@@ -17846,4 +17846,8 @@ body:before {
 /* line 56, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
+}
+/* line 59, ../scss/_giftBot.scss */
+#giftBotResults .giftBotSearchResults .product .downvotedBorder {
+  border: 10px solid #F86966;
 }
