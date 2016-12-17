@@ -17772,53 +17772,105 @@ body:before {
     margin-bottom: 0;
   }
 }
-/* line 3, ../scss/_giftBot.scss */
+/* line 2, ../scss/_giftBot.scss */
 .giftBotResultsHeader .fixed {
   background-color: #E8E4DF;
 }
-/* line 6, ../scss/_giftBot.scss */
+/* line 5, ../scss/_giftBot.scss */
 .giftBotResultsHeader .top-bar {
   background-color: #E8E4DF;
 }
-/* line 8, ../scss/_giftBot.scss */
+/* line 7, ../scss/_giftBot.scss */
 .giftBotResultsHeader .top-bar ul {
   width: 100%;
 }
-/* line 11, ../scss/_giftBot.scss */
+/* line 10, ../scss/_giftBot.scss */
 .giftBotResultsHeader .top-bar h1 {
   margin: 0;
 }
-/* line 14, ../scss/_giftBot.scss */
+/* line 13, ../scss/_giftBot.scss */
 .giftBotResultsHeader .top-bar label {
   display: inline;
 }
-/* line 17, ../scss/_giftBot.scss */
+/* line 16, ../scss/_giftBot.scss */
 .giftBotResultsHeader .top-bar .fa .fa-thumbs-up .fa-2 {
   font-size: 2em;
 }
+/* line 20, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip {
+  position: relative;
+  display: inline-block;
+}
+/* line 24, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .proTipText {
+  visibility: hidden;
+  width: auto;
+  background-color: #035a58;
+  color: #fff;
+  border-radius: 3px;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 0;
+  margin-left: -60px;
+}
+/* line 36, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .proTipText .closeProTip {
+  padding: .50rem;
+}
+/* line 39, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .proTipText .copy {
+  padding: 1rem;
+}
+/* line 41, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .proTipText .copy p {
+  color: #fff !important;
+  margin: 0;
+}
+/* line 47, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .proTipText::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #035a58 transparent;
+}
+/* line 57, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTip .displayProTipText {
+  visibility: visible;
+}
 
-/* line 22, ../scss/_giftBot.scss */
+/* line 61, ../scss/_giftBot.scss */
 #giftBotResults {
   margin-top: 2rem;
 }
-/* line 24, ../scss/_giftBot.scss */
+/* line 63, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults {
   max-width: 62.5rem;
 }
-/* line 26, ../scss/_giftBot.scss */
+/* line 66, ../scss/_giftBot.scss */
+#giftBotResults .giftBotSearchResults ul li {
+  position: relative;
+}
+/* line 70, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults #likeMoreIdeas {
   margin: 2rem 0;
 }
-/* line 29, ../scss/_giftBot.scss */
+/* line 73, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product {
-  margin-bottom: 3rem;
+  padding: 0 1rem;
+  padding-bottom: 2.5rem;
 }
-/* line 31, ../scss/_giftBot.scss */
+/* line 76, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
 }
-/* line 35, ../scss/_giftBot.scss */
+/* line 80, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   top: 0;
@@ -17826,28 +17878,28 @@ body:before {
   width: 100%;
   height: auto;
 }
-/* line 41, ../scss/_giftBot.scss */
+/* line 86, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
 }
-/* line 46, ../scss/_giftBot.scss */
+/* line 91, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .votingContainer {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding-bottom: .75rem;
 }
-/* line 52, ../scss/_giftBot.scss */
+/* line 97, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .preventReflow {
   overflow: hidden;
   padding-bottom: 100%;
 }
-/* line 56, ../scss/_giftBot.scss */
+/* line 101, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
 }
-/* line 59, ../scss/_giftBot.scss */
+/* line 104, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .downvotedBorder {
   border: 10px solid #F86966;
 }

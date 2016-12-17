@@ -1,5 +1,4 @@
 .giftBotResultsHeader {
-
 	.fixed {
 		background-color: $offwhite;
 	}
@@ -18,16 +17,62 @@
 			font-size: 2em;
 		}
 	}
+	.proTip {
+	    position: relative;
+	    display: inline-block;
+	}
+	.proTip .proTipText {
+	    visibility: hidden;
+	    width: auto;
+	    background-color: $active-dark-mix;
+		color: #fff;
+		border-radius: 3px;
+	    text-align: left;
+	    position: absolute;
+	    z-index: 1;
+	    top: 150%;
+	    left: 0;
+	    margin-left: -60px;
+		.closeProTip {
+			padding: .50rem;
+		}
+		.copy {
+			padding: 1rem;
+			p {
+				color: #fff !important;
+				margin: 0;
+			}
+		}
+	}
+	.proTip .proTipText::after {
+	    content: "";
+	    position: absolute;
+	    bottom: 100%;
+	    left: 50%;
+	    margin-left: -5px;
+	    border-width: 5px;
+	    border-style: solid;
+	    border-color: transparent transparent $active-dark-mix transparent;
+	}
+	.proTip .displayProTipText{
+	    visibility: visible;
+	}
 }
 #giftBotResults {
 	margin-top: 2rem;
 	.giftBotSearchResults {
 		max-width: 62.5rem;
+		ul {
+			li {
+				position: relative;
+			}
+		}
 		#likeMoreIdeas {
 			margin: 2rem 0;
 		}
 		.product {
-			margin-bottom: 3rem;
+			padding: 0 1rem;
+			padding-bottom: 2.5rem;
 			.responsively-lazy:not(img){
 				position:relative;
 				height:0

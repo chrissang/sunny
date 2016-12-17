@@ -17,6 +17,8 @@ ko.components.register('gift-bot-results-container', {
             this.isInitItemsLoaded = false;
             this.isAllowedMoreItems = ko.observable(false);
             this.isLikeMOreItemsCopy = ko.observable(false);
+            this.isProTip = ko.observable(false);
+
 
             this.viewModelImage = ko.observable('');
             this.viewModelAltImages = ko.observableArray();
@@ -52,10 +54,19 @@ ko.components.register('gift-bot-results-container', {
                 var upvotedImage = event.target.parentNode.parentNode.parentNode.querySelector('a img');
                 var votedContainer = event.target.parentNode.parentNode;
                 var downVoteBtn = event.target.parentNode.parentNode.querySelector('a .downVote');
+                var upVoteProTip = document.getElementById("firstUpVoteProTip");
 
                 $(upvotedImage).attr('class', 'upvotedBorder');
                 $(downVoteBtn).css('display', 'none');
                 $(votedContainer).css('top', 0);
+
+                upVoteProTip.className += !this.isProTip() ? " proTip displayProTipText" : "";
+                this.isProTip(true);
+            }
+            this.closeProTip = function() {
+                console.log('close');
+                var upVoteProTip = document.getElementById("firstUpVoteProTip");
+                $(upVoteProTip).css('visibility', 'hidden');
             }
 
 
@@ -75,7 +86,6 @@ ko.components.register('gift-bot-results-container', {
                     window.onbeforeunload = function () {
                         window.scrollTo(0, 0);
                     }
-                    $(document).foundation();
                 },
                 update: function(element, valueAccessor, allBindingsAccessor, viewModel) {
                     if (self.searchResults().length != 0 && !self.isInitItemsLoaded) {
@@ -137,7 +147,24 @@ ko.components.register('gift-bot-results-container', {
                             </li>
                             <li class="right">
                               <i class="fa fa-thumbs-up fa-2" aria-hidden="true"></i>
-                              <label>like to save gift ideas</label>
+                              <!--<label>Like to save gift ideas</label>-->
+                               <label class="proTip">
+                                    Like to save gift ideas
+
+                                    <div id="firstUpVoteProTip" class="proTipText">
+                                        <div class="closeProTip">
+                                            <a data-bind="event:{ click: closeProTip.bind($parent) }">
+                                                <span class="icon-close icon-sm right"></span>
+                                            </a>
+                                        </div>
+                                        <div class="copy">
+                                            <p>Pro Tip:</p>
+                                            <p class="intro-text">
+                                                The items you like will get saved in a list that you can view right here. Handy, right?
+                                            </p>
+                                        </div>
+                                    </div>
+                               </label>
                             </li>
                         </ul>
                     </nav>
@@ -148,8 +175,6 @@ ko.components.register('gift-bot-results-container', {
         <!-- Search Results -->
         <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
             <div class="small-12 small-centered columns giftBotSearchResults">
-                <span data-tooltip="" aria-haspopup="true" class="has-tip" data-selector="tooltip-iwo22i2p0" title="">small</span>
-                <span data-selector="tooltip-iwo22i2p0" class="tooltip" style="visibility: visible; display: none; width: auto; top: 3709px; bottom: auto; left: 560.266px; right: auto;">Testing documents received, filed and up-to-date<span class="nub"></span></span>
                 <ul class="small-block-grid-1 medium-block-grid-3" data-bind="foreach: displaySearchResults()">
                     <li>
                         <article class="product">
@@ -160,11 +185,19 @@ ko.components.register('gift-bot-results-container', {
                                     <a data-bind="event:{ click: $parent.upVote.bind($parent) }"><img class="voteBtns upVote" src="/images/SUN-thumb_yay.png"></a>
                                 </div>
                             </div>
-                            <h4>
-                                <a class="a-secondary" data-bind="attr: { href: ugWeb +$data.categoryURL }">
-                                <span data-bind="html: $data.title"></span></a>
-                            </h4>
-                            <p class="body-small price" data-bind="html: price"></p>
+                            <div style="min-height: 60px;">
+                                <h4>
+                                    <a class="a-secondary" data-bind="attr: { href: ugWeb +$data.categoryURL }">
+                                    <span data-bind="html: $data.title"></span></a>
+                                </h4>
+                                <p class="body-small price" data-bind="html: price"></p>
+
+                                <div style="background: #025A58; color: #fff; padding: 1rem; border-radius: 3px; position: absolute; bottom: 0; left: 0; width: 100%; height: 6rem;">
+                                  <p style="color: #fff; margin: 0;">Pro Tip:</p>
+                                  <p class="intro-text" style="color: #fff !important; margin: 0;">Try down voting a few items you're not interested in... it will give you better results</p>
+                                </div>
+                            </div>
+
                         </article>
                     </li>
                 </ul>
