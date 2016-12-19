@@ -9,7 +9,7 @@ var app = express();
 //app.use(express.static(staticPath));
 app.use('/', express.static(__dirname));
 
-var port = process.env.HTTP_PORT || 9000;
+var port = process.env.HTTP_PORT || 3000;
 
 app.listen(port, function() {
   console.log('listening for DEV: on port %s', port);

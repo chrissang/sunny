@@ -1,13 +1,142 @@
-const ugWeb = 'http://www.uncommongoods.com';
+const ugWeb = '//www.uncommongoods.com';
+
+// var upvoteCounter = 0;
+
 
 class Dependents {
     constructor(params) {
+        this.isAllowedMoreItems = ko.observable(false);
+        this.isProTip = ko.observable(false);
+        this.upvoteCounter = ko.observable(0);
+        this.isTryDownVoteingProTip = ko.observable(false);
+        this.isItemDownvoted = ko.observable(false);
 
+        this.closeProTip = function() {
+            var upVoteProTip = document.getElementById("firstUpVoteProTip");
+            $(upVoteProTip).css('visibility', 'hidden');
+        }
     }
 }
+ko.components.register('products', {
+    viewModel: class ProductsComponentModel extends Dependents {
+        constructor(params) {
+            super(params);
+            this.params = params;
+            this.productURL = params.data.categoryURL;
+            this.imageURL = ugWeb + params.data.imageURL;
+            this.title = params.data.title;
+            this.price = params.data.price;
+            this.itemId = params.data.itemId;
+            this.displayDownVoteSelected = ko.observable(false);
+            this.displayUpVoteSelected = ko.observable(false);
+            this.displayBorderSelected = function() {
+                if (this.displayDownVoteSelected()) {
+                    return 'downvotedBorder'
+                } else if (this.displayUpVoteSelected()) {
+                    return 'upvotedBorder'
+                } else {
+                    return ''
+                }
+            };
+
+            this.downVote = function(parent, event) {
+                console.log('down vote',this);
+                this.params.parent.isAllowedMoreItems(true);
+                this.params.parent.isItemDownvoted(true);
+                this.displayDownVoteSelected(true);
+            }
+            this.downVoteReasonSelection = function(parent,event) {
+                this.displayDownVoteSelected(false);
+                return true;
+            }
+
+            this.upVote = function() {
+                console.log('up vote ',this);
+                this.displayUpVoteSelected(true);
+                var element = document.getElementById(this.itemId);
+                var upvotedImage = element.querySelector('a img');
+                var votedContainer = element.querySelector('.votingContainer');
+                var downVoteBtn = element.querySelector('a .downVote');
+                var upVoteProTip = document.getElementById("firstUpVoteProTip");
+                var tryDownVoteingProTip = element.querySelector('.tryDownVoteingProTip');
+
+                this.params.parent.isAllowedMoreItems(true);
+                this.params.parent.upvoteCounter() != 2 ? this.params.parent.upvoteCounter(this.params.parent.upvoteCounter() + 1) : '';
+                this.params.parent.upvoteCounter() === 2 && !this.params.parent.isItemDownvoted() ? this.params.parent.isTryDownVoteingProTip(true) : this.params.parent.isTryDownVoteingProTip(false);
+                upVoteProTip.className += !this.params.parent.isProTip() ? " proTip displayProTipText" : "";
+                this.params.parent.isProTip(true);
+                this.params.parent.isTryDownVoteingProTip() ? $(tryDownVoteingProTip).css('display', 'block') : '';
+
+                // $(upvotedImage).attr('class', 'upvotedBorder');
+                // $(downVoteBtn).css('display', 'none');
+                // $(votedContainer).css('top', 0);
+            }
+            this.closeProTipTryDownVoting = function() {
+                var protipTryDownvotingElement = document.getElementById(this.itemId).querySelector('.tryDownVoteingProTip');
+                $(protipTryDownvotingElement).css('display', 'none');
+            }
+        }
+    },
+    template: `
+        <article class="product" data-bind="attr: { id: itemId }">
+            <div class="responsively-lazy preventReflow">
+                <a data-reveal-id="quickViewModal"><img data-bind="attr: { src: imageURL, class: displayBorderSelected() }"></a>
+                <!-- ko if: displayDownVoteSelected() -->
+                    <div class="downVoteReason">
+                        <div class="small-12 columns">
+                            <input type="radio" data-bind="attr:{ 'name': 'downVoteReason1_'+ itemId, 'id': 'downVoteReason1_'+itemId }, event:{ click: downVoteReasonSelection.bind($data) }">
+                            <label data-bind="attr:{ for: 'downVoteReason1_'+ itemId }">I dont't like this item</label>
+                        </div>
+                        <div class="small-12 columns">
+                            <input type="radio" data-bind="attr:{ 'name': 'downVoteReason2_'+ itemId, 'id': 'downVoteReason2_'+itemId }, event:{ click: downVoteReasonSelection.bind($data) }">
+                            <label data-bind="attr:{ for: 'downVoteReason2_'+ itemId }">I don't like this style</label>
+                        </div>
+                        <div class="small-12 columns">
+                            <input type="radio" data-bind="attr:{ 'name': 'downVoteReason3_'+ itemId, 'id': 'downVoteReason3_'+itemId }, event:{ click: downVoteReasonSelection.bind($data) }">
+                            <label data-bind="attr:{ for: 'downVoteReason3_'+ itemId }">Don't show me kitchen & bar</label>
+                        </div>
+                        <div class="small-12 columns">
+                            <input type="radio" data-bind="attr:{ 'name': 'downVoteReason4_'+ itemId, 'id': 'downVoteReason4_'+itemId }, event:{ click: downVoteReasonSelection.bind($data) }">
+                            <label data-bind="attr:{ for: 'downVoteReason4_'+ itemId }">Don't show me dishware</label>
+                        </div>
+                        <div class="small-12 columns">
+                            <input type="radio" data-bind="attr:{ 'name': 'downVoteReason5_'+ itemId, 'id': 'downVoteReason5_'+itemId }, event:{ click: downVoteReasonSelection.bind($data) }">
+                            <label data-bind="attr:{ for: 'downVoteReason5_'+ itemId }">Other reason</label>
+                        </div>
+                    </div>
+                <!-- /ko -->
+                <div data-bind="attr: { class: displayDownVoteSelected() ? 'votingContainer text-center animateUp' : 'votingContainer text-center animateDown' }">
+                    <!-- ko if: !displayUpVoteSelected() -->
+                        <a data-bind="event:{ click: downVote.bind($data) }"><img class="voteBtns downVote" src="/images/SUN-thumb_boo.png"></a>
+                    <!-- /ko -->
+
+                    <!-- ko if: !displayDownVoteSelected() -->
+                        <a data-bind="event:{ click: upVote.bind($data) }"><img class="voteBtns upVote" src="/images/SUN-thumb_yay.png"></a>
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div class="copy">
+                <h4>
+                    <a class="a-secondary" data-bind="attr: { href: productURL }">
+                    <span data-bind="html: title"></span></a>
+                </h4>
+                <p class="body-small price" data-bind="html: price"></p>
+                <div class="tryDownVoteingProTip">
+                    <div class="">
+                        <a data-bind="event:{ click: closeProTipTryDownVoting.bind($data) }">
+                            <span class="icon-close icon-sm right"></span>
+                        </a>
+                    </div>
+                    <p>Pro Tip:</p>
+                    <p class="intro-text">Try down voting a few items you're not interested in... it will give you better results</p>
+                </div>
+            </div>
+        </article>`, synchronous: true
+});
+
 
 ko.components.register('gift-bot-results-container', {
-    viewModel: class HomePageContainerComponentModel extends Dependents {
+    viewModel: class GiftbotResultsComponentModel extends Dependents {
         constructor(params) {
             super(params);
             this.searchResults = ko.observableArray([]).extend({ deferred: true });
@@ -15,10 +144,7 @@ ko.components.register('gift-bot-results-container', {
             this.curr = ko.observable(9);
             this.old = ko.observable(0);
             this.isInitItemsLoaded = false;
-            this.isAllowedMoreItems = ko.observable(false);
             this.isLikeMOreItemsCopy = ko.observable(false);
-            this.isProTip = ko.observable(false);
-
 
             this.viewModelImage = ko.observable('');
             this.viewModelAltImages = ko.observableArray();
@@ -37,42 +163,9 @@ ko.components.register('gift-bot-results-container', {
                 console.log(this);
                 this.viewModelImage(item.imageURL);
             }
-            this.downVote = function(item) {
-                this.isAllowedMoreItems(true);
-                console.log('down vote ',item);
-                var downVotedImage = event.target.parentNode.parentNode.parentNode.querySelector('a img');
-                var votedContainer = event.target.parentNode.parentNode;
-                var upVoteBtn = event.target.parentNode.parentNode.querySelector('a .upVote');
-
-                $(downVotedImage).attr('class', 'downvotedBorder');
-                $(upVoteBtn).css('display', 'none');
-                $(votedContainer).css('top', 0);
-            }
-            this.upVote = function(item, event) {
-                this.isAllowedMoreItems(true);
-                console.log('up vote ',item);
-                var upvotedImage = event.target.parentNode.parentNode.parentNode.querySelector('a img');
-                var votedContainer = event.target.parentNode.parentNode;
-                var downVoteBtn = event.target.parentNode.parentNode.querySelector('a .downVote');
-                var upVoteProTip = document.getElementById("firstUpVoteProTip");
-
-                $(upvotedImage).attr('class', 'upvotedBorder');
-                $(downVoteBtn).css('display', 'none');
-                $(votedContainer).css('top', 0);
-
-                upVoteProTip.className += !this.isProTip() ? " proTip displayProTipText" : "";
-                this.isProTip(true);
-            }
-            this.closeProTip = function() {
-                console.log('close');
-                var upVoteProTip = document.getElementById("firstUpVoteProTip");
-                $(upVoteProTip).css('visibility', 'hidden');
-            }
-
 
             self = this;
-
-            $.getJSON( "http://localhost:9000/js/gifts_search_results.json", function(data) {
+            $.getJSON( "http://localhost:3000/js/gifts_search_results.json", function(data) {
                 data.products.forEach((product,index) => {
                     self.searchResults.push(product);
                 })
@@ -175,31 +268,8 @@ ko.components.register('gift-bot-results-container', {
         <!-- Search Results -->
         <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
             <div class="small-12 small-centered columns giftBotSearchResults">
-                <ul class="small-block-grid-1 medium-block-grid-3" data-bind="foreach: displaySearchResults()">
-                    <li>
-                        <article class="product">
-                            <div class="responsively-lazy preventReflow">
-                                <a data-reveal-id="quickViewModal" data-bind="event:{ click: $parent.viewItemModel.bind($parent) }"><img data-bind="attr: { 'data-index': $index(), src: ugWeb + $data.imageURL }"></a>
-                                <div class="votingContainer text-center">
-                                    <a data-bind="event:{ click: $parent.downVote.bind($parent) }"><img class="voteBtns downVote" src="/images/SUN-thumb_boo.png"></a>
-                                    <a data-bind="event:{ click: $parent.upVote.bind($parent) }"><img class="voteBtns upVote" src="/images/SUN-thumb_yay.png"></a>
-                                </div>
-                            </div>
-                            <div style="min-height: 60px;">
-                                <h4>
-                                    <a class="a-secondary" data-bind="attr: { href: ugWeb +$data.categoryURL }">
-                                    <span data-bind="html: $data.title"></span></a>
-                                </h4>
-                                <p class="body-small price" data-bind="html: price"></p>
-
-                                <div style="background: #025A58; color: #fff; padding: 1rem; border-radius: 3px; position: absolute; bottom: 0; left: 0; width: 100%; height: 6rem;">
-                                  <p style="color: #fff; margin: 0;">Pro Tip:</p>
-                                  <p class="intro-text" style="color: #fff !important; margin: 0;">Try down voting a few items you're not interested in... it will give you better results</p>
-                                </div>
-                            </div>
-
-                        </article>
-                    </li>
+                <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
+                    <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
                 </ul>
 
                 <div class="row">
@@ -233,14 +303,7 @@ ko.components.register('gift-bot-results-container', {
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-    `, synchronous: true
+        </div>`, synchronous: true
 });
 
 ko.applyBindings();
