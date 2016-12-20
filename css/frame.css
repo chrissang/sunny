@@ -17674,8 +17674,7 @@ body:before {
   display: inline-block;
 }
 /* line 24, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .proTipText {
-  visibility: hidden;
+.giftBotResultsHeader .proTipText {
   width: auto;
   background-color: #035a58;
   color: #fff;
@@ -17686,21 +17685,25 @@ body:before {
   top: 150%;
   left: 0;
   margin-left: -60px;
+  opacity: 1;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
-/* line 36, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .proTipText .closeProTip {
+/* line 45, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTipText .closeProTip {
   padding: .50rem;
 }
-/* line 39, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .proTipText .copy {
+/* line 48, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTipText .copy {
   padding: 1rem;
 }
-/* line 41, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .proTipText .copy p {
+/* line 50, ../scss/_giftBot.scss */
+.giftBotResultsHeader .proTipText .copy p {
   color: #fff !important;
   margin: 0;
 }
-/* line 47, ../scss/_giftBot.scss */
+/* line 56, ../scss/_giftBot.scss */
 .giftBotResultsHeader .proTip .proTipText::after {
   content: "";
   position: absolute;
@@ -17711,57 +17714,48 @@ body:before {
   border-style: solid;
   border-color: transparent transparent #035a58 transparent;
 }
-/* line 57, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .displayProTipText {
-  visibility: visible;
-}
 
-/* line 61, ../scss/_giftBot.scss */
+/* line 67, ../scss/_giftBot.scss */
 #giftBotResults {
   margin-top: 2rem;
 }
-/* line 63, ../scss/_giftBot.scss */
+/* line 69, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults {
   max-width: 62.5rem;
 }
-/* line 66, ../scss/_giftBot.scss */
+/* line 72, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults ul li {
   position: relative;
+  padding: 0 1rem;
 }
-/* line 70, ../scss/_giftBot.scss */
+/* line 77, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults #likeMoreIdeas {
   margin: 2rem 0;
 }
-/* line 73, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product {
-  padding: 0 1rem;
-}
-/* line 76, ../scss/_giftBot.scss */
+/* line 81, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
 }
-/* line 80, ../scss/_giftBot.scss */
+/* line 85, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: auto;
 }
-/* line 86, ../scss/_giftBot.scss */
+/* line 89, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
 }
-/* line 91, ../scss/_giftBot.scss */
+/* line 94, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .votingContainer {
   position: absolute;
   width: 100%;
   height: calc(100% / 5);
   transform: translateY(calc(100% * 4));
 }
-/* line 96, ../scss/_giftBot.scss */
+/* line 99, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .votingContainer.animateUp {
   transform: translateY(0);
   -webkit-transform: translateY(0);
@@ -17771,7 +17765,7 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 105, ../scss/_giftBot.scss */
+/* line 108, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .votingContainer.animateDown {
   transform: translateY(calc(100% * 4));
   -webkit-transform: translateY(calc(100% * 4));
@@ -17781,28 +17775,28 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 115, ../scss/_giftBot.scss */
+/* line 118, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .preventReflow {
   overflow: hidden;
   padding-bottom: 100%;
 }
-/* line 119, ../scss/_giftBot.scss */
+/* line 122, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
 }
-/* line 122, ../scss/_giftBot.scss */
+/* line 125, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .downvotedBorder {
   border: 10px solid #F86966;
 }
-/* line 125, ../scss/_giftBot.scss */
+/* line 128, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .copy {
   min-height: 60px;
 }
-/* line 128, ../scss/_giftBot.scss */
+/* line 131, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip {
   background: #025A58;
   color: #fff;
-  padding: 1rem;
+  padding: .75rem 1rem;
   border-radius: 3px;
   position: absolute;
   bottom: 0;
@@ -17810,14 +17804,31 @@ body:before {
   width: 100%;
   height: 6.5rem;
   margin: 0;
-  display: none;
+  box-shadow: 2px 2px 2px #888888;
+  z-index: 99;
+  transform: translateY(35%);
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-/* line 140, ../scss/_giftBot.scss */
+/* line 149, ../scss/_giftBot.scss */
+#giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip.animateDown {
+  opacity: 1;
+  transform: translateY(45%);
+  -webkit-transform: translateY(45%);
+  -moz-transform: translateY(45%);
+  -ms-transform: translateY(45%);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+/* line 159, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip p {
   color: #fff !important;
   margin: 0;
 }
-/* line 145, ../scss/_giftBot.scss */
+/* line 164, ../scss/_giftBot.scss */
 #giftBotResults .giftBotSearchResults .product .downVoteReason {
   position: absolute;
   top: 0;
@@ -17828,4 +17839,31 @@ body:before {
   opacity: 0.9;
   padding-top: 3rem;
   border: 10px solid #F86966;
+}
+
+/* line 179, ../scss/_giftBot.scss */
+#quickViewModal .votingContainer {
+  padding-bottom: 3rem;
+}
+/* line 181, ../scss/_giftBot.scss */
+#quickViewModal .votingContainer .downVote {
+  padding-right: .50rem;
+}
+/* line 184, ../scss/_giftBot.scss */
+#quickViewModal .votingContainer .upVote {
+  padding-left: .50rem;
+}
+/* line 188, ../scss/_giftBot.scss */
+#quickViewModal .itemDescription {
+  padding-bottom: 1rem;
+}
+/* line 191, ../scss/_giftBot.scss */
+#quickViewModal .avgRating {
+  padding-bottom: 2rem;
+}
+/* line 195, ../scss/_giftBot.scss */
+#quickViewModal .selectQuanity input {
+  margin-top: 0;
+  background-color: #125688;
+  border-color: #125688 !important;
 }

@@ -21,8 +21,7 @@
 	    position: relative;
 	    display: inline-block;
 	}
-	.proTip .proTipText {
-	    visibility: hidden;
+	.proTipText {
 	    width: auto;
 	    background-color: $active-dark-mix;
 		color: #fff;
@@ -33,6 +32,16 @@
 	    top: 150%;
 	    left: 0;
 	    margin-left: -60px;
+		opacity: 1;
+		-webkit-transition: 0.3s linear;
+		-moz-transition: 0.3s linear;
+		transition: 0.3s linear;
+		// &.fadein {
+		// 	opacity: 1;
+		// 	-webkit-transition: 0.5s linear;
+		// 	-moz-transition: 0.5s linear;
+		// 	transition: 0.5s linear;
+		// }
 		.closeProTip {
 			padding: .50rem;
 		}
@@ -54,9 +63,6 @@
 	    border-style: solid;
 	    border-color: transparent transparent $active-dark-mix transparent;
 	}
-	.proTip .displayProTipText{
-	    visibility: visible;
-	}
 }
 #giftBotResults {
 	margin-top: 2rem;
@@ -65,22 +71,19 @@
 		ul {
 			li {
 				position: relative;
+				padding: 0 1rem;
 			}
 		}
 		#likeMoreIdeas {
 			margin: 2rem 0;
 		}
 		.product {
-			padding: 0 1rem;
-			// padding-bottom: 2.5rem;
 			.responsively-lazy:not(img){
 				position:relative;
 				height:0
 			}
 			.responsively-lazy:not(img) img{
 				position:absolute;
-				top:0;
-				left:0;
 				width:100%;
 				height: auto;
 				&.voteBtns {
@@ -128,7 +131,7 @@
 			.tryDownVoteingProTip {
 				background: #025A58;
 				color: #fff;
-				padding: 1rem;
+				padding: .75rem 1rem;
 				border-radius: 3px;
 				position: absolute;
 				bottom: 0;
@@ -136,7 +139,23 @@
 				width: 100%;
 				height: 6.5rem;
 				margin: 0;
-				display: none;
+				box-shadow: 2px 2px 2px #888888;
+				z-index: 99;
+				transform: translateY(35%);
+				opacity: 0;
+				-webkit-transition: 0.3s ease-in-out;
+				-moz-transition: 0.3s ease-in-out;
+				transition: 0.3s ease-in-out;
+				&.animateDown {
+					opacity: 1;
+					transform: translateY(45%);
+					-webkit-transform: translateY(45%);
+					-moz-transform: translateY(45%);
+					-ms-transform: translateY(45%);
+					-webkit-transition: 0.5s ease-in-out;
+					-moz-transition: 0.5s ease-in-out;
+					transition: 0.5s ease-in-out;
+				}
 				p {
 					color: #fff !important;
 					margin: 0;
@@ -155,5 +174,28 @@
 			}
 		}
 	}
-
+}
+#quickViewModal {
+	.votingContainer {
+		padding-bottom: 3rem;
+		.downVote {
+			padding-right: .50rem;
+		}
+		.upVote {
+			padding-left: .50rem;
+		}
+	}
+	.itemDescription {
+		padding-bottom: 1rem;
+	}
+	.avgRating {
+		padding-bottom: 2rem;
+	}
+	.selectQuanity {
+		input {
+			margin-top: 0;
+			background-color: #125688;
+    		border-color: #125688 !important;
+		}
+	}
 }
