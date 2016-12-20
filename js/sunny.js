@@ -13,6 +13,7 @@ class Dependents {
         this.viewModelTagLine = ko.observable('');
         this.viewModelAvgRating = ko.observable('');
         this.viewModelNumberOfReviews = ko.observable('');
+        this.viewModelProductURL = ko.observable('');
         this.itemQuantity = ko.observableArray([0,1,2,3,4,5,6,7,8,9,10]);
         this.productParent = ko.observable();
     }
@@ -45,7 +46,7 @@ ko.components.register('quickview', {
         <div id="quickViewModal" class="reveal-modal" data-reveal="" aria-hidden="true" role="dialog" style="max-width: 60%;">
             <div class="row" style="max-width: 100%;">
                 <div class="small-12 medium-6 columns">
-                    <a><img data-bind="attr: { src: ugWeb + $parent.viewModelImage() }"></a>
+                    <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><img data-bind="attr: { src: $parent.viewModelImage() }"></a>
                 </div>
                 <div class="small-12 medium-6 text-center columns">
                     <div class="row">
@@ -77,7 +78,7 @@ ko.components.register('quickview', {
                                     <select data-bind="options: itemQuantity()"></select>
                                 </div>
                                 <div class="small-9 columns">
-                                    <input type="button" value="add to cart" class="urgent expand">
+                                    <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
                                 </div>
                             </div>
                         </div>
@@ -136,7 +137,7 @@ ko.components.register('products', {
             this.displayQuickView = function() {
                 this.params.parent.productParent(this);
                 var itemID = this.params.data.itemId;
-                this.params.parent.viewModelImage(this.params.data.imageURL);
+                this.params.parent.viewModelImage(ugWeb+this.params.data.imageURL);
                 this.params.parent.viewModelTitle(this.params.data.title);
                 this.params.parent.viewModelPrice(this.params.data.price);
                 var self = this;
@@ -145,6 +146,7 @@ ko.components.register('products', {
                     self.params.parent.viewModelTagLine(itemdata[0].tagLine);
                 	self.params.parent.viewModelAvgRating(itemdata[0].avgRating.toString().replace('.','_'));
                     self.params.parent.viewModelNumberOfReviews(itemdata[0].noOfReviews);
+                    self.params.parent.viewModelProductURL(ugWeb+'/product/'+itemdata[0].url);
             	})
             }
         }
@@ -212,7 +214,7 @@ ko.components.register('gift-bot-results-container', {
             super(params);
             this.searchResults = ko.observableArray([]).extend({ deferred: true });
             this.displaySearchResults = ko.observableArray([]);
-            this.curr = ko.observable(9);
+            this.curr = ko.observable(24);
             this.old = ko.observable(0);
             this.isInitItemsLoaded = false;
             this.isLikeMOreItemsCopy = ko.observable(false);
@@ -276,8 +278,8 @@ ko.components.register('gift-bot-results-container', {
                         self.searchResults().forEach((item,index) => {
                             index < self.curr() && index >= self.old() ? self.displaySearchResults.push(item) : '';
                         })
-                        self.old(self.old() + 9);
-                        self.curr(self.curr() + 9);
+                        self.old(self.old() + 24);
+                        self.curr(self.curr() + 24);
                     }
                 }
             }
