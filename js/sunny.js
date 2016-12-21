@@ -19,8 +19,10 @@ class Dependents {
 
         this.upVotedResults = ko.observableArray([]);
         this.displayUpVotedResults = ko.observable(false);
+        this.displaySearchResultsToggle = ko.observable(true);
 
-
+        this.toggleSavedText = ko.observable('LIKE TO SAVE GIFT IDEAS');
+        this.toggleSavedIcon = ko.observable('');
     }
 }
 
@@ -291,8 +293,13 @@ ko.components.register('gift-bot-results-container', {
                 var itemsToAdd = load;
 
                 while (itemsToAdd--) {
-                    this.displaySearchResultsTemp.push(this.searchResults()[itemsToAdd]);
-                    this.searchResults().splice(itemsToAdd, 1);
+                    if (this.searchResults()[itemsToAdd]) {
+                        this.displaySearchResultsTemp.push(this.searchResults()[itemsToAdd]);
+                        this.searchResults().splice(itemsToAdd, 1);
+                    } else {
+                        console.log('no more items');
+                    }
+
                 }
                 this.displaySearchResultsTemp.reverse();
 
@@ -303,7 +310,7 @@ ko.components.register('gift-bot-results-container', {
             }
             this.viewSavedItems = function() {
                 console.log('viewSavedItems ',this);
-                this.displayUpVotedResults() ? this.displayUpVotedResults(false) : this.displayUpVotedResults(true);
+                this.displayUpVotedResults() ? (this.displayUpVotedResults(false), this.displaySearchResultsToggle(true), this.toggleSavedText('LIKE TO SAVE GIFT IDEAS')) : (this.displayUpVotedResults(true), this.displaySearchResultsToggle(false), this.toggleSavedText('RETURN TO SUGGESTIONS'));
             }
             self = this;
             $.getJSON( "http://localhost:3000/js/gifts_search_results.json", function(data) {
@@ -373,11 +380,12 @@ ko.components.register('gift-bot-results-container', {
                                   <h1>gift shopping for neighbor</h1>
                                 </li>
                                 <li class="right">
+                                    <!-- ko if: !displayUpVotedResults() -->
+                                        <i aria-hidden="true" data-bind="attr: { class: upVotedResults().length > 0 ? 'icon-gift icon-md' : 'fa fa-thumbs-up fa-2' }"></i>
+                                    <!-- /ko -->
 
-                                   <i class="fa fa-thumbs-up fa-2" aria-hidden="true"></i>
-
-                                   <label class="proTip">
-                                        <a data-bind="event: { click: viewSavedItems.bind($data) }">Like to save gift ideas</a>
+                                   <div class="proTip">
+                                        <a data-bind="event: { click: viewSavedItems.bind($data) }"><label data-bind="html: toggleSavedText()"></label></a>
                                         <!-- ko if: isProTip() -->
                                             <div id="firstUpVoteProTip" class="proTipText">
                                                 <div class="closeProTip">
@@ -393,7 +401,7 @@ ko.components.register('gift-bot-results-container', {
                                                 </div>
                                             </div>
                                         <!-- /ko -->
-                                   </label>
+                                   </div>
 
                                 </li>
                             </ul>
@@ -402,37 +410,33 @@ ko.components.register('gift-bot-results-container', {
                 </div>
             </div>
 
-
             <!-- Search Results -->
-
-            <!-- ko if: !displayUpVotedResults() -->
-                <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
-                    <div class="small-12 small-centered columns giftBotSearchResults">
-                        <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
-                            <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
-                        </ul>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <div class="row">
-                                    <div class="small-12 columns">
-                                        <div class="row collapse">
-                                            <div class="small-8 medium-10 large-8 small-centered columns">
-                                                <hr class="dottedSpacer">
-                                            </div>
+            <div id="giftBotResults" class="row fullwidth" data-bind="scroll, visible: displaySearchResultsToggle()">
+                <div class="small-12 small-centered columns giftBotSearchResults">
+                    <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
+                        <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
+                    </ul>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <div class="row collapse">
+                                        <div class="small-8 medium-10 large-8 small-centered columns">
+                                            <hr class="dottedSpacer">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                         </div>
+                        <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                     </div>
                 </div>
-            <!-- /ko -->
+            </div>
+            <!-- Search Results End-->
 
             <!-- ko if: displayUpVotedResults() -->
                 <!-- ko component: {name: 'upvoted-results', params: { parent: $data } } --><!-- /ko -->
             <!-- /ko -->
-
 
             <!-- ko component: {name: 'quickview', params: { parent: $data } } --><!-- /ko -->
         </div>`, synchronous: true
