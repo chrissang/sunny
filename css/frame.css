@@ -17644,37 +17644,37 @@ body:before {
     margin-bottom: 0;
   }
 }
-/* line 2, ../scss/_giftBot.scss */
-.giftBotResultsHeader .fixed {
+/* line 3, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .fixed {
   background-color: #E8E4DF;
 }
-/* line 5, ../scss/_giftBot.scss */
-.giftBotResultsHeader .top-bar {
+/* line 6, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar {
   background-color: #E8E4DF;
 }
-/* line 7, ../scss/_giftBot.scss */
-.giftBotResultsHeader .top-bar ul {
+/* line 8, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar ul {
   width: 100%;
 }
-/* line 10, ../scss/_giftBot.scss */
-.giftBotResultsHeader .top-bar h1 {
+/* line 11, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar h1 {
   margin: 0;
 }
-/* line 13, ../scss/_giftBot.scss */
-.giftBotResultsHeader .top-bar label {
+/* line 14, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar label {
   display: inline;
 }
-/* line 16, ../scss/_giftBot.scss */
-.giftBotResultsHeader .top-bar .fa .fa-thumbs-up .fa-2 {
+/* line 17, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar .fa .fa-thumbs-up .fa-2 {
   font-size: 2em;
 }
-/* line 20, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip {
+/* line 21, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTip {
   position: relative;
   display: inline-block;
 }
-/* line 24, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTipText {
+/* line 25, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTipText {
   width: auto;
   background-color: #035a58;
   color: #fff;
@@ -17690,21 +17690,21 @@ body:before {
   -moz-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-/* line 45, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTipText .closeProTip {
+/* line 46, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTipText .closeProTip {
   padding: .50rem;
 }
-/* line 48, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTipText .copy {
+/* line 49, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTipText .copy {
   padding: 1rem;
 }
-/* line 50, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTipText .copy p {
+/* line 51, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTipText .copy p {
   color: #fff !important;
   margin: 0;
 }
-/* line 56, ../scss/_giftBot.scss */
-.giftBotResultsHeader .proTip .proTipText::after {
+/* line 57, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .proTip .proTipText::after {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -17714,49 +17714,48 @@ body:before {
   border-style: solid;
   border-color: transparent transparent #035a58 transparent;
 }
-
-/* line 67, ../scss/_giftBot.scss */
-#giftBotResults {
+/* line 68, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults {
   margin-top: 2rem;
 }
-/* line 69, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults {
+/* line 70, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults {
   max-width: 62.5rem;
 }
-/* line 72, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults ul li {
+/* line 73, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
   position: relative;
   padding: 0 1rem;
 }
-/* line 77, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults #likeMoreIdeas {
+/* line 78, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults #likeMoreIdeas {
   margin: 2rem 0;
 }
-/* line 81, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
+/* line 82, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
 }
-/* line 85, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
+/* line 86, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   width: 100%;
   height: auto;
 }
-/* line 89, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
+/* line 90, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
 }
-/* line 94, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .votingContainer {
+/* line 95, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer {
   position: absolute;
   width: 100%;
   height: calc(100% / 5);
   transform: translateY(calc(100% * 4));
 }
-/* line 99, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .votingContainer.animateUp {
+/* line 100, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateUp {
   transform: translateY(0);
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -17765,8 +17764,8 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 108, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .votingContainer.animateDown {
+/* line 109, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateDown {
   transform: translateY(calc(100% * 4));
   -webkit-transform: translateY(calc(100% * 4));
   -moz-transform: translateY(calc(100% * 4));
@@ -17775,25 +17774,25 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 118, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .preventReflow {
+/* line 119, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .preventReflow {
   overflow: hidden;
   padding-bottom: 100%;
 }
-/* line 122, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .upvotedBorder {
+/* line 123, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
 }
-/* line 125, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .downvotedBorder {
+/* line 126, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downvotedBorder {
   border: 10px solid #F86966;
 }
-/* line 128, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .copy {
+/* line 129, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .copy {
   min-height: 60px;
 }
-/* line 131, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip {
+/* line 132, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip {
   background: #025A58;
   color: #fff;
   padding: .75rem 1rem;
@@ -17812,8 +17811,8 @@ body:before {
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-/* line 149, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip.animateDown {
+/* line 150, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip.animateDown {
   opacity: 1;
   transform: translateY(45%);
   -webkit-transform: translateY(45%);
@@ -17823,13 +17822,13 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 159, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip p {
+/* line 160, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip p {
   color: #fff !important;
   margin: 0;
 }
-/* line 164, ../scss/_giftBot.scss */
-#giftBotResults .giftBotSearchResults .product .downVoteReason {
+/* line 165, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason {
   position: absolute;
   top: 0;
   left: 0;
@@ -17840,29 +17839,60 @@ body:before {
   padding-top: 3rem;
   border: 10px solid #F86966;
 }
-
-/* line 179, ../scss/_giftBot.scss */
-#quickViewModal .votingContainer {
-  padding-bottom: 3rem;
-}
 /* line 181, ../scss/_giftBot.scss */
-#quickViewModal .votingContainer .downVote {
-  padding-right: .50rem;
+.giftBotResultsContainer .upvotedResultsContainer .container:first-child {
+  padding-top: 2rem;
 }
-/* line 184, ../scss/_giftBot.scss */
-#quickViewModal .votingContainer .upVote {
-  padding-left: .50rem;
+/* line 185, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
+  display: none;
 }
-/* line 188, ../scss/_giftBot.scss */
-#quickViewModal .itemDescription {
+/* line 190, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer img {
+  max-height: 300px;
+}
+/* line 194, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
+  border-bottom: 2px solid;
+  margin: 2rem 0 1.1875rem;
+}
+/* line 199, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 191, ../scss/_giftBot.scss */
-#quickViewModal .avgRating {
+/* line 202, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 195, ../scss/_giftBot.scss */
-#quickViewModal .selectQuanity input {
+/* line 206, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer .selectQuanity input {
+  margin-top: 0;
+  background-color: #125688;
+  border-color: #125688 !important;
+}
+
+/* line 216, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .votingContainer {
+  padding-bottom: 3rem;
+}
+/* line 218, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .votingContainer .downVote {
+  padding-right: .50rem;
+}
+/* line 221, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .votingContainer .upVote {
+  padding-left: .50rem;
+}
+/* line 225, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .itemDescription {
+  padding-bottom: 1rem;
+}
+/* line 228, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .avgRating {
+  padding-bottom: 2rem;
+}
+/* line 232, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;

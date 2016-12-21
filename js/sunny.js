@@ -16,8 +16,70 @@ class Dependents {
         this.viewModelProductURL = ko.observable('');
         this.itemQuantity = ko.observableArray([0,1,2,3,4,5,6,7,8,9,10]);
         this.productParent = ko.observable();
+
+        this.upVotedResults = ko.observableArray([]);
+        this.displayUpVotedResults = ko.observable(false);
+
+
     }
 }
+
+ko.components.register('upvoted-results', {
+    viewModel: class UpVotedResultsComponentModel extends Dependents {
+        constructor(params) {
+            super(params);
+            this.params = params;
+            ko.bindingHandlers.getItemDescription = {
+                update: function(element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                    var itemId = valueAccessor();
+                    $.getJSON( "http://www.uncommongoods.com/assets/get/item/"+itemId, function( itemdata ) {
+                        element.innerHTML = itemdata[0].tagLine;
+                    })
+                }
+            }
+        }
+    },
+    template: `
+        <div class="row upvotedResultsContainer">
+            <div class="small-12 columns">
+            <!-- ko foreach: $parent.upVotedResults() -->
+                <div class="row container">
+                    <div class="small-10 columns small-centered">
+                        <div class="row">
+                            <div class="small-6 columns">
+                                <a data-bind=""><img data-bind="attr: { src: ugWeb + $data.imageURL }"></a>
+                            </div>
+                            <div class="small-6 text-center columns">
+                                <h1 data-bind="html: $data.title"></h1>
+                                <div class="intro-text itemDescription" data-bind="getItemDescription: $data.itemId"></div>
+                                <p class="item-price price">
+                                    <span data-bind="html: $data.price"></span>
+                                </p>
+                                <div class="avgRating">
+                                    <span data-bind="attr: { class: 'fontStars-'+ $data.rating.toString().replace('.','_') }"></span><span class="body-mini">(<span data-bind="html: $data.noOfReviews != '' ? $data.noOfReviews : '0'"></span>)</span>
+                                </div>
+                            </div>
+
+                            <div class="small-6 columns">
+                                <div class="row selectQuanity">
+                                    <div class="small-3 columns">
+                                        <select data-bind="options: $parent.itemQuantity()"></select>
+                                    </div>
+                                    <div class="small-9 columns">
+                                        <a data-bind="attr: { href: ugWeb+'/product/'+$data.itemURL, target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-12 columns">
+                        <hr class="solidHorizontalLine">
+                    </div>
+                </div>
+            <!-- /ko -->
+            </div>
+        </div>`, synchronous: true
+});
 
 ko.components.register('quickview', {
     viewModel: class QuickViewComponentModel extends Dependents {
@@ -29,7 +91,7 @@ ko.components.register('quickview', {
                 parentProduct.displayDownVoteSelected(true);
                 parentProduct.isAllowedMoreItems(true);
                 parentProduct.isItemDownvoted(true);
-                $('#quickViewModal').foundation('reveal', 'close');
+                $('#giftBotQuickViewModal').foundation('reveal', 'close');
             }
             this.quickViewUpVote = function() {
                 var parentProduct = this.params.parent.productParent();
@@ -38,12 +100,12 @@ ko.components.register('quickview', {
                 this.params.parent.upvoteCounter() === 0 ? this.params.parent.isProTip(true) : '';
                 this.params.parent.upvoteCounter() != 2 ? this.params.parent.upvoteCounter(this.params.parent.upvoteCounter() + 1) : '';
                 this.params.parent.upvoteCounter() === 2 && !this.params.parent.isItemDownvoted() ? parentProduct.isTryDownVoteingProTip(true) : parentProduct.isTryDownVoteingProTip(false);
-                $('#quickViewModal').foundation('reveal', 'close');
+                $('#giftBotQuickViewModal').foundation('reveal', 'close');
             }
         }
     },
     template: `
-        <div id="quickViewModal" class="reveal-modal" data-reveal="" aria-hidden="true" role="dialog" style="max-width: 60%;">
+        <div id="giftBotQuickViewModal" class="reveal-modal" data-reveal="" aria-hidden="true" role="dialog" style="max-width: 60%;">
             <div class="row" style="max-width: 100%;">
                 <div class="small-12 medium-6 columns">
                     <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><img data-bind="attr: { src: $parent.viewModelImage() }"></a>
@@ -130,6 +192,7 @@ ko.components.register('products', {
                 this.params.parent.upvoteCounter() === 0 ? this.params.parent.isProTip(true) : '';
                 this.params.parent.upvoteCounter() != 2 ? this.params.parent.upvoteCounter(this.params.parent.upvoteCounter() + 1) : '';
                 this.params.parent.upvoteCounter() === 2 && !this.params.parent.isItemDownvoted() ? this.isTryDownVoteingProTip(true) : this.isTryDownVoteingProTip(false);
+                this.params.parent.upVotedResults.push(this.params.data);
             }
             this.closeProTipTryDownVoting = function() {
                 this.isTryDownVoteingProTip(false);
@@ -140,13 +203,13 @@ ko.components.register('products', {
                 this.params.parent.viewModelImage(ugWeb+this.params.data.imageURL);
                 this.params.parent.viewModelTitle(this.params.data.title);
                 this.params.parent.viewModelPrice(this.params.data.price);
-                var self = this;
+                this.params.parent.viewModelAvgRating(this.params.data.rating.toString().replace('.','_'));
+                this.params.parent.viewModelNumberOfReviews(this.params.data.noOfReviews);
+                this.params.parent.viewModelProductURL(ugWeb+'/product/'+ this.params.data.itemURL);
 
+                var self = this;
             	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+itemID, function( itemdata ) {
                     self.params.parent.viewModelTagLine(itemdata[0].tagLine);
-                	self.params.parent.viewModelAvgRating(itemdata[0].avgRating.toString().replace('.','_'));
-                    self.params.parent.viewModelNumberOfReviews(itemdata[0].noOfReviews);
-                    self.params.parent.viewModelProductURL(ugWeb+'/product/'+itemdata[0].url);
             	})
             }
         }
@@ -154,7 +217,7 @@ ko.components.register('products', {
     template: `
         <article class="product" data-bind="attr: { id: itemId }">
             <div class="responsively-lazy preventReflow">
-                <a data-reveal-id="quickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL, class: displayBorderSelected() }"></a>
+                <a data-reveal-id="giftBotQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL, class: displayBorderSelected() }"></a>
                 <!-- ko if: displayDownVoteSelected() -->
                     <div class="downVoteReason">
                         <div class="small-12 columns">
@@ -214,6 +277,7 @@ ko.components.register('gift-bot-results-container', {
             super(params);
             this.searchResults = ko.observableArray([]).extend({ deferred: true });
             this.displaySearchResults = ko.observableArray([]);
+            this.displaySearchResultsTemp = ko.observableArray([]);
             this.curr = ko.observable(24);
             this.old = ko.observable(0);
             this.isInitItemsLoaded = false;
@@ -221,6 +285,25 @@ ko.components.register('gift-bot-results-container', {
             this.closeProTip = function() {
                 console.log('closeProTip ',this);
                 this.isProTip(false);
+            }
+            this.addItems = function(load) {
+                this.displaySearchResultsTemp.removeAll();
+                var itemsToAdd = load;
+
+                while (itemsToAdd--) {
+                    this.displaySearchResultsTemp.push(this.searchResults()[itemsToAdd]);
+                    this.searchResults().splice(itemsToAdd, 1);
+                }
+                this.displaySearchResultsTemp.reverse();
+
+                this.displaySearchResultsTemp().forEach((product, index) => {
+                    this.displaySearchResults.push(product);
+                })
+
+            }
+            this.viewSavedItems = function() {
+                console.log('viewSavedItems ',this);
+                this.displayUpVotedResults() ? this.displayUpVotedResults(false) : this.displayUpVotedResults(true);
             }
             self = this;
             $.getJSON( "http://localhost:3000/js/gifts_search_results.json", function(data) {
@@ -239,7 +322,7 @@ ko.components.register('gift-bot-results-container', {
                 },
                 update: function(element, valueAccessor, allBindingsAccessor, viewModel) {
                     if (self.searchResults().length != 0 && !self.isInitItemsLoaded) {
-                        addItems();
+                        viewModel.addItems(24);
                         self.isInitItemsLoaded = true;
                     }
 
@@ -247,7 +330,7 @@ ko.components.register('gift-bot-results-container', {
                         $(window).on("scroll.ko.scrollHandler", function () {
                             if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
                                 if (self.isAllowedMoreItems()) {
-                                    addItems();
+                                    viewModel.addItems(24);
                                 } else {
                                     likeMoreItems();
                                 }
@@ -274,78 +357,85 @@ ko.components.register('gift-bot-results-container', {
                             }
                         });
                     }
-                    function addItems() {
-                        self.searchResults().forEach((item,index) => {
-                            index < self.curr() && index >= self.old() ? self.displaySearchResults.push(item) : '';
-                        })
-                        self.old(self.old() + 24);
-                        self.curr(self.curr() + 24);
-                    }
                 }
             }
         }
     },
     template: `
-        <!-- Fixed Header -->
-        <div class="row giftBotResultsHeader">
-            <div class="small-12 columns">
-                <div class="contain-to-grid fixed">
-                    <nav class="top-bar" data-topbar role="navigation">
-                        <ul class="title-area">
-                            <li class="left">
-                              <h1>gift shopping for neighbor</h1>
-                            </li>
-                            <li class="right">
-                              <i class="fa fa-thumbs-up fa-2" aria-hidden="true"></i>
-                               <label class="proTip">
-                                    Like to save gift ideas
-                                    <!-- ko if: isProTip() -->
-                                        <div id="firstUpVoteProTip" class="proTipText">
-                                            <div class="closeProTip">
-                                                <a data-bind="event:{ click: closeProTip.bind($data) }">
-                                                    <span class="icon-close icon-sm right"></span>
-                                                </a>
+        <div class="giftBotResultsContainer">
+            <!-- Fixed Header -->
+            <div class="row giftBotResultsHeader">
+                <div class="small-12 columns">
+                    <div class="contain-to-grid fixed">
+                        <nav class="top-bar" data-topbar role="navigation">
+                            <ul class="title-area">
+                                <li class="left">
+                                  <h1>gift shopping for neighbor</h1>
+                                </li>
+                                <li class="right">
+
+                                   <i class="fa fa-thumbs-up fa-2" aria-hidden="true"></i>
+
+                                   <label class="proTip">
+                                        <a data-bind="event: { click: viewSavedItems.bind($data) }">Like to save gift ideas</a>
+                                        <!-- ko if: isProTip() -->
+                                            <div id="firstUpVoteProTip" class="proTipText">
+                                                <div class="closeProTip">
+                                                    <a data-bind="event:{ click: closeProTip.bind($data) }">
+                                                        <span class="icon-close icon-sm right"></span>
+                                                    </a>
+                                                </div>
+                                                <div class="copy">
+                                                    <p>Pro Tip:</p>
+                                                    <p class="intro-text">
+                                                        The items you like will get saved in a list that you can view right here. Handy, right?
+                                                    </p>
+                                                </div>
                                             </div>
-                                            <div class="copy">
-                                                <p>Pro Tip:</p>
-                                                <p class="intro-text">
-                                                    The items you like will get saved in a list that you can view right here. Handy, right?
-                                                </p>
-                                            </div>
-                                        </div>
-                                    <!-- /ko -->
-                               </label>
-                            </li>
-                        </ul>
-                    </nav>
+                                        <!-- /ko -->
+                                   </label>
+
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Search Results -->
-        <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
-            <div class="small-12 small-centered columns giftBotSearchResults">
-                <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
-                    <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
-                </ul>
-                <div class="row">
-                    <div class="small-12 columns">
+
+            <!-- Search Results -->
+
+            <!-- ko if: !displayUpVotedResults() -->
+                <div id="giftBotResults" class="row fullwidth" data-bind="scroll">
+                    <div class="small-12 small-centered columns giftBotSearchResults">
+                        <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
+                            <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
+                        </ul>
                         <div class="row">
                             <div class="small-12 columns">
-                                <div class="row collapse">
-                                    <div class="small-8 medium-10 large-8 small-centered columns">
-                                        <hr class="dottedSpacer">
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="row collapse">
+                                            <div class="small-8 medium-10 large-8 small-centered columns">
+                                                <hr class="dottedSpacer">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                         </div>
                     </div>
-                    <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                 </div>
-            </div>
-        </div>
+            <!-- /ko -->
 
-        <!-- ko component: {name: 'quickview', params: { parent: $data } } --><!-- /ko -->`, synchronous: true
+            <!-- ko if: displayUpVotedResults() -->
+                <!-- ko component: {name: 'upvoted-results', params: { parent: $data } } --><!-- /ko -->
+            <!-- /ko -->
+
+
+            <!-- ko component: {name: 'quickview', params: { parent: $data } } --><!-- /ko -->
+        </div>`, synchronous: true
 });
 
 ko.applyBindings();

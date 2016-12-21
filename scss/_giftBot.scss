@@ -1,181 +1,218 @@
-.giftBotResultsHeader {
-	.fixed {
-		background-color: $offwhite;
-	}
-	.top-bar {
-		background-color: $offwhite;
-		ul {
-			width: 100%;
+.giftBotResultsContainer {
+	.giftBotResultsHeader {
+		.fixed {
+			background-color: $offwhite;
 		}
-		h1 {
-			margin: 0;
-		}
-		label {
-			display: inline;
-		}
-		.fa .fa-thumbs-up .fa-2 {
-			font-size: 2em;
-		}
-	}
-	.proTip {
-	    position: relative;
-	    display: inline-block;
-	}
-	.proTipText {
-	    width: auto;
-	    background-color: $active-dark-mix;
-		color: #fff;
-		border-radius: 3px;
-	    text-align: left;
-	    position: absolute;
-	    z-index: 1;
-	    top: 150%;
-	    left: 0;
-	    margin-left: -60px;
-		opacity: 1;
-		-webkit-transition: 0.3s linear;
-		-moz-transition: 0.3s linear;
-		transition: 0.3s linear;
-		// &.fadein {
-		// 	opacity: 1;
-		// 	-webkit-transition: 0.5s linear;
-		// 	-moz-transition: 0.5s linear;
-		// 	transition: 0.5s linear;
-		// }
-		.closeProTip {
-			padding: .50rem;
-		}
-		.copy {
-			padding: 1rem;
-			p {
-				color: #fff !important;
+		.top-bar {
+			background-color: $offwhite;
+			ul {
+				width: 100%;
+			}
+			h1 {
 				margin: 0;
 			}
-		}
-	}
-	.proTip .proTipText::after {
-	    content: "";
-	    position: absolute;
-	    bottom: 100%;
-	    left: 50%;
-	    margin-left: -5px;
-	    border-width: 5px;
-	    border-style: solid;
-	    border-color: transparent transparent $active-dark-mix transparent;
-	}
-}
-#giftBotResults {
-	margin-top: 2rem;
-	.giftBotSearchResults {
-		max-width: 62.5rem;
-		ul {
-			li {
-				position: relative;
-				padding: 0 1rem;
+			label {
+				display: inline;
+			}
+			.fa .fa-thumbs-up .fa-2 {
+				font-size: 2em;
 			}
 		}
-		#likeMoreIdeas {
-			margin: 2rem 0;
+		.proTip {
+		    position: relative;
+		    display: inline-block;
 		}
-		.product {
-			.responsively-lazy:not(img){
-				position:relative;
-				height:0
-			}
-			.responsively-lazy:not(img) img{
-				position:absolute;
-				width:100%;
-				height: auto;
-				&.voteBtns {
-					position: relative;
-					width: auto;
-				}
-			}
-			.votingContainer {
-				position: absolute;
-				width: 100%;
-				height: calc(100% / 5);
-				transform: translateY(calc(100% * 4));
-				&.animateUp {
-					transform: translateY(0);
-					-webkit-transform: translateY(0);
-    				-moz-transform: translateY(0);
-    				-ms-transform: translateY(0);
-					-webkit-transition: 0.5s ease-in-out;
-				    -moz-transition: 0.5s ease-in-out;
-					transition: 0.5s ease-in-out;
-				}
-				&.animateDown {
-					transform: translateY(calc(100% * 4));
-					-webkit-transform: translateY(calc(100% * 4));
-    				-moz-transform: translateY(calc(100% * 4));
-    				-ms-transform: translateY(calc(100% * 4));
-					-webkit-transition: 0.5s ease-in-out;
-				    -moz-transition: 0.5s ease-in-out;
-					transition: 0.5s ease-in-out;
-				}
-			}
-			.preventReflow {
-				overflow: hidden;
-				padding-bottom: 100%;
-			}
-			.upvotedBorder {
-				border: 10px solid $active-dark-mix;
-			}
-			.downvotedBorder {
-				border: 10px solid $highlight;
+		.proTipText {
+		    width: auto;
+		    background-color: $active-dark-mix;
+			color: #fff;
+			border-radius: 3px;
+		    text-align: left;
+		    position: absolute;
+		    z-index: 1;
+		    top: 150%;
+		    left: 0;
+		    margin-left: -60px;
+			opacity: 1;
+			-webkit-transition: 0.3s linear;
+			-moz-transition: 0.3s linear;
+			transition: 0.3s linear;
+			// &.fadein {
+			// 	opacity: 1;
+			// 	-webkit-transition: 0.5s linear;
+			// 	-moz-transition: 0.5s linear;
+			// 	transition: 0.5s linear;
+			// }
+			.closeProTip {
+				padding: .50rem;
 			}
 			.copy {
-				min-height: 60px;
-			}
-			.tryDownVoteingProTip {
-				background: #025A58;
-				color: #fff;
-				padding: .75rem 1rem;
-				border-radius: 3px;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 6.5rem;
-				margin: 0;
-				box-shadow: 2px 2px 2px #888888;
-				z-index: 99;
-				transform: translateY(35%);
-				opacity: 0;
-				-webkit-transition: 0.3s ease-in-out;
-				-moz-transition: 0.3s ease-in-out;
-				transition: 0.3s ease-in-out;
-				&.animateDown {
-					opacity: 1;
-					transform: translateY(45%);
-					-webkit-transform: translateY(45%);
-					-moz-transform: translateY(45%);
-					-ms-transform: translateY(45%);
-					-webkit-transition: 0.5s ease-in-out;
-					-moz-transition: 0.5s ease-in-out;
-					transition: 0.5s ease-in-out;
-				}
+				padding: 1rem;
 				p {
 					color: #fff !important;
 					margin: 0;
 				}
 			}
-			.downVoteReason {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: #ffffff;
-				opacity: 0.9;
-				padding-top: 3rem;
-				border: 10px solid #F86966;
+		}
+		.proTip .proTipText::after {
+		    content: "";
+		    position: absolute;
+		    bottom: 100%;
+		    left: 50%;
+		    margin-left: -5px;
+		    border-width: 5px;
+		    border-style: solid;
+		    border-color: transparent transparent $active-dark-mix transparent;
+		}
+	}
+	#giftBotResults {
+		margin-top: 2rem;
+		.giftBotSearchResults {
+			max-width: 62.5rem;
+			ul {
+				li {
+					position: relative;
+					padding: 0 1rem;
+				}
+			}
+			#likeMoreIdeas {
+				margin: 2rem 0;
+			}
+			.product {
+				.responsively-lazy:not(img){
+					position:relative;
+					height:0
+				}
+				.responsively-lazy:not(img) img{
+					position:absolute;
+					width:100%;
+					height: auto;
+					&.voteBtns {
+						position: relative;
+						width: auto;
+					}
+				}
+				.votingContainer {
+					position: absolute;
+					width: 100%;
+					height: calc(100% / 5);
+					transform: translateY(calc(100% * 4));
+					&.animateUp {
+						transform: translateY(0);
+						-webkit-transform: translateY(0);
+	    				-moz-transform: translateY(0);
+	    				-ms-transform: translateY(0);
+						-webkit-transition: 0.5s ease-in-out;
+					    -moz-transition: 0.5s ease-in-out;
+						transition: 0.5s ease-in-out;
+					}
+					&.animateDown {
+						transform: translateY(calc(100% * 4));
+						-webkit-transform: translateY(calc(100% * 4));
+	    				-moz-transform: translateY(calc(100% * 4));
+	    				-ms-transform: translateY(calc(100% * 4));
+						-webkit-transition: 0.5s ease-in-out;
+					    -moz-transition: 0.5s ease-in-out;
+						transition: 0.5s ease-in-out;
+					}
+				}
+				.preventReflow {
+					overflow: hidden;
+					padding-bottom: 100%;
+				}
+				.upvotedBorder {
+					border: 10px solid $active-dark-mix;
+				}
+				.downvotedBorder {
+					border: 10px solid $highlight;
+				}
+				.copy {
+					min-height: 60px;
+				}
+				.tryDownVoteingProTip {
+					background: #025A58;
+					color: #fff;
+					padding: .75rem 1rem;
+					border-radius: 3px;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 6.5rem;
+					margin: 0;
+					box-shadow: 2px 2px 2px #888888;
+					z-index: 99;
+					transform: translateY(35%);
+					opacity: 0;
+					-webkit-transition: 0.3s ease-in-out;
+					-moz-transition: 0.3s ease-in-out;
+					transition: 0.3s ease-in-out;
+					&.animateDown {
+						opacity: 1;
+						transform: translateY(45%);
+						-webkit-transform: translateY(45%);
+						-moz-transform: translateY(45%);
+						-ms-transform: translateY(45%);
+						-webkit-transition: 0.5s ease-in-out;
+						-moz-transition: 0.5s ease-in-out;
+						transition: 0.5s ease-in-out;
+					}
+					p {
+						color: #fff !important;
+						margin: 0;
+					}
+				}
+				.downVoteReason {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background-color: #ffffff;
+					opacity: 0.9;
+					padding-top: 3rem;
+					border: 10px solid #F86966;
+				}
+			}
+		}
+	}
+	.upvotedResultsContainer {
+		.container {
+			&:first-child {
+				padding-top: 2rem;
+			}
+			&:last-child {
+				.solidHorizontalLine {
+					display: none;
+				}
+			}
+		}
+		img {
+			max-height: 300px;
+		}
+		hr {
+			.solidHorizontalLine {
+				border-bottom: 2px solid;
+				margin: 2rem 0 1.1875rem;
+			}
+		}
+		.itemDescription {
+			padding-bottom: 1rem;
+		}
+		.avgRating {
+			padding-bottom: 2rem;
+		}
+		.selectQuanity {
+			input {
+				margin-top: 0;
+				background-color: #125688;
+				border-color: #125688 !important;
 			}
 		}
 	}
 }
-#quickViewModal {
+
+#giftBotQuickViewModal {
 	.votingContainer {
 		padding-bottom: 3rem;
 		.downVote {
@@ -195,7 +232,7 @@
 		input {
 			margin-top: 0;
 			background-color: #125688;
-    		border-color: #125688 !important;
+			border-color: #125688 !important;
 		}
 	}
 }
