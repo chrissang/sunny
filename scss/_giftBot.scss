@@ -1,12 +1,33 @@
 .giftBotResultsContainer {
 	.giftBotResultsHeader {
 		.fixed {
+			background-color: $white;
+		}
+		.logo-container {
+			background-color: $white;
+			display: inline-block;
+		}
+		.navTopBorder {
+			border-top: 1px solid $inactive;
 			background-color: $offwhite;
+			margin: 0;
+		}
+		.wishlistIcon {
+			.icon-heart_small {
+				color: $highlight;
+			}
+		}
+		.signInIcon {
+			.icon-account {
+				color: $brand-primary;
+			}
 		}
 		.top-bar {
 			background-color: $offwhite;
+			max-width: none;
+			padding: .5rem 2rem;
 			ul {
-				width: 100%;
+				margin: 0;
 			}
 			h1 {
 				margin: 0;
@@ -16,6 +37,10 @@
 			}
 			.fa .fa-thumbs-up .fa-2 {
 				font-size: 2em;
+			}
+			.upVotedResultsCounter {
+				font-weight: bold;
+				font-size: 1.2rem;
 			}
 		}
 		.proTip {
@@ -66,19 +91,19 @@
 		}
 	}
 	#giftBotResults {
-		margin-top: 2rem;
+		margin-top: 7rem;
 		.giftBotSearchResults {
-			max-width: 62.5rem;
 			ul {
 				li {
 					position: relative;
-					padding: 0 1rem;
+					padding: 0 2rem;
 				}
 			}
 			#likeMoreIdeas {
 				margin: 2rem 0;
 			}
 			.product {
+				max-width: none;
 				.responsively-lazy:not(img){
 					position:relative;
 					height:0
@@ -96,7 +121,6 @@
 					position: absolute;
 					width: 100%;
 					height: calc(100% / 5);
-					transform: translateY(calc(100% * 4));
 					&.animateUp {
 						transform: translateY(0);
 						-webkit-transform: translateY(0);
@@ -107,10 +131,10 @@
 						transition: 0.5s ease-in-out;
 					}
 					&.animateDown {
-						transform: translateY(calc(100% * 4));
-						-webkit-transform: translateY(calc(100% * 4));
-	    				-moz-transform: translateY(calc(100% * 4));
-	    				-ms-transform: translateY(calc(100% * 4));
+						transform: translateY(calc((100% * 5) - 100%));
+						-webkit-transform: translateY(calc((100% * 5) - 100%));
+	    				-moz-transform: translateY(calc((100% * 5) - 100%));
+	    				-ms-transform: translateY(calc((100% * 5) - 100%));
 						-webkit-transition: 0.5s ease-in-out;
 					    -moz-transition: 0.5s ease-in-out;
 						transition: 0.5s ease-in-out;
@@ -177,6 +201,7 @@
 		}
 	}
 	.upvotedResultsContainer {
+		margin-top: 7rem;
 		.container {
 			&:first-child {
 				padding-top: 2rem;
@@ -211,7 +236,6 @@
 		}
 	}
 }
-
 #giftBotQuickViewModal {
 	.votingContainer {
 		padding-bottom: 3rem;

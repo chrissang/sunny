@@ -17646,34 +17646,60 @@ body:before {
 }
 /* line 3, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .fixed {
-  background-color: #E8E4DF;
+  background-color: #FFFFFF;
 }
 /* line 6, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .logo-container {
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+/* line 10, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .navTopBorder {
+  border-top: 1px solid #A8A098;
+  background-color: #E8E4DF;
+  margin: 0;
+}
+/* line 16, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .wishlistIcon .icon-heart_small {
+  color: #F86966;
+}
+/* line 21, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .signInIcon .icon-account {
+  color: #387C9B;
+}
+/* line 25, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar {
   background-color: #E8E4DF;
+  max-width: none;
+  padding: .5rem 2rem;
 }
-/* line 8, ../scss/_giftBot.scss */
+/* line 29, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar ul {
-  width: 100%;
+  margin: 0;
 }
-/* line 11, ../scss/_giftBot.scss */
+/* line 32, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar h1 {
   margin: 0;
 }
-/* line 14, ../scss/_giftBot.scss */
+/* line 35, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar label {
   display: inline;
 }
-/* line 17, ../scss/_giftBot.scss */
+/* line 38, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar .fa .fa-thumbs-up .fa-2 {
   font-size: 2em;
 }
-/* line 21, ../scss/_giftBot.scss */
+/* line 41, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar .upVotedResultsCounter {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* line 46, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTip {
   position: relative;
   display: inline-block;
 }
-/* line 25, ../scss/_giftBot.scss */
+/* line 50, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText {
   width: auto;
   background-color: #035a58;
@@ -17690,20 +17716,20 @@ body:before {
   -moz-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-/* line 46, ../scss/_giftBot.scss */
+/* line 71, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .closeProTip {
   padding: .50rem;
 }
-/* line 49, ../scss/_giftBot.scss */
+/* line 74, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .copy {
   padding: 1rem;
 }
-/* line 51, ../scss/_giftBot.scss */
+/* line 76, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .copy p {
   color: #fff !important;
   margin: 0;
 }
-/* line 57, ../scss/_giftBot.scss */
+/* line 82, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTip .proTipText::after {
   content: "";
   position: absolute;
@@ -17714,47 +17740,46 @@ body:before {
   border-style: solid;
   border-color: transparent transparent #035a58 transparent;
 }
-/* line 68, ../scss/_giftBot.scss */
+/* line 93, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults {
-  margin-top: 2rem;
+  margin-top: 7rem;
 }
-/* line 70, ../scss/_giftBot.scss */
-.giftBotResultsContainer #giftBotResults .giftBotSearchResults {
-  max-width: 62.5rem;
-}
-/* line 73, ../scss/_giftBot.scss */
+/* line 97, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
   position: relative;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
-/* line 78, ../scss/_giftBot.scss */
+/* line 102, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults #likeMoreIdeas {
   margin: 2rem 0;
 }
-/* line 82, ../scss/_giftBot.scss */
+/* line 105, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product {
+  max-width: none;
+}
+/* line 107, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
 }
-/* line 86, ../scss/_giftBot.scss */
+/* line 111, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   width: 100%;
   height: auto;
 }
-/* line 90, ../scss/_giftBot.scss */
+/* line 115, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
 }
-/* line 95, ../scss/_giftBot.scss */
+/* line 120, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer {
   position: absolute;
   width: 100%;
   height: calc(100% / 5);
-  transform: translateY(calc(100% * 4));
 }
-/* line 100, ../scss/_giftBot.scss */
+/* line 124, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateUp {
   transform: translateY(0);
   -webkit-transform: translateY(0);
@@ -17764,34 +17789,34 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 109, ../scss/_giftBot.scss */
+/* line 133, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateDown {
-  transform: translateY(calc(100% * 4));
-  -webkit-transform: translateY(calc(100% * 4));
-  -moz-transform: translateY(calc(100% * 4));
-  -ms-transform: translateY(calc(100% * 4));
+  transform: translateY(calc((100% * 5) - 100%));
+  -webkit-transform: translateY(calc((100% * 5) - 100%));
+  -moz-transform: translateY(calc((100% * 5) - 100%));
+  -ms-transform: translateY(calc((100% * 5) - 100%));
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 119, ../scss/_giftBot.scss */
+/* line 143, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .preventReflow {
   overflow: hidden;
   padding-bottom: 100%;
 }
-/* line 123, ../scss/_giftBot.scss */
+/* line 147, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
 }
-/* line 126, ../scss/_giftBot.scss */
+/* line 150, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downvotedBorder {
   border: 10px solid #F86966;
 }
-/* line 129, ../scss/_giftBot.scss */
+/* line 153, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .copy {
   min-height: 60px;
 }
-/* line 132, ../scss/_giftBot.scss */
+/* line 156, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip {
   background: #025A58;
   color: #fff;
@@ -17811,7 +17836,7 @@ body:before {
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-/* line 150, ../scss/_giftBot.scss */
+/* line 174, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip.animateDown {
   opacity: 1;
   transform: translateY(45%);
@@ -17822,12 +17847,12 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 160, ../scss/_giftBot.scss */
+/* line 184, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip p {
   color: #fff !important;
   margin: 0;
 }
-/* line 165, ../scss/_giftBot.scss */
+/* line 189, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason {
   position: absolute;
   top: 0;
@@ -17839,59 +17864,63 @@ body:before {
   padding-top: 3rem;
   border: 10px solid #F86966;
 }
-/* line 181, ../scss/_giftBot.scss */
+/* line 203, ../scss/_giftBot.scss */
+.giftBotResultsContainer .upvotedResultsContainer {
+  margin-top: 7rem;
+}
+/* line 206, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .container:first-child {
   padding-top: 2rem;
 }
-/* line 185, ../scss/_giftBot.scss */
+/* line 210, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
   display: none;
 }
-/* line 190, ../scss/_giftBot.scss */
+/* line 215, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer img {
   max-height: 300px;
 }
-/* line 194, ../scss/_giftBot.scss */
+/* line 219, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
   border-bottom: 2px solid;
   margin: 2rem 0 1.1875rem;
 }
-/* line 199, ../scss/_giftBot.scss */
+/* line 224, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 202, ../scss/_giftBot.scss */
+/* line 227, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 206, ../scss/_giftBot.scss */
+/* line 231, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
 }
 
-/* line 216, ../scss/_giftBot.scss */
+/* line 240, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer {
   padding-bottom: 3rem;
 }
-/* line 218, ../scss/_giftBot.scss */
+/* line 242, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer .downVote {
   padding-right: .50rem;
 }
-/* line 221, ../scss/_giftBot.scss */
+/* line 245, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer .upVote {
   padding-left: .50rem;
 }
-/* line 225, ../scss/_giftBot.scss */
+/* line 249, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 228, ../scss/_giftBot.scss */
+/* line 252, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .avgRating {
   padding-bottom: 2rem;
 }
-/* line 232, ../scss/_giftBot.scss */
+/* line 256, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
