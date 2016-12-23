@@ -111,6 +111,7 @@ ko.components.register('quickview', {
                 this.params.parent.upvoteCounter() === 0 ? this.params.parent.isProTip(true) : '';
                 this.params.parent.upvoteCounter() != 2 ? this.params.parent.upvoteCounter(this.params.parent.upvoteCounter() + 1) : '';
                 this.params.parent.upvoteCounter() === 2 && !this.params.parent.isItemDownvoted() ? parentProduct.isTryDownVoteingProTip(true) : parentProduct.isTryDownVoteingProTip(false);
+                this.params.parent.upVotedResults.push(this.params.parent.productParent());
                 $('#giftBotQuickViewModal').foundation('reveal', 'close');
             }
         }
@@ -220,7 +221,6 @@ ko.components.register('products', {
                 this.isTryDownVoteingProTip(false);
             }
             this.displayQuickView = function(product) {
-                this.params.parent.productParent(this);
                 this.params.parent.viewModelImage(this.imageURL());
                 this.params.parent.viewModelTitle(this.title());
                 this.params.parent.viewModelPrice(this.price());
@@ -229,6 +229,7 @@ ko.components.register('products', {
                 this.params.parent.viewModelAvgRating(this.rating());
                 this.params.parent.viewModelProductURL(this.productURL());
 
+                this.params.parent.productParent(this);
                 var self = this;
             	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+this.params.parent.viewModelItemId(), function( itemdata ) {
                     self.params.parent.viewModelTagLine(itemdata[0].metaDescr);
