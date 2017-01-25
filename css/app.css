@@ -17391,23 +17391,27 @@ body:before {
   background-color: #125688;
   border-color: #125688 !important;
 }
+/* line 386, ../scss/_giftBot.scss */
+#giftBotQuickViewModal .copy {
+  padding-left: 24px;
+}
 
 @media (min-width: 64.063em) {
-  /* line 394, ../scss/_giftBot.scss */
+  /* line 397, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 400, ../scss/_giftBot.scss */
+  /* line 403, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 416, ../scss/_giftBot.scss */
+  /* line 419, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 422, ../scss/_giftBot.scss */
+  /* line 425, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }
