@@ -6230,807 +6230,6 @@ th.hide-for-touch {
     display: none !important;
   }
 }
-/* line 113, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:40.0625em)/";
-  width: 40.0625em;
-}
-
-/* Wrapped around .top-bar to contain to grid width */
-/* line 119, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.contain-to-grid {
-  width: 100%;
-  background: #333333;
-}
-/* line 123, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.contain-to-grid .top-bar {
-  margin-bottom: 0;
-}
-
-/* line 129, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 99;
-  left: 0;
-}
-/* line 136, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.fixed.expanded:not(.top-bar) {
-  height: auto;
-  max-height: 100%;
-  overflow-y: auto;
-  width: 100%;
-}
-/* line 142, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.fixed.expanded:not(.top-bar) .title-area {
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-}
-/* line 149, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.fixed.expanded:not(.top-bar) .top-bar-section {
-  margin-top: 2.8125rem;
-  z-index: 98;
-}
-
-/* line 156, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar {
-  background: #333333;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
-  margin-bottom: 0;
-  overflow: hidden;
-  position: relative;
-}
-/* line 165, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar ul {
-  list-style: none;
-  margin-bottom: 0;
-}
-/* line 170, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .row {
-  max-width: none;
-}
-/* line 174, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar form,
-.top-bar input,
-.top-bar select {
-  margin-bottom: 0;
-}
-/* line 180, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar input,
-.top-bar select {
-  font-size: 0.75rem;
-  height: 1.75rem;
-  padding-bottom: .35rem;
-  padding-top: .35rem;
-}
-/* line 188, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .button, .top-bar button {
-  font-size: 0.75rem;
-  margin-bottom: 0;
-  padding-bottom: 0.4125rem;
-  padding-top: 0.4125rem;
-}
-@media only screen and (max-width: 40em) {
-  /* line 188, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar .button, .top-bar button {
-    position: relative;
-    top: -1px;
-  }
-}
-/* line 204, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .title-area {
-  margin: 0;
-  position: relative;
-}
-/* line 209, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .name {
-  font-size: 16px;
-  height: 2.8125rem;
-  margin: 0;
-}
-/* line 214, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .name h1, .top-bar .name h2, .top-bar .name .accordion .accordion-navigation > a, .accordion .top-bar .name .accordion-navigation > a,
-.top-bar .name .accordion dd > a,
-.accordion .top-bar .name dd > a, .top-bar .name h3, .top-bar .name h4, .top-bar .name .intro-text, .top-bar .name .subCopy, .top-bar .name p, .top-bar .name span {
-  font-size: 1.0625rem;
-  line-height: 2.8125rem;
-  margin: 0;
-}
-/* line 219, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .name h1 a, .top-bar .name h2 a, .top-bar .name .accordion .accordion-navigation > a a, .accordion .top-bar .name .accordion-navigation > a a,
-.top-bar .name .accordion dd > a a,
-.accordion .top-bar .name dd > a a, .top-bar .name h3 a, .top-bar .name h4 a, .top-bar .name .intro-text a, .top-bar .name .subCopy a, .top-bar .name p a, .top-bar .name span a {
-  color: #FFFFFF;
-  display: block;
-  font-weight: normal;
-  padding: 0 0.9375rem;
-  width: 75%;
-}
-/* line 230, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .toggle-topbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-/* line 235, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .toggle-topbar a {
-  color: #FFFFFF;
-  display: block;
-  font-size: 0.8125rem;
-  font-weight: bold;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
-  padding: 0 0.9375rem;
-  position: relative;
-  text-transform: uppercase;
-}
-/* line 248, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .toggle-topbar.menu-icon {
-  margin-top: -16px;
-  top: 50%;
-}
-/* line 252, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar .toggle-topbar.menu-icon a {
-  color: #FFFFFF;
-  height: 34px;
-  line-height: 33px;
-  padding: 0 2.5rem 0 0.9375rem;
-  position: relative;
-}
-/* line 129, ../bower_components/foundation/scss/foundation/components/_global.scss */
-.top-bar .toggle-topbar.menu-icon a span::after {
-  content: "";
-  display: block;
-  height: 0;
-  position: absolute;
-  margin-top: -8px;
-  top: 50%;
-  right: 0.9375rem;
-  box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
-  width: 16px;
-}
-/* line 162, ../bower_components/foundation/scss/foundation/components/_global.scss */
-.top-bar .toggle-topbar.menu-icon a span:hover:after {
-  box-shadow: 0 0 0 1px "", 0 7px 0 1px "", 0 14px 0 1px "";
-}
-/* line 268, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar.expanded {
-  background: transparent;
-  height: auto;
-}
-/* line 272, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar.expanded .title-area {
-  background: #333333;
-}
-/* line 277, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar.expanded .toggle-topbar a {
-  color: #888888;
-}
-/* line 280, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar.expanded .toggle-topbar a span::after {
-  box-shadow: 0 0 0 1px #888888, 0 7px 0 1px #888888, 0 14px 0 1px #888888;
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 293, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar.expanded .top-bar-section .has-dropdown.moved > .dropdown,
-  .top-bar.expanded .top-bar-section .dropdown {
-    clip: initial;
-  }
-  /* line 299, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar.expanded .top-bar-section .has-dropdown:not(.moved) > ul {
-    padding: 0;
-  }
-}
-
-/* line 308, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section {
-  left: 0;
-  position: relative;
-  width: auto;
-  transition: left 300ms ease-out;
-}
-/* line 314, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul {
-  display: block;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-/* line 323, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .divider,
-.top-bar-section [role="separator"] {
-  border-top: solid 1px #1a1a1a;
-  clear: both;
-  height: 1px;
-  width: 100%;
-}
-/* line 331, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li {
-  background: #333333;
-}
-/* line 334, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a {
-  color: #FFFFFF;
-  display: block;
-  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: normal;
-  padding-left: 0.9375rem;
-  padding: 12px 0 12px 0.9375rem;
-  text-transform: none;
-  width: 100%;
-}
-/* line 345, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button {
-  font-size: 0.8125rem;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-  background-color: #4C463F;
-  border-color: #3d3832;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-  background-color: #3d3832;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button:hover, .top-bar-section ul li > a.button:focus {
-  color: #FFFFFF;
-}
-/* line 352, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button.secondary {
-  background-color: #817B73;
-  border-color: #67625c;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.secondary:hover, .top-bar-section ul li > a.button.secondary:focus {
-  background-color: #67625c;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.secondary:hover, .top-bar-section ul li > a.button.secondary:focus {
-  color: #FFFFFF;
-}
-/* line 353, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button.success {
-  background-color: #43AC6A;
-  border-color: #368a55;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.success:hover, .top-bar-section ul li > a.button.success:focus {
-  background-color: #368a55;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.success:hover, .top-bar-section ul li > a.button.success:focus {
-  color: #FFFFFF;
-}
-/* line 354, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button.alert {
-  background-color: #f04124;
-  border-color: #cf2a0e;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.alert:hover, .top-bar-section ul li > a.button.alert:focus {
-  background-color: #cf2a0e;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.alert:hover, .top-bar-section ul li > a.button.alert:focus {
-  color: #FFFFFF;
-}
-/* line 355, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button.warning {
-  background-color: #f08a24;
-  border-color: #cf6e0e;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.warning:hover, .top-bar-section ul li > a.button.warning:focus {
-  background-color: #cf6e0e;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.warning:hover, .top-bar-section ul li > a.button.warning:focus {
-  color: #FFFFFF;
-}
-/* line 356, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > a.button.info {
-  background-color: #a0d3e8;
-  border-color: #61b6d9;
-  color: #333333;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.info:hover, .top-bar-section ul li > a.button.info:focus {
-  background-color: #61b6d9;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > a.button.info:hover, .top-bar-section ul li > a.button.info:focus {
-  color: #FFFFFF;
-}
-/* line 359, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button {
-  font-size: 0.8125rem;
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
-  background-color: #4C463F;
-  border-color: #3d3832;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button:hover, .top-bar-section ul li > button:focus {
-  background-color: #3d3832;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button:hover, .top-bar-section ul li > button:focus {
-  color: #FFFFFF;
-}
-/* line 365, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button.secondary {
-  background-color: #817B73;
-  border-color: #67625c;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.secondary:hover, .top-bar-section ul li > button.secondary:focus {
-  background-color: #67625c;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.secondary:hover, .top-bar-section ul li > button.secondary:focus {
-  color: #FFFFFF;
-}
-/* line 366, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button.success {
-  background-color: #43AC6A;
-  border-color: #368a55;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.success:hover, .top-bar-section ul li > button.success:focus {
-  background-color: #368a55;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.success:hover, .top-bar-section ul li > button.success:focus {
-  color: #FFFFFF;
-}
-/* line 367, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button.alert {
-  background-color: #f04124;
-  border-color: #cf2a0e;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.alert:hover, .top-bar-section ul li > button.alert:focus {
-  background-color: #cf2a0e;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.alert:hover, .top-bar-section ul li > button.alert:focus {
-  color: #FFFFFF;
-}
-/* line 368, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button.warning {
-  background-color: #f08a24;
-  border-color: #cf6e0e;
-  color: #FFFFFF;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.warning:hover, .top-bar-section ul li > button.warning:focus {
-  background-color: #cf6e0e;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.warning:hover, .top-bar-section ul li > button.warning:focus {
-  color: #FFFFFF;
-}
-/* line 369, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li > button.info {
-  background-color: #a0d3e8;
-  border-color: #61b6d9;
-  color: #333333;
-}
-/* line 158, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.info:hover, .top-bar-section ul li > button.info:focus {
-  background-color: #61b6d9;
-}
-/* line 164, ../bower_components/foundation/scss/foundation/components/_buttons.scss */
-.top-bar-section ul li > button.info:hover, .top-bar-section ul li > button.info:focus {
-  color: #FFFFFF;
-}
-/* line 373, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li:hover:not(.has-form) > a {
-  background-color: #555555;
-  color: #FFFFFF;
-  background: #4C463F;
-}
-/* line 383, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li.active > a {
-  background: #4C463F;
-  color: #FFFFFF;
-}
-/* line 387, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section ul li.active > a:hover {
-  background: #413c36;
-  color: #FFFFFF;
-}
-/* line 395, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-form {
-  padding: 0.9375rem;
-}
-/* line 400, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-dropdown {
-  position: relative;
-}
-/* line 404, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-dropdown > a:after {
-  border: inset 5px;
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  border-color: transparent transparent transparent rgba(255, 255, 255, 0.4);
-  border-left-style: solid;
-  margin-right: 0.9375rem;
-  margin-top: -4.5px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-}
-/* line 417, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-dropdown.moved {
-  position: static;
-}
-/* line 420, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-dropdown.moved > .dropdown {
-  position: static !important;
-  height: auto;
-  width: auto;
-  overflow: visible;
-  clip: auto;
-  display: block;
-  position: absolute !important;
-  width: 100%;
-}
-/* line 425, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .has-dropdown.moved > a:after {
-  display: none;
-}
-/* line 432, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute !important;
-  width: 1px;
-  display: block;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  z-index: 99;
-  left: 100%;
-}
-/* line 440, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li {
-  height: auto;
-  width: 100%;
-}
-/* line 444, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li a {
-  font-weight: normal;
-  padding: 8px 0.9375rem;
-}
-/* line 447, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li a.parent-link {
-  font-weight: normal;
-}
-/* line 452, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li.title h5, .top-bar-section .dropdown li.parent-link {
-  margin-bottom: 0;
-  margin-top: 0;
-  font-size: 1.125rem;
-}
-/* line 458, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li.title h5 a, .top-bar-section .dropdown li.parent-link a {
-  color: #FFFFFF;
-  display: block;
-}
-/* line 462, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li.title h5 a:hover, .top-bar-section .dropdown li.parent-link a:hover {
-  background: none;
-}
-/* line 466, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li.has-form {
-  padding: 8px 0.9375rem;
-}
-/* line 470, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown li .button,
-.top-bar-section .dropdown li button {
-  top: auto;
-}
-/* line 476, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.top-bar-section .dropdown label {
-  color: #777777;
-  font-size: 0.625rem;
-  font-weight: bold;
-  margin-bottom: 0;
-  padding: 8px 0.9375rem 2px;
-  text-transform: uppercase;
-}
-
-/* line 487, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-.js-generated {
-  display: block;
-}
-
-@media only screen and (min-width: 40.0625em) {
-  /* line 492, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar {
-    background: #333333;
-    overflow: visible;
-  }
-  /* line 172, ../bower_components/foundation/scss/foundation/components/_global.scss */
-  .top-bar:before, .top-bar:after {
-    content: " ";
-    display: table;
-  }
-  /* line 173, ../bower_components/foundation/scss/foundation/components/_global.scss */
-  .top-bar:after {
-    clear: both;
-  }
-  /* line 497, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar .toggle-topbar {
-    display: none;
-  }
-  /* line 499, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar .title-area {
-    float: left;
-  }
-  /* line 500, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar .name h1 a,
-  .top-bar .name h2 a,
-  .top-bar .name .accordion .accordion-navigation > a a,
-  .accordion .top-bar .name .accordion-navigation > a a,
-  .top-bar .name .accordion dd > a a,
-  .accordion .top-bar .name dd > a a,
-  .top-bar .name h3 a,
-  .top-bar .name h4 a,
-  .top-bar .name .intro-text a,
-  .top-bar .name .subCopy a,
-  .top-bar .name h5 a,
-  .top-bar .name h6 a {
-    width: auto;
-  }
-  /* line 507, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar input,
-  .top-bar select,
-  .top-bar .button,
-  .top-bar button {
-    font-size: 0.875rem;
-    height: 1.75rem;
-    position: relative;
-    top: 0.53125rem;
-  }
-  /* line 517, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar.expanded {
-    background: #333333;
-  }
-
-  /* line 522, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .contain-to-grid .top-bar {
-    margin-bottom: 0;
-    margin: 0 auto;
-    max-width: 62.5rem;
-  }
-
-  /* line 528, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section {
-    transition: none 0 0;
-    left: 0 !important;
-  }
-  /* line 532, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section ul {
-    display: inline;
-    height: auto !important;
-    width: auto;
-  }
-  /* line 537, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section ul li {
-    float: left;
-  }
-  /* line 539, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section ul li .js-generated {
-    display: none;
-  }
-  /* line 545, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section li.hover > a:not(.button) {
-    background-color: #555555;
-    background: #4C463F;
-    color: #FFFFFF;
-  }
-  /* line 555, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section li:not(.has-form) a:not(.button) {
-    background: #333333;
-    line-height: 2.8125rem;
-    padding: 0 0.9375rem;
-  }
-  /* line 559, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section li:not(.has-form) a:not(.button):hover {
-    background-color: #555555;
-    background: #4C463F;
-  }
-  /* line 569, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section li.active:not(.has-form) a:not(.button) {
-    background: #4C463F;
-    color: #FFFFFF;
-    line-height: 2.8125rem;
-    padding: 0 0.9375rem;
-  }
-  /* line 574, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-    background: #413c36;
-    color: #FFFFFF;
-  }
-  /* line 584, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown > a {
-    padding-right: 2.1875rem !important;
-  }
-  /* line 586, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown > a:after {
-    border: inset 5px;
-    content: "";
-    display: block;
-    height: 0;
-    width: 0;
-    border-color: rgba(255, 255, 255, 0.4) transparent transparent transparent;
-    border-top-style: solid;
-    margin-top: -2.5px;
-    top: 1.40625rem;
-  }
-  /* line 594, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown.moved {
-    position: relative;
-  }
-  /* line 595, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown.moved > .dropdown {
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute !important;
-    width: 1px;
-    display: block;
-  }
-  /* line 601, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown.hover > .dropdown, .top-bar-section .has-dropdown.not-click:hover > .dropdown {
-    position: static !important;
-    height: auto;
-    width: auto;
-    overflow: visible;
-    clip: auto;
-    display: block;
-    position: absolute !important;
-  }
-  /* line 606, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown > a:focus + .dropdown {
-    position: static !important;
-    height: auto;
-    width: auto;
-    overflow: visible;
-    clip: auto;
-    display: block;
-    position: absolute !important;
-  }
-  /* line 613, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-dropdown .dropdown li.has-dropdown > a:after {
-    border: none;
-    content: "\00bb";
-    top: 0.1875rem;
-    right: 5px;
-  }
-  /* line 625, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown {
-    left: 0;
-    background: transparent;
-    min-width: 100%;
-    top: auto;
-  }
-  /* line 632, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown li a {
-    background: #333333;
-    color: #FFFFFF;
-    line-height: 2.8125rem;
-    padding: 12px 0.9375rem;
-    white-space: nowrap;
-  }
-  /* line 641, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
-    background: #333333;
-    color: #FFFFFF;
-  }
-  /* line 646, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
-    background-color: #555555;
-    color: #FFFFFF;
-    background: #4C463F;
-  }
-  /* line 655, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown li label {
-    background: #333333;
-    white-space: nowrap;
-  }
-  /* line 661, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .dropdown li .dropdown {
-    left: 100%;
-    top: 0;
-  }
-  /* line 668, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section > ul > .divider,
-  .top-bar-section > ul > [role="separator"] {
-    border-right: solid 1px #4e4e4e;
-    border-bottom: none;
-    border-top: none;
-    clear: none;
-    height: 2.8125rem;
-    width: 0;
-  }
-  /* line 678, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .has-form {
-    background: #333333;
-    height: 2.8125rem;
-    padding: 0 0.9375rem;
-  }
-  /* line 686, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .right li .dropdown {
-    left: auto;
-    right: 0;
-  }
-  /* line 690, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .right li .dropdown li .dropdown {
-    right: 100%;
-  }
-  /* line 694, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .left li .dropdown {
-    right: auto;
-    left: 0;
-  }
-  /* line 698, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .top-bar-section .left li .dropdown li .dropdown {
-    left: 100%;
-  }
-
-  /* line 708, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .no-js .top-bar-section ul li:hover > a {
-    background-color: #555555;
-    background: #4C463F;
-    color: #FFFFFF;
-  }
-  /* line 717, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .no-js .top-bar-section ul li:active > a {
-    background: #4C463F;
-    color: #FFFFFF;
-  }
-  /* line 725, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .no-js .top-bar-section .has-dropdown:hover > .dropdown {
-    position: static !important;
-    height: auto;
-    width: auto;
-    overflow: visible;
-    clip: auto;
-    display: block;
-    position: absolute !important;
-  }
-  /* line 730, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
-  .no-js .top-bar-section .has-dropdown > a:focus + .dropdown {
-    position: static !important;
-    height: auto;
-    width: auto;
-    overflow: visible;
-    clip: auto;
-    display: block;
-    position: absolute !important;
-  }
-}
 /* Tooltips */
 /* line 38, ../bower_components/foundation/scss/foundation/components/_tooltips.scss */
 .has-tip {
@@ -17644,62 +16843,98 @@ body:before {
     margin-bottom: 0;
   }
 }
-/* line 3, ../scss/_giftBot.scss */
+/* line 2, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader {
+  max-width: none;
+}
+/* line 4, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .fixed {
   background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+  left: 0;
 }
-/* line 6, ../scss/_giftBot.scss */
+/* line 12, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .flexContainer {
+  display: flex;
+  align-items: center;
+  padding: .75rem 0;
+}
+/* line 17, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .logo-container {
   background-color: #FFFFFF;
   display: inline-block;
+  margin-left: 0;
 }
-/* line 10, ../scss/_giftBot.scss */
-.giftBotResultsContainer .giftBotResultsHeader .navTopBorder {
-  border-top: 1px solid #A8A098;
-  background-color: #E8E4DF;
-  margin: 0;
+/* line 22, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .wishlistIcon {
+  padding: 0 1rem;
 }
-/* line 16, ../scss/_giftBot.scss */
+/* line 24, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .wishlistIcon .icon-heart_small {
   color: #F86966;
 }
-/* line 21, ../scss/_giftBot.scss */
+/* line 28, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .signInIcon {
+  padding-left: 1rem;
+}
+/* line 30, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .signInIcon .icon-account {
   color: #387C9B;
 }
-/* line 25, ../scss/_giftBot.scss */
+/* line 34, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .icon-caret_down {
+  padding-right: 1rem;
+}
+/* line 37, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .icon-cart {
+  padding-left: 1rem;
+}
+/* line 40, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .checkoutCopy {
+  padding-right: 1rem;
+}
+/* line 43, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar {
   background-color: #E8E4DF;
   max-width: none;
   padding: .5rem 2rem;
+  height: 50px;
+  border-top: 1px solid #A8A098;
 }
-/* line 29, ../scss/_giftBot.scss */
-.giftBotResultsContainer .giftBotResultsHeader .top-bar ul {
-  margin: 0;
-}
-/* line 32, ../scss/_giftBot.scss */
+/* line 49, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar h1 {
   margin: 0;
 }
-/* line 35, ../scss/_giftBot.scss */
+/* line 52, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar label {
   display: inline;
+  font-weight: bold;
 }
-/* line 38, ../scss/_giftBot.scss */
+/* line 56, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar .fa .fa-thumbs-up .fa-2 {
   font-size: 2em;
 }
-/* line 41, ../scss/_giftBot.scss */
+/* line 59, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .top-bar .upVotedResultsCounter {
   font-weight: bold;
   font-size: 1.2rem;
 }
-/* line 46, ../scss/_giftBot.scss */
+/* line 63, ../scss/_giftBot.scss */
+.giftBotResultsContainer .giftBotResultsHeader .top-bar .flexContainer {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+/* line 69, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTip {
   position: relative;
   display: inline-block;
+  padding-left: .50rem;
 }
-/* line 50, ../scss/_giftBot.scss */
+/* line 74, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText {
   width: auto;
   background-color: #035a58;
@@ -17716,20 +16951,20 @@ body:before {
   -moz-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-/* line 71, ../scss/_giftBot.scss */
+/* line 95, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .closeProTip {
   padding: .50rem;
 }
-/* line 74, ../scss/_giftBot.scss */
+/* line 98, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .copy {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
-/* line 76, ../scss/_giftBot.scss */
+/* line 100, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTipText .copy p {
   color: #fff !important;
   margin: 0;
 }
-/* line 82, ../scss/_giftBot.scss */
+/* line 106, ../scss/_giftBot.scss */
 .giftBotResultsContainer .giftBotResultsHeader .proTip .proTipText::after {
   content: "";
   position: absolute;
@@ -17740,46 +16975,61 @@ body:before {
   border-style: solid;
   border-color: transparent transparent #035a58 transparent;
 }
-/* line 93, ../scss/_giftBot.scss */
+/* line 117, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults {
-  margin-top: 7rem;
+  margin-top: 9rem;
 }
-/* line 97, ../scss/_giftBot.scss */
+/* line 121, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
   position: relative;
-  padding: 0 2rem;
+  padding: 0 0.5rem;
 }
-/* line 102, ../scss/_giftBot.scss */
+/* line 126, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults #likeMoreIdeas {
   margin: 2rem 0;
 }
-/* line 105, ../scss/_giftBot.scss */
+/* line 129, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product {
   max-width: none;
 }
-/* line 107, ../scss/_giftBot.scss */
+/* line 131, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
 }
-/* line 111, ../scss/_giftBot.scss */
+/* line 135, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   width: 100%;
   height: auto;
 }
-/* line 115, ../scss/_giftBot.scss */
+/* line 139, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
+  height: 100%;
 }
-/* line 120, ../scss/_giftBot.scss */
+/* line 145, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .loadingSvg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 151, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer {
   position: absolute;
-  width: 100%;
   height: calc(100% / 5);
+  margin: 0;
+  padding-bottom: .5rem;
+  width: 100%;
+  z-index: 100;
+  transform: translateY(calc((100% * 5) - 100%));
+  -webkit-transform: translateY(calc((100% * 5) - 100%));
+  -moz-transform: translateY(calc((100% * 5) - 100%));
+  -ms-transform: translateY(calc((100% * 5) - 100%));
 }
-/* line 124, ../scss/_giftBot.scss */
+/* line 162, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateUp {
   transform: translateY(0);
   -webkit-transform: translateY(0);
@@ -17789,7 +17039,7 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 133, ../scss/_giftBot.scss */
+/* line 171, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .votingContainer.animateDown {
   transform: translateY(calc((100% * 5) - 100%));
   -webkit-transform: translateY(calc((100% * 5) - 100%));
@@ -17799,24 +17049,24 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 143, ../scss/_giftBot.scss */
+/* line 181, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .preventReflow {
   overflow: hidden;
   padding-bottom: 100%;
 }
-/* line 147, ../scss/_giftBot.scss */
+/* line 185, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .upvotedBorder {
   border: 10px solid #035a58;
 }
-/* line 150, ../scss/_giftBot.scss */
+/* line 188, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downvotedBorder {
   border: 10px solid #F86966;
 }
-/* line 153, ../scss/_giftBot.scss */
+/* line 191, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .copy {
   min-height: 60px;
 }
-/* line 156, ../scss/_giftBot.scss */
+/* line 194, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip {
   background: #025A58;
   color: #fff;
@@ -17836,7 +17086,7 @@ body:before {
   -moz-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-/* line 174, ../scss/_giftBot.scss */
+/* line 212, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip.animateDown {
   opacity: 1;
   transform: translateY(45%);
@@ -17847,12 +17097,12 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 184, ../scss/_giftBot.scss */
+/* line 222, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .tryDownVoteingProTip p {
   color: #fff !important;
   margin: 0;
 }
-/* line 189, ../scss/_giftBot.scss */
+/* line 227, ../scss/_giftBot.scss */
 .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason {
   position: absolute;
   top: 0;
@@ -17861,68 +17111,176 @@ body:before {
   height: 100%;
   background-color: #ffffff;
   opacity: 0.9;
-  padding-top: 3rem;
   border: 10px solid #F86966;
+  z-index: 100;
 }
-/* line 203, ../scss/_giftBot.scss */
+/* line 237, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason .icon-close {
+  padding: 1rem;
+}
+/* line 240, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 2.5rem 0 2.5rem 1rem;
+}
+/* line 244, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul li {
+  padding: 0;
+}
+/* line 248, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="radio"] + label:not(.error), .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="radio"] + label.error + label, .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="radio"] + label:not(.invalid), .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="radio"] + label.invalid + label, .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="checkbox"] + label:not(.error), .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="checkbox"] + label.error + label, .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="checkbox"] + label:not(.invalid), .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason input[type="checkbox"] + label.invalid + label {
+  margin: 0 .75rem .5rem 0;
+}
+/* line 252, ../scss/_giftBot.scss */
+.giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .exitDownVoteReason {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+}
+/* line 261, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer {
   margin-top: 7rem;
 }
-/* line 206, ../scss/_giftBot.scss */
+/* line 264, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .container:first-child {
   padding-top: 2rem;
 }
-/* line 210, ../scss/_giftBot.scss */
+/* line 268, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
   display: none;
 }
-/* line 215, ../scss/_giftBot.scss */
+/* line 273, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer img {
   max-height: 300px;
 }
-/* line 219, ../scss/_giftBot.scss */
+/* line 277, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
   border-bottom: 2px solid;
   margin: 2rem 0 1.1875rem;
 }
-/* line 224, ../scss/_giftBot.scss */
+/* line 282, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 227, ../scss/_giftBot.scss */
+/* line 285, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 231, ../scss/_giftBot.scss */
+/* line 289, ../scss/_giftBot.scss */
 .giftBotResultsContainer .upvotedResultsContainer .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
 }
+/* line 296, ../scss/_giftBot.scss */
+.giftBotResultsContainer .animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+@keyframes bounce {
+  from, 20%, 53%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+/* line 356, ../scss/_giftBot.scss */
+.giftBotResultsContainer .bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
 
-/* line 240, ../scss/_giftBot.scss */
+/* line 364, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer {
   padding-bottom: 3rem;
 }
-/* line 242, ../scss/_giftBot.scss */
+/* line 366, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer .downVote {
   padding-right: .50rem;
 }
-/* line 245, ../scss/_giftBot.scss */
+/* line 369, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .votingContainer .upVote {
   padding-left: .50rem;
 }
-/* line 249, ../scss/_giftBot.scss */
+/* line 373, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 252, ../scss/_giftBot.scss */
+/* line 376, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .avgRating {
   padding-bottom: 2rem;
 }
-/* line 256, ../scss/_giftBot.scss */
+/* line 380, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
+}
+
+@media (min-width: 64.063em) {
+  /* line 394, ../scss/_giftBot.scss */
+  .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
+    padding: 0 1.75rem;
+  }
+  /* line 400, ../scss/_giftBot.scss */
+  .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
+    padding: 3.5rem 0 3rem 1rem;
+  }
+}
+@media (min-width: 90.063em) {
+  /* line 416, ../scss/_giftBot.scss */
+  .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
+    padding: 0 1.75rem;
+  }
+  /* line 422, ../scss/_giftBot.scss */
+  .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
+    padding: 4rem 0 4rem 1rem;
+  }
 }
