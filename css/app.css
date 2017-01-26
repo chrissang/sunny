@@ -17388,12 +17388,12 @@ body:before {
 /* line 380, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .selectQuanity input {
   margin-top: 0;
-  background-color: #125688;
-  border-color: #125688 !important;
+  margin-bottom: 1rem;
 }
-/* line 386, ../scss/_giftBot.scss */
+/* line 385, ../scss/_giftBot.scss */
 #giftBotQuickViewModal .copy {
   padding-left: 24px;
+  margin-top: 5rem;
 }
 
 @media (min-width: 64.063em) {

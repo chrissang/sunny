@@ -14,7 +14,8 @@ class Dependents {
         this.viewModelAvgRating = ko.observable('');
         this.viewModelNumberOfReviews = ko.observable('');
         this.viewModelProductURL = ko.observable('');
-        this.viewModelAltImgQuanity = ko.observable(0);
+        this.viewModelAltImg = ko.observableArray();
+        this.viewModelMultiSku = ko.observableArray();
 
         this.itemQuantity = ko.observableArray([0,1,2,3,4,5,6,7,8,9,10]);
         this.productParent = ko.observable();
@@ -123,29 +124,73 @@ ko.components.register('quickview', {
             this.closeQuickView = function() {
                 $('#giftBotQuickViewModal').foundation('reveal', 'close');
             }
+            this.swapMainImage = function(img) {
+                this.params.parent.viewModelImage(img.split('64px')[0]+'640px.jpg');
+            }
+            ko.bindingHandlers.swpierInit = {
+                init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+                    $(function () {
+                        console.log('swpierInit');
+                        var mySwiper = new Swiper('.swiper-container', {
+                            loop: false,
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            slidesPerView: 5,
+  	                        spaceBetween: 12,
+                          	slidesOffsetBefore: 27,
+                          	slidesOffsetAfter: 27,
+                            breakpoints: {
+                                1024: {
+                                    slidesPerView: 5
+                                },
+                                640: {
+                                    slidesPerView: 5
+                                },
+                                320: {
+                                    slidesPerView: 5
+                                }
+                            }
+                        });
+                    })
+                }
+            };
         }
     },
     template: `
-        <div id="giftBotQuickViewModal" class="reveal-modal xlarge" data-reveal="" aria-hidden="true" role="dialog">
+        <div id="giftBotQuickViewModal" class="reveal-modal xlarge" data-reveal="" aria-hidden="true" role="dialog" data-bind="swpierInit">
             <div class="row">
                 <div class="small-12 columns">
                     <a data-bind="event:{ click: closeQuickView.bind() }">
-                        <span class="icon-close icon-sm right"></span>
+                        <span class="icon-close icon-lg right"></span>
                     </a>
                 </div>
 
                 <div class="small-12 medium-7 columns">
                     <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><img data-bind="attr: { src: $parent.viewModelImage() }"></a>
+
+                    <div id="altImages" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <!-- ko foreach: $parent.viewModelAltImg() -->
+                                <div class="swiper-slide" style="width: auto; margin-right: 12px;">
+                                    <a data-bind="event: { click: $parent.swapMainImage.bind($parent) }">
+                                        <img data-bind="attr:{ src: $data, alt: $parent.params.parent.viewModelTitle()+' thumbnail' }"></img>
+                                    </a>
+                                </div>
+                            <!-- /ko -->
+                        </div>
+                        <div class="swiper-button-prev"><span class="icon-caret_left icon-lg"></span></div>
+                        <div class="swiper-button-next"><span class="icon-caret_right icon-lg"></span></div>
+                    </div>
                 </div>
 
                 <div class="small-12 medium-5 text-center columns copy">
                     <div class="row">
-                        <div class="small-12 columns" id="quickViewVotingContainer">
+                        <!-- <div class="small-12 columns" id="quickViewVotingContainer">
                             <div class="votingContainer">
                                 <a data-bind="event: { click: quickViewDownVote.bind($data) }"><img class="voteBtns downVote" src="/images/SUN-thumb_boo.png"></a>
                                 <a data-bind="event: { click: quickViewUpVote.bind($data) }"><img class="voteBtns upVote" src="/images/SUN-thumb_yay.png"></a>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="small-12 columns">
                             <h1 data-bind="text: $parent.viewModelTitle()"></h1>
@@ -165,14 +210,36 @@ ko.components.register('quickview', {
                         </div>
                         <div class="small-12 columns">
                             <div class="row selectQuanity">
-                                <div class="small-3 columns">
-                                    <select data-bind="options: itemQuantity()"></select>
-                                </div>
-                                <div class="small-9 columns">
-                                    <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
+                                <!-- ko if: $parent.viewModelMultiSku().length === 0 -->
+                                    <div class="small-4 columns">
+                                        <select data-bind="options: itemQuantity()"></select>
+                                    </div>
+
+                                    <div class="small-8 columns">
+                                        <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
+                                    </div>
+                                <!-- /ko -->
+
+                                <!-- ko if: $parent.viewModelMultiSku().length > 0 -->
+                                    <div class="small-8 columns">
+                                        <select data-bind="options: $parent.viewModelMultiSku()"></select>
+                                    </div>
+
+                                    <div class="small-4 columns">
+                                        <select data-bind="options: itemQuantity()"></select>
+                                    </div>
+
+                                    <div class="small-12 columns">
+                                        <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
+                                    </div>
+                                <!-- /ko -->
+
+                                <div class="small-12 columns">
+                                    <a class="body-small a-tertiary" data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }">view full details</a>
                                 </div>
                             </div>
                         </div>
+
 
 
                     </div>
@@ -255,13 +322,27 @@ ko.components.register('products', {
                 this.params.parent.viewModelAvgRating(this.rating());
                 this.params.parent.viewModelProductURL(this.productURL());
                 this.params.parent.productParent(this);
-                this.displayUpVoteSelected() ? document.getElementById('quickViewVotingContainer').style.display = 'none' : document.getElementById('quickViewVotingContainer').style.display = 'block'
+                //this.displayUpVoteSelected() ? document.getElementById('quickViewVotingContainer').style.display = 'none' : document.getElementById('quickViewVotingContainer').style.display = 'block'
                 var self = this;
             	$.getJSON( "http://qa2.uncommongoods.com/assets/get/item/"+this.params.parent.viewModelItemId(), function( itemdata ) {
                     self.params.parent.viewModelTagLine(itemdata[0].metaDescr);
+                    self.params.parent.viewModelAltImg([]);
+                    self.params.parent.viewModelMultiSku([]);
+
+                    var itemDir = '//www.uncommongoods.com/images/items/';
+                    var itemId = itemdata[0].itemId;
+                    var itemIdTrim = itemId.toString().slice(0, -2);
+
                     itemdata[0].itemMedia.forEach((mediaType, index) => {
-                        mediaType.mediaTypeId === 1 ? self.params.parent.viewModelAltImgQuanity(self.params.parent.viewModelAltImgQuanity() + 1) : '';
+                        mediaType.mediaTypeId === 1 ? self.params.parent.viewModelAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_64px.jpg') : '';
                     })
+
+                    if (itemdata[0].skus.length > 1) {
+                        itemdata[0].skus.forEach((sku, index) => {
+                            console.log(sku);
+                            sku.status === 'live' ? self.params.parent.viewModelMultiSku.push(sku.color + ' $'+sku.price) : '';
+                        })
+                    }
             	})
             }
             this.isloading = ko.observable(false);
