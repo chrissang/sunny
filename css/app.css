@@ -17396,22 +17396,28 @@ body:before {
   margin-top: 5rem;
 }
 
+@media (max-width: 40em) {
+  /* line 393, ../scss/_giftBot.scss */
+  #giftBotQuickViewModal .copy {
+    margin-top: 1rem;
+  }
+}
 @media (min-width: 64.063em) {
-  /* line 397, ../scss/_giftBot.scss */
+  /* line 405, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 403, ../scss/_giftBot.scss */
+  /* line 411, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 419, ../scss/_giftBot.scss */
+  /* line 427, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 425, ../scss/_giftBot.scss */
+  /* line 433, ../scss/_giftBot.scss */
   .giftBotResultsContainer #giftBotResults .giftBotSearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }

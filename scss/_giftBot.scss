@@ -387,6 +387,14 @@
 		margin-top: 5rem;
 	}
 }
+//small screen
+@media (max-width: 40em) {
+	#giftBotQuickViewModal {
+		.copy {
+			margin-top: 1rem;
+		}
+	}
+}
 
 //large screen
 @media (min-width: 64.063em) {
