@@ -210,7 +210,7 @@ ko.components.register('quickview', {
                         </div>
                         <div class="small-12 columns">
                             <div class="row selectQuanity">
-                                <!-- ko if: $parent.viewModelMultiSku().length === 0 -->
+                                <!-- ko if: $parent.viewModelMultiSku().length <= 1 -->
                                     <div class="small-4 columns">
                                         <select data-bind="options: itemQuantity()"></select>
                                     </div>
@@ -220,7 +220,7 @@ ko.components.register('quickview', {
                                     </div>
                                 <!-- /ko -->
 
-                                <!-- ko if: $parent.viewModelMultiSku().length > 0 -->
+                                <!-- ko if: $parent.viewModelMultiSku().length > 1 -->
                                     <div class="small-8 columns">
                                         <select data-bind="options: $parent.viewModelMultiSku()"></select>
                                     </div>
@@ -337,11 +337,12 @@ ko.components.register('products', {
                         mediaType.mediaTypeId === 1 ? self.params.parent.viewModelAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_64px.jpg') : '';
                     })
 
+
                     if (itemdata[0].skus.length > 1) {
                         itemdata[0].skus.forEach((sku, index) => {
-                            console.log(sku);
                             sku.status === 'live' ? self.params.parent.viewModelMultiSku.push(sku.color + ' $'+sku.price) : '';
                         })
+                        console.log(self.params.parent.viewModelMultiSku());
                     }
             	})
             }
