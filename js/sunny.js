@@ -110,7 +110,7 @@ ko.components.register('quickview', {
             }
             this.quickViewUpVote = function() {
                 var parentProduct = this.params.parent.productParent();
-                console.log('quickViewUpVote ',parentProduct);
+                // console.log('quickViewUpVote ',parentProduct);
                 if (!parentProduct.displayUpVoteSelected()) {
                     parentProduct.isAllowedMoreItems(true);
                     this.params.parent.upvoteCounter() === 0 ? this.params.parent.isProTip(true) : '';
@@ -272,14 +272,14 @@ ko.components.register('products', {
                 }
             };
             this.downVote = function() {
-                console.log('down vote',this);
+                // console.log('down vote',this);
                 this.displayDownVoteSelected(true);
                 this.params.parent.isAllowedMoreItems(true);
                 this.params.parent.isItemDownvoted(true);
             }
             this.downVoteReasonSelection = function() {
                 this.displayDownVoteSelected(false);
-                console.log('down vote reason selected ',this.params.parent.searchResults()[0]);
+                // console.log('down vote reason selected ',this.params.parent.searchResults()[0]);
                 this.imageURL(ugWeb + this.params.parent.searchResults()[0].imageURL);
                 this.title(this.params.parent.searchResults()[0].title);
                 this.price(this.params.parent.searchResults()[0].price);
@@ -296,7 +296,8 @@ ko.components.register('products', {
                 return true;
             }
             this.upVote = function() {
-                console.log('up vote ',this);
+                // console.log('up vote ',this);
+                this.params.parent.totalGiftIdeas(this.params.parent.searchResultsTotal());
                 this.params.parent.isDisplayGate(false);
                 if (!this.displayUpVoteSelected()) {
                     this.params.parent.isAllowedMoreItems(true);
@@ -357,8 +358,10 @@ ko.components.register('products', {
                 <!-- ko if: !displayUpVoteSelected() && !displayDownVoteSelected() -->
                     <a data-bind="event:{ click: downVote.bind($data) }"><span class="icon-close icon-md"></span></a>
                 <!-- /ko -->
+
                 <a data-reveal-id="sunnyQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>
-                <!-- ko if: displayDownVoteSelected() -->
+
+                <!-- ko vsible: displayDownVoteSelected() -->
                     <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReason slideUp' : 'downVoteReason' }">
                         <ul>
                             <li>
@@ -382,13 +385,14 @@ ko.components.register('products', {
                                 <label data-bind="attr:{ for: 'downVoteReason5_'+ itemId() }">Other reason</label>
                             </li>
                         </ul>
-                    </div>
-                    <a data-bind="event:{ click: exitDownVoteReason.bind($data) }" class="exitDownVoteReason">
-                        <span class="icon-caret_down icon-md right"></span>
-                    </a>
-                <!-- /ko -->
-                <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'votingContainer text-center upvoted' : 'votingContainer text-center' }">
 
+                        <a data-bind="event:{ click: exitDownVoteReason.bind($data) }" class="exitDownVoteReason">
+                            <span class="icon-caret_down icon-md right"></span>
+                        </a>
+                    </div>
+                <!-- /ko -->
+
+                <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'votingContainer text-center upvoted' : 'votingContainer text-center' }">
                     <!-- ko if: !displayDownVoteSelected() -->
                         <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'innerCircle outterCircle upvoted' : 'outterCircle' }">
                             <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'innerCircle upvoted' : 'innerCircle' }">
@@ -396,8 +400,8 @@ ko.components.register('products', {
                             </div>
                         </div>
                     <!-- /ko -->
-
                 </div>
+
                 <!-- ko if: isloading() -->
                     <div class="loadingSvg">
                         <embed type="image/svg+xml" src="/images/frame/loader.svg" style="width:3rem">
@@ -428,12 +432,14 @@ ko.components.register('sunny-results-container', {
         constructor(params) {
             super(params);
             this.searchResults = ko.observableArray([]).extend({ deferred: true });
+            this.totalGiftIdeas = ko.observable(18);
+            this.searchResultsTotal = ko.observable();
             this.displaySearchResults = ko.observableArray([]);
             this.displaySearchResultsTemp = ko.observableArray([]);
             this.isInitItemsLoaded = false;
             this.isLikeMoreItemsCopy = ko.observable(false);
             this.closeProTip = function() {
-                console.log('closeProTip ',this);
+                // console.log('closeProTip ',this);
                 this.isProTip(false);
             }
             this.addItems = function(load) {
@@ -453,7 +459,7 @@ ko.components.register('sunny-results-container', {
 
             }
             this.viewSavedItems = function() {
-                console.log('viewSavedResults ',this);
+                // console.log('viewSavedResults ',this);
                 if (this.upVotedResults().length > 0) {
                     this.displayUpVotedResults() ? (this.displayUpVotedResults(false), this.displaySearchResultsToggle(true)) : (this.displayUpVotedResults(true), this.displaySearchResultsToggle(false));
                 }
@@ -464,7 +470,7 @@ ko.components.register('sunny-results-container', {
                 data.products.forEach((product,index) => {
                     self.searchResults.push(product);
                 })
-                console.log(self.searchResults().length)
+                self.searchResultsTotal(data.products.length);
             })
 
             ko.bindingHandlers.scroll = {
@@ -475,7 +481,8 @@ ko.components.register('sunny-results-container', {
                 },
                 update: function(element, valueAccessor, allBindingsAccessor, viewModel) {
                     if (self.searchResults().length != 0 && !self.isInitItemsLoaded) {
-                        viewModel.addItems(24);
+                        viewModel.addItems(18);
+                        viewModel.totalGiftIdeas(18);
                         self.isInitItemsLoaded = true;
                     }
 
@@ -483,7 +490,7 @@ ko.components.register('sunny-results-container', {
                         $(window).on("scroll.ko.scrollHandler", function () {
                             if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
                                 if (self.isAllowedMoreItems()) {
-                                    viewModel.addItems(24);
+                                    viewModel.addItems(18);
                                 } else {
                                     likeMoreItems();
                                 }
@@ -492,7 +499,7 @@ ko.components.register('sunny-results-container', {
                     }
 
                     function likeMoreItems() {
-                        console.log('Try liking a few to see more ideas!');
+                        // console.log('Try liking a few to see more ideas!');
                         // bounce animated
                         $.fn.extend({
                             animateCss: function (animationName) {
@@ -542,7 +549,12 @@ ko.components.register('sunny-results-container', {
                             <div class="small-12 large-10 xlarge-8 columns small-centered">
                                 <div class="top-bar">
                                     <div class="left flexContainer">
-                                        <h1>gift ideas</h1>
+
+
+                                        <h1 data-bind="text: 'gift ideas (' + totalGiftIdeas() + ')' "></h1>
+
+
+
                                     </div>
                                     <div class="right flexContainer">
                                         <!-- ko if: upVotedResults().length > 0 && !displayUpVotedResults() -->
@@ -586,22 +598,22 @@ ko.components.register('sunny-results-container', {
                         <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
                     </ul>
 
-                    <!-- ko if: isDisplayGate() -->
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <div class="row">
-                                    <div class="small-12 columns">
-                                        <div class="row collapse">
-                                            <div class="small-8 medium-10 large-8 small-centered columns">
-                                                <hr class="dottedSpacer">
-                                            </div>
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <div class="row collapse">
+                                        <div class="small-8 medium-10 large-8 small-centered columns">
+                                            <hr class="dottedSpacer">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                         </div>
-                    <!-- /ko -->
+                        <!-- ko if: isDisplayGate() -->
+                            <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
+                        <!-- /ko -->
+                    </div>
                 </div>
             </div>
             <!-- Search Results End-->
