@@ -262,6 +262,8 @@ ko.components.register('products', {
             this.displayUpVoteSelected = ko.observable(false);
             this.isTryDownVoteingProTip = ko.observable(false);
             this.displayDownVoteSelected = ko.observable(false);
+            this.displayDownVoteSelected = ko.observable(false);
+
             this.displayBorderSelected = function() {
                 if (this.displayDownVoteSelected()) {
                     return 'downvotedBorder'
@@ -278,8 +280,10 @@ ko.components.register('products', {
                 this.params.parent.isItemDownvoted(true);
             }
             this.downVoteReasonSelection = function() {
-                this.displayDownVoteSelected(false);
-                // console.log('down vote reason selected ',this.params.parent.searchResults()[0]);
+                //var self = this;
+                //setTimeout(function() { self.displayDownVoteSelected(false) }, 2000);
+                this.displayDownVoteSelected(false)
+
                 this.imageURL(ugWeb + this.params.parent.searchResults()[0].imageURL);
                 this.title(this.params.parent.searchResults()[0].title);
                 this.price(this.params.parent.searchResults()[0].price);
@@ -365,7 +369,7 @@ ko.components.register('products', {
 
 
                     <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReasonContainer border' : 'downVoteReasonContainer' }">
-                        <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReason slideUp' : 'downVoteReason' }">
+                        <div data-bind="if: displayDownVoteSelected(), attr: { class: displayDownVoteSelected() ? 'downVoteReason slideUp' : 'downVoteReason' }">
                             <ul>
                                 <li>
                                     <input type="radio" data-bind="attr:{ 'name': 'downVoteReason1_'+ itemId(), 'id': 'downVoteReason1_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
@@ -428,7 +432,7 @@ ko.components.register('products', {
                             <span class="icon-close icon-sm right"></span>
                         </a>
                     </div>
-                    <p class="intro-text">Thumbs down what you don’t like so we can find better suggestions</p>
+                    <p class="intro-text">click the X on items you don't like so we can find better suggestions</p>
                 </div>
             </div>
         </article>`, synchronous: true
@@ -519,7 +523,7 @@ ko.components.register('sunny-results-container', {
                         $('#sunnyResults').animateCss('bounce');
                         $(document).ready(function() {
                             if (!self.isLikeMoreItemsCopy()) {
-                                $("<p class='call-out-large'>").text("Try liking a few to see more ideas!").appendTo("#likeMoreIdeas");
+                                $("<p class='call-out-large'>").text("For more ideas, favorite a few items!").appendTo("#likeMoreIdeas");
                                 self.isLikeMoreItemsCopy(true);
                             }
                         });
