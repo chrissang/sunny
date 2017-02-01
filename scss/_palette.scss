@@ -29,7 +29,7 @@ $active-muted-mix: desaturate(mix(white, $active-light-mix, 12%), 18%);
 
 $active-secondary:$active-light-mix;
 $active-lightened:$active-light-mix;
-
+$offwhite-light-mix:$offwhite-lightened;
 
 .color-box.active-secondary-mix{
 	background-color:$active-light-mix;
@@ -73,6 +73,9 @@ $active-lightened:$active-light-mix;
 }
 .color-box.offwhite{
 	background-color:$offwhite
+}
+.color-box.offwhite-light-mix{
+	background-color:$offwhite-light-mix
 }
 .color-box.collection{
 	background-color:$collection

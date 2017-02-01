@@ -6,10 +6,10 @@ $headerBarHeight:1.75rem;
 			background: $offwhite-lightened none repeat-y scroll center top !important;
 		}
 	}
-	main,
+	/*main,
 	header~*{
 		overflow-x:hidden;		
-	}
+	}*/
 	div#boxes div#dialog{
 		display:none!important
 	} 
@@ -687,10 +687,10 @@ svg .logo-green{
 		border-top-left-radius:0;
 		border-bottom-left-radius:0;
 		*/
-		min-width:0;
+/*		min-width:0;*/
 		margin-bottom:0;
-		width:$button-small-size;
-		height:$button-small-size;
+/*		width:$button-small-size;
+		height:$button-small-size;*/
 		@media #{$small-only} {
 			width:$button-medium-size;
 			height:$button-medium-size;

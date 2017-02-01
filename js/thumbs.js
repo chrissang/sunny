@@ -106,7 +106,7 @@ ko.components.register('quickview', {
                     parentProduct.isAllowedMoreItems(true);
                     parentProduct.isItemDownvoted(true);
                 }
-                $('#giftBotQuickViewModal').foundation('reveal', 'close');
+                $('#sunnyQuickViewModal').foundation('reveal', 'close');
             }
             this.quickViewUpVote = function() {
                 var parentProduct = this.params.parent.productParent();
@@ -119,26 +119,25 @@ ko.components.register('quickview', {
                     this.params.parent.upVotedResults.push(this.params.parent.productParent());
                     parentProduct.displayUpVoteSelected(true);
                 }
-                $('#giftBotQuickViewModal').foundation('reveal', 'close');
+                $('#sunnyQuickViewModal').foundation('reveal', 'close');
             }
             this.closeQuickView = function() {
-                $('#giftBotQuickViewModal').foundation('reveal', 'close');
+                $('#sunnyQuickViewModal').foundation('reveal', 'close');
             }
             this.swapMainImage = function(img) {
                 this.params.parent.viewModelImage(img.split('64px')[0]+'640px.jpg');
             }
             ko.bindingHandlers.swpierInit = {
-                init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-                    $(function () {
-                        console.log('swpierInit');
-                        var mySwiper = new Swiper('.swiper-container', {
+                update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+                    $(document).ready(function() {
+                        var altSwiper = new Swiper('#altImages', {
                             loop: false,
                             nextButton: '.swiper-button-next',
                             prevButton: '.swiper-button-prev',
                             slidesPerView: 5,
-  	                        spaceBetween: 12,
-                          	slidesOffsetBefore: 27,
-                          	slidesOffsetAfter: 27,
+                            spaceBetween: 12,
+                            slidesOffsetBefore: 27,
+                            slidesOffsetAfter: 27,
                             breakpoints: {
                                 1024: {
                                     slidesPerView: 5
@@ -150,14 +149,14 @@ ko.components.register('quickview', {
                                     slidesPerView: 5
                                 }
                             }
-                        });
+                        })
                     })
                 }
             };
         }
     },
     template: `
-        <div id="giftBotQuickViewModal" class="reveal-modal xlarge" data-reveal="" aria-hidden="true" role="dialog" data-bind="swpierInit">
+        <div id="sunnyQuickViewModal" class="reveal-modal xlarge" data-reveal="" aria-hidden="true" role="dialog">
             <div class="row">
                 <div class="small-12 columns">
                     <a data-bind="event:{ click: closeQuickView.bind() }">
@@ -168,12 +167,12 @@ ko.components.register('quickview', {
                 <div class="small-12 medium-7 columns">
                     <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><img data-bind="attr: { src: $parent.viewModelImage() }"></a>
 
-                    <div id="altImages" class="swiper-container">
+                    <div class="swiper-container" id="altImages">
                         <div class="swiper-wrapper">
                             <!-- ko foreach: $parent.viewModelAltImg() -->
                                 <div class="swiper-slide" style="width: auto; margin-right: 12px;">
                                     <a data-bind="event: { click: $parent.swapMainImage.bind($parent) }">
-                                        <img data-bind="attr:{ src: $data, alt: $parent.params.parent.viewModelTitle()+' thumbnail' }"></img>
+                                        <img data-bind="attr:{ src: $data, alt: $parent.params.parent.viewModelTitle()+' thumbnail' }, swpierInit"></img>
                                     </a>
                                 </div>
                             <!-- /ko -->
@@ -196,7 +195,7 @@ ko.components.register('quickview', {
                             <h1 data-bind="text: $parent.viewModelTitle()"></h1>
                         </div>
                         <div class="small-12 columns">
-                            <div class="intro-text itemDescription" data-bind="text: $parent.viewModelTagLine()"></div>
+                            <div class="intro-text itemDescription" data-bind="html: $parent.viewModelTagLine()"></div>
                         </div>
                         <div class="small-12 columns">
                             <p class="item-price price">
@@ -298,6 +297,7 @@ ko.components.register('products', {
             }
             this.upVote = function() {
                 console.log('up vote ',this);
+                this.params.parent.isDisplayGate(false);
                 if (!this.displayUpVoteSelected()) {
                     this.params.parent.isAllowedMoreItems(true);
                     this.params.parent.upvoteCounter() === 0 ? this.params.parent.isProTip(true) : '';
@@ -324,7 +324,7 @@ ko.components.register('products', {
                 this.params.parent.productParent(this);
                 //this.displayUpVoteSelected() ? document.getElementById('quickViewVotingContainer').style.display = 'none' : document.getElementById('quickViewVotingContainer').style.display = 'block'
                 var self = this;
-            	$.getJSON( "http://qa2.uncommongoods.com/assets/get/item/"+this.params.parent.viewModelItemId(), function( itemdata ) {
+            	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+this.params.parent.viewModelItemId(), function( itemdata ) {
                     self.params.parent.viewModelTagLine(itemdata[0].metaDescr);
                     self.params.parent.viewModelAltImg([]);
                     self.params.parent.viewModelMultiSku([]);
@@ -342,7 +342,6 @@ ko.components.register('products', {
                         itemdata[0].skus.forEach((sku, index) => {
                             sku.status === 'live' ? self.params.parent.viewModelMultiSku.push(sku.color + ' $'+sku.price) : '';
                         })
-                        console.log(self.params.parent.viewModelMultiSku());
                     }
             	})
             }
@@ -355,7 +354,7 @@ ko.components.register('products', {
     template: `
         <article class="product" data-bind="attr: { id: itemId() }">
             <div class="responsively-lazy preventReflow">
-                <a data-reveal-id="giftBotQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>
+                <a data-reveal-id="sunnyQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>
                 <!-- ko if: displayDownVoteSelected() -->
                     <div class="downVoteReason">
                         <ul>
@@ -419,8 +418,8 @@ ko.components.register('products', {
         </article>`, synchronous: true
 });
 
-ko.components.register('gift-bot-results-container', {
-    viewModel: class GiftbotResultsComponentModel extends Dependents {
+ko.components.register('sunny-results-container', {
+    viewModel: class sunnyResultsComponentModel extends Dependents {
         constructor(params) {
             super(params);
             this.searchResults = ko.observableArray([]).extend({ deferred: true });
@@ -454,11 +453,13 @@ ko.components.register('gift-bot-results-container', {
                     this.displayUpVotedResults() ? (this.displayUpVotedResults(false), this.displaySearchResultsToggle(true)) : (this.displayUpVotedResults(true), this.displaySearchResultsToggle(false));
                 }
             }
+            this.isDisplayGate = ko.observable(true);
             self = this;
             $.getJSON( "/js/coffee_search_results.json", function(data) {
                 data.products.forEach((product,index) => {
                     self.searchResults.push(product);
                 })
+                console.log(self.searchResults().length)
             })
 
             ko.bindingHandlers.scroll = {
@@ -496,7 +497,7 @@ ko.components.register('gift-bot-results-container', {
                                 });
                             }
                         });
-                        $('#giftBotResults').animateCss('bounce');
+                        $('#sunnyResults').animateCss('bounce');
                         $(document).ready(function() {
                             if (!self.isLikeMoreItemsCopy()) {
                                 $("<p class='call-out-large'>").text("Try liking a few to see more ideas!").appendTo("#likeMoreIdeas");
@@ -509,9 +510,9 @@ ko.components.register('gift-bot-results-container', {
         }
     },
     template: `
-        <div class="giftBotResultsContainer">
+        <div class="sunnyResultsContainer">
             <!-- Fixed Header -->
-            <div class="row giftBotResultsHeader">
+            <div class="row sunnyResultsHeader">
                 <div class="small-12 columns">
                     <div class="contain-to-grid fixed">
                         <div class="row">
@@ -524,7 +525,7 @@ ko.components.register('gift-bot-results-container', {
                                                 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="600" height="91" version="1.1" viewBox="-5 0 610 91"><g transform="translate(0,-961.36215)"><g transform="matrix(0.88125356,0,0,0.88125356,-1.1665022,959.21629)"><path d="m48 73.9c0.1-7.7 0.3-34.8-0.1-37.5-1.4-1.1-8.2-1-9.7 0-0.5 3.5-0.5 21.6-0.6 30.8-2.2 3.6-8.4 6-13.4 6-2.7 0-5.5-1.7-5.5-5.7 0-2.6 0.5-25.3 0.3-27.4-0.3-3-2.2-4.5-7.9-4.5-5 0-8.2 1.7-8.2 4.5v3.8H9.3C8.9 51.2 8.4 66.8 9.2 71.4c1.2 7.1 5.7 11.7 12.8 11.7 6.2 0 14-3.2 16.4-7.3 0.1 0 0.3 0 0.3 0-0.2 0.5-0.3 1.3-0.3 2.2 0 3 2 4.5 7.6 4.5 5 0 8.2-2.3 8.2-5.1v-3.5h-6.2zM61.3 43.8 61.3 43.8 61.3 43.8c-0.1 7.7-0.3 34.8 0.1 37.5 1.4 1.1 8.2 1 9.7 0 0.5-3.5 0.5-21.6 0.6-30.8 2.2-3.5 8.4-6.9 13.4-6.9 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.3 27.4 0.3 3 2.3 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5l0-3.8h-6.4c0.4-7.3 0.9-22.9 0.1-27.5C99 39.2 94.5 34.6 87.4 34.6c-6.2 0-14 3.2-16.4 7.3-0.1 0-0.3 0-0.3 0 0.2-0.5 0.3-1.3 0.3-2.2 0-3-1.9-4.5-7.6-4.5-5 0-8.2 2.3-8.2 5.1l0 3.5h6.2z" class="logo-blue" "#387d9b"=""></path><path d="M7.2 13.5C5.1 11.4 3.6 12.1 2.4 13.3c-1.2 1.2-1.7 2.9 0.2 4.8 1.6 1.6 8 6.3 11 7.7 0.8 0.4 1.8-0.5 1.4-1.3-1.4-2.9-6.2-9.5-7.7-11zM51.7 13.3 51.7 13.3 51.7 13.3c-1.2-1.2-2.7-1.9-4.8 0.2-1.6 1.6-6.4 8.1-7.7 11-0.4 0.8 0.6 1.7 1.4 1.3 2.9-1.4 9.4-6.1 11-7.7 1.9-1.9 1.4-3.6 0.2-4.8zM27 2.7c-1.7 0-3.3 0.8-3.3 3.6 0 2.2 1.2 16.2 2.3 19.2 0.3 0.9 1.6 0.9 1.9 0.1 1.1-3 2.3-17.1 2.3-19.3 0-3-1.6-3.6-3.3-3.6z" class="logo-green"></path><path d="m194.1 58.5c0-20.7-10.7-23.9-22-23.9-11.3 0-22 4.9-22 23.9 0 19 10.7 23.9 22 23.9 11.3 0 22-3.2 22-23.9zm-22 15.8c-6 0-11.7-1.9-11.7-15.8 0-13.2 5.7-16 11.7-16 6 0 11.7 2.1 11.7 16 0 14.2-5.7 15.8-11.7 15.8zM384.2 58.5 384.2 58.5 384.2 58.5c0-20.7-12.2-24.8-23.5-24.8-11.3 0-23.5 5.8-23.5 24.8 0 19 12.2 24.8 23.5 24.8 11.3 0 23.5-4.1 23.5-24.8zm-23.5 16.7c-6 0-13.2-2.8-13.2-16.7 0-13.2 7.2-17 13.2-17 6 0 13.2 3 13.2 17 0 14.2-7.2 16.7-13.2 16.7zM391.6 43.8c-0.1 7.7-0.3 34.8 0.1 37.5 1.4 1.1 8.2 1 9.7 0 0.5-3.5 0.5-21.6 0.6-30.8 2.2-3.5 8.4-6.9 13.4-6.9 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.2 27.4 0.3 3 2.2 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5v-3.8h-6.4c0.4-7.3 0.9-22.9 0.1-27.5-1.2-7.1-5.7-11.7-12.8-11.7-6.2 0-14 3.2-16.4 7.3-0.1 0-0.3 0-0.3 0 0.2-0.5 0.3-1.3 0.3-2.2 0-3-1.9-4.5-7.6-4.5-5 0-8.2 2.3-8.2 5.1v3.5h6.2zM334.5 73.8h-6.4c0.4-7.3 0.9-22.9 0.1-27.5-1.2-7.1-5.7-11.7-12.8-11.7-6.2 0-14 3.2-16.4 7.3-0.1 0-0.4 0-0.7 0l0 0c-2-4.6-6-7.4-11.5-7.4-6.2 0-14 3.2-16.4 7.3-0.1 0-0.4 0-0.7 0l0 0.1c-2-4.6-6-7.4-11.5-7.4-6.2 0-14 3.2-16.4 7.3-0.1 0-0.4 0-0.7 0-2-4.6-6-7.3-11.5-7.3-6.2 0-13.7 3.2-16.1 7.3-0.1 0-0.3 0-0.3 0 0.2-0.5 0.3-1.3 0.3-2.2 0-3-1.9-4.5-7.6-4.5-5 0-8.2 2.3-8.2 5.1v3.5h6.2c-0.1 7.7-0.3 34.8 0.1 37.5 1.4 1.1 8.2 1 9.7 0 0.5-3.5 0.5-21.6 0.6-30.8 2.2-3.5 8.1-6.9 13.1-6.9 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.3 27.4 0.3 3 2.3 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5v-3.8h-6.4c0.3-5.9 0.7-17.2 0.4-23.8 2.4-3.4 8.3-6.5 13.1-6.5 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.3 27.4 0.3 3 2.2 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5v-3.8h-6.4c0.3-6 0.7-17.4 0.4-23.9l0 0.2c2.4-3.4 8.3-6.5 13.1-6.5 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.2 27.4 0.3 3 2.3 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5l0-3.8h-6.4c0.3-5.9 0.7-17.3 0.4-23.8l0 0.1c2.4-3.4 8.3-6.5 13.1-6.5 2.7 0 5.5 1.6 5.5 6.6 0 2.6-0.5 25.3-0.2 27.4 0.3 3 2.3 4.5 7.9 4.5 5 0 8.2-1.7 8.2-4.5v-3.8zM143.6 71.8c-2.4 1.2-9.6 2.2-12.9 2.2-6 0-11.7-1.9-11.7-15.8 0-13.2 5.7-16 11.7-16 2.2 0 4.2 0.3 5.8 0.7 0 7.5 1.7 8.5 4.5 8.5h1.2c3 0 4.5-1.2 4.5-9.5h0c0-4.1-4.4-7.6-15.1-7.6-11.3 0-23 4.9-23 23.9 0 19 10.7 23.9 22 23.9 5.7 0 12.4-1.7 15-3.4 2.4-1.6 0-6.8-2.2-6.8z" class="logo-blue"></path><path d="m538.4 58.5c0-20.7-12.2-24.8-23.5-24.8-11.3 0-23.5 5.8-23.5 24.8 0 19 12.2 24.8 23.5 24.8 11.3 0 23.5-4.1 23.5-24.8zM514.9 75.1c-6 0-13.2-2.8-13.2-16.7 0-13.2 7.2-17 13.2-17 6 0 13.2 3 13.2 17 0 14.2-7.2 16.7-13.2 16.7zM589.2 58.5 589.2 58.5 589.2 58.5c0-20.7-12.2-24.8-23.5-24.8-11.3 0-23.5 5.8-23.5 24.8 0 19 12.2 24.8 23.5 24.8 11.3 0 23.5-4.1 23.5-24.8zm-23.5 16.7c-6 0-13.2-2.8-13.2-16.7 0-13.2 7.2-17 13.2-17 6 0 13.2 3 13.2 17 0 14.2-7.2 16.7-13.2 16.7zM682.2 68.5c0-15.3-24.6-14-24.6-21.9 0-3.9 1.6-5.7 7.7-5.7 2.2 0 3.9 0.3 5.5 0.7 0 7.5 1.7 8.5 4.5 8.5h1.2c3 0 4.5-1.2 4.5-9.4l0 0c0-4.1-4.1-7.6-14.8-7.6-11.3 0-18.5 3.9-18.5 14.5 0 14.4 24.4 12.8 24.4 21 0 3.8-1.5 5.6-7.5 5.6-3.6 0-5.6-0.5-7-1.4 0-7.5-1.7-8.2-4.5-8.2h-1.2c-3 0-4.5 1.2-4.5 9.5l0 0c0 4.1 5.6 7.9 16.3 7.9 11.3 0 18.5-2.6 18.5-13.5zM490.1 40.2c0-2.8-3.3-5.1-8.2-5.1-4.8 0-7 1.1-7.5 3.3-3.1-2.4-7.3-4-12-4-11.3 0-21.5 4.9-21.5 23.9 0 19 10.7 23.9 22 23.9 3.7 0 7.7-1.1 10.9-2.7 0 1.6 0 2.5 0 2.5 0 13.9-6 15.7-12 15.7-3.3 0-10.5-1-12.9-2.2-2.2 0.1-4.5 5.3-2.2 6.8 2.7 1.8 9.3 3.4 15 3.4 11.3 0 22.3-4.9 22.3-23.9 0 0 0-30.5-0.1-38.2h6.2l0-3.5zm-27.3 33.7c-6 0-11.7-1.9-11.7-15.8 0-13.2 5.7-16 11.7-16 4.7 0 9.2 2.7 10.9 6.7l-0.1 1.5c0 4.9 0 13.6 0.1 20.6-3.4 2.1-8.1 3-10.8 3zM643.8 73.6h-6.4c0.3-5 0.6-13.9 0.5-20.5 0.3-6.8 0.3-19.7 0.3-27 0-3.6 0-8.8-0.6-10.7-0.9-2.8-1.9-4.5-7.6-4.5-5 0-8.2 2.3-8.2 5.1v3.5h6.2c0 3.5-0.1 11.1-0.1 18.5-3-2.2-7.1-3.7-11.6-3.7-11.3 0-21.5 4.9-21.5 23.9 0 19 10.7 23.9 22 23.9 3.4 0 7.7-1.5 11-4.2 0.5 2.7 2.5 4 7.9 4 5 0 8.2-1.7 8.2-4.5l0-3.8zm-27.1 0.3c-6 0-11.7-1.9-11.7-15.8 0-13.2 5.7-16 11.7-16 4.9 0 9.7 3 11.1 7.4 0 1 0 1.9 0 2.7-0.1 3.7-0.2 10.8-0.2 16.5-3.1 3.5-6.5 5.2-10.9 5.2z" class="logo-green headerLogo"></path></g></g></svg>
                                             </div>
                                             <a class="wishlistIcon"><span class="icon-heart_small icon-sm GAWishList"></span> Wish Lists</a>
-                                            <span class="signInIcon"><span class="icon-account icon-sm"></span><span>Hi, Microhyls</span></span>
+                                            <span class="signInIcon"><span class="icon-account icon-sm"></span><span class="accountCopy">Hi, Microhyls</span></span>
                                             <span class="icon-caret_down icon-md"></span>
                                             <span class="icon-cart icon-md"></span>
                                             <span class="checkoutCopy">Checkout</span>
@@ -574,25 +575,28 @@ ko.components.register('gift-bot-results-container', {
             </div>
 
             <!-- Search Results -->
-            <div id="giftBotResults" class="row fullwidth" data-bind="scroll, visible: displaySearchResultsToggle()">
-                <div class="small-12 large-11 xlarge-8 small-centered columns giftBotSearchResults">
-                    <ul class="small-block-grid-1 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
+            <div id="sunnyResults" class="row fullwidth" data-bind="scroll, visible: displaySearchResultsToggle()">
+                <div class="small-12 large-11 xlarge-8 small-centered columns sunnySearchResults">
+                    <ul class="small-block-grid-2 medium-block-grid-3 end" data-bind="foreach: displaySearchResults()">
                         <li data-bind='component: { name: "products", params: { data: $data, parent: $parent } }'></li>
                     </ul>
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <div class="row collapse">
-                                        <div class="small-8 medium-10 large-8 small-centered columns">
-                                            <hr class="dottedSpacer">
+
+                    <!-- ko if: isDisplayGate() -->
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <div class="row collapse">
+                                            <div class="small-8 medium-10 large-8 small-centered columns">
+                                                <hr class="dottedSpacer">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
                         </div>
-                        <div id="likeMoreIdeas" class="small-12 text-center columns"></div>
-                    </div>
+                    <!-- /ko -->
                 </div>
             </div>
             <!-- Search Results End-->

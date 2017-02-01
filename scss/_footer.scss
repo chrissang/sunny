@@ -392,6 +392,22 @@ footer#site-footer .prefooter hr{
 			.copyContainer {
 				text-align: center;
 			}
+			a {
+				img {
+					max-width: 100px;
+				}
+			}
+		}
+	}
+}
+@media #{$large-only}{
+	.prefooter {
+		.ourContainer {
+			a {
+				img {
+					max-width: 120px;
+				}
+			}
 		}
 	}
 }

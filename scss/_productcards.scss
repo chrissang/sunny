@@ -1,7 +1,7 @@
 ul.products{
 	margin:0 -.375rem;
 	@media #{$xlarge-up} {
-		margin:0 -1rem;
+		margin:0 0 0 -1rem;
 	}
 }
 ul.products li{

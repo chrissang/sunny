@@ -21,7 +21,7 @@
 }
 @font-face {
 	font-family: 'UncommonGoods';
-	src:url('/fonts/ug_icon_font-102116.woff?-dj7pr2') format('woff');
+	src:url('/fonts/ug_icon_font-011917.woff?-dj7pr2') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -136,7 +136,25 @@
  50% { transform:rotateZ(180deg)}
 100% { transform:rotateZ(360deg)}
 }
+.icon-close:hover{
+    cursor: pointer;
+}
 
+.icon-arrow_right:before {
+	content: "\2f";
+}
+
+.icon-arrow_down:before {
+	content: "\5b";
+}
+
+.icon-arrow_left:before {
+	content: "\5f";
+}
+
+.icon-arrow_up:before {
+	content: "\3b";
+}
 
 .icon-caret_right:before {
 	content: "\30";
