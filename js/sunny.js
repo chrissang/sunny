@@ -361,42 +361,48 @@ ko.components.register('products', {
 
                 <a data-reveal-id="sunnyQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>
 
-                <!-- ko vsible: displayDownVoteSelected() -->
-                    <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReason slideUp' : 'downVoteReason' }">
-                        <ul>
-                            <li>
-                                <input type="radio" data-bind="attr:{ 'name': 'downVoteReason1_'+ itemId(), 'id': 'downVoteReason1_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                <label data-bind="attr:{ for: 'downVoteReason1_'+ itemId() }">I don't like this item</label>
-                            </li>
-                            <li>
-                                <input type="radio" data-bind="attr:{ 'name': 'downVoteReason2_'+ itemId(), 'id': 'downVoteReason2_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                <label data-bind="attr:{ for: 'downVoteReason2_'+ itemId() }">I don't like this style</label>
-                            </li>
-                            <li>
-                                <input type="radio" data-bind="attr:{ 'name': 'downVoteReason3_'+ itemId(), 'id': 'downVoteReason3_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                <label data-bind="attr:{ for: 'downVoteReason3_'+ itemId() }">Don't show me kitchen & bar</label>
-                            </li>
-                            <li>
-                                <input type="radio" data-bind="attr:{ 'name': 'downVoteReason4_'+ itemId(), 'id': 'downVoteReason4_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                <label data-bind="attr:{ for: 'downVoteReason4_'+ itemId() }">Don't show me dishware</label>
-                            </li>
-                            <li>
-                                <input type="radio" data-bind="attr:{ 'name': 'downVoteReason5_'+ itemId(), 'id': 'downVoteReason5_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                <label data-bind="attr:{ for: 'downVoteReason5_'+ itemId() }">Other reason</label>
-                            </li>
-                        </ul>
 
-                        <a data-bind="event:{ click: exitDownVoteReason.bind($data) }" class="exitDownVoteReason">
-                            <span class="icon-caret_down icon-md right"></span>
-                        </a>
+
+
+                    <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReasonContainer border' : 'downVoteReasonContainer' }">
+                        <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReason slideUp' : 'downVoteReason' }">
+                            <ul>
+                                <li>
+                                    <input type="radio" data-bind="attr:{ 'name': 'downVoteReason1_'+ itemId(), 'id': 'downVoteReason1_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
+                                    <label data-bind="attr:{ for: 'downVoteReason1_'+ itemId() }">I don't like this item</label>
+                                </li>
+                                <li>
+                                    <input type="radio" data-bind="attr:{ 'name': 'downVoteReason2_'+ itemId(), 'id': 'downVoteReason2_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
+                                    <label data-bind="attr:{ for: 'downVoteReason2_'+ itemId() }">I don't like this style</label>
+                                </li>
+                                <li>
+                                    <input type="radio" data-bind="attr:{ 'name': 'downVoteReason3_'+ itemId(), 'id': 'downVoteReason3_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
+                                    <label data-bind="attr:{ for: 'downVoteReason3_'+ itemId() }">Don't show me kitchen & bar</label>
+                                </li>
+                                <li>
+                                    <input type="radio" data-bind="attr:{ 'name': 'downVoteReason4_'+ itemId(), 'id': 'downVoteReason4_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
+                                    <label data-bind="attr:{ for: 'downVoteReason4_'+ itemId() }">Don't show me dishware</label>
+                                </li>
+                                <li>
+                                    <input type="radio" data-bind="attr:{ 'name': 'downVoteReason5_'+ itemId(), 'id': 'downVoteReason5_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
+                                    <label data-bind="attr:{ for: 'downVoteReason5_'+ itemId() }">Other reason</label>
+                                </li>
+                            </ul>
+
+                            <a data-bind="event:{ click: exitDownVoteReason.bind($data) }" class="exitDownVoteReason">
+                                <span class="icon-caret_down icon-md right"></span>
+                            </a>
+                        </div>
                     </div>
-                <!-- /ko -->
+
+
+
 
                 <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'votingContainer text-center upvoted' : 'votingContainer text-center' }">
                     <!-- ko if: !displayDownVoteSelected() -->
                         <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'innerCircle outterCircle upvoted' : 'outterCircle' }">
                             <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'innerCircle upvoted' : 'innerCircle' }">
-                                <a data-bind="event:{ click: upVote.bind($data) }"><span class="icon-star icon-lg"></span></a>
+                                <a data-bind="event:{ click: upVote.bind($data) }"><span class="icon-star"></span></a>
                             </div>
                         </div>
                     <!-- /ko -->
@@ -409,6 +415,7 @@ ko.components.register('products', {
                 <!-- /ko -->
 
             </div>
+
             <div data-bind="attr: { class: displayUpVoteSelected() ? 'copy borderAdded upvoted' : displayDownVoteSelected() ? 'copy borderAdded downvoted' : 'copy' }">
                 <h4>
                     <a class="a-secondary" data-bind="attr: { href: productURL() }">

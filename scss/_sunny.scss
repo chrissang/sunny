@@ -159,212 +159,233 @@
 	}
 	#sunnyResults {
 		margin-top: 9rem;
-		.sunnySearchResults {
-			ul {
-				li {
-					position: relative;
-					padding: 0 0.5rem;
-				}
-			}
-			#likeMoreIdeas {
-				margin: 2rem 0;
-			}
-			.product {
-				max-width: none;
-				.responsively-lazy:not(img){
-					position:relative;
-					height:0;
-					margin-bottom: 0;
-				}
-				.responsively-lazy:not(img) img{
-					position:absolute;
-					width:100%;
-					height: auto;
-					&.voteBtns {
-						position: relative;
-						width: auto;
-						height: 100%;
-					}
-				}
-				.icon-close {
-					position: absolute;
- 					top: 0;
- 					right: 0;
- 					z-index: 100;
- 					padding: .5rem;
-				}
-				.loadingSvg {
-					position: absolute;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%,-50%);
-				}
-				.votingContainer {
-					position: absolute;
-					bottom: 0;
-					width: 100%;
-					z-index: 100;
-					margin-bottom: 1rem;
-					&.upvoted {
-						margin-bottom: calc(1rem + 10px);
-					}
-					.innerCircle {
-					    height: 3.25rem;
-					    width: 3.25rem;
-						background: $white;
-					    border: 1px solid $inactive;
-						border-radius: 3.25rem;
-						padding: 2px;
-					    box-sizing: border-box;
-						box-shadow: 0 0 6px -1px $secondary;
-						.icon-star {
-							margin-top: .85rem;
-							margin-left: .25rem;
-							color: $inactive;
-						}
-						&.upvoted {
-							background-color: #F4C714;
-							.icon-star {
-								color: $white;
-							}
-						}
-					}
-					.outterCircle+.upvote::before {
-						transition: all .25s;
-						transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
-					}
-
-					.outterCircle {
-						display: inline-block;
-						&.upvoted {
-							width: 3.625rem;
-						    height: 3.625rem;
-						    box-shadow: 0 0 6px -1px $secondary;
-							background: $white;
-						}
-					}
-					&.animateUp {
-					    transform: translateY(0);
-					    -webkit-transform: translateY(0);
-					    -moz-transform: translateY(0);
-					    -ms-transform: translateY(0);
-					    -webkit-transition: 0.5s ease-in-out;
-					    -moz-transition: 0.5s ease-in-out;
-					    transition: 0.5s ease-in-out;
-					}
-					&.animateDown {
-					    transform: translateY(calc((100% * 5) - 100%));
-					    -webkit-transform: translateY(calc((100% * 5) - 100%));
-					    -moz-transform: translateY(calc((100% * 5) - 100%));
-					    -ms-transform: translateY(calc((100% * 5) - 100%));
-					    -webkit-transition: 0.5s ease-in-out;
-					    -moz-transition: 0.5s ease-in-out;
-					    transition: 0.5s ease-in-out;
-					}
-				}
-				.preventReflow {
-					overflow: hidden;
-					padding-bottom: 100%;
-				}
-				.upvotedBorder {
-					border: 10px solid #FEEFC7;
-				}
-				// .downvotedBorder {
-				// 	border: 10px solid $inactive;
-				// }
-				.copy {
-					min-height: 60px;
-					&.borderAdded {
-						padding-left: 10px;
-						h4 {
-							margin-top: 0;
-						}
-					}
-					&.upvoted {
-						background-color: #FEEFC7;
-					}
-					&.downvoted {
-						background-color: $offwhite-light-mix;
-					}
-				}
-				.tryDownVoteingProTip {
-					background: #025A58;
-					color: #fff;
-					padding: .75rem 1rem;
-					border-radius: 3px;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					width: 100%;
-					height: 6.5rem;
-					margin: 0;
-					box-shadow: 2px 2px 2px #888888;
-					z-index: 99;
-					transform: translateY(35%);
-					opacity: 0;
-					-webkit-transition: 0.3s ease-in-out;
-					-moz-transition: 0.3s ease-in-out;
-					transition: 0.3s ease-in-out;
-					&.animateDown {
-						opacity: 1;
-						transform: translateY(45%);
-						-webkit-transform: translateY(45%);
-						-moz-transform: translateY(45%);
-						-ms-transform: translateY(45%);
-						-webkit-transition: 0.5s ease-in-out;
-						-moz-transition: 0.5s ease-in-out;
-						transition: 0.5s ease-in-out;
-					}
-					p {
-						color: #fff !important;
-						margin: 0;
-					}
-				}
-				.downVoteReason {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					background-color: #ffffff;
-					opacity: 0.9;
-					border: 10px solid $offwhite-light-mix;
-					z-index: 100;
-					transform: translateY(100%);
-					-webkit-transition: 0.5s ease-in-out;
-					-moz-transition: 0.5s ease-in-out;
-					transition: 0.5s ease-in-out;
-					&.slideUp {
-						transform: translateY(0%);
-						-webkit-transform: translateY(0%);
-						-moz-transform: translateY(0%);
-						-ms-transform: translateY(0%);
-						-webkit-transition: 0.5s ease-in-out;
-						-moz-transition: 0.5s ease-in-out;
-						transition: 0.5s ease-in-out;
-					}
-					.icon-close {
-						padding: 1rem;
-					}
-					ul {
-						margin: 0;
-						list-style-type: none;
-						padding: 2.5rem 0 2.5rem 1rem;
-						li {
-							padding: 0;
-						}
-					}
-					input[type="radio"] + label:not(.error), input[type="radio"] + label.error + label, input[type="radio"] + label:not(.invalid), input[type="radio"] + label.invalid + label, input[type="checkbox"] + label:not(.error), input[type="checkbox"] + label.error + label, input[type="checkbox"] + label:not(.invalid), input[type="checkbox"] + label.invalid + label {
-					    margin: 0 .75rem .5rem 0;
-					}
-				}
-				.exitDownVoteReason {
-					position: absolute;
-					top: 1rem;
-					right: 1rem;
-					z-index: 101;
-				}
-			}
-		}
 	}
+    .sunnySearchResults {
+        ul {
+            li {
+                position: relative;
+                padding: 0 0.5rem;
+            }
+        }
+        #likeMoreIdeas {
+            margin: 2rem 0;
+        }
+        .product {
+            max-width: none;
+            .responsively-lazy:not(img){
+                position:relative;
+                height:0;
+                margin-bottom: 0;
+            }
+            .responsively-lazy:not(img) img{
+                position:absolute;
+                width:100%;
+                height: auto;
+                z-index: 99;
+                &.voteBtns {
+                    position: relative;
+                    width: auto;
+                    height: 100%;
+                }
+            }
+            .icon-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 100;
+                padding: .5rem;
+            }
+            .loadingSvg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .votingContainer {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                z-index: 100;
+                margin-bottom: 1rem;
+                &.upvoted {
+                    margin-bottom: calc(1rem + 10px);
+                }
+                .icon-star {
+                    font-size: 1.125rem;
+                }
+                .innerCircle {
+                    height: 3.25rem;
+                    width: 3.25rem;
+                    background: $white;
+                    border: 1px solid $inactive;
+                    border-radius: 3.25rem;
+                    padding: 2px;
+                    box-sizing: border-box;
+                    box-shadow: 0 0 6px -1px $secondary;
+                    &:hover {
+                        border: 2px solid #F4C714;
+                    }
+                    .icon-star {
+                        margin-top: .85rem;
+                        margin-left: .25rem;
+                        color: $inactive;
+                    }
+                    &.upvoted {
+                        background-color: #F4C714;
+                        .icon-star {
+                            color: $white;
+                        }
+                        &:hover {
+                            border: 1px solid $inactive;
+                        }
+                    }
+                }
+                .outterCircle+.upvote::before {
+                    transition: all .25s;
+                    transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+                }
+                .outterCircle {
+                    display: inline-block;
+                    &.upvoted {
+                        width: 3.625rem;
+                        height: 3.625rem;
+                        box-shadow: 0 0 6px -1px $secondary;
+                        background: $white;
+                    }
+                }
+                // &.animateUp {
+                //     transform: translateY(0);
+                //     -webkit-transform: translateY(0);
+                //     -moz-transform: translateY(0);
+                //     -ms-transform: translateY(0);
+                //     -webkit-transition: 0.5s ease-in-out;
+                //     -moz-transition: 0.5s ease-in-out;
+                //     transition: 0.5s ease-in-out;
+                // }
+                // &.animateDown {
+                //     transform: translateY(calc((100% * 5) - 100%));
+                //     -webkit-transform: translateY(calc((100% * 5) - 100%));
+                //     -moz-transform: translateY(calc((100% * 5) - 100%));
+                //     -ms-transform: translateY(calc((100% * 5) - 100%));
+                //     -webkit-transition: 0.5s ease-in-out;
+                //     -moz-transition: 0.5s ease-in-out;
+                //     transition: 0.5s ease-in-out;
+                // }
+            }
+            .preventReflow {
+                // overflow: hidden;
+                padding-bottom: 100%;
+            }
+            .upvotedBorder {
+                border: 10px solid #FEEFC7;
+            }
+            .copy {
+                min-height: 60px;
+                padding-bottom: .5rem;
+                padding-top: 10px;
+                &.borderAdded {
+                    padding-left: 10px;
+                    h4 {
+                        margin-top: 0;
+                    }
+                }
+                &.upvoted {
+                    padding-top: 0px;
+                    background-color: #FEEFC7;
+                }
+                &.downvoted {
+                    background-color: $offwhite-light-mix;
+                }
+            }
+            .tryDownVoteingProTip {
+                background: #025A58;
+                color: #fff;
+                padding: .75rem 1rem;
+                border-radius: 3px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 6.5rem;
+                margin: 0;
+                box-shadow: 2px 2px 2px #888888;
+                z-index: 99;
+                transform: translateY(35%);
+                opacity: 0;
+                -webkit-transition: 0.3s ease-in-out;
+                -moz-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                &.animateDown {
+                    opacity: 1;
+                    z-index: 101;
+                    transform: translateY(45%);
+                    -webkit-transform: translateY(45%);
+                    -moz-transform: translateY(45%);
+                    -ms-transform: translateY(45%);
+                    -webkit-transition: 0.5s ease-in-out;
+                    -moz-transition: 0.5s ease-in-out;
+                    transition: 0.5s ease-in-out;
+                }
+                p {
+                    color: #fff !important;
+                    margin: 0;
+                }
+            }
+            .downVoteReasonContainer {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                &.border {
+                    border: 10px solid $offwhite-light-mix;
+                    z-index: 99;
+                }
+                .downVoteReason {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #ffffff;
+                    opacity: 0.9;
+                    z-index: 100;
+                    transform: translateY(100%);
+                    -webkit-transition: 0.5s ease-in-out;
+                    -moz-transition: 0.5s ease-in-out;
+                    transition: 0.5s ease-in-out;
+                    &.slideUp {
+                        transform: translateY(0%);
+                        -webkit-transform: translateY(0%);
+                        -moz-transform: translateY(0%);
+                        -ms-transform: translateY(0%);
+                        -webkit-transition: 0.5s ease-in-out;
+                        -moz-transition: 0.5s ease-in-out;
+                        transition: 0.5s ease-in-out;
+                    }
+                    .icon-close {
+                        padding: 1rem;
+                    }
+                    ul {
+                        margin: 0;
+                        list-style-type: none;
+                        padding: 2.5rem 0 2.5rem 1rem;
+                        li {
+                            padding: 0;
+                        }
+                    }
+                    input[type="radio"] + label:not(.error), input[type="radio"] + label.error + label, input[type="radio"] + label:not(.invalid), input[type="radio"] + label.invalid + label, input[type="checkbox"] + label:not(.error), input[type="checkbox"] + label.error + label, input[type="checkbox"] + label:not(.invalid), input[type="checkbox"] + label.invalid + label {
+                        margin: 0 .75rem .5rem 0;
+                    }
+                }
+            }
+            .exitDownVoteReason {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                z-index: 101;
+            }
+        }
+    }
 	.upvotedResultsContainer {
 		margin-top: 7rem;
 		.container {
@@ -524,7 +545,39 @@
 				}
 			}
 		}
-	}
+
+        .sunnySearchResults {
+            .product {
+                .votingContainer {
+                    margin-bottom: -1.375rem;
+                    &.upvoted {
+                        margin-bottom: -1.375rem;
+                    }
+                    .icon-star {
+                        font-size: .875rem;
+                    }
+                    .innerCircle {
+                        height: 2.75rem;
+                        width: 2.75rem;
+                    }
+                    .outterCircle {
+                        &.upvoted {
+                            width: 3.125rem;
+                            height: 3.125rem;
+                        }
+                    }
+                }
+                .copy {
+                    // padding-top: 1.375rem;
+                }
+            }
+        }
+
+    }
+}
+
+//medium screen
+@media (min-width: 40.063em) {
 }
 
 //large screen
