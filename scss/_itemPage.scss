@@ -43,6 +43,12 @@ main.uncommonCollection .unco{
 		margin-bottom:1.125rem;
 	}
 }
+#viewLifeSize{
+    display:none;
+    @media #{$medium-up} {
+        display: inline;
+    }
+}
 /* the maker */
 #artistBlock{
 	padding:.5rem .75rem;
@@ -480,8 +486,7 @@ div[id^='personalize_']{
 		font-family: noto sans;
 		font-size: 0.875rem!important;
 	}	
-}
-.close_modal{
+    & .close_modal{
 	position: absolute;
 	right: -1rem;
 	top: 0px;
@@ -490,13 +495,12 @@ div[id^='personalize_']{
 	top: -3rem;
 	line-height:4rem;
 	z-index:9;
-	&:hover{
-		cursor:pointer;
-	}
-	@media #{$large-up} {
-		right:-1.75rem;
-	}
+	   @media #{$large-up} {
+           right:-1.75rem;
+	   }
+    }
 }
+
 /* */
 
 
@@ -667,4 +671,21 @@ iframe#player{
 		top: 0;
 		background: linear-gradient(to right bottom, $active-light-mix 50%, transparent 50%)
 	}
+}
+
+.comingSoon{
+    padding:1.5rem;
+    background-color:$active-light-mix;
+    margin:-.75rem -.375rem .75rem;
+    p{
+        color:#FFF;
+        text-transform: uppercase;
+        letter-spacing:.25em;
+    }
+    h2{
+        margin-bottom: 0;
+    }
+    @media #{$medium-up} {
+        margin:-.75rem 0 1.125rem;
+    }
 }

@@ -171,9 +171,9 @@ button, input[type="button"], .button, input[type="submit"]{
 a.button{
 	padding-top:0!important;
 	padding-bottom:0!important;
-	line-height:$button-medium-size;
+    line-height:calc(#{$button-small-size} - 2px);
 	@media #{$medium-up} {
-		line-height:$button-small-size;
+        line-height:calc(#{$button-medium-size} - 2px);
 	}
 }
 .sqbtt{

@@ -209,7 +209,7 @@ blockquote::after{
 	}
 	*/
 }
-input[type="radio"]+label, input[type="checkbox"]+label, .moveTo label{
+input[type="radio"]+label, input[type="checkbox"]+label{
 	color:$primary;
 	font-family:$font-family-sans-serif;
 	font-size:rem-calc(14);
@@ -577,6 +577,10 @@ table thead tr th{
 	border-bottom:1px solid $secondary;
 	margin-left:0;
 }
+.accordion .accordion-navigation,
+.accordion dd{
+    border-bottom:1px solid $offwhite;
+}
 .accordion .accordion-navigation > a,
 .accordion dd > a{
 	@extend h2;
@@ -584,7 +588,6 @@ table thead tr th{
 	margin:0;
 	padding:1.5rem 0;
 	background-color:transparent;
-	border-bottom:1px solid $offwhite!important;
 	&::after{
 		font-family:"UncommonGoods";
 		content:"1";
@@ -604,6 +607,10 @@ table thead tr th{
 .accordion .accordion-navigation.active > a::after,
 .accordion dd.active > a::after{
 	content:"3";
+}
+.accordion .accordion-navigation > .content,
+.accordion dd > .content{
+    padding-bottom:1.5rem;
 }
 input[type="checkbox"].readmore, input[type="checkbox"].readmore+label{
 	display:none;

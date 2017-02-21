@@ -138,7 +138,9 @@ article.product .icon-loveIt{
 		top: 0;
 		background: linear-gradient(to right bottom, $active-light-mix 50%, transparent 50%)
 	}
-
+.comingsoonFlag{
+    @extend .customFlag;
+}
 /*
 .newFlag+.customFlag,
 .stockFlag+.customFlag{
