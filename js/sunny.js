@@ -607,7 +607,7 @@ ko.components.register('sunny-results-container', {
                     <div class="sunnyHeader">
                         <div data-bind="attr: { class: suggestionsBtn() ? 'suggestionsContainer bkgColorOn' : 'suggestionsContainer' }">
 
-                            <div data-bind="attr: { class: isUpVoteMessage1() ? 'upvotePrompt animateIn' : 'upvotePrompt animateOut' }">
+                            <div data-bind="attr: { class: isUpVoteMessage1() ? 'upvotePrompt suggestions animateIn' : 'upvotePrompt suggestions animateOut' }">
                                 <a data-bind="event:{ click: closeUpVoteMessage1.bind($data) }">
                                     <p data-bind="text: upvoteMessage1(), attr: { class: isUpVoteMessage1() ? 'intro-text animateIn' : 'intro-text' }"></p>
                                 </a>
@@ -622,7 +622,7 @@ ko.components.register('sunny-results-container', {
                                         <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'count animateIn' : ( upVotedResults().length >= 1 ? 'count updateColor' : 'count')}"></div>
                                     </div>
 
-                                    <h2 data-bind="attr: { 'data-suggestions': totalGiftIdeas() }" class="circleLeft">suggestions</h2>
+                                    <h2 class="circleLeft">suggestions</h2>
                                 </label>
                             </div>
                         </div>
@@ -636,7 +636,7 @@ ko.components.register('sunny-results-container', {
                             <div class="superCheckCounterBtn">
                                 <input data-bind="checked: isGiftsYouLikeBtn, event:{ click: toggleGiftsYouLike() }" id="giftsSaved" type="checkbox">
                                 <label class="super-check counter" for="giftsSaved">
-                                    <h2 data-bind="text: 'gifts you like', attr: { 'data-suggestions': upVotedResults().length }" class="circleRight"></h2>
+                                    <h2 data-bind="text: 'gifts you like'" class="circleRight"></h2>
 
                                     <!-- ko if: upVotedResults().length > 0 -->
                                         <div data-bind="attr: { class: isUpVoteMessage2() ? 'giftsYouLikeCircleOuter fill' : 'giftsYouLikeCircleOuter' }">

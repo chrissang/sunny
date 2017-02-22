@@ -154,52 +154,11 @@
                                 align-items: center;
                                 height: 44px;
                                 &.circleLeft {
-                                    // width: 190px;
-                                    // padding-right: 1rem;
                                     padding-left: 46px;
-                                    // &::before {
-                                    //     content: '';
-                                    //     font-family: "noto sans";
-                                    //     font-size: .875rem;
-                                    //     display: inline-block;
-                                    //     width: 32px;
-                                    //     height: 32px;
-                                    //     position: relative;
-                                    //     padding: .5rem 0;
-                                    //     margin-right: 6px;
-                                    //     text-align: center;
-                                    //     border: 1px solid $white;
-                                    //     border-radius: 32px;
-                                    //     -moz-border-radius: 32px;
-                                    //     -webkit-border-radius: 32px;
-                                    // }
-                                    // &[data-suggestions]:before {
-                                    //     content: attr(data-suggestions);
-                                    // }
                                 }
                                 &.circleRight {
-                                    // padding-left: 1rem;
                                     padding-right: 46px;
                                     justify-content: flex-end;
-                                    // &::after {
-                                    //     content: '';
-                                    //     font-family: "noto sans";
-                                    //     font-size: .875rem;
-                                    //     display: inline-block;
-                                    //     width: 32px;
-                                    //     height: 32px;
-                                    //     position: relative;
-                                    //     padding: .5rem 0;
-                                    //     margin-left: 6px;
-                                    //     text-align: center;
-                                    //     border: 1px solid $white;
-                                    //     border-radius: 32px;
-                                    //     -moz-border-radius: 32px;
-                                    //     -webkit-border-radius: 32px;
-                                    // }
-                                    // &[data-suggestions]:after {
-                                    //     content: attr(data-suggestions);
-                                    // }
                                 }
                             }
                             .suggestionsCircleOuter {
@@ -340,7 +299,7 @@
                                     width: 32px;
                                     height: 32px;
                                     border: 1px solid $white;
-                                    background-color: transparent;
+                                    background-color: #3E69BC;
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
@@ -359,7 +318,6 @@
                                         -ms-transform: scale(0);
                                     }
                                     &.animateIn {
-                                        background-color: #3E69BC;
                                         transform: scale(0);
                                         -webkit-transform: scale(0);
                                         -moz-transform: scale(0);
@@ -849,53 +807,25 @@
                                     margin: 0;
                                     flex-direction: column;
                                     align-items: flex-start;
+                                    height: auto;
                                     &.circleLeft {
                                         padding: 0;
-                                        width: auto;
-                                        // &::before {
-                                        //     left: 50%;
-                                        //     transform: translateX(-50%);
-                                        //     margin: 0;
-                                        //     width: 28px;
-                                        //     height: 28px;
-                                        //     padding: .25rem 0;
-                                        //     border-radius: 28px;
-                                        //     -moz-border-radius: 28px;
-                                        //     -webkit-border-radius: 28px;
-                                        // }
+                                        padding-top: 1.75rem;
                                     }
                                     &.circleRight {
                                         padding: 0;
-                                        &::after {
-                                            display: none;
-                                        }
-                                        &::before {
-                                            content: '';
-                                            font-family: "noto sans";
-                                            font-size: .875rem;
-                                            display: inline-block;
-                                            width: 28px;
-                                            height: 28px;
-                                            position: relative;
-                                            padding: .25rem 0;
-                                            margin-right: 6px;
-                                            text-align: center;
-                                            border: 1px solid $white;
-                                            border-radius: 28px;
-                                            -moz-border-radius: 28px;
-                                            -webkit-border-radius: 28px;
-                                            left: 50%;
-                                            transform: translateX(-50%);
-                                            margin: 0;
-                                        }
-                                        &[data-suggestions]:before {
-                                            content: attr(data-suggestions);
-                                        }
+                                        padding-top: 1.75rem;
                                     }
                                 }
                                 .suggestionsCircleOuter {
                                     left: 50%;
-                                    padding-top: 30%;
+                                    transform: translate(-50%, -80%);
+                                    -webkit-transform: translate(-50%, -80%);
+                                    -moz-transform: translate(-50%, -80%);
+                                    -ms-transform: translate(-50%, -80%);
+                                }
+                                .giftsYouLikeCircleOuter {
+                                    left: 50%;
                                     transform: translate(-50%, -80%);
                                     -webkit-transform: translate(-50%, -80%);
                                     -moz-transform: translate(-50%, -80%);
@@ -912,11 +842,26 @@
                 }
                 .upvotePrompt {
                     width: 100%;
-                    right: 0;
                     p {
                         padding-left: 15px;
                         padding-right: 15px;
                         text-align: center;
+                    }
+                    &.suggestions {
+                        right: 0;
+                    }
+                    &.giftsYouLike {
+                        left: 0;
+                    }
+                    &.animateOut {
+                        border-radius: 0;
+                        transform: scaleY(0);
+                        -webkit-transform: scaleY(0);
+                        -moz-transform: scaleY(0);
+                        -ms-transform: scaleY(0);
+                        -webkit-transition: 0.5s ease-in-out;
+                        -moz-transition: 0.5s ease-in-out;
+                        transition: 0.5s ease-in-out;
                     }
                 }
             }
