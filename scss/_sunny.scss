@@ -1,3 +1,40 @@
+//UG condensed header
+.fullWidth {
+    max-width: none;
+}
+.ugCondensedHeaderContainer {
+    background-color: $white;
+    padding: 0;
+    .ugHeader {
+        display: flex;
+        align-items: center;
+        height: 2.75rem;
+        padding: .5rem 1rem;
+        .logo-container {
+            background-color: $white;
+            display: inline-block;
+            margin-left: 0;
+            svg {
+                max-height: 2rem;
+            }
+        }
+        .icon-cart {
+            padding-left: 1rem;
+        }
+        .checkoutCopy {
+            padding-right: 1rem;
+        }
+    }
+}
+
+.preventScrollHtml {
+    height: 100%;
+    overflow: hidden;
+}
+.preventScrollBounceBody {
+    height: 100%;
+    overflow: auto;
+}
 // Form page styles
 #sunnyFormBkg{
     background-color: #3D69BC;
@@ -41,7 +78,7 @@
     #paginationDots {
         position: absolute;
         left: 0;
-        top: 0;
+        top: calc(44px + 3rem);
         display: flex;
         flex-direction: column;
         margin-left: 2rem;
@@ -73,29 +110,6 @@
     			display: flex;
         		align-items: center;
         		padding: 0 1rem;
-    		}
-            .ugHeaderContainer {
-                background-color: $white;
-                .ugHeader {
-                    display: flex;
-                    align-items: center;
-                    height: 2.75rem;
-                    padding: .5rem 1rem;
-                }
-            }
-    		.logo-container {
-    			background-color: $white;
-    			display: inline-block;
-    			margin-left: 0;
-                svg {
-                    max-height: 2rem;
-                }
-    		}
-    		.icon-cart {
-    			padding-left: 1rem;
-    		}
-    		.checkoutCopy {
-    			padding-right: 1rem;
     		}
     		.sunnyHeader {
                 height: 5rem;
@@ -464,9 +478,6 @@
                 padding: 0 0.5rem;
             }
         }
-        #likeMoreIdeas {
-            margin: 2rem 0;
-        }
         .product {
             max-width: none;
             .responsively-lazy:not(img){
@@ -620,6 +631,14 @@
                 z-index: 101;
             }
         }
+        .gate {
+            // margin: 2rem 0;
+            height: 90px;
+            border-top: 1px solid #F4C714;
+            p {
+                padding-top: 33px;
+            }
+        }
     }
     .upvotedResultsContainer {
 		margin-top: 7rem;
@@ -657,65 +676,132 @@
 		}
 	}
 	.animated {
-	  -webkit-animation-duration: 1s;
-	  animation-duration: 1s;
+	  -webkit-animation-duration: 1.5s;
+	  animation-duration: 1.5s;
 	  -webkit-animation-fill-mode: both;
 	  animation-fill-mode: both;
 	}
-	@-webkit-keyframes bounce {
-	  from, 20%, 53%, 80%, to {
-	    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	    -webkit-transform: translate3d(0,0,0);
-	    transform: translate3d(0,0,0);
-	  }
+    @-webkit-keyframes bounce {
+      0% {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: ccubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+      }
 
-	  40%, 43% {
-	    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    -webkit-transform: translate3d(0, -30px, 0);
-	    transform: translate3d(0, -30px, 0);
-	  }
+      20% {
+        -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        -webkit-transform: translate3d(0, -100px, 0);
+        transform: translate3d(0, -100px, 0);
+      }
 
-	  70% {
-	    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    -webkit-transform: translate3d(0, -15px, 0);
-	    transform: translate3d(0, -15px, 0);
-	  }
+      100% {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    @-moz-keyframes bounce {
+        0% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: ccubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+        }
 
-	  90% {
-	    -webkit-transform: translate3d(0,-4px,0);
-	    transform: translate3d(0,-4px,0);
-	  }
-	}
-	@keyframes bounce {
-	  from, 20%, 53%, 80%, to {
-	    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-	    -webkit-transform: translate3d(0,0,0);
-	    transform: translate3d(0,0,0);
-	  }
+        20% {
+          -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          -webkit-transform: translate3d(0, -100px, 0);
+          transform: translate3d(0, -100px, 0);
+        }
 
-	  40%, 43% {
-	    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    -webkit-transform: translate3d(0, -30px, 0);
-	    transform: translate3d(0, -30px, 0);
-	  }
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+    }
+    @keyframes bounce {
+        0% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+        }
 
-	  70% {
-	    -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-	    -webkit-transform: translate3d(0, -15px, 0);
-	    transform: translate3d(0, -15px, 0);
-	  }
+        20% {
+          -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          -webkit-transform: translate3d(0, -100px, 0);
+          transform: translate3d(0, -100px, 0);
+        }
 
-	  90% {
-	    -webkit-transform: translate3d(0,-4px,0);
-	    transform: translate3d(0,-4px,0);
-	  }
-	}
+        100% {
+          -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+
+    }
+	// @-webkit-keyframes bounce {
+	//   from, 20%, 53%, 80%, to {
+	//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	//     -webkit-transform: translate3d(0,0,0);
+	//     transform: translate3d(0,0,0);
+	//   }
+    //
+	//   40%, 43% {
+	//     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     -webkit-transform: translate3d(0, -30px, 0);
+	//     transform: translate3d(0, -30px, 0);
+	//   }
+    //
+	//   70% {
+	//     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     -webkit-transform: translate3d(0, -15px, 0);
+	//     transform: translate3d(0, -15px, 0);
+	//   }
+    //
+	//   90% {
+	//     -webkit-transform: translate3d(0,-4px,0);
+	//     transform: translate3d(0,-4px,0);
+	//   }
+	// }
+	// @keyframes bounce {
+	//   from, 20%, 53%, 80%, to {
+	//     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	//     animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	//     -webkit-transform: translate3d(0,0,0);
+	//     transform: translate3d(0,0,0);
+	//   }
+    //
+	//   40%, 43% {
+	//     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     -webkit-transform: translate3d(0, -30px, 0);
+	//     transform: translate3d(0, -30px, 0);
+	//   }
+    //
+	//   70% {
+	//     -webkit-animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+	//     -webkit-transform: translate3d(0, -15px, 0);
+	//     transform: translate3d(0, -15px, 0);
+	//   }
+    //
+	//   90% {
+	//     -webkit-transform: translate3d(0,-4px,0);
+	//     transform: translate3d(0,-4px,0);
+	//   }
+	// }
 	.bounce {
 	  -webkit-animation-name: bounce;
 	  animation-name: bounce;
@@ -724,6 +810,7 @@
 	}
 }
 
+// quickView
 #sunnyQuickViewModal {
 	.votingContainer {
 		padding-bottom: 3rem;
