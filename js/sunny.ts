@@ -584,19 +584,50 @@ ko.components.register('sunny-results-container', {
                     }
 
                     if (self.isInitItemsLoaded) {
-                        $(window).on("scroll.ko.scrollHandler", function () {
-                            if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
-                                //console.log('scrolled to bottom ',$(window).scrollTop());
-                                if (self.isAllowedMoreItems()) {
-                                    viewModel.addItems(24);
-                                } else {
-                                    likeMoreItems();
-                                }
-                            }
-                        })
+//***********************************************************************
+                        // var lastScrollTop = 0;
+                        //    $(window).on('scroll', function() {
+                        //        var st = $(this).scrollTop();
+                        //        if(st < lastScrollTop) {
+                        //            console.log('up 1');
+                        //        }
+                        //        else {
+                        //            console.log('down 1');
+                        //        }
+                        //        lastScrollTop = st;
+                        //    });
+//***********************************************************************
+                        var lastScrollTop = 0;
+                       $(window).on('scroll', function() {
+                           var st = $(this).scrollTop();
+                           if(st < lastScrollTop) {
+                               //console.log('up 1 ',self.isDisplayGateCopy());
+                               self.isDisplayGateCopy(false);
+                           }
+                           else {
+                               //console.log('down 1');
+                               if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
+                                   if (self.isAllowedMoreItems()) {
+                                       viewModel.addItems(24);
+                                   } else {
+                                       animateGateIn();
+                                   }
+                               }
+                           }
+                           lastScrollTop = st;
+                       });
+                        // $(window).on("scroll.ko.scrollHandler", function () {
+                        //     if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
+                        //         if (self.isAllowedMoreItems()) {
+                        //             viewModel.addItems(24);
+                        //         } else {
+                        //             animateGateIn();
+                        //         }
+                        //     }
+                        // })
                     }
 
-                    function likeMoreItems() {
+                    function animateGateIn() {
                         // bounce animated
                         $.fn.extend({
                             animateCss: function (animationName) {
@@ -688,24 +719,21 @@ ko.components.register('sunny-results-container', {
 
             <price-filiter params='parent: $data'></price-filiter>
 
-            <div class="small-12 small-centered columns">
+            <div class="small-10 small-centered columns">
                 <ul id="results" class="small-block-grid-2 medium-block-grid-3" data-bind="foreach: displaySearchResults()">
                     <!-- ko component: {name: 'products', params: { data: $data, parent: $parent  } } --><!-- /ko -->
                 </ul>
+            </div>
 
-                <div class="row" id="gate">
-                    <div class="small-12 text-center columns">
-                        <div data-bind="attr: { class: isDisplayGateCopy() ? 'gate unhide' : 'gate' }">
-                            <div data-bind="attr: { class: isDisplayGateCopy() ? 'animateGate animate' : 'animateGate'}">
-                                <p class='call-out-large'>"For more ideas, star a few items!"</p>
-                            </div>
-                        </div>
+            <div id="gate" class="small-12 text-center columns fullWidth">
+                <div data-bind="attr: { class: isDisplayGateCopy() ? 'gate unhide' : 'gate' }">
+                    <div data-bind="attr: { class: isDisplayGateCopy() ? 'animateGate animate' : 'animateGate'}">
+                        <p class='call-out-large'>"For more ideas, star a few items!"</p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Search Results End-->
-
 
         <!-- ko if: displayUpVotedResults() -->
             <!-- ko component: {name: 'upvoted-results', params: { parent: $data } } --><!-- /ko -->

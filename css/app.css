@@ -17222,98 +17222,99 @@ body:before {
 /* line 2, ../scss/_sunny.scss */
 .fullWidth {
   max-width: none;
+  padding: 0;
 }
 
-/* line 5, ../scss/_sunny.scss */
+/* line 6, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer {
   background-color: #FFFFFF;
   padding: 0;
 }
-/* line 8, ../scss/_sunny.scss */
+/* line 9, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer .ugHeader {
   display: flex;
   align-items: center;
   height: 2.75rem;
   padding: .5rem 1rem;
 }
-/* line 13, ../scss/_sunny.scss */
+/* line 14, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer .ugHeader .logo-container {
   background-color: #FFFFFF;
   display: inline-block;
   margin-left: 0;
 }
-/* line 17, ../scss/_sunny.scss */
+/* line 18, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer .ugHeader .logo-container svg {
   max-height: 2rem;
 }
-/* line 21, ../scss/_sunny.scss */
+/* line 22, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer .ugHeader .icon-cart {
   padding-left: 1rem;
 }
-/* line 24, ../scss/_sunny.scss */
+/* line 25, ../scss/_sunny.scss */
 .ugCondensedHeaderContainer .ugHeader .checkoutCopy {
   padding-right: 1rem;
 }
 
-/* line 30, ../scss/_sunny.scss */
+/* line 31, ../scss/_sunny.scss */
 .preventScrollHtml {
   height: 100%;
   overflow: hidden;
 }
 
-/* line 34, ../scss/_sunny.scss */
+/* line 35, ../scss/_sunny.scss */
 .preventScrollBounceBody {
   height: 100%;
   overflow: auto;
 }
 
-/* line 39, ../scss/_sunny.scss */
+/* line 40, ../scss/_sunny.scss */
 #sunnyFormBkg {
   background-color: #3D69BC;
 }
-/* line 41, ../scss/_sunny.scss */
+/* line 42, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent {
   margin-top: 3rem;
 }
-/* line 43, ../scss/_sunny.scss */
+/* line 44, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent h2, #sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunnyFormBkg #formContent .accordion-navigation > a,
 #sunnyFormBkg #formContent .accordion dd > a,
 .accordion #sunnyFormBkg #formContent dd > a, #sunnyFormBkg #formContent p {
   color: #FFFFFF !important;
 }
-/* line 46, ../scss/_sunny.scss */
+/* line 47, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent .white {
   color: #FFFFFF !important;
 }
-/* line 49, ../scss/_sunny.scss */
+/* line 50, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #intro, #sunnyFormBkg #formContent #form1, #sunnyFormBkg #formContent #form2, #sunnyFormBkg #formContent #form3 {
   display: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 56, ../scss/_sunny.scss */
+/* line 57, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #form1 .sunnyImg {
   margin-bottom: 1rem;
 }
-/* line 59, ../scss/_sunny.scss */
+/* line 60, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #form1 #recipientInput {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
-/* line 63, ../scss/_sunny.scss */
+/* line 64, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #form1 .copy {
   margin-bottom: 1rem;
 }
-/* line 66, ../scss/_sunny.scss */
+/* line 67, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #form1 #recipientBtnContainer {
   margin-bottom: 3rem;
 }
-/* line 72, ../scss/_sunny.scss */
+/* line 73, ../scss/_sunny.scss */
 #sunnyFormBkg #formContent #form3 .inputGroup a {
   margin-left: 0;
 }
-/* line 78, ../scss/_sunny.scss */
+/* line 79, ../scss/_sunny.scss */
 #sunnyFormBkg #paginationDots {
   position: absolute;
   left: 0;
@@ -17323,12 +17324,12 @@ body:before {
   margin-left: 2rem;
   visibility: hidden;
 }
-/* line 86, ../scss/_sunny.scss */
+/* line 87, ../scss/_sunny.scss */
 #sunnyFormBkg #paginationDots a {
   margin: .25rem 0;
 }
 
-/* line 94, ../scss/_sunny.scss */
+/* line 95, ../scss/_sunny.scss */
 .sunnyResultsContainer header {
   position: fixed;
   z-index: 200;
@@ -17340,21 +17341,21 @@ body:before {
   right: 0;
   border-bottom: 0;
 }
-/* line 104, ../scss/_sunny.scss */
+/* line 105, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader {
   max-width: none;
 }
-/* line 106, ../scss/_sunny.scss */
+/* line 107, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .small-12 {
   padding: 0;
 }
-/* line 109, ../scss/_sunny.scss */
+/* line 110, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .flexContainer {
   display: flex;
   align-items: center;
   padding: 0 1rem;
 }
-/* line 114, ../scss/_sunny.scss */
+/* line 115, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
   height: 5rem;
   width: 100%;
@@ -17363,7 +17364,7 @@ body:before {
   margin: 0;
   max-width: none;
 }
-/* line 121, ../scss/_sunny.scss */
+/* line 122, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer {
   position: relative;
   width: 50%;
@@ -17372,11 +17373,11 @@ body:before {
   align-items: center;
   justify-content: flex-end;
 }
-/* line 128, ../scss/_sunny.scss */
+/* line 129, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
   transform: translateX(-3rem);
 }
-/* line 132, ../scss/_sunny.scss */
+/* line 133, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer {
   position: relative;
   width: 50%;
@@ -17385,38 +17386,38 @@ body:before {
   align-items: center;
   justify-content: flex-start;
 }
-/* line 139, ../scss/_sunny.scss */
+/* line 140, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
   transform: translateX(3rem);
 }
-/* line 143, ../scss/_sunny.scss */
+/* line 144, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn {
   position: relative;
   display: inline-block;
 }
-/* line 146, ../scss/_sunny.scss */
+/* line 147, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before {
   border: 1px solid transparent;
 }
-/* line 149, ../scss/_sunny.scss */
+/* line 150, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter {
   background-color: #233C6D;
   border: 1px solid #233C6D;
   line-height: 1rem;
 }
-/* line 154, ../scss/_sunny.scss */
+/* line 155, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check {
   margin: 0;
   padding: .5rem 1rem .5rem .5rem;
   line-height: 1rem;
 }
-/* line 158, ../scss/_sunny.scss */
+/* line 159, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
   width: 190px;
   height: 44px;
   padding: 0;
 }
-/* line 162, ../scss/_sunny.scss */
+/* line 163, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
 .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
@@ -17428,20 +17429,20 @@ body:before {
   align-items: center;
   height: 44px;
 }
-/* line 170, ../scss/_sunny.scss */
+/* line 171, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
 .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
   padding-left: 46px;
 }
-/* line 173, ../scss/_sunny.scss */
+/* line 174, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
 .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
   padding-right: 46px;
   justify-content: flex-end;
 }
-/* line 178, ../scss/_sunny.scss */
+/* line 179, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter {
   position: absolute;
   display: inline-block;
@@ -17464,11 +17465,11 @@ body:before {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
-/* line 199, ../scss/_sunny.scss */
+/* line 200, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter.fill {
   background-color: #FFFFFF;
 }
-/* line 202, ../scss/_sunny.scss */
+/* line 203, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count {
   color: #FFFFFF;
   transform: scale(0);
@@ -17477,7 +17478,7 @@ body:before {
   -ms-transform: scale(0);
   transition: .5s ease-in-out;
 }
-/* line 209, ../scss/_sunny.scss */
+/* line 210, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.updateColor {
   color: #FFFFFF;
   transform: scale(1);
@@ -17485,7 +17486,7 @@ body:before {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
 }
-/* line 216, ../scss/_sunny.scss */
+/* line 217, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.animateIn {
   color: #233B6D;
   font-weight: bold;
@@ -17495,7 +17496,7 @@ body:before {
   -ms-transform: scale(1);
   transition: .5s ease-in-out;
 }
-/* line 226, ../scss/_sunny.scss */
+/* line 227, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle {
   position: absolute;
   top: -1px;
@@ -17516,14 +17517,14 @@ body:before {
   -ms-transform: scale(1);
   transition: .25s ease-in-out;
 }
-/* line 245, ../scss/_sunny.scss */
+/* line 246, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.hideInnerCircle {
   transform: scale(0);
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
 }
-/* line 251, ../scss/_sunny.scss */
+/* line 252, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.animateIn {
   transform: scale(0);
   -webkit-transform: scale(0);
@@ -17531,7 +17532,7 @@ body:before {
   -ms-transform: scale(0);
   transition: .25s ease-in-out;
 }
-/* line 261, ../scss/_sunny.scss */
+/* line 262, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
   position: absolute;
   display: inline-block;
@@ -17554,11 +17555,11 @@ body:before {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
-/* line 282, ../scss/_sunny.scss */
+/* line 283, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter.fill {
   background-color: #FFFFFF;
 }
-/* line 285, ../scss/_sunny.scss */
+/* line 286, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count {
   color: #FFFFFF;
   transform: scale(0);
@@ -17567,7 +17568,7 @@ body:before {
   -ms-transform: scale(0);
   transition: .5s ease-in-out;
 }
-/* line 292, ../scss/_sunny.scss */
+/* line 293, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.updateColor {
   color: #FFFFFF;
   transform: scale(1);
@@ -17575,7 +17576,7 @@ body:before {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
 }
-/* line 299, ../scss/_sunny.scss */
+/* line 300, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.animateIn {
   color: #233B6D;
   font-weight: bold;
@@ -17585,7 +17586,7 @@ body:before {
   -ms-transform: scale(1);
   transition: .5s ease-in-out;
 }
-/* line 309, ../scss/_sunny.scss */
+/* line 310, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle {
   position: absolute;
   top: -1px;
@@ -17606,14 +17607,14 @@ body:before {
   -ms-transform: scale(1);
   transition: .5s ease-in-out;
 }
-/* line 328, ../scss/_sunny.scss */
+/* line 329, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.hideInnerCircle {
   transform: scale(0);
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
 }
-/* line 334, ../scss/_sunny.scss */
+/* line 335, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.animateIn {
   transform: scale(0);
   -webkit-transform: scale(0);
@@ -17621,7 +17622,7 @@ body:before {
   -ms-transform: scale(0);
   transition: .5s ease-in-out;
 }
-/* line 346, ../scss/_sunny.scss */
+/* line 347, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
   margin: 0 auto;
   border-radius: 6rem;
@@ -17635,25 +17636,25 @@ body:before {
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 359, ../scss/_sunny.scss */
+/* line 360, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns {
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 100%;
 }
-/* line 365, ../scss/_sunny.scss */
+/* line 366, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .upVotedResultsCounter {
   font-weight: bold;
   font-size: 1.2rem;
 }
-/* line 369, ../scss/_sunny.scss */
+/* line 370, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .flexContainer {
   display: flex;
   align-items: center;
   height: 100%;
 }
-/* line 375, ../scss/_sunny.scss */
+/* line 376, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
   position: absolute;
   top: -23;
@@ -17664,12 +17665,12 @@ body:before {
   transform: scaleY(0);
   border-radius: 100px;
 }
-/* line 384, ../scss/_sunny.scss */
+/* line 385, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
   left: 48px;
   background-color: #3D69BC;
 }
-/* line 388, ../scss/_sunny.scss */
+/* line 389, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
   color: #FFFFFF;
   text-align: center;
@@ -17683,7 +17684,7 @@ body:before {
   opacity: 0;
   transform: translateY(-50px);
 }
-/* line 400, ../scss/_sunny.scss */
+/* line 401, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateIn {
   opacity: 1;
   transform: translateY(0px);
@@ -17697,7 +17698,7 @@ body:before {
   -moz-transition: .25s;
   transition-delay: .25s;
 }
-/* line 413, ../scss/_sunny.scss */
+/* line 414, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateOut {
   opacity: 0;
   transform: translateY(-50px);
@@ -17708,7 +17709,7 @@ body:before {
   -moz-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 }
-/* line 424, ../scss/_sunny.scss */
+/* line 425, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateIn {
   top: 0;
   border-radius: 0px;
@@ -17720,7 +17721,7 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 435, ../scss/_sunny.scss */
+/* line 436, ../scss/_sunny.scss */
 .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
   border-radius: 100px;
   transform: scaleY(0);
@@ -17731,75 +17732,75 @@ body:before {
   -moz-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-/* line 448, ../scss/_sunny.scss */
+/* line 449, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-/* line 451, ../scss/_sunny.scss */
+/* line 452, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer h3 {
   display: inline-block;
   padding-right: .5rem;
 }
-/* line 455, ../scss/_sunny.scss */
+/* line 456, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer .flex {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
 }
-/* line 460, ../scss/_sunny.scss */
+/* line 461, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer .flex .priceCopy {
   padding: 0;
   margin: 0 .5rem 0 0;
 }
-/* line 464, ../scss/_sunny.scss */
+/* line 465, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer .flex .priceToCopy {
   padding: 0;
   margin: 0 .5rem 0 .5rem;
 }
-/* line 468, ../scss/_sunny.scss */
+/* line 469, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer .flex .minMaxPrice {
   width: 3rem;
   margin: 0;
 }
-/* line 472, ../scss/_sunny.scss */
+/* line 473, ../scss/_sunny.scss */
 .sunnyResultsContainer .prieFilterContainer .flex button {
   margin: 0 0 0 1rem;
 }
-/* line 477, ../scss/_sunny.scss */
+/* line 478, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults {
   margin-top: 9.75rem;
 }
-/* line 480, ../scss/_sunny.scss */
+/* line 481, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults ul li {
   position: relative;
   padding: 0 0.5rem;
 }
-/* line 485, ../scss/_sunny.scss */
+/* line 486, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product {
   max-width: none;
 }
-/* line 487, ../scss/_sunny.scss */
+/* line 488, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
   margin-bottom: 0;
 }
-/* line 492, ../scss/_sunny.scss */
+/* line 493, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   width: 100%;
   height: auto;
   z-index: 99;
 }
-/* line 497, ../scss/_sunny.scss */
+/* line 498, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
   height: 100%;
 }
-/* line 503, ../scss/_sunny.scss */
+/* line 504, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .icon-close {
   position: absolute;
   top: 0;
@@ -17807,14 +17808,14 @@ body:before {
   z-index: 100;
   padding: .5rem;
 }
-/* line 510, ../scss/_sunny.scss */
+/* line 511, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .loadingSvg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* line 516, ../scss/_sunny.scss */
+/* line 517, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer {
   position: absolute;
   bottom: 0;
@@ -17822,15 +17823,15 @@ body:before {
   z-index: 100;
   margin-bottom: 1rem;
 }
-/* line 522, ../scss/_sunny.scss */
+/* line 523, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted {
   margin-bottom: calc(1rem + 10px);
 }
-/* line 526, ../scss/_sunny.scss */
+/* line 527, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .icon-star {
   font-size: 1.125rem;
 }
-/* line 529, ../scss/_sunny.scss */
+/* line 530, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle {
   height: 3.25rem;
   width: 3.25rem;
@@ -17841,76 +17842,76 @@ body:before {
   box-sizing: border-box;
   box-shadow: 0 0 6px -1px #817B73;
 }
-/* line 538, ../scss/_sunny.scss */
+/* line 539, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle:hover {
   border: 2px solid #F4C714;
 }
-/* line 541, ../scss/_sunny.scss */
+/* line 542, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle .icon-star {
   margin-top: .85rem;
   margin-left: .25rem;
   color: #A8A098;
 }
-/* line 546, ../scss/_sunny.scss */
+/* line 547, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted {
   background-color: #F4C714;
 }
-/* line 548, ../scss/_sunny.scss */
+/* line 549, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted .icon-star {
   color: #FFFFFF;
 }
-/* line 551, ../scss/_sunny.scss */
+/* line 552, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted:hover {
   border: 1px solid #A8A098;
 }
-/* line 556, ../scss/_sunny.scss */
+/* line 557, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle + .upvote::before {
   transition: all .25s;
   transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
 }
-/* line 560, ../scss/_sunny.scss */
+/* line 561, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle {
   display: inline-block;
 }
-/* line 562, ../scss/_sunny.scss */
+/* line 563, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle.upvoted {
   width: 3.625rem;
   height: 3.625rem;
   box-shadow: 0 0 6px -1px #817B73;
   background: #FFFFFF;
 }
-/* line 571, ../scss/_sunny.scss */
+/* line 572, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .preventReflow {
   padding-bottom: 100%;
 }
-/* line 574, ../scss/_sunny.scss */
+/* line 575, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .upvotedBorder {
   border: 10px solid #FEEFC7;
 }
-/* line 577, ../scss/_sunny.scss */
+/* line 578, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .copy {
   min-height: 60px;
   padding-bottom: .5rem;
   padding-top: 10px;
 }
-/* line 581, ../scss/_sunny.scss */
+/* line 582, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 584, ../scss/_sunny.scss */
+/* line 585, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy {
   margin-top: 0;
 }
-/* line 588, ../scss/_sunny.scss */
+/* line 589, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted {
   background-color: #FEEFC7;
 }
-/* line 592, ../scss/_sunny.scss */
+/* line 593, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted {
   background-color: #f2f0ed;
 }
-/* line 596, ../scss/_sunny.scss */
+/* line 597, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer {
   position: absolute;
   width: 100%;
@@ -17919,12 +17920,12 @@ body:before {
   left: 0;
   overflow: hidden;
 }
-/* line 603, ../scss/_sunny.scss */
+/* line 604, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border {
   border: 10px solid #f2f0ed;
   z-index: 99;
 }
-/* line 607, ../scss/_sunny.scss */
+/* line 608, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason {
   position: absolute;
   width: 100%;
@@ -17934,32 +17935,32 @@ body:before {
   z-index: 100;
   transform: translateY(100%);
 }
-/* line 615, ../scss/_sunny.scss */
+/* line 616, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close {
   padding: 1rem;
 }
-/* line 618, ../scss/_sunny.scss */
+/* line 619, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul {
   margin: 0;
   list-style-type: none;
   padding: 2.5rem 0 2.5rem 1rem;
 }
-/* line 622, ../scss/_sunny.scss */
+/* line 623, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li {
   padding: 0;
 }
-/* line 626, ../scss/_sunny.scss */
+/* line 627, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label {
   margin: 0 .75rem .5rem 0;
 }
-/* line 631, ../scss/_sunny.scss */
+/* line 632, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason {
   position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 101;
 }
-/* line 638, ../scss/_sunny.scss */
+/* line 639, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .gate {
   height: 90px;
   border-top: 1px solid #F4C714;
@@ -17967,20 +17968,24 @@ body:before {
   overflow: hidden;
   visibility: hidden;
 }
-/* line 644, ../scss/_sunny.scss */
+/* line 645, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .gate p {
   padding-top: 33px;
 }
-/* line 647, ../scss/_sunny.scss */
+/* line 648, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .gate .animateGate {
   height: 100%;
   width: 100%;
   position: absolute;
   left: 0%;
-  transform: translateY(100%);
   background-color: #f2f0ed;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transition: 0.5s ease-in-out;
 }
-/* line 654, ../scss/_sunny.scss */
+/* line 659, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate {
   transform: translateY(0%);
   -webkit-transform: translateY(0%);
@@ -17988,46 +17993,46 @@ body:before {
   -ms-transform: translateY(0%);
   transition: 0.5s ease-in-out;
 }
-/* line 662, ../scss/_sunny.scss */
+/* line 667, ../scss/_sunny.scss */
 .sunnyResultsContainer .sunnySearchResults .gate.unhide {
   visibility: visible;
 }
-/* line 667, ../scss/_sunny.scss */
+/* line 672, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer {
   margin-top: 7rem;
 }
-/* line 670, ../scss/_sunny.scss */
+/* line 675, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer .container:first-child {
   padding-top: 2rem;
 }
-/* line 674, ../scss/_sunny.scss */
+/* line 679, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
   display: none;
 }
-/* line 679, ../scss/_sunny.scss */
+/* line 684, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer img {
   max-height: 300px;
 }
-/* line 683, ../scss/_sunny.scss */
+/* line 688, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
   border-bottom: 2px solid;
   margin: 2rem 0 1.1875rem;
 }
-/* line 688, ../scss/_sunny.scss */
+/* line 693, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 691, ../scss/_sunny.scss */
+/* line 696, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 695, ../scss/_sunny.scss */
+/* line 700, ../scss/_sunny.scss */
 .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
 }
-/* line 702, ../scss/_sunny.scss */
+/* line 707, ../scss/_sunny.scss */
 .sunnyResultsContainer .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -18094,7 +18099,7 @@ body:before {
     transform: translate3d(0, 0, 0);
   }
 }
-/* line 829, ../scss/_sunny.scss */
+/* line 834, ../scss/_sunny.scss */
 .sunnyResultsContainer .bounce {
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -18102,84 +18107,84 @@ body:before {
   transform-origin: center bottom;
 }
 
-/* line 839, ../scss/_sunny.scss */
+/* line 844, ../scss/_sunny.scss */
 #sunnyQuickViewModal .votingContainer {
   padding-bottom: 3rem;
 }
-/* line 841, ../scss/_sunny.scss */
+/* line 846, ../scss/_sunny.scss */
 #sunnyQuickViewModal .votingContainer .downVote {
   padding-right: .50rem;
 }
-/* line 844, ../scss/_sunny.scss */
+/* line 849, ../scss/_sunny.scss */
 #sunnyQuickViewModal .votingContainer .upVote {
   padding-left: .50rem;
 }
-/* line 848, ../scss/_sunny.scss */
+/* line 853, ../scss/_sunny.scss */
 #sunnyQuickViewModal .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 851, ../scss/_sunny.scss */
+/* line 856, ../scss/_sunny.scss */
 #sunnyQuickViewModal .avgRating {
   padding-bottom: 2rem;
 }
-/* line 855, ../scss/_sunny.scss */
+/* line 860, ../scss/_sunny.scss */
 #sunnyQuickViewModal .selectQuanity input {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-/* line 860, ../scss/_sunny.scss */
+/* line 865, ../scss/_sunny.scss */
 #sunnyQuickViewModal .copy {
   padding-left: 24px;
   margin-top: 5rem;
 }
 
 @media (max-width: 40em) {
-  /* line 869, ../scss/_sunny.scss */
+  /* line 874, ../scss/_sunny.scss */
   #sunnyQuickViewModal .copy {
     margin-top: 1rem;
     padding-left: 0;
   }
-  /* line 873, ../scss/_sunny.scss */
+  /* line 878, ../scss/_sunny.scss */
   #sunnyQuickViewModal .icon-close {
     margin-bottom: 1rem;
   }
 
-  /* line 881, ../scss/_sunny.scss */
+  /* line 886, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .flexContainer h1 {
     font-size: 18px;
   }
-  /* line 884, ../scss/_sunny.scss */
+  /* line 889, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .flexContainer label {
     font-size: 11px;
   }
-  /* line 888, ../scss/_sunny.scss */
+  /* line 893, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
     height: 4rem;
   }
-  /* line 891, ../scss/_sunny.scss */
+  /* line 896, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer.bkgColorOn, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 896, ../scss/_sunny.scss */
+  /* line 901, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
     transform: translateX(-2rem);
   }
-  /* line 901, ../scss/_sunny.scss */
+  /* line 906, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
     transform: translateX(3rem);
   }
-  /* line 905, ../scss/_sunny.scss */
+  /* line 910, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
     background-color: #233C6D;
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
   }
-  /* line 913, ../scss/_sunny.scss */
+  /* line 918, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
     width: 100%;
   }
-  /* line 915, ../scss/_sunny.scss */
+  /* line 920, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
   .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
@@ -18190,21 +18195,21 @@ body:before {
     align-items: flex-start;
     height: auto;
   }
-  /* line 922, ../scss/_sunny.scss */
+  /* line 927, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
   .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 926, ../scss/_sunny.scss */
+  /* line 931, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
   .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 931, ../scss/_sunny.scss */
+  /* line 936, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter {
     left: 50%;
     transform: translate(-50%, -80%);
@@ -18212,7 +18217,7 @@ body:before {
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 938, ../scss/_sunny.scss */
+  /* line 943, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
     left: 50%;
     transform: translate(-50%, -80%);
@@ -18220,29 +18225,29 @@ body:before {
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 949, ../scss/_sunny.scss */
+  /* line 954, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 954, ../scss/_sunny.scss */
+  /* line 959, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
     width: 100%;
   }
-  /* line 956, ../scss/_sunny.scss */
+  /* line 961, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
   }
-  /* line 961, ../scss/_sunny.scss */
+  /* line 966, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.suggestions {
     right: 0;
   }
-  /* line 964, ../scss/_sunny.scss */
+  /* line 969, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
     left: 0;
   }
-  /* line 967, ../scss/_sunny.scss */
+  /* line 972, ../scss/_sunny.scss */
   .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
     border-radius: 0;
     transform: scaleY(0);
@@ -18253,57 +18258,57 @@ body:before {
     -moz-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
   }
-  /* line 981, ../scss/_sunny.scss */
+  /* line 986, ../scss/_sunny.scss */
   .sunnyResultsContainer .prieFilterContainer .flex {
     justify-content: flex-start;
   }
-  /* line 985, ../scss/_sunny.scss */
+  /* line 990, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults {
     margin-top: 6.75rem;
   }
-  /* line 988, ../scss/_sunny.scss */
+  /* line 993, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .votingContainer {
     margin-bottom: -1.375rem;
   }
-  /* line 990, ../scss/_sunny.scss */
+  /* line 995, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted {
     margin-bottom: -1.375rem;
   }
-  /* line 993, ../scss/_sunny.scss */
+  /* line 998, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .votingContainer .icon-star {
     font-size: .875rem;
   }
-  /* line 996, ../scss/_sunny.scss */
+  /* line 1001, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .votingContainer .innerCircle {
     height: 2.75rem;
     width: 2.75rem;
   }
-  /* line 1001, ../scss/_sunny.scss */
+  /* line 1006, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .votingContainer .outterCircle.upvoted {
     width: 3.125rem;
     height: 3.125rem;
   }
-  /* line 1007, ../scss/_sunny.scss */
+  /* line 1012, ../scss/_sunny.scss */
   .sunnyResultsContainer .sunnySearchResults .product .copy {
     padding-top: calc(14px + .5rem);
   }
 }
 @media (min-width: 64.063em) {
-  /* line 1025, ../scss/_sunny.scss */
+  /* line 1030, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1031, ../scss/_sunny.scss */
+  /* line 1036, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 1047, ../scss/_sunny.scss */
+  /* line 1052, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1053, ../scss/_sunny.scss */
+  /* line 1058, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }
