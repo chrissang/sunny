@@ -59,7 +59,7 @@ ko.components.register('upvoted-results', {
             <div class="small-12 columns">
             <!-- ko foreach: $parent.upVotedResults() -->
                 <div class="row container">
-                    <div class="small-10 columns small-centered">
+                    <div class="small-10 large-6 columns small-centered">
                         <div class="row">
                             <div class="small-12 medium-6 columns">
                                 <a data-bind="attr: { href: $data.productURL(), target: '_blank' }"><img data-bind="attr: { src: $data.imageURL() }"></a>
@@ -393,7 +393,7 @@ ko.components.register('products', {
     template: `
         <!-- ko if: params.data.display() -->
             <li>
-                <article class="product" data-bind="attr: { id: itemId() }">
+                <article data-bind="attr: { id: itemId(), class: 'product ' + displayBorderSelected() }">
                     <div class="responsively-lazy preventReflow">
                         <!-- ko if: !displayUpVoteSelected() && !displayDownVoteSelected() -->
                             <a data-bind="event:{ click: downVote.bind($data) }"><span class="icon-close icon-md"></span></a>
@@ -401,7 +401,7 @@ ko.components.register('products', {
 
                         <!--<a data-reveal-id="sunnyQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>-->
 
-                        <a data-bind="attr: { href: productURL, target: '_blank' }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>
+                        <a data-bind="attr: { href: productURL, target: '_blank' }"><img data-bind="attr: { src: imageURL() }"></a>
 
                         <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReasonContainer border' : 'downVoteReasonContainer' }">
                             <div data-bind="if: displayDownVoteSelected(), attr: { class: displayDownVoteSelected() ? 'downVoteReason' : 'downVoteReason' }, slideUp">
@@ -439,7 +439,7 @@ ko.components.register('products', {
                                 <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'outterCircle upvoted' : 'outterCircle' }">
 
 
-                                    <div data-bind="attr:{ class: params.parent.isDisplayGateCopy() ? 'starExplode animate' : 'starExplode' }"></div>
+                                    <div data-bind="attr:{ class: params.parent.isDisplayGateCopy() ? (displayUpVoteSelected() ? 'starExplode upvoted animate' : 'starExplode animate') : (displayUpVoteSelected() ? 'starExplode upvoted' : 'starExplode') }"></div>
 
                                     <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? (params.parent.isDisplayGateCopy() ? 'innerCircle upvoted animate' : 'innerCircle upvoted') : (params.parent.isDisplayGateCopy() ? 'innerCircle animate' : 'innerCircle') }">
                                         <a data-bind="toggleClick: highlight"><span data-bind="attr: { class: params.parent.isDisplayGateCopy() ? 'icon-star animate' : 'icon-star' }"></span></a>
@@ -473,6 +473,7 @@ ko.components.register('price-filiter', {
             super(params);
             this.params = params;
             this.upVotedItemIdArry = ko.observableArray([]);
+            this.recipient = ko.observable(localStorage.getItem("sunnyRecipient"));
             this.filterByPrice = function() {
                 var min = parseFloat(parseFloat(this.params.parent.filterMinPrice()).toFixed(2));
                 var max = parseFloat(parseFloat(this.params.parent.filterMaxPrice()).toFixed(2));
@@ -491,17 +492,21 @@ ko.components.register('price-filiter', {
                 }
                 this.params.parent.totalGiftIdeas(this.params.parent.displaySearchResults().length - hiddenCounter);
             }
+            this.startOver = function () {
+                localStorage.setItem('display', 'form1');
+                window.location.href = '/sunny/intro';
+            };
         }
     },
     template: `
-        <div class="small-12 medium-10 large-8 small-centered columns prieFilterContainer">
+        <div class="small-12 columns prieFilterContainer">
             <div class="row">
-                <div class="small-12 medium-5 large-6 columns">
-                    <h3>gifts for coffee lover</h3>
-                    <a class="a-secondary"><i class="body-small">start over</i></a>
+                <div class="small-12 medium-6 columns">
+                    <h3 data-bind="text:'gifts for ' + recipient()"></h3>
+                    <a data-bind="event: { click: startOver }" class="a-secondary"><i class="body-small">start over</i></a>
                 </div>
 
-                <div class="small-12 medium-7 large-6 columns">
+                <div class="small-12 medium-6 columns">
                     <div class="flex">
                         <p class="nav-fam priceCopy">PRICE RANGE:</p>
                         <input class="minMaxPrice" type="number" placeholder="$" data-bind="value: $parent.filterMinPrice">
@@ -593,8 +598,9 @@ ko.components.register('sunny-results-container', {
                         $(window).on('scroll', function() {
                             var st = $(this).scrollTop();
                             if(st < lastScrollTop) {
-                                //console.log('up 1 ',self.isDisplayGateCopy());
-                                self.isDisplayGateCopy(false);
+                                if( ( ($(window).height() + $(window).scrollTop()) <= ($(document).height() - 100)  ) ) {
+                                    self.isDisplayGateCopy(false);
+                                }
                             } else {
                                 //console.log('down 1');
                                 if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
@@ -607,15 +613,6 @@ ko.components.register('sunny-results-container', {
                             }
                             lastScrollTop = st;
                         });
-                        // $(window).on("scroll.ko.scrollHandler", function () {
-                        //     if(($(document).height() <= $(window).height() + $(window).scrollTop())) {
-                        //         if (self.isAllowedMoreItems()) {
-                        //             viewModel.addItems(24);
-                        //         } else {
-                        //             animateGateIn();
-                        //         }
-                        //     }
-                        // })
                     }
 
                     function animateGateIn() {
@@ -668,8 +665,8 @@ ko.components.register('sunny-results-container', {
                                 <input data-bind="checked: suggestionsBtn, event:{ click: toggleSuggestions() }" id="suggestions" type="checkbox">
                                 <label class="super-check counter" for="suggestions">
 
-                                    <div data-bind="attr: { class: isUpVoteMessage1() ? 'suggestionsCircleOuter fill' : 'suggestionsCircleOuter' }">
-                                        <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'innerCircle animateIn' : ( upVotedResultsLen() >= 1 ? 'innerCircle hideInnerCircle' : 'innerCircle')}"></div>
+                                    <div data-bind="attr: { class: isUpVoteMessage1() ? 'outterCircle fill' : 'outterCircle' }">
+                                        <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'innerCircle whiteBkg animateIn' : ( upVotedResultsLen() >= 1 ? 'innerCircle hideInnerCircle' : 'innerCircle')}"></div>
                                         <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'count animateIn' : ( upVotedResultsLen() >= 1 ? 'count updateColor' : 'count')}"></div>
                                     </div>
 
@@ -690,8 +687,8 @@ ko.components.register('sunny-results-container', {
                                     <h2 data-bind="text: 'gifts you like'" class="circleRight"></h2>
 
                                     <!-- ko if: upVotedResultsLen() > 0 -->
-                                        <div data-bind="attr: { class: isUpVoteMessage2() ? 'giftsYouLikeCircleOuter fill' : 'giftsYouLikeCircleOuter' }">
-                                            <div data-bind="text: upVotedResultsLen() > 0 ? upVotedResultsLen() : '', attr:{ class: isUpVoteMessage2() ? 'innerCircle animateIn' : ( upVotedResultsLen() > 0 ? 'innerCircle hideInnerCircle' : 'innerCircle') }"></div>
+                                        <div data-bind="attr: { class: isUpVoteMessage2() ? 'outterCircle fill' : 'outterCircle' }">
+                                            <div data-bind="text: upVotedResultsLen() > 0 ? upVotedResultsLen() : '', attr:{ class: isUpVoteMessage2() ? 'innerCircle whiteBkg animateIn' : ( upVotedResultsLen() > 0 ? 'innerCircle ' : 'innerCircle') }"></div>
                                             <div data-bind="text: upVotedResultsLen() > 0 ? upVotedResultsLen() : '', attr:{ class: isUpVoteMessage2() ? 'count animateIn' : ( upVotedResultsLen() > 0 ? 'count updateColor' : 'count') }"></div>
                                         </div>
                                     <!-- /ko -->
@@ -710,8 +707,8 @@ ko.components.register('sunny-results-container', {
 
             <price-filiter params='parent: $data'></price-filiter>
 
-            <div class="small-10 large-8 small-centered columns">
-                <ul id="results" class="small-block-grid-2 medium-block-grid-3" data-bind="foreach: displaySearchResults()">
+            <div class="small-12 columns">
+                <ul id="results" class="small-block-grid-2 medium-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-5" data-bind="foreach: displaySearchResults()">
                     <!-- ko component: {name: 'products', params: { data: $data, parent: $parent  } } --><!-- /ko -->
                 </ul>
             </div>
@@ -732,3 +729,11 @@ ko.components.register('sunny-results-container', {
 });
 
 ko.applyBindings();
+
+var currState = history.state;
+history.pushState(history.state, null, document.URL);
+history.pushState(currState, null, document.URL);
+window.addEventListener('popstate', function (event) {
+    console.log("back button click");
+    history.pushState(event.state, null, document.URL);
+}, false);

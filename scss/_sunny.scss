@@ -1,3 +1,6 @@
+#sunny {
+    overflow-y: scroll;
+}
 #sunny, #sunnyForm {
     //UG condensed header
     .fullWidth {
@@ -29,7 +32,7 @@
         }
     }
     // Form page styles
-    .sunnyFormBkg {
+    &.sunnyFormBkg {
         background-color: #3D69BC;
         #formContent {
             margin-top: 3rem;
@@ -121,6 +124,91 @@
                         .superCheckCounterBtn {
                             transform: translateX(-3rem);
                         }
+                        .outterCircle {
+                            position: absolute;
+                            display: inline-block;
+                            top: 50%;
+                            left: 6px;
+                            font-family: "Noto Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+                            font-size: .875rem;
+                            color: $white;
+                            background-color: transparent;
+                            width: 32px;
+                            height: 32px;
+                            padding: .5rem 0;
+                            text-align: center;
+                            border: 1px solid $white;
+                            border-radius: 32px;
+                            -moz-border-radius: 32px;
+                            -webkit-border-radius: 32px;
+                            transform: translateY(-50%);
+                            -webkit-transform: translateY(-50%);
+                            -moz-transform: translateY(-50%);
+                            -ms-transform: translateY(-50%);
+                            .innerCircle {
+                                position: absolute;
+                                top: -1px;
+                                left: -1px;
+                                width: 32px;
+                                height: 32px;
+                                border: 1px solid $white;
+                                background-color: #233B6D;
+                                visibility: hidden;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 32px;
+                                -moz-border-radius: 32px;
+                                -webkit-border-radius: 32px;
+                                &.hideInnerCircle {
+                                    transform: scale(0);
+                                    -webkit-transform: scale(0);
+                                    -moz-transform: scale(0);
+                                    -ms-transform: scale(0);
+                                }
+                                &.whiteBkg {
+                                    visibility: visible;
+                                }
+                                &.animateIn {
+                                    transform: scale(0);
+                                    -webkit-transform: scale(0);
+                                    -moz-transform: scale(0);
+                                    -ms-transform: scale(0);
+                                    transition: .3s ease-in-out;
+                                }
+                            }
+                            .count {
+                                color: $white;
+                                transform: scale(1);
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                -ms-transform: scale(1);
+                                transition: .5s ease-in-out;
+                                &.updateColor {
+                                    color: $white;
+                                    transform: scale(1);
+                                    -webkit-transform: scale(1);
+                                    -moz-transform: scale(1);
+                                    -ms-transform: scale(1);
+                                }
+                                &.animateIn {
+                                    color: #233b6d;
+                                    font-weight: bold;
+                                    -webkit-animation-name: counterAnimation;
+                                    -moz-animation-name: counterAnimation;
+                                    animation-name: counterAnimation;
+                                    -webkit-animation-duration: .3s;
+                                    -moz-animation-duration: .3s;
+                                    animation-duration: .3s;
+                                    -webkit-transition-delay: .16s;
+                                    -moz-transition-delay: .16s;
+                                    transition-delay: .16s;
+                                }
+                            }
+                            &.fill {
+                                background-color: $white;
+                            }
+                        }
                     }
                     .giftsYouLikeContainer {
                         position: relative;
@@ -132,7 +220,93 @@
                         .superCheckCounterBtn {
                             transform: translateX(3rem);
                         }
+                        .outterCircle {
+                            position: absolute;
+                            display: inline-block;
+                            top: 50%;
+                            right: 6px;
+                            font-family: "Noto Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+                            font-size: .875rem;
+                            color: $white;
+                            background-color: transparent;
+                            width: 32px;
+                            height: 32px;
+                            padding: .5rem 0;
+                            text-align: center;
+                            border: 1px solid $white;
+                            border-radius: 32px;
+                            -moz-border-radius: 32px;
+                            -webkit-border-radius: 32px;
+                            transform: translateY(-50%);
+                            -webkit-transform: translateY(-50%);
+                            -moz-transform: translateY(-50%);
+                            -ms-transform: translateY(-50%);
+                            .innerCircle {
+                                position: absolute;
+                                top: -1px;
+                                left: -1px;
+                                width: 32px;
+                                height: 32px;
+                                border: 1px solid $white;
+                                background-color: #3E69BC;
+                                visibility: hidden;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border-radius: 32px;
+                                -moz-border-radius: 32px;
+                                -webkit-border-radius: 32px;
+                                &.hideInnerCircle {
+                                    transform: scale(0);
+                                    -webkit-transform: scale(0);
+                                    -moz-transform: scale(0);
+                                    -ms-transform: scale(0);
+                                }
+                                &.whiteBkg {
+                                    visibility: visible;
+                                }
+                                &.animateIn {
+                                    transform: scale(0);
+                                    -webkit-transform: scale(0);
+                                    -moz-transform: scale(0);
+                                    -ms-transform: scale(0);
+                                    transition: .3s ease-in-out;
+                                }
+                            }
+                            .count {
+                                color: $white;
+                                transform: scale(1);
+                                -webkit-transform: scale(1);
+                                -moz-transform: scale(1);
+                                -ms-transform: scale(1);
+                                transition: .5s ease-in-out;
+                                &.updateColor {
+                                    color: $white;
+                                    transform: scale(1);
+                                    -webkit-transform: scale(1);
+                                    -moz-transform: scale(1);
+                                    -ms-transform: scale(1);
+                                }
+                                &.animateIn {
+                                    color: #233B6D;
+                                    font-weight: bold;
+                                    -webkit-animation-name: counterAnimation;
+                                    -moz-animation-name: counterAnimation;
+                                    animation-name: counterAnimation;
+                                    -webkit-animation-duration: .3s;
+                                    -moz-animation-duration: .3s;
+                                    animation-duration: .3s;
+                                    -webkit-transition-delay: .16s;
+                                    -moz-transition-delay: .16s;
+                                    transition-delay: .16s;
+                                }
+                            }
+                            &.fill {
+                                background-color: $white;
+                            }
+                        }
                     }
+
                     .superCheckCounterBtn {
                         position: relative;
                         display: inline-block;
@@ -152,6 +326,7 @@
                                 width: 190px;
                                 height: 44px;
                                 padding: 0;
+                                border: 1px solid transparent;
                                 h2 {
                                     margin: 0;
                                     line-height: 1rem;
@@ -164,173 +339,9 @@
                                         padding-left: 46px;
                                     }
                                     &.circleRight {
-                                        padding-right: 46px;
-                                        justify-content: flex-end;
-                                    }
-                                }
-                                .suggestionsCircleOuter {
-                                    position: absolute;
-                                    display: inline-block;
-                                    top: 50%;
-                                    left: 6px;
-                                    font-family: "Noto Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-                                    font-size: .875rem;
-                                    color: $white;
-                                    background-color: transparent;
-                                    width: 32px;
-                                    height: 32px;
-                                    padding: .5rem 0;
-                                    text-align: center;
-                                    border: 1px solid $white;
-                                    border-radius: 32px;
-                                    -moz-border-radius: 32px;
-                                    -webkit-border-radius: 32px;
-                                    transform: translateY(-50%);
-                                    -webkit-transform: translateY(-50%);
-                                    -moz-transform: translateY(-50%);
-                                    -ms-transform: translateY(-50%);
-                                    &.fill {
-                                        background-color: $white;
-                                    }
-                                    .count {
-                                        color: $white;
-                                        transform: scale(0);
-                                        -webkit-transform: scale(0);
-                                        -moz-transform: scale(0);
-                                        -ms-transform: scale(0);
-                                        transition: .5s ease-in-out;
-                                        &.updateColor {
-                                            color: $white;
-                                            transform: scale(1);
-                                            -webkit-transform: scale(1);
-                                            -moz-transform: scale(1);
-                                            -ms-transform: scale(1);
-                                        }
-                                        &.animateIn {
-                                            color: #233B6D;
-                                            font-weight: bold;
-                                            transform: scale(1);
-                                            -webkit-transform: scale(1);
-                                            -moz-transform: scale(1);
-                                            -ms-transform: scale(1);
-                                            transition: .5s ease-in-out;
-                                        }
-                                    }
-                                    .innerCircle {
-                                        position: absolute;
-                                        top: -1px;
-                                        left: -1px;
-                                        width: 32px;
-                                        height: 32px;
-                                        border: 1px solid $white;
-                                        background-color: #233B6D;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        border-radius: 32px;
-                                        -moz-border-radius: 32px;
-                                        -webkit-border-radius: 32px;
-                                        transform: scale(1);
-                                        -webkit-transform: scale(1);
-                                        -moz-transform: scale(1);
-                                        -ms-transform: scale(1);
-                                        transition: .25s ease-in-out;
-                                        &.hideInnerCircle {
-                                            transform: scale(0);
-                                            -webkit-transform: scale(0);
-                                            -moz-transform: scale(0);
-                                            -ms-transform: scale(0);
-                                        }
-                                        &.animateIn {
-                                            transform: scale(0);
-                                            -webkit-transform: scale(0);
-                                            -moz-transform: scale(0);
-                                            -ms-transform: scale(0);
-                                            transition: .25s ease-in-out;
-                                        }
-                                    }
-
-                                }
-                                .giftsYouLikeCircleOuter {
-                                    position: absolute;
-                                    display: inline-block;
-                                    top: 50%;
-                                    right: 6px;
-                                    font-family: "Noto Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-                                    font-size: .875rem;
-                                    color: $white;
-                                    background-color: transparent;
-                                    width: 32px;
-                                    height: 32px;
-                                    padding: .5rem 0;
-                                    text-align: center;
-                                    border: 1px solid $white;
-                                    border-radius: 32px;
-                                    -moz-border-radius: 32px;
-                                    -webkit-border-radius: 32px;
-                                    transform: translateY(-50%);
-                                    -webkit-transform: translateY(-50%);
-                                    -moz-transform: translateY(-50%);
-                                    -ms-transform: translateY(-50%);
-                                    &.fill {
-                                        background-color: $white;
-                                    }
-                                    .count {
-                                        color: $white;
-                                        transform: scale(0);
-                                        -webkit-transform: scale(0);
-                                        -moz-transform: scale(0);
-                                        -ms-transform: scale(0);
-                                        transition: .5s ease-in-out;
-                                        &.updateColor {
-                                            color: $white;
-                                            transform: scale(1);
-                                            -webkit-transform: scale(1);
-                                            -moz-transform: scale(1);
-                                            -ms-transform: scale(1);
-                                        }
-                                        &.animateIn {
-                                            color: #233B6D;
-                                            font-weight: bold;
-                                            transform: scale(1);
-                                            -webkit-transform: scale(1);
-                                            -moz-transform: scale(1);
-                                            -ms-transform: scale(1);
-                                            transition: .5s ease-in-out;
-                                        }
-                                    }
-                                    .innerCircle {
-                                        position: absolute;
-                                        top: -1px;
-                                        left: -1px;
-                                        width: 32px;
-                                        height: 32px;
-                                        border: 1px solid $white;
-                                        background-color: #3E69BC;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        border-radius: 32px;
-                                        -moz-border-radius: 32px;
-                                        -webkit-border-radius: 32px;
-                                        transform: scale(1);
-                                        -webkit-transform: scale(1);
-                                        -moz-transform: scale(1);
-                                        -ms-transform: scale(1);
-                                        transition: .5s ease-in-out;
-                                        &.hideInnerCircle {
-                                            transform: scale(0);
-                                            -webkit-transform: scale(0);
-                                            -moz-transform: scale(0);
-                                            -ms-transform: scale(0);
-                                        }
-                                        &.animateIn {
-                                            transform: scale(0);
-                                            -webkit-transform: scale(0);
-                                            -moz-transform: scale(0);
-                                            -ms-transform: scale(0);
-                                            transition: .5s ease-in-out;
-                                        }
+                                        padding-left: 1rem;
+                                        padding-right: 0;
+                                        justify-content: flex-start;
                                     }
                                 }
                             }
@@ -388,30 +399,30 @@
                         position: absolute;
                         width: 100%;
                         bottom: 0;
-                        opacity: 0;
-                        transform: translateY(-50px);
                         &.animateIn {
-                            opacity: 1;
-                            transform: translateY(0px);
-                            -webkit-transform: translateY(0px);
-                            -moz-transform: translateY(0px);
-                            -ms-transform: translateY(0px);
-                            -webkit-transition: .3s ease-in-out;
-                            -moz-transition: .3s ease-in-out;
-                            transition: .3s ease-in-out;
+                            -webkit-animation-name: bounceInDown;
+                            -moz-animation-name: bounceInDown;
+                            animation-name: bounceInDown;
+                            -webkit-animation-duration: .3s;
+                            -moz-animation-duration: .3s;
+                            animation-duration: .3s;
+                            -webkit-animation-timing-function: ease;
+                            -moz-animation-timing-function: ease;
+                            animation-timing-function: ease;
                             -webkit-transition-delay: .3s;
                             -moz-transition-delay: .3s;
                             transition-delay: .3s;
                         }
+
                         &.animateOut {
                             opacity: 0;
                             transform: translateY(-50px);
                             -webkit-transform: translateY(-50px);
                             -moz-transform: translateY(-50px);
                             -ms-transform: translateY(-50px);
-                            -webkit-transition: .3s ease-in-out;
-                            -moz-transition: .3s ease-in-out;
-                            transition: .3s ease-in-out;
+                            -webkit-transition: .3s ease;
+                            -moz-transition: .3s ease;
+                            transition: .3s ease;
                         }
                     }
                     &.animateIn {
@@ -421,9 +432,9 @@
                         -webkit-transform: scaleY(1);
                         -moz-transform: scaleY(1);
                         -ms-transform: scaleY(1);
-                        -webkit-transition: 0.3s ease-in-out;
-                        -moz-transition: 0.3s ease-in-out;
-                        transition: 0.3s ease-in-out;
+                        -webkit-transition: 0.3s ease;
+                        -moz-transition: 0.3s ease;
+                        transition: 0.3s ease;
                     }
                     &.animateOut {
                         border-radius: 100px;
@@ -431,9 +442,9 @@
                         -webkit-transform: scaleY(0);
                         -moz-transform: scaleY(0);
                         -ms-transform: scaleY(0);
-                        -webkit-transition: 0.3s ease-in-out;
-                        -moz-transition: 0.3s ease-in-out;
-                        transition: 0.3s ease-in-out;
+                        -webkit-transition: 0.3s ease;
+                        -moz-transition: 0.3s ease;
+                        transition: 0.3s ease;
                     }
                 }
             }
@@ -472,11 +483,55 @@
             ul {
                 li {
                     position: relative;
-                    padding: 0 0.5rem;
+                    padding: 0 .75rem 1.5rem .5rem;
+                    &:nth-last-child(-n+9) {
+                        .innerCircle {
+                            .icon-star {
+                                &.animate {
+                                    -webkit-animation-name: starFadeIn;
+                                    -moz-animation-name: starFadeIn;
+                                    animation-name: starFadeIn;
+                                    -webkit-animation-duration: .5s;
+                                    -moz-animation-duration: .5s;
+                                    animation-duration: .5s;
+                                    -webkit-animation-timing-function: ease;
+                                    -moz-animation-timing-function: ease;
+                                    animation-timing-function: ease;
+                                }
+                            }
+                            &.animate {
+                                -webkit-animation-name: starBorderIn;
+                                -moz-animation-name: starBorderIn;
+                                animation-name: starBorderIn;
+                                -webkit-animation-duration: .5s;
+                                -moz-animation-duration: .5s;
+                                animation-duration: .5s;
+                                -webkit-animation-timing-function: ease;
+                                -moz-animation-timing-function: ease;
+                                animation-timing-function: ease;
+                            }
+                        }
+                        .outterCircle {
+                            .starExplode {
+                                &.animate {
+                                    -webkit-animation-name: starScale;
+                                    -moz-animation-name: starScale;
+                                    animation-name: starScale;
+                                    -webkit-animation-duration: .65s;
+                                    -moz-animation-duration: .65s;
+                                    animation-duration: .65s;
+                                    -webkit-animation-timing-function: ease;
+                                    -moz-animation-timing-function: ease;
+                                    animation-timing-function: ease;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             .product {
                 max-width: none;
+                border: .75rem solid transparent;
                 .responsively-lazy:not(img){
                     position:relative;
                     height:0;
@@ -537,17 +592,6 @@
                                 justify-content: center;
     	                        color: $inactive;
                                 font-size: 1.125rem;
-                                &.animate {
-                                    -webkit-animation-name: starFadeIn;
-                                    -moz-animation-name: starFadeIn;
-                              	    animation-name: starFadeIn;
-                                    -webkit-animation-duration: .5s;
-                                    -moz-animation-duration: .5s;
-                                    animation-duration: .5s;
-                                    -webkit-animation-timing-function: ease;
-                                    -moz-animation-timing-function: ease;
-                                    animation-timing-function: ease;
-                                }
     	                    }
     	                    &.upvoted {
     	                        background-color: #F4C714;
@@ -561,17 +605,6 @@
     	                            border: 1px solid $inactive;
     	                        }
     	                    }
-                            &.animate {
-                                -webkit-animation-name: starBorderIn;
-                                -moz-animation-name: starBorderIn;
-                                animation-name: starBorderIn;
-                                -webkit-animation-duration: .5s;
-                                -moz-animation-duration: .5s;
-                                animation-duration: .5s;
-                                -webkit-animation-timing-function: ease;
-                                -moz-animation-timing-function: ease;
-                                animation-timing-function: ease;
-                            }
                         }
     	                .outterCircle+.upvote::before {
     	                    transition: all .25s;
@@ -599,16 +632,12 @@
                                 position: absolute;
                                 top: -1px;
                                 left: -1px;
-                                opacity: 1;
-                                &.animate {
-                                    opacity: 0;
-                                    transform: scale(1.5);
-                                    -webkit-transform: scale(1.5);
-                                    -moz-transform: scale(1.5);
-                                    -ms-transform: scale(1.5);
-                                    -webkit-transition: .65s ease;
-                                    -moz-transition: .65s ease;
-                                    transition: .65s ease;
+                                &.upvoted {
+                                    height: 3.625rem;
+                                    width: 3.625rem;
+                                    border-radius: 3.625rem;
+                                    top: 0;
+                                    left: 0;
                                 }
                             }
     	                }
@@ -617,22 +646,18 @@
                 .preventReflow {
                     padding-bottom: 100%;
                 }
-                .upvotedBorder {
-                    border: 10px solid #FEEFC7;
-                }
                 .copy {
                     min-height: 60px;
-                    padding-bottom: .5rem;
+                    padding-bottom: .75rem;
+                    margin-bottom: 0;
                     padding-top: 10px;
                     &.borderAdded {
-                        padding-left: 10px;
     					padding-right: 10px;
                         h4 {
                             margin-top: 0;
                         }
                     }
                     &.upvoted {
-                        //padding-top: 0px;
                         background-color: #FEEFC7;
                     }
                     &.downvoted {
@@ -679,6 +704,9 @@
                     top: 1rem;
                     right: 1rem;
                     z-index: 101;
+                }
+                &.upvotedBorder {
+                    border: .75rem solid #FEEFC7;
                 }
             }
             .gate {
@@ -830,7 +858,6 @@
     	  transform-origin: center bottom;
     	}
 
-
         @-webkit-keyframes starFadeIn {
           0% {
             color: $inactive;
@@ -898,6 +925,178 @@
               border-color: $inactive;
             }
         }
+
+        @-webkit-keyframes starScale {
+          0% {
+              opacity: 1;
+              transform: scale(1);
+              -webkit-transform: scale(1);
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+          }
+          50% {
+              opacity: 1;
+              transform: scale(1.3);
+              -webkit-transform: scale(1.3);
+              -moz-transform: scale(1.3);
+              -ms-transform: scale(1.3);
+          }
+          100% {
+              opacity: 0;
+              transform: scale(1);
+              -webkit-transform: scale(1);
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+          }
+        }
+        @-moz-keyframes starScale {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+                -webkit-transform: scale(1.3);
+                -moz-transform: scale(1.3);
+                -ms-transform: scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+            }
+        }
+        @keyframes starScale {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+                -webkit-transform: scale(1.3);
+                -moz-transform: scale(1.3);
+                -ms-transform: scale(1.3);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+            }
+        }
+
+        @-webkit-keyframes bounceInDown {
+          from, 60%, 75%, 90%, to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          }
+
+          0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -50px, 0);
+            transform: translate3d(0, -50px, 0);
+          }
+
+          60% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+          }
+          to {
+              -webkit-transform: translate3d(0, 0px, 0);
+              transform: translate3d(0, 0px, 0);
+          }
+        }
+        @keyframes bounceInDown {
+          from, 60%, 75%, 90%, to {
+            -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          }
+
+          0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -50px, 0);
+            transform: translate3d(0, -50px, 0);
+          }
+
+          60% {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 5px, 0);
+            transform: translate3d(0, 5px, 0);
+          }
+          to {
+              -webkit-transform: translate3d(0, 0px, 0);
+              transform: translate3d(0, 0px, 0);
+          }
+        }
+
+
+
+        @-webkit-keyframes counterAnimation {
+          0% {
+              transform: scale(0);
+              -webkit-transform: scale(0);
+              -moz-transform: scale(0);
+              -ms-transform: scale(0);
+            //   -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            //   animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          }
+          100% {
+              transform: scale(1);
+              -webkit-transform: scale(1);
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+            //   -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            //   animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+          }
+        }
+        @-moz-keyframes counterAnimation {
+            0% {
+                transform: scale(0);
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                // -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                // animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            100% {
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                // -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                // animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+        }
+        @keyframes counterAnimation {
+            0% {
+                transform: scale(0);
+                -webkit-transform: scale(0);
+                -moz-transform: scale(0);
+                -ms-transform: scale(0);
+                // -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                // animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            100% {
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                // -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                // animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+        }
     }
     // quickView
     #sunnyQuickViewModal {
@@ -941,138 +1140,140 @@
 			margin-bottom: 1rem;
 		}
 	}
-	.sunnyResultsContainer {
-        header {
-            &.sunnyResultsHeader {
-    			.flexContainer {
-    				h1 {
-    					font-size: 18px;
-    				}
-    				label {
-    					font-size: 11px;
-    				}
-    			}
-                .sunnyHeader {
-                    height: 4rem;
-                    .suggestionsContainer, .giftsYouLikeContainer {
-                        &.bkgColorOn {
-                            background-color: #233C6D;
-                        }
-                    }
-                    .suggestionsContainer {
-                        .superCheckCounterBtn {
-                            transform: translateX(-2rem);
-                        }
-                    }
-                    .giftsYouLikeContainer {
-                        .superCheckCounterBtn {
-                            transform: translateX(3rem);
-                        }
-                    }
-                    .sunnyIcon {
-                        background-color: #233C6D;
+    #sunny {
+        .sunnyResultsContainer {
+            header {
+                &.sunnyResultsHeader {
+        			.flexContainer {
+        				h1 {
+        					font-size: 18px;
+        				}
+        				label {
+        					font-size: 11px;
+        				}
+        			}
+                    .sunnyHeader {
                         height: 4rem;
-                        width: 4rem;
-                        border-radius: 4rem;
-                    }
-                    .superCheckCounterBtn {
-                        .super-check {
-                            &.counter {
-                                width: 100%;
-                                h2 {
-                                    font-size: 1.0625rem;
-                                    line-height: 1.25rem;
-                                    margin: 0;
-                                    flex-direction: column;
-                                    align-items: flex-start;
-                                    height: auto;
-                                    &.circleLeft {
-                                        padding: 0;
-                                        padding-top: 1.75rem;
+                        .suggestionsContainer, .giftsYouLikeContainer {
+                            &.bkgColorOn {
+                                background-color: #233C6D;
+                            }
+                        }
+                        .suggestionsContainer {
+                            .superCheckCounterBtn {
+                                transform: translateX(-2rem);
+                            }
+                        }
+                        .giftsYouLikeContainer {
+                            .superCheckCounterBtn {
+                                transform: translateX(3rem);
+                            }
+                        }
+                        .sunnyIcon {
+                            background-color: #233C6D;
+                            height: 4rem;
+                            width: 4rem;
+                            border-radius: 4rem;
+                        }
+                        .superCheckCounterBtn {
+                            .super-check {
+                                &.counter {
+                                    width: 100%;
+                                    h2 {
+                                        font-size: 1.0625rem;
+                                        line-height: 1.25rem;
+                                        margin: 0;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        height: auto;
+                                        &.circleLeft {
+                                            padding: 0;
+                                            padding-top: 1.75rem;
+                                        }
+                                        &.circleRight {
+                                            padding: 0;
+                                            padding-top: 1.75rem;
+                                        }
                                     }
-                                    &.circleRight {
-                                        padding: 0;
-                                        padding-top: 1.75rem;
+                                    .outterCircle {
+                                        left: 50%;
+                                        transform: translate(-50%, -80%);
+                                        -webkit-transform: translate(-50%, -80%);
+                                        -moz-transform: translate(-50%, -80%);
+                                        -ms-transform: translate(-50%, -80%);
                                     }
-                                }
-                                .suggestionsCircleOuter {
-                                    left: 50%;
-                                    transform: translate(-50%, -80%);
-                                    -webkit-transform: translate(-50%, -80%);
-                                    -moz-transform: translate(-50%, -80%);
-                                    -ms-transform: translate(-50%, -80%);
-                                }
-                                .giftsYouLikeCircleOuter {
-                                    left: 50%;
-                                    transform: translate(-50%, -80%);
-                                    -webkit-transform: translate(-50%, -80%);
-                                    -moz-transform: translate(-50%, -80%);
-                                    -ms-transform: translate(-50%, -80%);
+                                    .giftsYouLikeCircleOuter {
+                                        left: 50%;
+                                        transform: translate(-50%, -80%);
+                                        -webkit-transform: translate(-50%, -80%);
+                                        -moz-transform: translate(-50%, -80%);
+                                        -ms-transform: translate(-50%, -80%);
+                                    }
                                 }
                             }
                         }
+                        .toggleBtns {
+                            &.bkgColorOn {
+                                background-color: #233C6D;
+                            }
+                        }
                     }
-                    .toggleBtns {
-                        &.bkgColorOn {
-                            background-color: #233C6D;
+                    .upvotePrompt {
+                        width: 100%;
+                        p {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            text-align: center;
+                        }
+                        &.suggestions {
+                            right: 0;
+                        }
+                        &.giftsYouLike {
+                            left: 0;
+                        }
+                        &.animateOut {
+                            border-radius: 0;
+                            transform: scaleY(0);
+                            -webkit-transform: scaleY(0);
+                            -moz-transform: scaleY(0);
+                            -ms-transform: scaleY(0);
+                            -webkit-transition: 0.5s ease-in-out;
+                            -moz-transition: 0.5s ease-in-out;
+                            transition: 0.5s ease-in-out;
                         }
                     }
                 }
-                .upvotePrompt {
-                    width: 100%;
-                    p {
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        text-align: center;
-                    }
-                    &.suggestions {
-                        right: 0;
-                    }
-                    &.giftsYouLike {
-                        left: 0;
-                    }
-                    &.animateOut {
-                        border-radius: 0;
-                        transform: scaleY(0);
-                        -webkit-transform: scaleY(0);
-                        -moz-transform: scaleY(0);
-                        -ms-transform: scaleY(0);
-                        -webkit-transition: 0.5s ease-in-out;
-                        -moz-transition: 0.5s ease-in-out;
-                        transition: 0.5s ease-in-out;
-                    }
+            }
+            .prieFilterContainer {
+                .flex {
+                    justify-content: flex-start;
                 }
             }
-        }
-        .prieFilterContainer {
-            .flex {
-                justify-content: flex-start;
-            }
-        }
-        .sunnySearchResults {
-            margin-top: 6.75rem;
-            .product {
-                .votingContainer {
-                    margin-bottom: -1.375rem;
-                    &.upvoted {
+            .sunnySearchResults {
+                margin-top: 6.75rem;
+                .product {
+                    .votingContainer {
                         margin-bottom: -1.375rem;
-                    }
-                    .icon-star {
-                        font-size: .875rem;
-                    }
-                    .innerCircle {
-                        height: 2.75rem;
-                        width: 2.75rem;
-                    }
-                    .outterCircle {
                         &.upvoted {
-                            width: 3.125rem;
-                            height: 3.125rem;
+                            margin-bottom: -1.375rem;
+                        }
+                        .icon-star {
+                            font-size: .875rem;
+                        }
+                        .innerCircle {
+                            height: 2.75rem;
+                            width: 2.75rem;
+                        }
+                        .outterCircle {
+                            &.upvoted {
+                                width: 3.125rem;
+                                height: 3.125rem;
+                            }
                         }
                     }
-                }
-                .copy {
-                    padding-top: calc(14px + .5rem);
+                    .copy {
+                        padding-top: calc(14px + .5rem);
+                    }
                 }
             }
         }

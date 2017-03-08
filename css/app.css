@@ -17219,91 +17219,96 @@ body:before {
     margin-bottom: 2rem;
   }
 }
-/* line 3, ../scss/_sunny.scss */
+/* line 1, ../scss/_sunny.scss */
+#sunny {
+  overflow-y: scroll;
+}
+
+/* line 6, ../scss/_sunny.scss */
 #sunny .fullWidth, #sunnyForm .fullWidth {
   max-width: none;
   padding: 0;
 }
-/* line 7, ../scss/_sunny.scss */
+/* line 10, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer, #sunnyForm .ugCondensedHeaderContainer {
   background-color: #FFFFFF;
   padding: 0;
 }
-/* line 10, ../scss/_sunny.scss */
+/* line 13, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer .ugHeader, #sunnyForm .ugCondensedHeaderContainer .ugHeader {
   display: flex;
   align-items: center;
   height: 2.75rem;
   padding: .5rem 1rem;
 }
-/* line 15, ../scss/_sunny.scss */
+/* line 18, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer .ugHeader .logo-container, #sunnyForm .ugCondensedHeaderContainer .ugHeader .logo-container {
   background-color: #FFFFFF;
   display: inline-block;
   margin-left: 0;
 }
-/* line 19, ../scss/_sunny.scss */
+/* line 22, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer .ugHeader .logo-container svg, #sunnyForm .ugCondensedHeaderContainer .ugHeader .logo-container svg {
   max-height: 2rem;
 }
-/* line 23, ../scss/_sunny.scss */
+/* line 26, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer .ugHeader .icon-cart, #sunnyForm .ugCondensedHeaderContainer .ugHeader .icon-cart {
   padding-left: 1rem;
 }
-/* line 26, ../scss/_sunny.scss */
+/* line 29, ../scss/_sunny.scss */
 #sunny .ugCondensedHeaderContainer .ugHeader .checkoutCopy, #sunnyForm .ugCondensedHeaderContainer .ugHeader .checkoutCopy {
   padding-right: 1rem;
 }
-/* line 32, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg, #sunnyForm .sunnyFormBkg {
+/* line 35, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg, #sunnyForm.sunnyFormBkg {
   background-color: #3D69BC;
 }
-/* line 34, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent, #sunnyForm .sunnyFormBkg #formContent {
+/* line 37, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent, #sunnyForm.sunnyFormBkg #formContent {
   margin-top: 3rem;
 }
-/* line 36, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent h2, #sunny .sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunny .sunnyFormBkg #formContent .accordion-navigation > a,
-#sunny .sunnyFormBkg #formContent .accordion dd > a,
-.accordion #sunny .sunnyFormBkg #formContent dd > a, #sunny .sunnyFormBkg #formContent p, #sunnyForm .sunnyFormBkg #formContent h2, #sunnyForm .sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunnyForm .sunnyFormBkg #formContent .accordion-navigation > a,
-#sunnyForm .sunnyFormBkg #formContent .accordion dd > a,
-.accordion #sunnyForm .sunnyFormBkg #formContent dd > a, #sunnyForm .sunnyFormBkg #formContent p {
-  color: #FFFFFF !important;
-}
 /* line 39, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent .white, #sunnyForm .sunnyFormBkg #formContent .white {
+#sunny.sunnyFormBkg #formContent h2, #sunny.sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunny.sunnyFormBkg #formContent .accordion-navigation > a,
+#sunny.sunnyFormBkg #formContent .accordion dd > a,
+.accordion #sunny.sunnyFormBkg #formContent dd > a, #sunny.sunnyFormBkg #formContent p, #sunnyForm.sunnyFormBkg #formContent h2, #sunnyForm.sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunnyForm.sunnyFormBkg #formContent .accordion-navigation > a,
+#sunnyForm.sunnyFormBkg #formContent .accordion dd > a,
+.accordion #sunnyForm.sunnyFormBkg #formContent dd > a, #sunnyForm.sunnyFormBkg #formContent p {
   color: #FFFFFF !important;
 }
 /* line 42, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #intro, #sunny .sunnyFormBkg #formContent #form1, #sunny .sunnyFormBkg #formContent #form2, #sunny .sunnyFormBkg #formContent #form3, #sunnyForm .sunnyFormBkg #formContent #intro, #sunnyForm .sunnyFormBkg #formContent #form1, #sunnyForm .sunnyFormBkg #formContent #form2, #sunnyForm .sunnyFormBkg #formContent #form3 {
+#sunny.sunnyFormBkg #formContent .white, #sunnyForm.sunnyFormBkg #formContent .white {
+  color: #FFFFFF !important;
+}
+/* line 45, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #intro, #sunny.sunnyFormBkg #formContent #form1, #sunny.sunnyFormBkg #formContent #form2, #sunny.sunnyFormBkg #formContent #form3, #sunnyForm.sunnyFormBkg #formContent #intro, #sunnyForm.sunnyFormBkg #formContent #form1, #sunnyForm.sunnyFormBkg #formContent #form2, #sunnyForm.sunnyFormBkg #formContent #form3 {
   display: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 49, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #form1 .sunnyImg, #sunnyForm .sunnyFormBkg #formContent #form1 .sunnyImg {
+/* line 52, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #form1 .sunnyImg, #sunnyForm.sunnyFormBkg #formContent #form1 .sunnyImg {
   margin-bottom: 1rem;
 }
-/* line 52, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #form1 #recipientInput, #sunnyForm .sunnyFormBkg #formContent #form1 #recipientInput {
+/* line 55, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #form1 #recipientInput, #sunnyForm.sunnyFormBkg #formContent #form1 #recipientInput {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
-/* line 56, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #form1 .copy, #sunnyForm .sunnyFormBkg #formContent #form1 .copy {
+/* line 59, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #form1 .copy, #sunnyForm.sunnyFormBkg #formContent #form1 .copy {
   margin-bottom: 1rem;
 }
-/* line 59, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #form1 #recipientBtnContainer, #sunnyForm .sunnyFormBkg #formContent #form1 #recipientBtnContainer {
+/* line 62, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #form1 #recipientBtnContainer, #sunnyForm.sunnyFormBkg #formContent #form1 #recipientBtnContainer {
   margin-bottom: 3rem;
 }
-/* line 65, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #formContent #form3 .inputGroup a, #sunnyForm .sunnyFormBkg #formContent #form3 .inputGroup a {
+/* line 68, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #formContent #form3 .inputGroup a, #sunnyForm.sunnyFormBkg #formContent #form3 .inputGroup a {
   margin-left: 0;
 }
-/* line 71, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #paginationDots, #sunnyForm .sunnyFormBkg #paginationDots {
+/* line 74, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #paginationDots, #sunnyForm.sunnyFormBkg #paginationDots {
   position: absolute;
   left: 0;
   top: calc(44px + 3rem);
@@ -17312,15 +17317,15 @@ body:before {
   margin-left: 2rem;
   visibility: hidden;
 }
-/* line 79, ../scss/_sunny.scss */
-#sunny .sunnyFormBkg #paginationDots a, #sunnyForm .sunnyFormBkg #paginationDots a {
+/* line 82, ../scss/_sunny.scss */
+#sunny.sunnyFormBkg #paginationDots a, #sunnyForm.sunnyFormBkg #paginationDots a {
   margin: .25rem 0;
 }
-/* line 85, ../scss/_sunny.scss */
+/* line 88, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer, #sunnyForm .sunnyResultsContainer {
   background-color: #f2f0ed;
 }
-/* line 87, ../scss/_sunny.scss */
+/* line 90, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header, #sunnyForm .sunnyResultsContainer header {
   position: fixed;
   z-index: 200;
@@ -17332,21 +17337,21 @@ body:before {
   right: 0;
   border-bottom: 0;
 }
-/* line 97, ../scss/_sunny.scss */
+/* line 100, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader {
   max-width: none;
 }
-/* line 99, ../scss/_sunny.scss */
+/* line 102, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .small-12, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .small-12 {
   padding: 0;
 }
-/* line 102, ../scss/_sunny.scss */
+/* line 105, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .flexContainer {
   display: flex;
   align-items: center;
   padding: 0 1rem;
 }
-/* line 107, ../scss/_sunny.scss */
+/* line 110, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
   height: 5rem;
   width: 100%;
@@ -17355,7 +17360,7 @@ body:before {
   margin: 0;
   max-width: none;
 }
-/* line 114, ../scss/_sunny.scss */
+/* line 117, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer {
   position: relative;
   width: 50%;
@@ -17364,83 +17369,12 @@ body:before {
   align-items: center;
   justify-content: flex-end;
 }
-/* line 121, ../scss/_sunny.scss */
+/* line 124, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
   transform: translateX(-3rem);
 }
-/* line 125, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-/* line 132, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
-  transform: translateX(3rem);
-}
-/* line 136, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn {
-  position: relative;
-  display: inline-block;
-}
-/* line 139, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before {
-  border: 1px solid transparent;
-}
-/* line 142, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter {
-  background-color: #233C6D;
-  border: 1px solid #233C6D;
-  line-height: 1rem;
-}
-/* line 147, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check {
-  margin: 0;
-  padding: .5rem 1rem .5rem .5rem;
-  line-height: 1rem;
-}
-/* line 151, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
-  width: 190px;
-  height: 44px;
-  padding: 0;
-}
-/* line 155, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
-.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
-#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
-.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
-  margin: 0;
-  line-height: 1rem;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 44px;
-}
-/* line 163, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
-.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
-#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
-.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
-  padding-left: 46px;
-}
-/* line 166, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
-.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
-#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
-.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
-  padding-right: 46px;
-  justify-content: flex-end;
-}
-/* line 171, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter {
+/* line 127, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle {
   position: absolute;
   display: inline-block;
   top: 50%;
@@ -17462,39 +17396,8 @@ body:before {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
-/* line 192, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter.fill {
-  background-color: #FFFFFF;
-}
-/* line 195, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count {
-  color: #FFFFFF;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  transition: .5s ease-in-out;
-}
-/* line 202, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.updateColor, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.updateColor {
-  color: #FFFFFF;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-}
-/* line 209, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .count.animateIn {
-  color: #233B6D;
-  font-weight: bold;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  transition: .5s ease-in-out;
-}
-/* line 219, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle {
+/* line 148, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle {
   position: absolute;
   top: -1px;
   left: -1px;
@@ -17502,35 +17405,83 @@ body:before {
   height: 32px;
   border: 1px solid #FFFFFF;
   background-color: #233B6D;
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 32px;
   -moz-border-radius: 32px;
   -webkit-border-radius: 32px;
+}
+/* line 163, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.hideInnerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.hideInnerCircle {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+}
+/* line 169, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.whiteBkg, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.whiteBkg {
+  visibility: visible;
+}
+/* line 172, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.animateIn {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transition: .3s ease-in-out;
+}
+/* line 180, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count {
+  color: #FFFFFF;
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
-  transition: .25s ease-in-out;
+  transition: .5s ease-in-out;
 }
-/* line 238, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.hideInnerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.hideInnerCircle {
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
+/* line 187, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.updateColor, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.updateColor {
+  color: #FFFFFF;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
 }
-/* line 244, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter .innerCircle.animateIn {
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  transition: .25s ease-in-out;
+/* line 194, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.animateIn {
+  color: #233b6d;
+  font-weight: bold;
+  -webkit-animation-name: counterAnimation;
+  -moz-animation-name: counterAnimation;
+  animation-name: counterAnimation;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-transition-delay: .16s;
+  -moz-transition-delay: .16s;
+  transition-delay: .16s;
 }
-/* line 254, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
+/* line 208, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle.fill {
+  background-color: #FFFFFF;
+}
+/* line 213, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+/* line 220, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
+  transform: translateX(3rem);
+}
+/* line 223, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle {
   position: absolute;
   display: inline-block;
   top: 50%;
@@ -17552,39 +17503,8 @@ body:before {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
-/* line 275, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter.fill {
-  background-color: #FFFFFF;
-}
-/* line 278, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count {
-  color: #FFFFFF;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  transition: .5s ease-in-out;
-}
-/* line 285, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.updateColor, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.updateColor {
-  color: #FFFFFF;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-}
-/* line 292, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .count.animateIn {
-  color: #233B6D;
-  font-weight: bold;
-  transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  transition: .5s ease-in-out;
-}
-/* line 302, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle {
+/* line 244, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle {
   position: absolute;
   top: -1px;
   left: -1px;
@@ -17592,34 +17512,129 @@ body:before {
   height: 32px;
   border: 1px solid #FFFFFF;
   background-color: #3E69BC;
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 32px;
   -moz-border-radius: 32px;
   -webkit-border-radius: 32px;
+}
+/* line 259, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.hideInnerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.hideInnerCircle {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+}
+/* line 265, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.whiteBkg, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.whiteBkg {
+  visibility: visible;
+}
+/* line 268, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.animateIn {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transition: .3s ease-in-out;
+}
+/* line 276, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count {
+  color: #FFFFFF;
   transform: scale(1);
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   transition: .5s ease-in-out;
 }
+/* line 283, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.updateColor, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.updateColor {
+  color: #FFFFFF;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+}
+/* line 290, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn {
+  color: #233B6D;
+  font-weight: bold;
+  -webkit-animation-name: counterAnimation;
+  -moz-animation-name: counterAnimation;
+  animation-name: counterAnimation;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-transition-delay: .16s;
+  -moz-transition-delay: .16s;
+  transition-delay: .16s;
+}
+/* line 304, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle.fill {
+  background-color: #FFFFFF;
+}
+/* line 310, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn {
+  position: relative;
+  display: inline-block;
+}
+/* line 313, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before {
+  border: 1px solid transparent;
+}
+/* line 316, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter {
+  background-color: #233C6D;
+  border: 1px solid #233C6D;
+  line-height: 1rem;
+}
 /* line 321, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.hideInnerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.hideInnerCircle {
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check {
+  margin: 0;
+  padding: .5rem 1rem .5rem .5rem;
+  line-height: 1rem;
 }
-/* line 327, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter .innerCircle.animateIn {
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  transition: .5s ease-in-out;
+/* line 325, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
+  width: 190px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
 }
-/* line 339, ../scss/_sunny.scss */
+/* line 330, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
+  margin: 0;
+  line-height: 1rem;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 44px;
+}
+/* line 338, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
+  padding-left: 46px;
+}
+/* line 341, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
+  padding-left: 1rem;
+  padding-right: 0;
+  justify-content: flex-start;
+}
+/* line 350, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
   margin: 0 auto;
   border-radius: 6rem;
@@ -17633,25 +17648,25 @@ body:before {
   left: 50%;
   transform: translateX(-50%);
 }
-/* line 352, ../scss/_sunny.scss */
+/* line 363, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns {
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 100%;
 }
-/* line 358, ../scss/_sunny.scss */
+/* line 369, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .upVotedResultsCounter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .upVotedResultsCounter {
   font-weight: bold;
   font-size: 1.2rem;
 }
-/* line 362, ../scss/_sunny.scss */
+/* line 373, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .flexContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .flexContainer {
   display: flex;
   align-items: center;
   height: 100%;
 }
-/* line 368, ../scss/_sunny.scss */
+/* line 379, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
   position: absolute;
   top: -23;
@@ -17662,12 +17677,12 @@ body:before {
   transform: scaleY(0);
   border-radius: 100px;
 }
-/* line 377, ../scss/_sunny.scss */
+/* line 388, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
   left: 48px;
   background-color: #3D69BC;
 }
-/* line 381, ../scss/_sunny.scss */
+/* line 392, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
   color: #FFFFFF;
   text-align: center;
@@ -17678,35 +17693,34 @@ body:before {
   position: absolute;
   width: 100%;
   bottom: 0;
-  opacity: 0;
-  transform: translateY(-50px);
 }
-/* line 393, ../scss/_sunny.scss */
+/* line 402, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateIn {
-  opacity: 1;
-  transform: translateY(0px);
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
   transition-delay: .3s;
 }
-/* line 406, ../scss/_sunny.scss */
+/* line 417, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateOut, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateOut {
   opacity: 0;
   transform: translateY(-50px);
   -webkit-transform: translateY(-50px);
   -moz-transform: translateY(-50px);
   -ms-transform: translateY(-50px);
-  -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  transition: .3s ease;
 }
-/* line 417, ../scss/_sunny.scss */
+/* line 428, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateIn {
   top: 0;
   border-radius: 0px;
@@ -17714,90 +17728,127 @@ body:before {
   -webkit-transform: scaleY(1);
   -moz-transform: scaleY(1);
   -ms-transform: scaleY(1);
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
-/* line 428, ../scss/_sunny.scss */
+/* line 439, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
   border-radius: 100px;
   transform: scaleY(0);
   -webkit-transform: scaleY(0);
   -moz-transform: scaleY(0);
   -ms-transform: scaleY(0);
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
-/* line 441, ../scss/_sunny.scss */
+/* line 452, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer, #sunnyForm .sunnyResultsContainer .prieFilterContainer {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-/* line 444, ../scss/_sunny.scss */
+/* line 455, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer h3, #sunnyForm .sunnyResultsContainer .prieFilterContainer h3 {
   display: inline-block;
   padding-right: .5rem;
 }
-/* line 448, ../scss/_sunny.scss */
+/* line 459, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .flex, #sunnyForm .sunnyResultsContainer .prieFilterContainer .flex {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
 }
-/* line 453, ../scss/_sunny.scss */
+/* line 464, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .flex .priceCopy, #sunnyForm .sunnyResultsContainer .prieFilterContainer .flex .priceCopy {
   padding: 0;
   margin: 0 .5rem 0 0;
 }
-/* line 457, ../scss/_sunny.scss */
+/* line 468, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .flex .priceToCopy, #sunnyForm .sunnyResultsContainer .prieFilterContainer .flex .priceToCopy {
   padding: 0;
   margin: 0 .5rem 0 .5rem;
 }
-/* line 461, ../scss/_sunny.scss */
+/* line 472, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .flex .minMaxPrice, #sunnyForm .sunnyResultsContainer .prieFilterContainer .flex .minMaxPrice {
   width: 3rem;
   margin: 0;
 }
-/* line 465, ../scss/_sunny.scss */
+/* line 476, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .flex button, #sunnyForm .sunnyResultsContainer .prieFilterContainer .flex button {
   margin: 0 0 0 1rem;
 }
-/* line 470, ../scss/_sunny.scss */
+/* line 481, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults, #sunnyForm .sunnyResultsContainer .sunnySearchResults {
   margin-top: 7.75rem;
 }
-/* line 473, ../scss/_sunny.scss */
+/* line 484, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul li, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li {
   position: relative;
-  padding: 0 0.5rem;
+  padding: 0 .75rem 1.5rem .5rem;
 }
-/* line 478, ../scss/_sunny.scss */
+/* line 490, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .innerCircle .icon-star.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .innerCircle .icon-star.animate {
+  -webkit-animation-name: starFadeIn;
+  -moz-animation-name: starFadeIn;
+  animation-name: starFadeIn;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+/* line 502, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .innerCircle.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .innerCircle.animate {
+  -webkit-animation-name: starBorderIn;
+  -moz-animation-name: starBorderIn;
+  animation-name: starBorderIn;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+/* line 516, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .outterCircle .starExplode.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li:nth-last-child(-n+9) .outterCircle .starExplode.animate {
+  -webkit-animation-name: starScale;
+  -moz-animation-name: starScale;
+  animation-name: starScale;
+  -webkit-animation-duration: .65s;
+  -moz-animation-duration: .65s;
+  animation-duration: .65s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+}
+/* line 532, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product {
   max-width: none;
+  border: .75rem solid transparent;
 }
-/* line 480, ../scss/_sunny.scss */
+/* line 535, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
   margin-bottom: 0;
 }
-/* line 485, ../scss/_sunny.scss */
+/* line 540, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img {
   position: absolute;
   width: 100%;
   height: auto;
   z-index: 99;
 }
-/* line 490, ../scss/_sunny.scss */
+/* line 545, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
   height: 100%;
 }
-/* line 496, ../scss/_sunny.scss */
+/* line 551, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .icon-close, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .icon-close {
   position: absolute;
   top: 0;
@@ -17805,14 +17856,14 @@ body:before {
   z-index: 100;
   padding: .5rem;
 }
-/* line 503, ../scss/_sunny.scss */
+/* line 558, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .loadingSvg, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .loadingSvg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* line 509, ../scss/_sunny.scss */
+/* line 564, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer {
   position: absolute;
   bottom: 0;
@@ -17820,11 +17871,11 @@ body:before {
   z-index: 100;
   margin-bottom: 1rem;
 }
-/* line 515, ../scss/_sunny.scss */
+/* line 570, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted {
   margin-bottom: calc(1rem + 10px);
 }
-/* line 519, ../scss/_sunny.scss */
+/* line 574, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle {
   position: absolute;
   top: -1px;
@@ -17836,11 +17887,11 @@ body:before {
   border-radius: 3.25rem;
   box-shadow: 0 0 6px -1px #817B73;
 }
-/* line 529, ../scss/_sunny.scss */
+/* line 584, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle:hover, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle:hover {
   border: 2px solid #F4C714;
 }
-/* line 532, ../scss/_sunny.scss */
+/* line 587, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle .icon-star {
   display: flex;
   width: 100%;
@@ -17850,51 +17901,27 @@ body:before {
   color: #A8A098;
   font-size: 1.125rem;
 }
-/* line 540, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle .icon-star.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle .icon-star.animate {
-  -webkit-animation-name: starFadeIn;
-  -moz-animation-name: starFadeIn;
-  animation-name: starFadeIn;
-  -webkit-animation-duration: .5s;
-  -moz-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
-/* line 552, ../scss/_sunny.scss */
+/* line 596, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted {
   background-color: #F4C714;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* line 557, ../scss/_sunny.scss */
+/* line 601, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted .icon-star {
   color: #FFFFFF;
 }
-/* line 560, ../scss/_sunny.scss */
+/* line 604, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted:hover, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.upvoted:hover {
   border: 1px solid #A8A098;
 }
-/* line 564, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .innerCircle.animate {
-  -webkit-animation-name: starBorderIn;
-  -moz-animation-name: starBorderIn;
-  animation-name: starBorderIn;
-  -webkit-animation-duration: .5s;
-  -moz-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-timing-function: ease;
-  -moz-animation-timing-function: ease;
-  animation-timing-function: ease;
-}
-/* line 576, ../scss/_sunny.scss */
+/* line 609, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle + .upvote::before, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle + .upvote::before {
   transition: all .25s;
   transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
 }
-/* line 580, ../scss/_sunny.scss */
+/* line 613, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle {
   display: inline-block;
   height: 3.25rem;
@@ -17902,7 +17929,7 @@ body:before {
   border-radius: 3.25rem;
   position: relative;
 }
-/* line 586, ../scss/_sunny.scss */
+/* line 619, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle.upvoted {
   width: 3.625rem;
   height: 3.625rem;
@@ -17911,7 +17938,7 @@ body:before {
   transition: all .25s;
   transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
 }
-/* line 594, ../scss/_sunny.scss */
+/* line 627, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode {
   height: 3.25rem;
   width: 3.25rem;
@@ -17920,51 +17947,43 @@ body:before {
   position: absolute;
   top: -1px;
   left: -1px;
-  opacity: 1;
 }
-/* line 603, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode.animate {
-  opacity: 0;
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -webkit-transition: .65s ease;
-  -moz-transition: .65s ease;
-  transition: .65s ease;
+/* line 635, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .votingContainer.stars .outterCircle .starExplode.upvoted {
+  height: 3.625rem;
+  width: 3.625rem;
+  border-radius: 3.625rem;
+  top: 0;
+  left: 0;
 }
-/* line 617, ../scss/_sunny.scss */
+/* line 646, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .preventReflow, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .preventReflow {
   padding-bottom: 100%;
 }
-/* line 620, ../scss/_sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .upvotedBorder, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .upvotedBorder {
-  border: 10px solid #FEEFC7;
-}
-/* line 623, ../scss/_sunny.scss */
+/* line 649, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy {
   min-height: 60px;
-  padding-bottom: .5rem;
+  padding-bottom: .75rem;
+  margin-bottom: 0;
   padding-top: 10px;
 }
-/* line 627, ../scss/_sunny.scss */
+/* line 654, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded {
-  padding-left: 10px;
   padding-right: 10px;
 }
-/* line 630, ../scss/_sunny.scss */
+/* line 656, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy {
   margin-top: 0;
 }
-/* line 634, ../scss/_sunny.scss */
+/* line 660, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted {
   background-color: #FEEFC7;
 }
-/* line 638, ../scss/_sunny.scss */
+/* line 663, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted {
   background-color: #f2f0ed;
 }
-/* line 642, ../scss/_sunny.scss */
+/* line 667, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer {
   position: absolute;
   width: 100%;
@@ -17973,12 +17992,12 @@ body:before {
   left: 0;
   overflow: hidden;
 }
-/* line 649, ../scss/_sunny.scss */
+/* line 674, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border {
   border: 10px solid #f2f0ed;
   z-index: 99;
 }
-/* line 653, ../scss/_sunny.scss */
+/* line 678, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason {
   position: absolute;
   width: 100%;
@@ -17988,32 +18007,36 @@ body:before {
   z-index: 100;
   transform: translateY(100%);
 }
-/* line 661, ../scss/_sunny.scss */
+/* line 686, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close {
   padding: 1rem;
 }
-/* line 664, ../scss/_sunny.scss */
+/* line 689, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul {
   margin: 0;
   list-style-type: none;
   padding: 2.5rem 0 2.5rem 1rem;
 }
-/* line 668, ../scss/_sunny.scss */
+/* line 693, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li {
   padding: 0;
 }
-/* line 672, ../scss/_sunny.scss */
+/* line 697, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label {
   margin: 0 .75rem .5rem 0;
 }
-/* line 677, ../scss/_sunny.scss */
+/* line 702, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason {
   position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 101;
 }
-/* line 684, ../scss/_sunny.scss */
+/* line 708, ../scss/_sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product.upvotedBorder, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product.upvotedBorder {
+  border: .75rem solid #FEEFC7;
+}
+/* line 712, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate {
   height: 90px;
   border-top: 1px solid #F4C714;
@@ -18022,11 +18045,11 @@ body:before {
   visibility: hidden;
   background-color: #FFFFFF;
 }
-/* line 691, ../scss/_sunny.scss */
+/* line 719, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate p, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate p {
   padding-top: 33px;
 }
-/* line 694, ../scss/_sunny.scss */
+/* line 722, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate .animateGate {
   height: 100%;
   width: 100%;
@@ -18039,7 +18062,7 @@ body:before {
   -ms-transform: translateY(100%);
   transition: 0.5s ease-in-out;
 }
-/* line 705, ../scss/_sunny.scss */
+/* line 733, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate {
   transform: translateY(0%);
   -webkit-transform: translateY(0%);
@@ -18047,46 +18070,46 @@ body:before {
   -ms-transform: translateY(0%);
   transition: 0.5s ease-in-out;
 }
-/* line 713, ../scss/_sunny.scss */
+/* line 741, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate.unhide, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate.unhide {
   visibility: visible;
 }
-/* line 718, ../scss/_sunny.scss */
+/* line 746, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer {
   margin-top: 7rem;
 }
-/* line 721, ../scss/_sunny.scss */
+/* line 749, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .container:first-child, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .container:first-child {
   padding-top: 2rem;
 }
-/* line 725, ../scss/_sunny.scss */
+/* line 753, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
   display: none;
 }
-/* line 730, ../scss/_sunny.scss */
+/* line 758, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer img, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer img {
   max-height: 300px;
 }
-/* line 734, ../scss/_sunny.scss */
+/* line 762, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
   border-bottom: 2px solid;
   margin: 2rem 0 1.1875rem;
 }
-/* line 739, ../scss/_sunny.scss */
+/* line 767, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .itemDescription, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 742, ../scss/_sunny.scss */
+/* line 770, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .avgRating, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 746, ../scss/_sunny.scss */
+/* line 774, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
 }
-/* line 753, ../scss/_sunny.scss */
+/* line 781, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .animated, #sunnyForm .sunnyResultsContainer .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -18153,7 +18176,7 @@ body:before {
     transform: translate3d(0, 0, 0);
   }
 }
-/* line 826, ../scss/_sunny.scss */
+/* line 854, ../scss/_sunny.scss */
 #sunny .sunnyResultsContainer .bounce, #sunnyForm .sunnyResultsContainer .bounce {
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -18226,87 +18249,238 @@ body:before {
     border-color: #A8A098;
   }
 }
-/* line 904, ../scss/_sunny.scss */
+@-webkit-keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@-moz-keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@-webkit-keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-webkit-keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@-moz-keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+/* line 1103, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .votingContainer, #sunnyForm #sunnyQuickViewModal .votingContainer {
   padding-bottom: 3rem;
 }
-/* line 906, ../scss/_sunny.scss */
+/* line 1105, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .votingContainer .downVote, #sunnyForm #sunnyQuickViewModal .votingContainer .downVote {
   padding-right: .50rem;
 }
-/* line 909, ../scss/_sunny.scss */
+/* line 1108, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .votingContainer .upVote, #sunnyForm #sunnyQuickViewModal .votingContainer .upVote {
   padding-left: .50rem;
 }
-/* line 913, ../scss/_sunny.scss */
+/* line 1112, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .itemDescription, #sunnyForm #sunnyQuickViewModal .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 916, ../scss/_sunny.scss */
+/* line 1115, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .avgRating, #sunnyForm #sunnyQuickViewModal .avgRating {
   padding-bottom: 2rem;
 }
-/* line 920, ../scss/_sunny.scss */
+/* line 1119, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .selectQuanity input, #sunnyForm #sunnyQuickViewModal .selectQuanity input {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-/* line 925, ../scss/_sunny.scss */
+/* line 1124, ../scss/_sunny.scss */
 #sunny #sunnyQuickViewModal .copy, #sunnyForm #sunnyQuickViewModal .copy {
   padding-left: 24px;
   margin-top: 5rem;
 }
 
 @media (max-width: 40em) {
-  /* line 936, ../scss/_sunny.scss */
+  /* line 1135, ../scss/_sunny.scss */
   #sunnyQuickViewModal .copy {
     margin-top: 1rem;
     padding-left: 0;
   }
-  /* line 940, ../scss/_sunny.scss */
+  /* line 1139, ../scss/_sunny.scss */
   #sunnyQuickViewModal .icon-close {
     margin-bottom: 1rem;
   }
 
-  /* line 948, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .flexContainer h1 {
+  /* line 1148, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer h1 {
     font-size: 18px;
   }
-  /* line 951, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .flexContainer label {
+  /* line 1151, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer label {
     font-size: 11px;
   }
-  /* line 955, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
+  /* line 1155, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
     height: 4rem;
   }
-  /* line 958, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer.bkgColorOn, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer.bkgColorOn {
+  /* line 1158, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer.bkgColorOn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 963, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
+  /* line 1163, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
     transform: translateX(-2rem);
   }
-  /* line 968, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
+  /* line 1168, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
     transform: translateX(3rem);
   }
-  /* line 972, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
+  /* line 1172, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
     background-color: #233C6D;
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
   }
-  /* line 980, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
+  /* line 1180, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
     width: 100%;
   }
-  /* line 982, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
-  .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
+  /* line 1182, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
     font-size: 1.0625rem;
     line-height: 1.25rem;
     margin: 0;
@@ -18314,60 +18488,60 @@ body:before {
     align-items: flex-start;
     height: auto;
   }
-  /* line 989, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
-  .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
+  /* line 1189, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 993, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
-  .accordion .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
+  /* line 1193, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 998, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .suggestionsCircleOuter {
+  /* line 1198, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .outterCircle {
     left: 50%;
     transform: translate(-50%, -80%);
     -webkit-transform: translate(-50%, -80%);
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 1005, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
+  /* line 1205, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
     left: 50%;
     transform: translate(-50%, -80%);
     -webkit-transform: translate(-50%, -80%);
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 1016, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns.bkgColorOn {
+  /* line 1216, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 1021, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
+  /* line 1221, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
     width: 100%;
   }
-  /* line 1023, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
+  /* line 1223, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
   }
-  /* line 1028, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.suggestions {
+  /* line 1228, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.suggestions {
     right: 0;
   }
-  /* line 1031, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
+  /* line 1231, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
     left: 0;
   }
-  /* line 1034, ../scss/_sunny.scss */
-  .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
+  /* line 1234, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
     border-radius: 0;
     transform: scaleY(0);
     -webkit-transform: scaleY(0);
@@ -18377,57 +18551,57 @@ body:before {
     -moz-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
   }
-  /* line 1048, ../scss/_sunny.scss */
-  .sunnyResultsContainer .prieFilterContainer .flex {
+  /* line 1248, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .prieFilterContainer .flex {
     justify-content: flex-start;
   }
-  /* line 1052, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults {
+  /* line 1252, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults {
     margin-top: 6.75rem;
   }
-  /* line 1055, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .votingContainer {
+  /* line 1255, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer {
     margin-bottom: -1.375rem;
   }
-  /* line 1057, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted {
+  /* line 1257, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer.upvoted {
     margin-bottom: -1.375rem;
   }
-  /* line 1060, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .votingContainer .icon-star {
+  /* line 1260, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer .icon-star {
     font-size: .875rem;
   }
-  /* line 1063, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .votingContainer .innerCircle {
+  /* line 1263, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer .innerCircle {
     height: 2.75rem;
     width: 2.75rem;
   }
-  /* line 1068, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .votingContainer .outterCircle.upvoted {
+  /* line 1268, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .votingContainer .outterCircle.upvoted {
     width: 3.125rem;
     height: 3.125rem;
   }
-  /* line 1074, ../scss/_sunny.scss */
-  .sunnyResultsContainer .sunnySearchResults .product .copy {
+  /* line 1274, ../scss/_sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .copy {
     padding-top: calc(14px + .5rem);
   }
 }
 @media (min-width: 64.063em) {
-  /* line 1092, ../scss/_sunny.scss */
+  /* line 1293, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1098, ../scss/_sunny.scss */
+  /* line 1299, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 1114, ../scss/_sunny.scss */
+  /* line 1315, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1120, ../scss/_sunny.scss */
+  /* line 1321, ../scss/_sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }
