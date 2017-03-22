@@ -15266,65 +15266,163 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
 #sunny {
   overflow-y: scroll;
 }
-/* line 378, ../scss/sunny.scss */
+/* line 377, ../scss/sunny.scss */
+#sunny .starContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: auto;
+  z-index: 100;
+  margin-bottom: 1rem;
+  transform: translateX(-50%);
+}
+/* line 385, ../scss/sunny.scss */
+#sunny .starContainer .innerCircle {
+  position: absolute;
+  top: 50%;
+  height: 3.25rem;
+  width: 3.25rem;
+  background: #FFFFFF;
+  border: 1px solid #A8A098;
+  border-radius: 3.25rem;
+  box-shadow: 0 0 6px -1px #817B73;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+/* line 398, ../scss/sunny.scss */
+#sunny .starContainer .innerCircle:hover {
+  border: 2px solid #F4C714;
+}
+/* line 401, ../scss/sunny.scss */
+#sunny .starContainer .innerCircle .icon-star {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #A8A098;
+  font-size: 1.125rem;
+}
+/* line 409, ../scss/sunny.scss */
+#sunny .starContainer .innerCircle .icon-star.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/* line 416, ../scss/sunny.scss */
+#sunny .starContainer .outterCircle + .upvote::before {
+  transition: all .25s;
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+}
+/* line 420, ../scss/sunny.scss */
+#sunny .starContainer .outterCircle {
+  display: inline-block;
+  height: 3.25rem;
+  width: 3.25rem;
+  border-radius: 3.25rem;
+  position: relative;
+}
+/* line 427, ../scss/sunny.scss */
+#sunny .starContainer .starExplode {
+  opacity: 1;
+  height: 3.25rem;
+  width: 3.25rem;
+  border-radius: 3.25rem;
+  border: 1px solid #F4C714;
+}
+/* line 435, ../scss/sunny.scss */
+#sunny .starContainer.upvoted .innerCircle {
+  background-color: #F4C714;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+/* line 443, ../scss/sunny.scss */
+#sunny .starContainer.upvoted .innerCircle .icon-star {
+  color: #FFFFFF;
+}
+/* line 446, ../scss/sunny.scss */
+#sunny .starContainer.upvoted .innerCircle:hover {
+  border: 1px solid #A8A098;
+}
+/* line 450, ../scss/sunny.scss */
+#sunny .starContainer.upvoted .outterCircle {
+  width: 3.625rem;
+  height: 3.625rem;
+  box-shadow: 0 0 6px -1px #817B73;
+  border: 1px solid #F4C714;
+  background: #FFFFFF;
+  transition: all .25s;
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+}
+/* line 459, ../scss/sunny.scss */
+#sunny .starContainer.upvoted .starExplode {
+  display: none;
+}
+/* line 465, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer {
   background-color: #f2f0ed;
 }
-/* line 381, ../scss/sunny.scss */
+/* line 467, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-/* line 384, ../scss/sunny.scss */
+/* line 470, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer h3 {
   display: inline-block;
   padding-right: .5rem;
 }
-/* line 388, ../scss/sunny.scss */
+/* line 474, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .priceRange {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   align-items: center;
 }
-/* line 393, ../scss/sunny.scss */
+/* line 479, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .priceRange .nav-fam {
   padding: 0;
   margin: 0 .5rem 0 0;
 }
-/* line 397, ../scss/sunny.scss */
+/* line 483, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .priceRange .priceToCopy {
   padding: 0;
   margin: 0 .5rem 0 .5rem;
 }
-/* line 401, ../scss/sunny.scss */
+/* line 487, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .priceRange .minMaxPrice {
   width: 3rem;
   margin: 0;
 }
-/* line 405, ../scss/sunny.scss */
+/* line 491, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .prieFilterContainer .priceRange button {
   margin: 0 0 0 1rem;
 }
-/* line 410, ../scss/sunny.scss */
+/* line 496, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults {
   margin-top: 7.75rem;
 }
-/* line 413, ../scss/sunny.scss */
+/* line 499, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul li {
   padding: 0 .75rem 1.5rem .5rem;
   -webkit-transition: height 350ms ease;
   -moz-transition: height 350ms ease;
   transition: height 350ms ease;
 }
-/* line 418, ../scss/sunny.scss */
+/* line 504, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul li.quickViewExpander {
   -webkit-transition: height 350ms ease;
   -moz-transition: height 350ms ease;
   transition: height 350ms ease;
   height: 1100px;
 }
-/* line 427, ../scss/sunny.scss */
+/* line 513, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle {
   -webkit-animation-name: starBorderIn;
   -moz-animation-name: starBorderIn;
@@ -15342,7 +15440,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-/* line 443, ../scss/sunny.scss */
+/* line 529, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle .icon-star {
   -webkit-animation-name: starFadeIn;
   -moz-animation-name: starFadeIn;
@@ -15360,7 +15458,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-/* line 462, ../scss/sunny.scss */
+/* line 548, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .outterCircle .starExplode {
   -webkit-animation-name: starScale;
   -moz-animation-name: starScale;
@@ -15375,15 +15473,15 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-/* line 481, ../scss/sunny.scss */
+/* line 567, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle {
   border-color: #F4C714;
 }
-/* line 483, ../scss/sunny.scss */
+/* line 569, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle .icon-star {
   color: #F4C714;
 }
-/* line 490, ../scss/sunny.scss */
+/* line 576, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle {
   -webkit-animation-name: starBorderOut;
   -moz-animation-name: starBorderOut;
@@ -15401,7 +15499,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-/* line 506, ../scss/sunny.scss */
+/* line 592, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle .icon-star {
   -webkit-animation-name: starFadeOut;
   -moz-animation-name: starFadeOut;
@@ -15419,24 +15517,24 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
-/* line 526, ../scss/sunny.scss */
+/* line 612, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product {
   max-width: none;
   border: .75rem solid transparent;
 }
-/* line 529, ../scss/sunny.scss */
+/* line 615, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) {
   position: relative;
   height: 0;
   margin-bottom: 0;
 }
-/* line 539, ../scss/sunny.scss */
+/* line 621, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns {
   position: relative;
   width: auto;
   height: 100%;
 }
-/* line 545, ../scss/sunny.scss */
+/* line 627, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .icon-close {
   position: absolute;
   top: 0;
@@ -15444,7 +15542,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   z-index: 100;
   padding: .5rem;
 }
-/* line 552, ../scss/sunny.scss */
+/* line 634, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .loadingSvg {
   position: absolute;
   top: 50%;
@@ -15454,132 +15552,34 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-/* line 561, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: auto;
-  z-index: 100;
-  margin-bottom: 1rem;
-  transform: translateX(-50%);
-}
-/* line 569, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle {
-  position: absolute;
-  top: 50%;
-  height: 3.25rem;
-  width: 3.25rem;
-  background: #FFFFFF;
-  border: 1px solid #A8A098;
-  border-radius: 3.25rem;
-  box-shadow: 0 0 6px -1px #817B73;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-}
-/* line 582, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle:hover {
-  border: 2px solid #F4C714;
-}
-/* line 585, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  color: #A8A098;
-  font-size: 1.125rem;
-}
-/* line 593, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star.paused {
-  -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  animation-play-state: paused;
-}
-/* line 600, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle + .upvote::before {
-  transition: all .25s;
-  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
-}
-/* line 604, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle {
-  display: inline-block;
-  height: 3.25rem;
-  width: 3.25rem;
-  border-radius: 3.25rem;
-  position: relative;
-}
-/* line 611, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .starExplode {
-  opacity: 1;
-  height: 3.25rem;
-  width: 3.25rem;
-  border-radius: 3.25rem;
-  border: 1px solid #F4C714;
-}
-/* line 619, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle {
-  background-color: #F4C714;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-/* line 627, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle .icon-star {
-  color: #FFFFFF;
-}
-/* line 630, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle:hover {
-  border: 1px solid #A8A098;
-}
-/* line 634, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .outterCircle {
-  width: 3.625rem;
-  height: 3.625rem;
-  box-shadow: 0 0 6px -1px #817B73;
-  border: 1px solid #F4C714;
-  background: #FFFFFF;
-  transition: all .25s;
-  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
-}
-/* line 643, ../scss/sunny.scss */
-#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .starExplode {
-  display: none;
-}
-/* line 648, ../scss/sunny.scss */
+/* line 644, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .preventReflow {
   padding-bottom: 100%;
 }
-/* line 651, ../scss/sunny.scss */
+/* line 647, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy {
   min-height: 60px;
   padding-bottom: .75rem;
   margin-bottom: 0;
   padding-top: 10px;
 }
-/* line 656, ../scss/sunny.scss */
+/* line 652, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded {
   padding-right: 10px;
 }
-/* line 658, ../scss/sunny.scss */
+/* line 654, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy {
   margin-top: 0;
 }
-/* line 662, ../scss/sunny.scss */
+/* line 658, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted {
   background-color: #FEEFC7;
 }
-/* line 665, ../scss/sunny.scss */
+/* line 661, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted {
   background-color: #f2f0ed;
 }
-/* line 669, ../scss/sunny.scss */
+/* line 665, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer {
   position: absolute;
   width: 100%;
@@ -15588,12 +15588,12 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   left: 0;
   overflow: hidden;
 }
-/* line 676, ../scss/sunny.scss */
+/* line 672, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border {
   border: 10px solid #f2f0ed;
   z-index: 99;
 }
-/* line 680, ../scss/sunny.scss */
+/* line 676, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason {
   position: absolute;
   width: 100%;
@@ -15606,36 +15606,36 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
 }
-/* line 691, ../scss/sunny.scss */
+/* line 687, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close {
   padding: 1rem;
 }
-/* line 694, ../scss/sunny.scss */
+/* line 690, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul {
   margin: 0;
   list-style-type: none;
   padding: 2.5rem 0 2.5rem 1rem;
 }
-/* line 698, ../scss/sunny.scss */
+/* line 694, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li {
   padding: 0;
 }
-/* line 702, ../scss/sunny.scss */
+/* line 698, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label {
   margin: 0 .75rem .5rem 0;
 }
-/* line 707, ../scss/sunny.scss */
+/* line 703, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason {
   position: absolute;
   top: 1rem;
   right: 1rem;
   z-index: 101;
 }
-/* line 713, ../scss/sunny.scss */
+/* line 709, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .product.upvotedBorder {
   border: 0.75rem solid #FEEFC7;
 }
-/* line 717, ../scss/sunny.scss */
+/* line 713, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate {
   height: 90px;
   border-top: 1px solid #F4C714;
@@ -15644,11 +15644,11 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   visibility: hidden;
   background-color: #FFFFFF;
 }
-/* line 724, ../scss/sunny.scss */
+/* line 720, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate p {
   padding-top: 33px;
 }
-/* line 727, ../scss/sunny.scss */
+/* line 723, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate {
   height: 100%;
   width: 100%;
@@ -15657,7 +15657,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   left: 0;
   background-color: #f2f0ed;
 }
-/* line 739, ../scss/sunny.scss */
+/* line 735, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate {
   transform: translateY(0%);
   -webkit-transform: translateY(0%);
@@ -15665,46 +15665,46 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -ms-transform: translateY(0%);
   transition: 0.5s ease-in-out;
 }
-/* line 747, ../scss/sunny.scss */
+/* line 743, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .sunnySearchResults .gate.unhide {
   visibility: visible;
 }
-/* line 752, ../scss/sunny.scss */
+/* line 748, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer {
   margin-top: 7rem;
 }
-/* line 755, ../scss/sunny.scss */
+/* line 751, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .container:first-child {
   padding-top: 2rem;
 }
-/* line 759, ../scss/sunny.scss */
+/* line 755, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
   display: none;
 }
-/* line 764, ../scss/sunny.scss */
+/* line 760, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer img {
   max-height: 300px;
 }
-/* line 768, ../scss/sunny.scss */
+/* line 764, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
   border-bottom: 2px solid;
   margin: 2rem 0 1.1875rem;
 }
-/* line 773, ../scss/sunny.scss */
+/* line 769, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .itemDescription {
   padding-bottom: 1rem;
 }
-/* line 776, ../scss/sunny.scss */
+/* line 772, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .avgRating {
   padding-bottom: 2rem;
 }
-/* line 780, ../scss/sunny.scss */
+/* line 776, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input {
   margin-top: 0;
   background-color: #125688;
   border-color: #125688 !important;
 }
-/* line 793, ../scss/sunny.scss */
+/* line 784, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .quickViewExpander .quickViewContainer {
   position: absolute;
   background: #FFFFFF;
@@ -15715,14 +15715,14 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   height: 0;
   overflow: hidden;
 }
-/* line 802, ../scss/sunny.scss */
+/* line 793, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .quickViewExpander .quickViewContainer.animate {
   -webkit-transition: height 350ms ease;
   -moz-transition: height 350ms ease;
   transition: height 350ms ease;
   height: 603px;
 }
-/* line 811, ../scss/sunny.scss */
+/* line 801, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -15789,7 +15789,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     transform: translate3d(0, 0, 0);
   }
 }
-/* line 884, ../scss/sunny.scss */
+/* line 875, ../scss/sunny.scss */
 #sunny .sunnyResultsContainer .bounce {
   -webkit-animation-name: bounce;
   animation-name: bounce;
@@ -16022,12 +16022,12 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     -ms-transform: scale(1);
   }
 }
-/* line 1129, ../scss/sunny.scss */
+/* line 1120, ../scss/sunny.scss */
 #sunny.quickViewOpen {
   height: 100%;
   overflow: hidden;
 }
-/* line 1134, ../scss/sunny.scss */
+/* line 1125, ../scss/sunny.scss */
 #sunny #quickView {
   position: absolute;
   top: 0;
@@ -16042,7 +16042,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-transform: translateY(100%);
   -ms-transform: translateY(100%);
 }
-/* line 1147, ../scss/sunny.scss */
+/* line 1138, ../scss/sunny.scss */
 #sunny #quickView.animate {
   transform: translateY(0%);
   -webkit-transform: translateY(0%);
@@ -16052,61 +16052,66 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
   -moz-transition: .5s ease;
   transition: .5s ease;
 }
-/* line 1156, ../scss/sunny.scss */
+/* line 1147, ../scss/sunny.scss */
 #sunny #quickView .quickViewInner {
   position: relative;
   margin: .25rem 1rem 1rem 1rem;
   background-color: #FFFFFF;
   box-shadow: 0 0 6px -1px #817B73;
 }
+/* line 1152, ../scss/sunny.scss */
+#sunny #quickView .quickViewInner .quickViewStar {
+  position: relative;
+  margin-top: 1rem;
+}
 
 @media (max-width: 40em) {
-  /* line 1172, ../scss/sunny.scss */
+  /* line 1167, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer h1 {
     font-size: 18px;
   }
-  /* line 1175, ../scss/sunny.scss */
+  /* line 1170, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer label {
     font-size: 11px;
   }
-  /* line 1179, ../scss/sunny.scss */
+  /* line 1174, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
     height: 4rem;
   }
-  /* line 1182, ../scss/sunny.scss */
+  /* line 1177, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer.bkgColorOn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 1187, ../scss/sunny.scss */
+  /* line 1182, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
     transform: translateX(-2rem);
     -webkit-transform: translateX(-2rem);
     -moz-transform: translateX(-2rem);
     -ms-transform: translateX(-2rem);
   }
-  /* line 1195, ../scss/sunny.scss */
+  /* line 1190, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
     transform: translateX(2.5rem);
     -webkit-transform: translateX(2.5rem);
     -moz-transform: translateX(2.5rem);
     -ms-transform: translateX(2.5rem);
   }
-  /* line 1201, ../scss/sunny.scss */
+  /* line 1196, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn .super-check.counter {
     width: 100%;
   }
-  /* line 1207, ../scss/sunny.scss */
+  /* line 1202, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
     background-color: #233C6D;
     height: 4rem;
     width: 4rem;
     border-radius: 4rem;
   }
-  /* line 1215, ../scss/sunny.scss */
+  /* line 1210, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
     width: 100%;
   }
-  /* line 1217, ../scss/sunny.scss */
+  /* line 1212, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
   .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
@@ -16117,26 +16122,26 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     align-items: flex-start;
     height: auto;
   }
-  /* line 1224, ../scss/sunny.scss */
+  /* line 1219, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
   .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 1228, ../scss/sunny.scss */
+  /* line 1223, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
   .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
     padding: 0;
     padding-top: 1.75rem;
   }
-  /* line 1233, ../scss/sunny.scss */
+  /* line 1228, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter:hover {
     background-color: transparent;
     border: 1px solid transparent;
   }
-  /* line 1237, ../scss/sunny.scss */
+  /* line 1232, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .outterCircle {
     left: 50%;
     transform: translate(-50%, -80%);
@@ -16144,7 +16149,7 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 1244, ../scss/sunny.scss */
+  /* line 1239, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
     left: 50%;
     transform: translate(-50%, -80%);
@@ -16152,29 +16157,29 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     -moz-transform: translate(-50%, -80%);
     -ms-transform: translate(-50%, -80%);
   }
-  /* line 1255, ../scss/sunny.scss */
+  /* line 1250, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns.bkgColorOn {
     background-color: #233C6D;
   }
-  /* line 1260, ../scss/sunny.scss */
+  /* line 1255, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
     width: 100%;
   }
-  /* line 1262, ../scss/sunny.scss */
+  /* line 1257, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
   }
-  /* line 1267, ../scss/sunny.scss */
+  /* line 1262, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.suggestions {
     right: 0;
   }
-  /* line 1270, ../scss/sunny.scss */
+  /* line 1265, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
     left: 0;
   }
-  /* line 1273, ../scss/sunny.scss */
+  /* line 1268, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
     border-radius: 0;
     transform: scaleY(0);
@@ -16185,74 +16190,74 @@ table thead tr #wlRecommendationsContainer .choosingSKU th.price, #wlRecommendat
     -moz-transition: 0.5s ease-in-out;
     transition: 0.5s ease-in-out;
   }
-  /* line 1287, ../scss/sunny.scss */
+  /* line 1282, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .prieFilterContainer .priceRange {
     justify-content: flex-start;
   }
-  /* line 1291, ../scss/sunny.scss */
+  /* line 1286, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults {
     margin-top: 6.75rem;
   }
-  /* line 1294, ../scss/sunny.scss */
+  /* line 1289, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults ul li {
     padding: 0 .375rem 1.5rem .375rem;
   }
-  /* line 1298, ../scss/sunny.scss */
+  /* line 1293, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product {
     border: .25rem solid transparent;
   }
-  /* line 1300, ../scss/sunny.scss */
+  /* line 1295, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer {
     margin-bottom: -1.375rem;
   }
-  /* line 1302, ../scss/sunny.scss */
+  /* line 1297, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted {
     margin-bottom: -1.375rem;
   }
-  /* line 1305, ../scss/sunny.scss */
+  /* line 1300, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .icon-star {
     font-size: .875rem;
   }
-  /* line 1308, ../scss/sunny.scss */
+  /* line 1303, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle {
     height: 2.75rem;
     width: 2.75rem;
   }
-  /* line 1313, ../scss/sunny.scss */
+  /* line 1308, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle.upvoted {
     width: 3.125rem;
     height: 3.125rem;
   }
-  /* line 1319, ../scss/sunny.scss */
+  /* line 1314, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .copy {
     padding-top: calc(14px + .5rem);
   }
-  /* line 1322, ../scss/sunny.scss */
+  /* line 1317, ../scss/sunny.scss */
   #sunny .sunnyResultsContainer .sunnySearchResults .product .upvoteBorder {
     border: 0.25rem solid #FEEFC7;
   }
 
-  /* line 1331, ../scss/sunny.scss */
+  /* line 1326, ../scss/sunny.scss */
   #sunnyForm.sunnyFormBkg #paginationDots {
     top: calc(44px + 1rem);
   }
 }
 @media (min-width: 64.063em) {
-  /* line 1348, ../scss/sunny.scss */
+  /* line 1343, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1354, ../scss/sunny.scss */
+  /* line 1349, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 1370, ../scss/sunny.scss */
+  /* line 1365, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1376, ../scss/sunny.scss */
+  /* line 1371, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }

@@ -115,10 +115,8 @@ ko.components.register('quickview', {
                     <div class="small-12 medium-7 columns">
                         <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
                     </div>
-
                     <div class="small-12 medium-5 columns">
-
-                        <div data-bind="attr: { class: 'starContainer text-center' }">
+                        <div data-bind="attr: { class: 'starContainer text-center quickViewStar' }">
                             <div data-bind="attr: { class: 'outterCircle' }">
                                 <div data-bind="attr:{ class: 'starExplode' }"></div>
 
@@ -127,7 +125,6 @@ ko.components.register('quickview', {
                                 </div>
                             </div>
                         </div>
-
                         <h1 class="text-center" data-bind="text: params.parent.quickViewTitle()"></h1>
                         <div class="hide-for-small-only text-center intro-text" data-bind="text: params.parent.quickViewDescription()"></div>
                         <p class="item-price price text-center"><span data-bind="text: params.parent.quickViewPrice()"></span></p>

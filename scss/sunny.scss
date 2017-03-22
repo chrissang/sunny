@@ -374,10 +374,96 @@ $reviews-light-mix: #FEEFC7;
 
 #sunny {
     overflow-y: scroll;
+    .starContainer {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: auto;
+        z-index: 100;
+        margin-bottom: 1rem;
+        transform: translateX(-50%);
+        .innerCircle {
+            position: absolute;
+            top: 50%;
+            height: 3.25rem;
+            width: 3.25rem;
+            background: $white;
+            border: 1px solid $inactive;
+            border-radius: 3.25rem;
+            box-shadow: 0 0 6px -1px $secondary;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            &:hover {
+                border: 2px solid $sunny-gold;
+            }
+            .icon-star {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                color: $inactive;
+                font-size: 1.125rem;
+                &.paused {
+                    -webkit-animation-play-state:paused;
+                    -moz-animation-play-state:paused;
+                    animation-play-state:paused;
+                }
+            }
+        }
+        .outterCircle+.upvote::before {
+            transition: all .25s;
+            transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+        }
+        .outterCircle {
+            display: inline-block;
+            height: 3.25rem;
+            width: 3.25rem;
+            border-radius: 3.25rem;
+            position: relative;
+        }
+        .starExplode {
+            opacity: 1;
+            height: 3.25rem;
+            width: 3.25rem;
+            border-radius: 3.25rem;
+            border: 1px solid $sunny-gold;
+        }
+        &.upvoted {
+            .innerCircle {
+                background-color: $sunny-gold;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                .icon-star {
+                    color: $white;
+                }
+                &:hover {
+                    border: 1px solid $inactive;
+                }
+            }
+            .outterCircle {
+                width: 3.625rem;
+                height: 3.625rem;
+                box-shadow: 0 0 6px -1px $secondary;
+                border: 1px solid $sunny-gold;
+                background: $white;
+                transition: all .25s;
+                transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+            }
+            .starExplode {
+                display: none;
+            }
+        }
+    }
     // Results page styles
     .sunnyResultsContainer {
         background-color: $offwhite-light-mix;
-
         .prieFilterContainer {
             padding-top: 1.5rem;
             padding-bottom: 1.5rem;
@@ -531,11 +617,7 @@ $reviews-light-mix: #FEEFC7;
                     height:0;
                     margin-bottom: 0;
                 }
-                .responsively-lazy:not(img) img{
-                    // position:absolute;
-                    // width:100%;
-                    // height: auto;
-                    // z-index: 99;
+                .responsively-lazy:not(img) img {
                     &.voteBtns {
                         position: relative;
                         width: auto;
@@ -558,93 +640,7 @@ $reviews-light-mix: #FEEFC7;
                     -moz-transform: translate(-50%,-50%);
                     -ms-transform: translate(-50%,-50%);
                 }
-                .starContainer {
-                    position: absolute;
-                    left: 50%;
-                    bottom: 0;
-                    width: auto;
-                    z-index: 100;
-                    margin-bottom: 1rem;
-                    transform: translateX(-50%);
-                    .innerCircle {
-                        position: absolute;
-                        top: 50%;
-                        height: 3.25rem;
-                        width: 3.25rem;
-                        background: $white;
-                        border: 1px solid $inactive;
-                        border-radius: 3.25rem;
-                        box-shadow: 0 0 6px -1px $secondary;
-                        transform: translateY(-50%);
-                        -webkit-transform: translateY(-50%);
-                        -moz-transform: translateY(-50%);
-                        -ms-transform: translateY(-50%);
-                        &:hover {
-                            border: 2px solid $sunny-gold;
-                        }
-                        .icon-star {
-                            display: flex;
-                            width: 100%;
-                            height: 100%;
-                            align-items: center;
-                            justify-content: center;
-                            color: $inactive;
-                            font-size: 1.125rem;
-                            &.paused {
-                                -webkit-animation-play-state:paused;
-                                -moz-animation-play-state:paused;
-                                animation-play-state:paused;
-                            }
-                        }
-                    }
-                    .outterCircle+.upvote::before {
-                        transition: all .25s;
-                        transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
-                    }
-                    .outterCircle {
-                        display: inline-block;
-                        height: 3.25rem;
-                        width: 3.25rem;
-                        border-radius: 3.25rem;
-                        position: relative;
-                    }
-                    .starExplode {
-                        opacity: 1;
-                        height: 3.25rem;
-                        width: 3.25rem;
-                        border-radius: 3.25rem;
-                        border: 1px solid $sunny-gold;
-                    }
-                    &.upvoted {
-                        .innerCircle {
-                            background-color: $sunny-gold;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            -webkit-transform: translate(-50%, -50%);
-                            -moz-transform: translate(-50%, -50%);
-                            -ms-transform: translate(-50%, -50%);
-                            .icon-star {
-                                color: $white;
-                            }
-                            &:hover {
-                                border: 1px solid $inactive;
-                            }
-                        }
-                        .outterCircle {
-                            width: 3.625rem;
-                            height: 3.625rem;
-                            box-shadow: 0 0 6px -1px $secondary;
-                            border: 1px solid $sunny-gold;
-                            background: $white;
-                            transition: all .25s;
-                            transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
-                        }
-                        .starExplode {
-                            display: none;
-                        }
-                    }
-                }
+
                 .preventReflow {
                     padding-bottom: 100%;
                 }
@@ -784,12 +780,7 @@ $reviews-light-mix: #FEEFC7;
     			}
     		}
     	}
-
         .quickViewExpander {
-            // -webkit-transition: height 350ms ease;
-            // -moz-transition: height 350ms ease;
-            // transition: height 350ms ease;
-            // height: 1100px;
             .quickViewContainer {
                 position: absolute;
                 background: $white;
@@ -807,13 +798,13 @@ $reviews-light-mix: #FEEFC7;
                 }
             }
         }
-
         .animated {
     	  -webkit-animation-duration: 1s;
     	  animation-duration: 1s;
     	  -webkit-animation-fill-mode: both;
     	  animation-fill-mode: both;
     	}
+
         @-webkit-keyframes bounce {
           0% {
             -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1158,6 +1149,10 @@ $reviews-light-mix: #FEEFC7;
             margin: .25rem 1rem 1rem 1rem;
             background-color: $white;
             box-shadow: 0 0 6px -1px $secondary;
+            .quickViewStar {
+                position: relative;
+                margin-top: 1rem;
+            }
         }
     }
 }
