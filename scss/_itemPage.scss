@@ -37,7 +37,8 @@ main.uncommonCollection .unco{
 }
 /* */
 #altImages,
-.small-2 #youtube_link{
+.small-2 #youtube_link,
+.small-2 #pdf_link{
 	margin-top:.75rem;
 	@media #{$small-only} {
 		margin-bottom:1.125rem;
@@ -209,7 +210,8 @@ form#registry{
 .no-cssfilters-magic .mz-thumb{
 	background-color:#FFF!important;
 }
-#youtube_link{
+#youtube_link,
+#pdf_link{
 	width:64px;
 	box-sizing:content-box!important;
 	
@@ -625,19 +627,23 @@ div[id^='personalize_']{
 }
 #playerContainer{
 	display:none;
-    height: 0;
-    padding-bottom: 100%;
     background-color: #000;
+    position: relative;
+    width:100%;
     clear: both;
     margin-left: .375rem;
     margin-right: .375rem;
 }
+#playerContainer:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
 iframe#player{
 	display:none;
-	transform: translateY(-50%);
-    width: calc(100% - 1.5rem);
+    width:100%;
+    height: 100%;
     position: absolute;
-    top: 44%;
 }
 
 .banner{
@@ -686,6 +692,6 @@ iframe#player{
         margin-bottom: 0;
     }
     @media #{$medium-up} {
-        margin:-.75rem 0 1.125rem;
+        margin:-.75rem 0 .25rem;
     }
 }

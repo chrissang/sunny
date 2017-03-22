@@ -85,9 +85,6 @@ button, input[type="button"], .button, input[type="submit"]{
 		font-family:$font-family-sans-serif;
 		text-transform:uppercase;
 		font-size:.875rem;
-		@media #{$medium-up} {
-			font-size:.75rem;
-		}
 	}
 	&.btn-secondary{
 		color:$active;
@@ -101,7 +98,7 @@ button, input[type="button"], .button, input[type="submit"]{
 	}
 
 	@media #{$medium-up} {
-		font-size:.875rem;
+		/*font-size:.875rem;*/
 		min-height:$button-medium-size;
         min-width:$button-medium-size;
 		&.prefix, &.postfix{
@@ -177,7 +174,7 @@ a.button{
 	}
 }
 .sqbtt{
-
+    text-align: center;
     background-color:$inactive;
     border-radius:3px;
 	width:2.75rem;
@@ -342,6 +339,7 @@ select::-ms-expand {
 }
 input[type="submit"], input[type="button"], button, .button{
 	margin-bottom:1rem;
+    margin-top:0;
 }
 
 :disabled,
@@ -592,22 +590,15 @@ label.addRemove{
 		width:2rem;
 	}
 	& button{
+        @extend .btn-micro;
 		border:$input-border;
-		border-left:0;
-		font-family:noto sans;
-		text-transform:uppercase;
-		/*font-weight:bold;*/
+		border-left:0!important;
 		border-top-left-radius:0;
 		border-bottom-left-radius:0;
 		-webkit-flex-shrink:0;
 		flex-shrink:0;
 		&.btn-secondary{
-			background-color:#FFF;
-			color:$secondary;
-		}
-		font-size:.875rem;
-		@media #{$medium-up} {
-			font-size:.75rem;
+			@extend .btn-micro-secondary;
 		}
 	}
 	& label.error{

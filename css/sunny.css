@@ -17175,3 +17175,1375 @@ body:before {
     margin-bottom: 2rem;
   }
 }
+/* line 44, ../scss/sunny.scss */
+#sunny {
+  overflow-y: scroll;
+}
+
+/* line 48, ../scss/sunny.scss */
+#sunny .fullWidth, #sunnyForm .fullWidth {
+  max-width: none;
+  padding: 0;
+}
+/* line 53, ../scss/sunny.scss */
+#sunny .ugCondensedHeaderContainer, #sunnyForm .ugCondensedHeaderContainer {
+  background-color: #FFFFFF;
+  padding: 0;
+}
+/* line 56, ../scss/sunny.scss */
+#sunny .ugCondensedHeaderContainer .ugHeader, #sunnyForm .ugCondensedHeaderContainer .ugHeader {
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+  padding: .5rem 1rem;
+}
+/* line 61, ../scss/sunny.scss */
+#sunny .ugCondensedHeaderContainer .ugHeader .logo-container, #sunnyForm .ugCondensedHeaderContainer .ugHeader .logo-container {
+  background-color: #FFFFFF;
+  display: inline-block;
+  margin-left: 0;
+}
+/* line 65, ../scss/sunny.scss */
+#sunny .ugCondensedHeaderContainer .ugHeader .logo-container svg, #sunnyForm .ugCondensedHeaderContainer .ugHeader .logo-container svg {
+  max-height: 2rem;
+}
+/* line 72, ../scss/sunny.scss */
+#sunny.sunnyFormBkg, #sunnyForm.sunnyFormBkg {
+  background-color: #3D69BC;
+}
+/* line 74, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #formContent, #sunnyForm.sunnyFormBkg #formContent {
+  margin-top: 3rem;
+}
+/* line 76, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #formContent h2, #sunny.sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunny.sunnyFormBkg #formContent .accordion-navigation > a,
+#sunny.sunnyFormBkg #formContent .accordion dd > a,
+.accordion #sunny.sunnyFormBkg #formContent dd > a, #sunny.sunnyFormBkg #formContent p, #sunnyForm.sunnyFormBkg #formContent h2, #sunnyForm.sunnyFormBkg #formContent .accordion .accordion-navigation > a, .accordion #sunnyForm.sunnyFormBkg #formContent .accordion-navigation > a,
+#sunnyForm.sunnyFormBkg #formContent .accordion dd > a,
+.accordion #sunnyForm.sunnyFormBkg #formContent dd > a, #sunnyForm.sunnyFormBkg #formContent p {
+  color: #FFFFFF !important;
+}
+/* line 79, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #formContent .white, #sunnyForm.sunnyFormBkg #formContent .white {
+  color: #FFFFFF !important;
+}
+/* line 84, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #form1 .sunnyImg, #sunnyForm.sunnyFormBkg #form1 .sunnyImg {
+  margin-bottom: 1rem;
+}
+/* line 87, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #form1 #recipientInput, #sunnyForm.sunnyFormBkg #form1 #recipientInput {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+/* line 91, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #form1 .copy, #sunnyForm.sunnyFormBkg #form1 .copy {
+  margin-bottom: 1rem;
+}
+/* line 94, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #form1 #recipientBtnContainer, #sunnyForm.sunnyFormBkg #form1 #recipientBtnContainer {
+  margin-bottom: 3rem;
+}
+/* line 100, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #form3 .inputGroup a, #sunnyForm.sunnyFormBkg #form3 .inputGroup a {
+  margin-left: 0;
+}
+/* line 105, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #paginationDots, #sunnyForm.sunnyFormBkg #paginationDots {
+  position: absolute;
+  left: 0;
+  top: calc(44px + 3rem);
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  visibility: hidden;
+}
+/* line 113, ../scss/sunny.scss */
+#sunny.sunnyFormBkg #paginationDots a, #sunnyForm.sunnyFormBkg #paginationDots a {
+  margin: .25rem 0;
+}
+/* line 119, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer, #sunnyForm .sunnyResultsContainer {
+  background-color: #f2f0ed;
+}
+/* line 121, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header, #sunnyForm .sunnyResultsContainer header {
+  position: fixed;
+  z-index: 200;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 2.75rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 0;
+}
+/* line 132, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
+  height: 5rem;
+  width: 100%;
+  background-color: #3D69BC;
+  display: flex;
+  margin: 0;
+  max-width: none;
+}
+/* line 139, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn {
+  position: relative;
+  display: inline-block;
+}
+/* line 142, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"] + label.super-check.counter::before {
+  border: 1px solid transparent;
+}
+/* line 145, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn input[type="checkbox"]:checked + label.super-check.counter {
+  background-color: #233C6D;
+  border: 1px solid #233C6D;
+}
+/* line 149, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check {
+  margin: 0;
+  padding: .5rem 1rem .5rem .5rem;
+  line-height: 1rem;
+}
+/* line 153, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
+  width: 190px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid transparent;
+}
+/* line 158, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
+  margin: 0;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 44px;
+}
+/* line 165, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
+  padding-left: 46px;
+}
+/* line 168, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+.accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+#sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+.accordion #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
+  padding-left: 1rem;
+}
+/* line 172, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter:hover, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter:hover {
+  background-color: #233C6D;
+  border: 1px solid #233C6D;
+}
+/* line 179, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* line 185, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
+  transform: translateX(-3rem);
+  -webkit-transform: translateX(-3rem);
+  -moz-transform: translateX(-3rem);
+  -ms-transform: translateX(-3rem);
+}
+/* line 191, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle {
+  position: absolute;
+  top: 50%;
+  font-family: "Noto Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  font-size: .875rem;
+  color: #FFFFFF;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  padding: .5rem 0;
+  text-align: center;
+  border: 1px solid #FFFFFF;
+  border-radius: 32px;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+/* line 210, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #FFFFFF;
+  background-color: #233C6D;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+}
+/* line 225, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.animateIn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .innerCircle.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .innerCircle.animateIn {
+  visibility: visible;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  transition: .3s ease-in-out;
+}
+/* line 234, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count {
+  color: #FFFFFF;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transition: .5s ease-in-out;
+}
+/* line 241, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.animateIn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn {
+  color: #233C6D;
+  font-weight: bold;
+  -webkit-animation-name: counterAnimation;
+  -moz-animation-name: counterAnimation;
+  animation-name: counterAnimation;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-transition-delay: .16s;
+  -moz-transition-delay: .16s;
+  transition-delay: .16s;
+}
+/* line 255, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle.fill, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle.fill, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle.fill {
+  background-color: #FFFFFF;
+}
+/* line 262, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .outterCircle {
+  left: 6px;
+}
+/* line 266, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer {
+  justify-content: flex-start;
+}
+/* line 268, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .upvotePrompt, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .upvotePrompt {
+  width: 206px;
+}
+/* line 271, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
+  transform: translateX(3rem);
+  -webkit-transform: translateX(3rem);
+  -moz-transform: translateX(3rem);
+  -ms-transform: translateX(3rem);
+  background-color: #3D69BC;
+}
+/* line 278, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn .super-check.counter, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn .super-check.counter {
+  width: 206px;
+}
+/* line 283, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle {
+  right: 6px;
+}
+/* line 286, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .outterCircle .count.animateIn {
+  color: #3E69BC;
+}
+/* line 292, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
+  margin: 0 auto;
+  border-radius: 6rem;
+  background-color: #3D69BC;
+  height: 96px;
+  width: 96px;
+  background-image: url("/images/sunnyheader.png");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+/* line 309, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
+  position: absolute;
+  top: -23px;
+  right: 48px;
+  width: 190px;
+  height: 130px;
+  background-color: #233C6D;
+}
+/* line 316, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
+  left: 48px;
+  background-color: #3D69BC;
+}
+/* line 320, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
+  color: #FFFFFF;
+  text-align: center;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-bottom: 18px;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+/* line 330, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateIn {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+  -webkit-animation-duration: .3s;
+  -moz-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  transition-delay: .3s;
+}
+/* line 344, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateOut, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p.animateOut {
+  opacity: 0;
+  transform: translateY(-50px);
+  -webkit-transform: translateY(-50px);
+  -moz-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  transition: .3s ease;
+}
+/* line 355, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateIn, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateIn {
+  top: 0;
+  border-radius: 0px;
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+/* line 366, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut, #sunnyForm .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
+  border-radius: 100px;
+  transform: scaleY(0);
+  -webkit-transform: scaleY(0);
+  -moz-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+/* line 379, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer, #sunnyForm .sunnyResultsContainer .prieFilterContainer {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+/* line 382, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer h3, #sunnyForm .sunnyResultsContainer .prieFilterContainer h3 {
+  display: inline-block;
+  padding-right: .5rem;
+}
+/* line 386, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer .priceRange, #sunnyForm .sunnyResultsContainer .prieFilterContainer .priceRange {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: center;
+}
+/* line 391, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer .priceRange .nav-fam, #sunnyForm .sunnyResultsContainer .prieFilterContainer .priceRange .nav-fam {
+  padding: 0;
+  margin: 0 .5rem 0 0;
+}
+/* line 395, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer .priceRange .priceToCopy, #sunnyForm .sunnyResultsContainer .prieFilterContainer .priceRange .priceToCopy {
+  padding: 0;
+  margin: 0 .5rem 0 .5rem;
+}
+/* line 399, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer .priceRange .minMaxPrice, #sunnyForm .sunnyResultsContainer .prieFilterContainer .priceRange .minMaxPrice {
+  width: 3rem;
+  margin: 0;
+}
+/* line 403, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .prieFilterContainer .priceRange button, #sunnyForm .sunnyResultsContainer .prieFilterContainer .priceRange button {
+  margin: 0 0 0 1rem;
+}
+/* line 408, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults, #sunnyForm .sunnyResultsContainer .sunnySearchResults {
+  margin-top: 7.75rem;
+}
+/* line 411, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul li, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li {
+  padding: 0 .75rem 1.5rem .5rem;
+  -webkit-transition: height 350ms ease;
+  -moz-transition: height 350ms ease;
+  transition: height 350ms ease;
+}
+/* line 417, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul li.quickViewExpander, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul li.quickViewExpander {
+  -webkit-transition: height 350ms ease;
+  -moz-transition: height 350ms ease;
+  transition: height 350ms ease;
+  height: 1100px;
+}
+/* line 426, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle {
+  -webkit-animation-name: starBorderIn;
+  -moz-animation-name: starBorderIn;
+  animation-name: starBorderIn;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+/* line 442, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .innerCircle .icon-star {
+  -webkit-animation-name: starFadeIn;
+  -moz-animation-name: starFadeIn;
+  animation-name: starFadeIn;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+/* line 461, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .outterCircle .starExplode, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.starBlinkOn li:nth-child(-n+18) .outterCircle .starExplode {
+  -webkit-animation-name: starScale;
+  -moz-animation-name: starScale;
+  animation-name: starScale;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+/* line 480, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle {
+  border-color: #F4C714;
+}
+/* line 482, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.onstate li:nth-child(-n+18) .innerCircle .icon-star {
+  color: #F4C714;
+}
+/* line 489, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle {
+  -webkit-animation-name: starBorderOut;
+  -moz-animation-name: starBorderOut;
+  animation-name: starBorderOut;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+/* line 505, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults ul.starBlinkOff .innerCircle .icon-star {
+  -webkit-animation-name: starFadeOut;
+  -moz-animation-name: starFadeOut;
+  animation-name: starFadeOut;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+/* line 525, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product {
+  max-width: none;
+  border: .75rem solid transparent;
+}
+/* line 528, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) {
+  position: relative;
+  height: 0;
+  margin-bottom: 0;
+}
+/* line 538, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .responsively-lazy:not(img) img.voteBtns {
+  position: relative;
+  width: auto;
+  height: 100%;
+}
+/* line 544, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .icon-close, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  padding: .5rem;
+}
+/* line 551, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .loadingSvg, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .loadingSvg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+/* line 560, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: auto;
+  z-index: 100;
+  margin-bottom: 1rem;
+  transform: translateX(-50%);
+}
+/* line 568, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle {
+  position: absolute;
+  top: 50%;
+  height: 3.25rem;
+  width: 3.25rem;
+  background: #FFFFFF;
+  border: 1px solid #A8A098;
+  border-radius: 3.25rem;
+  box-shadow: 0 0 6px -1px #817B73;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+/* line 581, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle:hover, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle:hover {
+  border: 2px solid #F4C714;
+}
+/* line 584, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #A8A098;
+  font-size: 1.125rem;
+}
+/* line 592, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star.paused, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle .icon-star.paused {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  animation-play-state: paused;
+}
+/* line 599, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle + .upvote::before, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle + .upvote::before {
+  transition: all .25s;
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+}
+/* line 603, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle {
+  display: inline-block;
+  height: 3.25rem;
+  width: 3.25rem;
+  border-radius: 3.25rem;
+  position: relative;
+}
+/* line 610, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .starExplode, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer .starExplode {
+  opacity: 1;
+  height: 3.25rem;
+  width: 3.25rem;
+  border-radius: 3.25rem;
+  border: 1px solid #F4C714;
+}
+/* line 618, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle {
+  background-color: #F4C714;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+/* line 626, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle .icon-star, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle .icon-star {
+  color: #FFFFFF;
+}
+/* line 629, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle:hover, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .innerCircle:hover {
+  border: 1px solid #A8A098;
+}
+/* line 633, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .outterCircle, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .outterCircle {
+  width: 3.625rem;
+  height: 3.625rem;
+  box-shadow: 0 0 6px -1px #817B73;
+  border: 1px solid #F4C714;
+  background: #FFFFFF;
+  transition: all .25s;
+  transition-timing-function: cubic-bezier(0.01, 0.25, 0.31, 1.84);
+}
+/* line 642, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .starExplode, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted .starExplode {
+  display: none;
+}
+/* line 647, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .preventReflow, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .preventReflow {
+  padding-bottom: 100%;
+}
+/* line 650, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .copy, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy {
+  min-height: 60px;
+  padding-bottom: .75rem;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+/* line 655, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded {
+  padding-right: 10px;
+}
+/* line 657, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, #sunny .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded h4, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .intro-text, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.borderAdded .subCopy {
+  margin-top: 0;
+}
+/* line 661, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.upvoted {
+  background-color: #FEEFC7;
+}
+/* line 664, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .copy.downvoted {
+  background-color: #f2f0ed;
+}
+/* line 668, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+/* line 675, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer.border {
+  border: 10px solid #f2f0ed;
+  z-index: 99;
+}
+/* line 679, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  z-index: 100;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+}
+/* line 690, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason .icon-close {
+  padding: 1rem;
+}
+/* line 693, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 2.5rem 0 2.5rem 1rem;
+}
+/* line 697, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason ul li {
+  padding: 0;
+}
+/* line 701, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), #sunny .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.error), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.error + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label:not(.invalid), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="radio"] + label.invalid + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.error), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.error + label, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label:not(.invalid), #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .downVoteReasonContainer .downVoteReason input[type="checkbox"] + label.invalid + label {
+  margin: 0 .75rem .5rem 0;
+}
+/* line 706, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product .exitDownVoteReason {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+}
+/* line 712, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .product.upvotedBorder, #sunnyForm .sunnyResultsContainer .sunnySearchResults .product.upvotedBorder {
+  border: 0.75rem solid #FEEFC7;
+}
+/* line 716, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .gate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate {
+  height: 90px;
+  border-top: 1px solid #F4C714;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: #FFFFFF;
+}
+/* line 723, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .gate p, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate p {
+  padding-top: 33px;
+}
+/* line 726, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate .animateGate {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f2f0ed;
+}
+/* line 738, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate .animateGate.animate {
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transition: 0.5s ease-in-out;
+}
+/* line 746, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .sunnySearchResults .gate.unhide, #sunnyForm .sunnyResultsContainer .sunnySearchResults .gate.unhide {
+  visibility: visible;
+}
+/* line 751, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer {
+  margin-top: 7rem;
+}
+/* line 754, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer .container:first-child, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .container:first-child {
+  padding-top: 2rem;
+}
+/* line 758, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .container:last-child .solidHorizontalLine {
+  display: none;
+}
+/* line 763, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer img, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer img {
+  max-height: 300px;
+}
+/* line 767, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer hr .solidHorizontalLine {
+  border-bottom: 2px solid;
+  margin: 2rem 0 1.1875rem;
+}
+/* line 772, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer .itemDescription, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .itemDescription {
+  padding-bottom: 1rem;
+}
+/* line 775, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer .avgRating, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .avgRating {
+  padding-bottom: 2rem;
+}
+/* line 779, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input, #sunnyForm .sunnyResultsContainer .upvotedResultsContainer .selectQuanity input {
+  margin-top: 0;
+  background-color: #125688;
+  border-color: #125688 !important;
+}
+/* line 792, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .quickViewExpander .quickViewContainer, #sunnyForm .sunnyResultsContainer .quickViewExpander .quickViewContainer {
+  position: absolute;
+  background: #FFFFFF;
+  top: auto;
+  left: 0;
+  width: 100vw;
+  text-align: left;
+  height: 0;
+  overflow: hidden;
+}
+/* line 801, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .quickViewExpander .quickViewContainer.animate, #sunnyForm .sunnyResultsContainer .quickViewExpander .quickViewContainer.animate {
+  -webkit-transition: height 350ms ease;
+  -moz-transition: height 350ms ease;
+  transition: height 350ms ease;
+  height: 603px;
+}
+/* line 810, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .animated, #sunnyForm .sunnyResultsContainer .animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 90px, 0);
+    transform: translate3d(0, 90px, 0);
+  }
+  20% {
+    -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 90px, 0);
+    transform: translate3d(0, 90px, 0);
+  }
+}
+@-moz-keyframes bounce {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 90px, 0);
+    transform: translate3d(0, 90px, 0);
+  }
+  20% {
+    -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 90px, 0);
+    transform: translate3d(0, 90px, 0);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    -webkit-animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+  100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* line 883, ../scss/sunny.scss */
+#sunny .sunnyResultsContainer .bounce, #sunnyForm .sunnyResultsContainer .bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+@-webkit-keyframes starFadeIn {
+  0% {
+    color: #A8A098;
+  }
+  100% {
+    color: #F4C714;
+  }
+}
+@-moz-keyframes starFadeIn {
+  0% {
+    color: #A8A098;
+  }
+  100% {
+    color: #F4C714;
+  }
+}
+@keyframes starFadeIn {
+  0% {
+    color: #A8A098;
+  }
+  100% {
+    color: #F4C714;
+  }
+}
+@-webkit-keyframes starBorderIn {
+  0% {
+    border-color: #A8A098;
+  }
+  100% {
+    border-color: #F4C714;
+  }
+}
+@-moz-keyframes starBorderIn {
+  0% {
+    border-color: #A8A098;
+  }
+  100% {
+    border-color: #F4C714;
+  }
+}
+@keyframes starBorderIn {
+  0% {
+    border-color: #A8A098;
+  }
+  100% {
+    border-color: #F4C714;
+  }
+}
+@-webkit-keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+}
+@-moz-keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+}
+@keyframes starScale {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+  }
+}
+@-webkit-keyframes starFadeOut {
+  0% {
+    color: #F4C714;
+  }
+  100% {
+    color: #A8A098;
+  }
+}
+@-moz-keyframes starFadeOut {
+  0% {
+    color: #F4C714;
+  }
+  100% {
+    color: #A8A098;
+  }
+}
+@keyframes starFadeOut {
+  0% {
+    color: #F4C714;
+  }
+  100% {
+    color: #A8A098;
+  }
+}
+@-webkit-keyframes starBorderOut {
+  0% {
+    border-color: #F4C714;
+  }
+  100% {
+    border-color: #A8A098;
+  }
+}
+@-moz-keyframes starBorderOut {
+  0% {
+    border-color: #F4C714;
+  }
+  100% {
+    border-color: #A8A098;
+  }
+}
+@keyframes starBorderOut {
+  0% {
+    border-color: #F4C714;
+  }
+  100% {
+    border-color: #A8A098;
+  }
+}
+@-webkit-keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -50px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0px, 0);
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@-webkit-keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@-moz-keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+@keyframes counterAnimation {
+  0% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+  }
+}
+/* line 1128, ../scss/sunny.scss */
+#sunny.quickViewOpen, #sunnyForm.quickViewOpen {
+  height: 100%;
+  overflow: hidden;
+}
+/* line 1135, ../scss/sunny.scss */
+#sunny #quickView, #sunnyForm #quickView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+}
+/* line 1146, ../scss/sunny.scss */
+#sunny #quickView.animate, #sunnyForm #quickView.animate {
+  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  transition: .5s ease;
+}
+/* line 1155, ../scss/sunny.scss */
+#sunny #quickView .quickViewInner, #sunnyForm #quickView .quickViewInner {
+  height: 100%;
+  overflow-y: scroll;
+  margin: .25rem 1rem 1rem 1rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 6px -1px #817B73;
+}
+
+@media (max-width: 40em) {
+  /* line 1174, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer h1 {
+    font-size: 18px;
+  }
+  /* line 1177, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .flexContainer label {
+    font-size: 11px;
+  }
+  /* line 1181, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader {
+    height: 4rem;
+  }
+  /* line 1184, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer.bkgColorOn, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer.bkgColorOn {
+    background-color: #233C6D;
+  }
+  /* line 1189, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .suggestionsContainer .superCheckCounterBtn {
+    transform: translateX(-2rem);
+    -webkit-transform: translateX(-2rem);
+    -moz-transform: translateX(-2rem);
+    -ms-transform: translateX(-2rem);
+  }
+  /* line 1197, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn {
+    transform: translateX(2.5rem);
+    -webkit-transform: translateX(2.5rem);
+    -moz-transform: translateX(2.5rem);
+    -ms-transform: translateX(2.5rem);
+  }
+  /* line 1203, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .giftsYouLikeContainer .superCheckCounterBtn .super-check.counter {
+    width: 100%;
+  }
+  /* line 1209, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .sunnyIcon {
+    background-color: #233C6D;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 4rem;
+  }
+  /* line 1217, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter {
+    width: 100%;
+  }
+  /* line 1219, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a {
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  /* line 1226, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleLeft, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleLeft, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleLeft,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleLeft,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleLeft {
+    padding: 0;
+    padding-top: 1.75rem;
+  }
+  /* line 1230, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter h2.circleRight, #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion .accordion-navigation > a.circleRight, .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion-navigation > a.circleRight,
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .accordion dd > a.circleRight,
+  .accordion #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter dd > a.circleRight {
+    padding: 0;
+    padding-top: 1.75rem;
+  }
+  /* line 1235, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter:hover {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+  /* line 1239, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .outterCircle {
+    left: 50%;
+    transform: translate(-50%, -80%);
+    -webkit-transform: translate(-50%, -80%);
+    -moz-transform: translate(-50%, -80%);
+    -ms-transform: translate(-50%, -80%);
+  }
+  /* line 1246, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .superCheckCounterBtn .super-check.counter .giftsYouLikeCircleOuter {
+    left: 50%;
+    transform: translate(-50%, -80%);
+    -webkit-transform: translate(-50%, -80%);
+    -moz-transform: translate(-50%, -80%);
+    -ms-transform: translate(-50%, -80%);
+  }
+  /* line 1257, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .sunnyHeader .toggleBtns.bkgColorOn {
+    background-color: #233C6D;
+  }
+  /* line 1262, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt {
+    width: 100%;
+  }
+  /* line 1264, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt p {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+  }
+  /* line 1269, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.suggestions {
+    right: 0;
+  }
+  /* line 1272, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.giftsYouLike {
+    left: 0;
+  }
+  /* line 1275, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer header.sunnyResultsHeader .upvotePrompt.animateOut {
+    border-radius: 0;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+  /* line 1289, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .prieFilterContainer .priceRange {
+    justify-content: flex-start;
+  }
+  /* line 1293, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults {
+    margin-top: 6.75rem;
+  }
+  /* line 1296, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults ul li {
+    padding: 0 .375rem 1.5rem .375rem;
+  }
+  /* line 1300, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product {
+    border: .25rem solid transparent;
+  }
+  /* line 1302, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer {
+    margin-bottom: -1.375rem;
+  }
+  /* line 1304, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer.upvoted {
+    margin-bottom: -1.375rem;
+  }
+  /* line 1307, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .icon-star {
+    font-size: .875rem;
+  }
+  /* line 1310, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .innerCircle {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+  /* line 1315, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .starContainer .outterCircle.upvoted {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+  /* line 1321, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .copy {
+    padding-top: calc(14px + .5rem);
+  }
+  /* line 1324, ../scss/sunny.scss */
+  #sunny .sunnyResultsContainer .sunnySearchResults .product .upvoteBorder {
+    border: 0.25rem solid #FEEFC7;
+  }
+
+  /* line 1333, ../scss/sunny.scss */
+  #sunnyForm.sunnyFormBkg #paginationDots {
+    top: calc(44px + 1rem);
+  }
+}
+@media (min-width: 64.063em) {
+  /* line 1350, ../scss/sunny.scss */
+  .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
+    padding: 0 1.75rem;
+  }
+  /* line 1356, ../scss/sunny.scss */
+  .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
+    padding: 3.5rem 0 3rem 1rem;
+  }
+}
+@media (min-width: 90.063em) {
+  /* line 1372, ../scss/sunny.scss */
+  .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
+    padding: 0 1.75rem;
+  }
+  /* line 1378, ../scss/sunny.scss */
+  .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
+    padding: 4rem 0 4rem 1rem;
+  }
+}

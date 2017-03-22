@@ -50,9 +50,8 @@
     .white-box-container {
         background-color: $white;
         padding: 1rem .75rem;
-        margin: 0;
+        margin: -3rem 1.25rem 1rem 1.25rem;
 		border-radius: 3px;
-		margin: -3rem 1.25rem 1rem 1.25rem;
         h1 {
             margin-bottom: 0.5rem;
         }
@@ -230,11 +229,9 @@
 	background-color: $white;
 	.topSpacer {
 		margin-bottom: 1rem;
-		width: 372px;
 	}
 	.bottomSpacer {
     	margin-top: 1rem;
-		width: 372px;
 	}
 	.topCatContent {
 		margin-bottom: 1rem;
@@ -300,26 +297,10 @@ body:before {
 			padding: 0;
 		}
 	}
-	.small-feature-module {
-		.row {
-			&:last-of-type {
-				.container {
-					border-bottom: 0;
-				}
-			}
-		}
-	}
-
 	.basic-story-module {
 	    .container {
-			label {
-				margin-top: 1rem;
-			}
 			&:last-of-type {
 				margin-bottom: 0rem;
-			}
-			.tagline {
-				margin-bottom: 0;
 			}
 		}
 	}
@@ -327,9 +308,6 @@ body:before {
 	    .container {
 			&:last-of-type {
 				margin-bottom: 0;
-			}
-			h2 {
-				margin-bottom: 1rem;
 			}
 	    }
 	}
@@ -456,12 +434,6 @@ body:before {
 			padding: 1.5rem 0 0 0;
 			background-color: $white;
 		}
-		.offsetLeft {
-			margin: -1.5rem 0 0 -1.5rem;
-		}
-		.offsetRight {
-			margin: -1.5rem -1.5rem 0 0;
-		}
 	}
 	.large-feature-module {
 		.preventReflow {
@@ -534,11 +506,8 @@ body:before {
 			.copyContainer {
 				display: flex;
 				flex-direction: column;
-				padding: 0 1.5rem;
+				padding: 0 .75rem;
 				h2 {
-					margin-bottom: .5rem;
-				}
-				.tagline {
 					margin-bottom: .5rem;
 				}
 			}
@@ -572,6 +541,9 @@ body:before {
 			padding-top: 0;
 			margin: 3rem 1.5rem 0 3rem;
 			padding-bottom: 1.5rem;
+			.imageOffset {
+
+			}
 			.medium-5,.medium-7,.large-4,.large-8 {
 				padding: 0;
 			}
@@ -579,11 +551,8 @@ body:before {
 				display: flex;
 				flex-direction: column;
 				padding: 0 .75rem;
-				h1 {
+				h2 {
 					margin-bottom: .5rem;
-				}
-				label {
-					margin-top: 1rem;
 				}
 			}
 		}
@@ -650,7 +619,7 @@ body:before {
 		.white-box-container {
 		    background-color: $white;
 		    padding: 1rem .75rem;
-		    margin: 0 1.25rem 0 1.25rem;
+		    margin: -1.5rem 1.25rem 0 1.25rem;
 		    border-radius: 3px;
 			label {
 				padding: 0;
@@ -682,7 +651,7 @@ body:before {
 		.white-box-container {
 		    background-color: $white;
 		    padding: 1rem .75rem;
-		    margin: 0 1.25rem 0 1.25rem;
+		    margin: -1.5rem 1.25rem 0 1.25rem;
 		    border-radius: 3px;
 			label {
 				padding: 0;
@@ -828,14 +797,11 @@ body:before {
 		    margin: 0;
 		    border-radius: 3px;
 		    h2 {
-		        margin-bottom: 0.75rem;
+		        margin-bottom: 0.5rem;
 		    }
 		    p {
 		        margin-bottom: 0rem;
 		    }
-			.tagline {
-				margin-bottom: .5rem;
-			}
 		}
 		.large-6 {
 			margin-bottom: 2rem;
@@ -853,11 +819,7 @@ body:before {
 		}
 		.container {
 			margin: 3rem 1.5rem 0 3rem;
-			.copyContainer {
-				padding: 0 1.5rem;
-			}
 		}
-
 	}
 	.text-link-module {
 		&.background-color-off-white,

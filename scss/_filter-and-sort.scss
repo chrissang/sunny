@@ -205,6 +205,11 @@
     .flexFilterContainer label.error{
         padding:0 .375rem
     }
+    #priceFilterGo{
+        flex-shrink:0;
+        flex-grow:0;
+        flex-basis:auto;
+    } 
 	@media only screen and (min-width: 40.65em){
 	#filter .details > div:nth-last-of-type(1) label{
 		border-bottom:transparent;

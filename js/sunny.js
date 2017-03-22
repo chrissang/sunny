@@ -5,16 +5,6 @@ class Dependents {
         this.isAllowedMoreItems = ko.observable(false);
         this.upvoteCounter = ko.observable(0);
         this.isItemDownvoted = ko.observable(false);
-        this.viewModelItemId = ko.observable('');
-        this.viewModelImage = ko.observable('');
-        this.viewModelTitle = ko.observable('');
-        this.viewModelPrice = ko.observable('');
-        this.viewModelTagLine = ko.observable('');
-        this.viewModelAvgRating = ko.observable('');
-        this.viewModelNumberOfReviews = ko.observable('');
-        this.viewModelProductURL = ko.observable('');
-        this.viewModelAltImg = ko.observableArray();
-        this.viewModelMultiSku = ko.observableArray();
 
         this.upvoteMessage1 = ko.observable('Nice Choice! I added more suggestions.');
         this.upvoteMessage2 = ko.observable('You starred it,<br> I saved it!');
@@ -36,6 +26,21 @@ class Dependents {
         this.upVotedResultsLen = ko.observable(0);
         this.displayUpVotedResults = ko.observable(false);
         this.displaySearchResultsToggle = ko.observable(true);
+
+        this.quickViewItemId = ko.observable('');
+        this.quickViewImage = ko.observable('');
+        this.quickViewTitle = ko.observable('');
+        this.quickViewPrice = ko.observable('');
+        this.quickViewDescription = ko.observable('');
+        this.quickViewRating = ko.observable('');
+        this.quickViewNumberOfReviews = ko.observable('');
+        this.quickViewProductURL = ko.observable('');
+        this.quickViewAltImg = ko.observableArray();
+        this.quickViewMultiSku = ko.observableArray();
+
+        this.isDisplayQuickView = ko.observable(false);
+        this.prevOffSet = ko.observable(-1);
+        this.quickViewOffset = ko.observable();
     }
 }
 
@@ -97,157 +102,29 @@ ko.components.register('upvoted-results', {
 });
 
 ko.components.register('quickview', {
-    viewModel: class QuickViewComponentModel extends Dependents {
+    viewModel: class QuickViewModel extends Dependents {
         constructor(params) {
             super(params);
             this.params = params;
-            this.quickViewDownVote = function() {
-                var parentProduct = this.params.parent.productParent();
-                if (!parentProduct.displayUpVoteSelected()) {
-                    parentProduct.displayDownVoteSelected(true);
-                    parentProduct.isAllowedMoreItems(true);
-                    parentProduct.isItemDownvoted(true);
-                }
-                $('#sunnyQuickViewModal').foundation('reveal', 'close');
-            }
-            this.quickViewUpVote = function() {
-                var parentProduct = this.params.parent.productParent();
-                // console.log('quickViewUpVote ',parentProduct);
-                if (!parentProduct.displayUpVoteSelected()) {
-                    parentProduct.isAllowedMoreItems(true);
-                    this.params.parent.upvoteCounter() === 0 ? this.params.parent.isUpVoteMessage1(true) : '';
-                    this.params.parent.upvoteCounter() != 2 ? this.params.parent.upvoteCounter(this.params.parent.upvoteCounter() + 1) : '';
-                    this.params.parent.upvoteCounter() === 2 && !this.params.parent.isItemDownvoted() ? this.params.parent.isUpVoteMessage2(true) : this.params.parent.isUpVoteMessage2(false);
-                    this.params.parent.upVotedResults.push(this.params.parent.productParent());
-                    parentProduct.displayUpVoteSelected(true);
-                }
-                $('#sunnyQuickViewModal').foundation('reveal', 'close');
-            }
-            this.closeQuickView = function() {
-                $('#sunnyQuickViewModal').foundation('reveal', 'close');
-            }
-            this.swapMainImage = function(img) {
-                this.params.parent.viewModelImage(img.split('64px')[0]+'640px.jpg');
-            }
-            ko.bindingHandlers.swpierInit = {
-                update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-                    $(document).ready(function() {
-                        var altSwiper = new Swiper('#altImages', {
-                            loop: false,
-                            nextButton: '.swiper-button-next',
-                            prevButton: '.swiper-button-prev',
-                            slidesPerView: 5,
-                            spaceBetween: 12,
-                            slidesOffsetBefore: 27,
-                            slidesOffsetAfter: 27,
-                            breakpoints: {
-                                1024: {
-                                    slidesPerView: 5
-                                },
-                                640: {
-                                    slidesPerView: 5
-                                },
-                                320: {
-                                    slidesPerView: 5
-                                }
-                            }
-                        })
-                    })
-                }
-            };
         }
     },
     template: `
-        <div id="sunnyQuickViewModal" class="reveal-modal xlarge" data-reveal="" aria-hidden="true" role="dialog">
-            <div class="row">
-                <div class="small-12 columns">
-                    <a data-bind="event:{ click: closeQuickView.bind() }">
-                        <span class="icon-close icon-lg right"></span>
-                    </a>
-                </div>
-
-                <div class="small-12 medium-7 columns">
-                    <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><img data-bind="attr: { src: $parent.viewModelImage() }"></a>
-
-                    <div class="swiper-container" id="altImages">
-                        <div class="swiper-wrapper">
-                            <!-- ko foreach: $parent.viewModelAltImg() -->
-                                <div class="swiper-slide" style="width: auto; margin-right: 12px;">
-                                    <a data-bind="event: { click: $parent.swapMainImage.bind($parent) }">
-                                        <img data-bind="attr:{ src: $data, alt: $parent.params.parent.viewModelTitle()+' thumbnail' }, swpierInit"></img>
-                                    </a>
-                                </div>
-                            <!-- /ko -->
-                        </div>
-                        <div class="swiper-button-prev"><span class="icon-caret_left icon-lg"></span></div>
-                        <div class="swiper-button-next"><span class="icon-caret_right icon-lg"></span></div>
+        <div id="quickView" data-bind="style: { top: params.parent.quickViewOffset() + 140 + 'px'}">
+            <div class="quickViewInner">
+                <div class="row">
+                    <div class="small-12 medium-7 columns">
+                        <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
                     </div>
-                </div>
 
-                <div class="small-12 medium-5 text-center columns copy">
-                    <div class="row">
-                        <!-- <div class="small-12 columns" id="quickViewVotingContainer">
-                            <div class="votingContainer">
-                                <a data-bind="event: { click: quickViewDownVote.bind($data) }"><img class="voteBtns downVote" src="/images/SUN-thumb_boo.png"></a>
-                                <a data-bind="event: { click: quickViewUpVote.bind($data) }"><img class="voteBtns upVote" src="/images/SUN-thumb_yay.png"></a>
-                            </div>
-                        </div> -->
-
-                        <div class="small-12 columns">
-                            <h1 data-bind="text: $parent.viewModelTitle()"></h1>
-                        </div>
-                        <div class="small-12 columns">
-                            <div class="intro-text itemDescription" data-bind="html: $parent.viewModelTagLine()"></div>
-                        </div>
-                        <div class="small-12 columns">
-                            <p class="item-price price">
-                                <span data-bind="text: $parent.viewModelPrice()"></span>
-                            </p>
-                        </div>
-                        <div class="small-12 columns">
-                            <div class="avgRating">
-                                <span data-bind="attr: { class: 'fontStars-'+ $parent.viewModelAvgRating() }"></span><span class="body-mini">(<span data-bind="text: $parent.viewModelNumberOfReviews() != '' ? $parent.viewModelNumberOfReviews() : ''"></span>)</span>
-                            </div>
-                        </div>
-                        <div class="small-12 columns">
-                            <div class="row selectQuanity">
-                                <!-- ko if: $parent.viewModelMultiSku().length <= 1 -->
-                                    <div class="small-4 columns">
-                                        <select data-bind="options: itemQuantity()"></select>
-                                    </div>
-
-                                    <div class="small-8 columns">
-                                        <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
-                                    </div>
-                                <!-- /ko -->
-
-                                <!-- ko if: $parent.viewModelMultiSku().length > 1 -->
-                                    <div class="small-8 columns">
-                                        <select data-bind="options: $parent.viewModelMultiSku()"></select>
-                                    </div>
-
-                                    <div class="small-4 columns">
-                                        <select data-bind="options: itemQuantity()"></select>
-                                    </div>
-
-                                    <div class="small-12 columns">
-                                        <a data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }"><input type="button" value="add to cart" class="urgent expand"></a>
-                                    </div>
-                                <!-- /ko -->
-
-                                <div class="small-12 columns">
-                                    <a class="body-small a-tertiary" data-bind="attr: { href: $parent.viewModelProductURL(), target: '_blank' }">view full details</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-
+                    <div class="small-12 medium-5 columns">
+                        <h1 class="text-center" data-bind="text: params.parent.quickViewTitle()"></h1>
+                        <div class="hide-for-small-only text-center intro-text" data-bind="text: params.parent.quickViewDescription()"></div>
+                        <p class="item-price price text-center"><span data-bind="text: params.parent.quickViewPrice()"></span></p>
                     </div>
                 </div>
             </div>
         </div>`, synchronous: true
-});
+})
 
 ko.components.register('products', {
     viewModel: class ProductsComponentModel extends Dependents {
@@ -265,6 +142,7 @@ ko.components.register('products', {
             this.displayDownVoteSelected = ko.observable(false);
             this.closeDownvoteModal = ko.observable(false);
             this.isloading = ko.observable(false);
+            this.toggleOnStar = ko.observable(false);
             this.displayBorderSelected = function() {
                 if (this.displayDownVoteSelected()) {
                     return 'downvotedBorder'
@@ -317,35 +195,85 @@ ko.components.register('products', {
                     this.displayUpVoteSelected(true);
                 }
             }
-            this.displayQuickView = function(product) {
-                this.params.parent.viewModelImage(this.imageURL().split('360px')[0]+'640px.jpg');
-                this.params.parent.viewModelTitle(this.title());
-                this.params.parent.viewModelPrice(this.price());
-                this.params.parent.viewModelItemId(this.itemId());
-                this.params.parent.viewModelNumberOfReviews(this.numberOfReviews());
-                this.params.parent.viewModelAvgRating(this.rating());
-                this.params.parent.viewModelProductURL(this.productURL());
+            this.isQuickViewShown = ko.observable(false);
+            this.displayQuickView = function(product, itemId) {
                 this.params.parent.productParent(this);
                 var self = this;
-            	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+this.params.parent.viewModelItemId(), function( itemdata ) {
-                    self.params.parent.viewModelTagLine(itemdata[0].metaDescr);
-                    self.params.parent.viewModelAltImg([]);
-                    self.params.parent.viewModelMultiSku([]);
-
+            	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+self.itemId(), function( itemdata ) {
                     var itemDir = '//www.uncommongoods.com/images/items/';
                     var itemId = itemdata[0].itemId;
                     var itemIdTrim = itemId.toString().slice(0, -2);
 
-                    itemdata[0].itemMedia.forEach((mediaType, index) => {
-                        mediaType.mediaTypeId === 1 ? self.params.parent.viewModelAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_64px.jpg') : '';
-                    })
+                    self.params.parent.quickViewImage(itemDir+itemIdTrim+'00/'+itemdata[0].itemId+'_1_640px.jpg');
+                    self.params.parent.quickViewDescription(itemdata[0].metaDescr);
+                    self.params.parent.quickViewTitle(itemdata[0].toDisplayname);
+                    self.params.parent.quickViewPrice(itemdata[0].itemPrice);
+                    self.params.parent.quickViewRating(itemdata[0].avgRating);
+                    self.params.parent.quickViewNumberOfReviews(itemdata[0].noOfReviews);
+                    self.params.parent.quickViewProductURL(itemdata[0].url);
+                    self.params.parent.quickViewProductURL(itemdata[0].url);
+
+                    self.params.parent.quickViewAltImg([]);
+                    self.params.parent.quickViewMultiSku([]);
+                    self.params.parent.quickViewOffset(document.getElementById(''+itemdata[0].itemId+'').offsetTop + 80);
+
+                    this.quickViewMultiSku = ko.observableArray();
 
 
-                    if (itemdata[0].skus.length > 1) {
-                        itemdata[0].skus.forEach((sku, index) => {
-                            sku.status === 'live' ? self.params.parent.viewModelMultiSku.push(sku.color + ' $'+sku.price) : '';
-                        })
+
+                    // itemdata[0].itemMedia.forEach((mediaType, index) => {
+                    //     mediaType.mediaTypeId === 1 ? self.params.parent.quickViewAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_640px.jpg') : '';
+                    // })
+                    // if (itemdata[0].skus.length > 1) {
+                    //     itemdata[0].skus.forEach((sku, index) => {
+                    //         sku.status === 'live' ? self.params.parent.quickViewMultiSku.push(sku.color + ' $'+sku.price) : '';
+                    //     })
+                    // }
+
+                    var quickView = {
+                        productEl: document.getElementById(''+self.itemId()+''),
+                        speed: 350,
+                        close: function() {
+                            console.log('close ',this.productEl);
+                        },
+                        showQuickView: function() {
+                            if (self.params.parent.prevOffSet() != -1) {
+                                if(self.params.parent.prevOffSet() !== quickView.productEl.offsetTop) {
+                                    console.log('new row');
+                                    quickView.createQuickView();
+                                } else {
+                                    quickView.updateQuickView();
+                                    console.log('same row');
+                                    return false
+                                }
+                            }
+                            quickView.createQuickView();
+                            self.params.parent.prevOffSet(quickView.productEl.offsetTop);
+                            //self.isQuickViewShown(true);
+                        },
+                        createQuickView: function() {
+                            quickView.productEl.className = 'quickViewExpander';
+                            //quickView.productEl.insertAdjacentHTML('beforeend',quickView.compileQuickViewContainer());
+                            //ko.applyBindings(self, $("#quickView")[0]);
+
+                            // quickView.productEl.insertAdjacentHTML('beforeend',`<div data-bind="component: { name: 'quickView' }"></div>`);
+                            // quickView.productEl.innerHTML = `<div data-bind="component: { name: 'quickView' }"></div>`;
+                            self.params.parent.isDisplayQuickView(true);
+                            //self.params.parent.quickViewOffset(quickView.productEl.offsetTop + 80);
+
+                            $('html, body').animate({
+                                scrollTop: quickView.productEl.offsetTop + 80
+                            }, quickView.speed).on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
+                                    document.getElementById('sunny').className = 'quickViewOpen';
+                                }
+                            );
+
+                            document.getElementById('quickView').className = 'animate';
+                        }
                     }
+                    quickView.showQuickView();
+
+
             	})
             }
             this.exitDownVoteReason = function() {
@@ -357,6 +285,24 @@ ko.components.register('products', {
                 }, 500);
 
             }
+            this.toggleClick = function() {
+                this.toggleOnStar(!this.toggleOnStar());
+                if (this.toggleOnStar()) {
+                    this.upVote();
+                    if (this.params.parent.isUpVoteMessage1()) {
+                        $(event.target)[0].className += ' paused';
+                        $(event.target)[0].style.color = '#ffffff';
+                    }
+                } else {
+                    this.displayUpVoteSelected(false);
+                    this.params.parent.upVotedResults().forEach((product, index) => {
+                        if (this.itemId() === product.itemId()) {
+                            this.params.parent.upVotedResults().splice(index,1);
+                            this.params.parent.upVotedResultsLen(this.params.parent.upVotedResults().length);
+                        }
+                    })
+                }
+            }
             ko.bindingHandlers.slideUp = {
                 update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
                     if (viewModel.displayDownVoteSelected()) {
@@ -367,82 +313,23 @@ ko.components.register('products', {
                     }
                 }
             }
-
-            this.highlight = ko.observable(false);
-            ko.bindingHandlers.toggleClick = {
-                init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
-                    var value = valueAccessor();
-                    ko.utils.registerEventHandler(element, "click", function () {
-                        value(!value());
-                        if (value()) {
-                            viewModel.upVote();
-                        } else {
-                            viewModel.displayUpVoteSelected(false);
-                            viewModel.params.parent.upVotedResults().forEach((product, index) => {
-                                if (viewModel.itemId() === product.itemId()) {
-                                    viewModel.params.parent.upVotedResults().splice(index,1);
-                                    viewModel.params.parent.upVotedResultsLen(viewModel.params.parent.upVotedResults().length);
-                                }
-                            })
-                        }
-                    });
-                }
-            };
         }
     },
     template: `
         <!-- ko if: params.data.display() -->
-            <li>
-                <article data-bind="attr: { id: itemId(), class: 'product ' + displayBorderSelected() }">
+            <li data-bind="attr: { id: itemId() }">
+                <div data-bind="attr: { class: 'product ' + displayBorderSelected() }">
                     <div class="responsively-lazy preventReflow">
-                        <!-- ko if: !displayUpVoteSelected() && !displayDownVoteSelected() -->
-                            <a data-bind="event:{ click: downVote.bind($data) }"><span class="icon-close icon-md"></span></a>
-                        <!-- /ko -->
+                        <a data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL() }"/></a>
 
-                        <!--<a data-reveal-id="sunnyQuickViewModal" data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL(), class: displayBorderSelected() }"></a>-->
-
-                        <a data-bind="attr: { href: productURL, target: '_blank' }"><img data-bind="attr: { src: imageURL() }"></a>
-
-                        <div data-bind="attr: { class: displayDownVoteSelected() ? 'downVoteReasonContainer border' : 'downVoteReasonContainer' }">
-                            <div data-bind="if: displayDownVoteSelected(), attr: { class: displayDownVoteSelected() ? 'downVoteReason' : 'downVoteReason' }, slideUp">
-                                <ul>
-                                    <li>
-                                        <input type="radio" data-bind="attr:{ 'name': 'downVoteReason1_'+ itemId(), 'id': 'downVoteReason1_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                        <label data-bind="attr:{ for: 'downVoteReason1_'+ itemId() }">I don't like this item</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" data-bind="attr:{ 'name': 'downVoteReason2_'+ itemId(), 'id': 'downVoteReason2_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                        <label data-bind="attr:{ for: 'downVoteReason2_'+ itemId() }">I don't like this style</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" data-bind="attr:{ 'name': 'downVoteReason3_'+ itemId(), 'id': 'downVoteReason3_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                        <label data-bind="attr:{ for: 'downVoteReason3_'+ itemId() }">Don't show me kitchen & bar</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" data-bind="attr:{ 'name': 'downVoteReason4_'+ itemId(), 'id': 'downVoteReason4_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                        <label data-bind="attr:{ for: 'downVoteReason4_'+ itemId() }">Don't show me dishware</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" data-bind="attr:{ 'name': 'downVoteReason5_'+ itemId(), 'id': 'downVoteReason5_'+itemId() }, event:{ click: downVoteReasonSelection.bind($data) }">
-                                        <label data-bind="attr:{ for: 'downVoteReason5_'+ itemId() }">Other reason</label>
-                                    </li>
-                                </ul>
-
-                                <a data-bind="event:{ click: exitDownVoteReason.bind($data) }" class="exitDownVoteReason">
-                                    <span class="icon-caret_down icon-md right"></span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'votingContainer text-center upvoted stars' : 'votingContainer text-center stars' }">
+                        <div data-bind="attr: { class: displayUpVoteSelected() ? 'starContainer text-center upvoted' : 'starContainer text-center' }, css: { upvoted: toggleOnStar }, event: { click: toggleClick.bind($data) }">
                             <!-- ko if: !displayDownVoteSelected() -->
-                                <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? 'outterCircle upvoted' : 'outterCircle' }">
-
+                                <div data-bind="attr: { class: displayUpVoteSelected() ? 'outterCircle upvoted' : 'outterCircle' }">
 
                                     <div data-bind="attr:{ class: params.parent.isDisplayGateCopy() ? (displayUpVoteSelected() ? 'starExplode upvoted animate' : 'starExplode animate') : (displayUpVoteSelected() ? 'starExplode upvoted' : 'starExplode') }"></div>
 
-                                    <div data-bind="attr: { class: displayDownVoteSelected() || displayUpVoteSelected() ? (params.parent.isDisplayGateCopy() ? 'innerCircle upvoted animate' : 'innerCircle upvoted') : (params.parent.isDisplayGateCopy() ? 'innerCircle animate' : 'innerCircle') }">
-                                        <a data-bind="toggleClick: highlight"><span data-bind="attr: { class: params.parent.isDisplayGateCopy() ? 'icon-star animate' : 'icon-star' }"></span></a>
+                                    <div data-bind="attr: { class: displayUpVoteSelected() ? (params.parent.isDisplayGateCopy() ? 'innerCircle upvoted animate' : 'innerCircle upvoted') : (params.parent.isDisplayGateCopy() ? 'innerCircle animate' : 'innerCircle') }">
+                                        <span data-bind="attr: { class: params.parent.isDisplayGateCopy() ? 'icon-star animate' : 'icon-star' }"></span>
                                     </div>
                                 </div>
                             <!-- /ko -->
@@ -462,7 +349,7 @@ ko.components.register('products', {
                         </h4>
                         <p class="body-small price" data-bind="text: price()"></p>
                     </div>
-                </article>
+                </div>
             </li>
         <!-- /ko -->`, synchronous: true
 });
@@ -507,8 +394,8 @@ ko.components.register('price-filiter', {
                 </div>
 
                 <div class="small-12 medium-6 columns">
-                    <div class="flex">
-                        <p class="nav-fam priceCopy">PRICE RANGE:</p>
+                    <div class="priceRange">
+                        <p class="nav-fam">PRICE RANGE:</p>
                         <input class="minMaxPrice" type="number" placeholder="$" data-bind="value: $parent.filterMinPrice">
                         <p class="priceToCopy">to</p>
                         <input class="minMaxPrice" type="number" placeholder="$" data-bind="value: $parent.filterMaxPrice">
@@ -574,6 +461,7 @@ ko.components.register('sunny-results-container', {
                 })
                 this.totalGiftIdeas(hiddenCounter);
             }
+
             self = this;
             $.getJSON( "/js/coffee_search_results.json", function(data) {
                 data.products.forEach((product,index) => {
@@ -581,6 +469,43 @@ ko.components.register('sunny-results-container', {
                 })
             })
 
+            ko.bindingHandlers.starBlinkToggle = {
+                update: function(element, valueAccessor, allBindingsAccessor) {
+                    var setIntervalId = setInterval(frame, 3500);
+                    animateStarsIn();
+                    function frame() {
+                        if (self.displaySearchResults().length > 18) {
+                            clearInterval(setIntervalId);
+                        } else {
+                            animateStarsIn();
+                        }
+                    }
+                    function animateStarsIn() {
+                        $.fn.extend({
+                            animateStarIn: function (animationName) {
+                                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                                this.addClass(animationName).one(animationEnd, function() {
+                                    $('#results').animateStarOut('onstate starBlinkOff');
+                                });
+                            },
+                            animateStarOut: function (animationName) {
+                                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                                this.addClass(animationName).one(animationEnd, function() {
+                                    var star = $(this);
+                                    setTimeout(function(){
+                                        star.removeClass('starBlinkOn');
+                                    }, 500);
+                                    setTimeout(function(){
+                                        star.removeClass('onstate starBlinkOff');
+                                    }, 1500);
+
+                                });
+                            }
+                        });
+                        $('#results').animateStarIn('starBlinkOn');
+                    }
+                }
+            }
             ko.bindingHandlers.scroll = {
                 init: function(element, valueAccessor, allBindingsAccessor) {
                     window.onbeforeunload = function () {
@@ -666,8 +591,8 @@ ko.components.register('sunny-results-container', {
                                 <label class="super-check counter" for="suggestions">
 
                                     <div data-bind="attr: { class: isUpVoteMessage1() ? 'outterCircle fill' : 'outterCircle' }">
-                                        <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'innerCircle whiteBkg animateIn' : ( upVotedResultsLen() >= 1 ? 'innerCircle hideInnerCircle' : 'innerCircle')}"></div>
-                                        <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'count animateIn' : ( upVotedResultsLen() >= 1 ? 'count updateColor' : 'count')}"></div>
+                                        <div data-bind="attr:{ class: isUpVoteMessage1() ? 'innerCircle animateIn' : 'innerCircle'}"></div>
+                                        <div data-bind="text: totalGiftIdeas(), attr:{ class: isUpVoteMessage1() ? 'count animateIn' : 'count'}"></div>
                                     </div>
 
                                     <h2 class="circleLeft">suggestions</h2>
@@ -708,7 +633,7 @@ ko.components.register('sunny-results-container', {
             <price-filiter params='parent: $data'></price-filiter>
 
             <div class="small-12 columns">
-                <ul id="results" class="small-block-grid-2 medium-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-5" data-bind="foreach: displaySearchResults()">
+                <ul id="results" class="small-block-grid-2 medium-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-5" data-bind="foreach: { data: displaySearchResults() }, starBlinkToggle">
                     <!-- ko component: {name: 'products', params: { data: $data, parent: $parent  } } --><!-- /ko -->
                 </ul>
             </div>
@@ -722,6 +647,10 @@ ko.components.register('sunny-results-container', {
             </div>
         </div>
         <!-- Search Results End-->
+
+        <!-- ko if: isDisplayQuickView() -->
+            <quickview params='parent: $data'></quickview>
+        <!-- /ko -->
 
         <!-- ko if: displayUpVotedResults() -->
             <!-- ko component: {name: 'upvoted-results', params: { parent: $data } } --><!-- /ko -->
