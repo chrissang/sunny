@@ -117,6 +117,17 @@ ko.components.register('quickview', {
                     </div>
 
                     <div class="small-12 medium-5 columns">
+
+                        <div data-bind="attr: { class: 'starContainer text-center' }">
+                            <div data-bind="attr: { class: 'outterCircle' }">
+                                <div data-bind="attr:{ class: 'starExplode' }"></div>
+
+                                <div data-bind="attr: { class: 'innerCircle' }">
+                                    <span data-bind="attr: { class: 'icon-star' }"></span>
+                                </div>
+                            </div>
+                        </div>
+
                         <h1 class="text-center" data-bind="text: params.parent.quickViewTitle()"></h1>
                         <div class="hide-for-small-only text-center intro-text" data-bind="text: params.parent.quickViewDescription()"></div>
                         <p class="item-price price text-center"><span data-bind="text: params.parent.quickViewPrice()"></span></p>
@@ -220,6 +231,15 @@ ko.components.register('products', {
                     this.quickViewMultiSku = ko.observableArray();
 
 
+                    document.getElementById(''+self.itemId()+'').className = 'quickViewExpander';
+                    self.params.parent.isDisplayQuickView(true);
+                    $('html, body').animate({
+                        scrollTop: document.getElementById(''+self.itemId()+'').offsetTop + 80
+                    }, 350).on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
+                            document.getElementById('sunny').className = 'quickViewOpen';
+                        }
+                    );
+                    document.getElementById('quickView').className = 'animate';
 
                     // itemdata[0].itemMedia.forEach((mediaType, index) => {
                     //     mediaType.mediaTypeId === 1 ? self.params.parent.quickViewAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_640px.jpg') : '';
@@ -230,48 +250,6 @@ ko.components.register('products', {
                     //     })
                     // }
 
-                    var quickView = {
-                        productEl: document.getElementById(''+self.itemId()+''),
-                        speed: 350,
-                        close: function() {
-                            console.log('close ',this.productEl);
-                        },
-                        showQuickView: function() {
-                            if (self.params.parent.prevOffSet() != -1) {
-                                if(self.params.parent.prevOffSet() !== quickView.productEl.offsetTop) {
-                                    console.log('new row');
-                                    quickView.createQuickView();
-                                } else {
-                                    quickView.updateQuickView();
-                                    console.log('same row');
-                                    return false
-                                }
-                            }
-                            quickView.createQuickView();
-                            self.params.parent.prevOffSet(quickView.productEl.offsetTop);
-                            //self.isQuickViewShown(true);
-                        },
-                        createQuickView: function() {
-                            quickView.productEl.className = 'quickViewExpander';
-                            //quickView.productEl.insertAdjacentHTML('beforeend',quickView.compileQuickViewContainer());
-                            //ko.applyBindings(self, $("#quickView")[0]);
-
-                            // quickView.productEl.insertAdjacentHTML('beforeend',`<div data-bind="component: { name: 'quickView' }"></div>`);
-                            // quickView.productEl.innerHTML = `<div data-bind="component: { name: 'quickView' }"></div>`;
-                            self.params.parent.isDisplayQuickView(true);
-                            //self.params.parent.quickViewOffset(quickView.productEl.offsetTop + 80);
-
-                            $('html, body').animate({
-                                scrollTop: quickView.productEl.offsetTop + 80
-                            }, quickView.speed).on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
-                                    document.getElementById('sunny').className = 'quickViewOpen';
-                                }
-                            );
-
-                            document.getElementById('quickView').className = 'animate';
-                        }
-                    }
-                    quickView.showQuickView();
 
 
             	})

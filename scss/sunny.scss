@@ -27,29 +27,22 @@
 	"forms",
 	"powerreviews",
 	"header",
-	"footer",
 	"productcards",
 	"borderfreemodal",
-	"swiper",
 	"itemPage",
 	"filter-and-sort",
-	"wishlist",
-	"homePage";
+	"wishlist";
 
 $sunny-light-blue: #3D69BC;
 $sunny-dark-blue: #233C6D;
 $sunny-gold: #F4C714;
 $reviews-light-mix: #FEEFC7;
 
-#sunny {
-    overflow-y: scroll;
-}
 #sunny, #sunnyForm {
     .fullWidth {
         max-width: none;
         padding: 0;
     }
-    //UG condensed header
     .ugCondensedHeaderContainer {
         background-color: $white;
         padding: 0;
@@ -68,56 +61,7 @@ $reviews-light-mix: #FEEFC7;
             }
         }
     }
-    // Form page styles
-    &.sunnyFormBkg {
-        background-color: $sunny-light-blue;
-        #formContent {
-            margin-top: 3rem;
-            h2, p {
-                color: $white !important;
-            }
-            .white {
-                color: $white !important;
-            }
-        }
-        #form1 {
-            .sunnyImg {
-                margin-bottom: 1rem;
-            }
-            #recipientInput {
-                margin-top: 1rem;
-                margin-bottom: 2rem;
-            }
-            .copy {
-                margin-bottom: 1rem;
-            }
-            #recipientBtnContainer {
-                margin-bottom: 3rem;
-            }
-        }
-        #form3 {
-            .inputGroup {
-                a {
-                    margin-left: 0;
-                }
-            }
-        }
-        #paginationDots {
-            position: absolute;
-            left: 0;
-            top: calc(44px + 3rem);
-            display: flex;
-            flex-direction: column;
-            margin-left: 2rem;
-            visibility: hidden;
-            a {
-                margin: .25rem 0;
-            }
-        }
-    }
-    // Results page styles
     .sunnyResultsContainer {
-        background-color: $offwhite-light-mix;
         header {
             position: fixed;
             z-index: 200;
@@ -376,6 +320,64 @@ $reviews-light-mix: #FEEFC7;
                 }
             }
         }
+    }
+}
+
+#sunnyForm {
+    &.sunnyFormBkg {
+        background-color: $sunny-light-blue;
+        #formContent {
+            margin-top: 3rem;
+            h2, p {
+                color: $white !important;
+            }
+            .white {
+                color: $white !important;
+            }
+        }
+        #form1 {
+            .sunnyImg {
+                margin-bottom: 1rem;
+            }
+            #recipientInput {
+                margin-top: 1rem;
+                margin-bottom: 2rem;
+            }
+            .copy {
+                margin-bottom: 1rem;
+            }
+            #recipientBtnContainer {
+                margin-bottom: 3rem;
+            }
+        }
+        #form3 {
+            .inputGroup {
+                a {
+                    margin-left: 0;
+                }
+            }
+        }
+        #paginationDots {
+            position: absolute;
+            left: 0;
+            top: calc(44px + 3rem);
+            display: flex;
+            flex-direction: column;
+            margin-left: 2rem;
+            visibility: hidden;
+            a {
+                margin: .25rem 0;
+            }
+        }
+    }
+}
+
+#sunny {
+    overflow-y: scroll;
+    // Results page styles
+    .sunnyResultsContainer {
+        background-color: $offwhite-light-mix;
+
         .prieFilterContainer {
             padding-top: 1.5rem;
             padding-bottom: 1.5rem;
@@ -413,7 +415,6 @@ $reviews-light-mix: #FEEFC7;
                     -webkit-transition: height 350ms ease;
                     -moz-transition: height 350ms ease;
                     transition: height 350ms ease;
-                    //height: 450px;
                     &.quickViewExpander {
                         -webkit-transition: height 350ms ease;
                         -moz-transition: height 350ms ease;
@@ -1126,8 +1127,6 @@ $reviews-light-mix: #FEEFC7;
     }
 
     &.quickViewOpen {
-        //overflow: hidden;
-        // position: fixed;
         height: 100%;
         overflow: hidden;
     }
@@ -1136,9 +1135,11 @@ $reviews-light-mix: #FEEFC7;
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100vh - 140px);
         z-index: 200;
+        overflow-y: scroll;
         transform: translateY(100%);
         -webkit-transform: translateY(100%);
         -moz-transform: translateY(100%);
@@ -1153,16 +1154,13 @@ $reviews-light-mix: #FEEFC7;
             transition: .5s ease;
         }
         .quickViewInner {
-            // border: 1px solid #ff0000;
-            height: 100%;
-            overflow-y: scroll;
+            position: relative;
             margin: .25rem 1rem 1rem 1rem;
             background-color: $white;
             box-shadow: 0 0 6px -1px $secondary;
         }
     }
 }
-
 
 //small screen
 @media (max-width: 40em) {
