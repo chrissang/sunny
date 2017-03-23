@@ -39,8 +39,6 @@ class Dependents {
         this.quickViewMultiSku = ko.observableArray();
 
         this.isDisplayQuickView = ko.observable(false);
-        this.prevOffSet = ko.observable(-1);
-        this.quickViewOffset = ko.observable();
     }
 }
 
@@ -101,33 +99,43 @@ ko.components.register('upvoted-results', {
         </div>`, synchronous: true
 });
 
+function breakpointValue() {
+    return window.getComputedStyle(document.querySelector('body'), ':before').getPropertyValue('content').replace(/\"/g, '');
+};
 ko.components.register('quickview', {
     viewModel: class QuickViewModel extends Dependents {
         constructor(params) {
             super(params);
             this.params = params;
+            this.viewPortSize = ko.observable(breakpointValue());
+            this.closeQuickView = function() {
+                console.log('close');
+            }
         }
     },
     template: `
-        <div id="quickView" data-bind="style: { top: params.parent.quickViewOffset() + 140 + 'px'}">
+        <div id="quickView">
             <div class="quickViewInner">
-                <div class="row">
-                    <div class="small-12 medium-7 columns">
-                        <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
-                    </div>
-                    <div class="small-12 medium-5 columns">
-                        <div data-bind="attr: { class: 'starContainer text-center quickViewStar' }">
-                            <div data-bind="attr: { class: 'outterCircle' }">
-                                <div data-bind="attr:{ class: 'starExplode' }"></div>
+                <div class="content">
+                    <span class="icon-close icon-lg"></span>
+                    <div class="row">
+                        <div class="small-12 medium-7 columns">
+                            <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
+                        </div>
+                        <div class="small-12 medium-5 columns">
+                            <div data-bind="attr: { class: 'starContainer text-center quickViewStar' }">
+                                <div data-bind="attr: { class: 'outterCircle' }">
+                                    <div data-bind="attr:{ class: 'starExplode' }"></div>
 
-                                <div data-bind="attr: { class: 'innerCircle' }">
-                                    <span data-bind="attr: { class: 'icon-star' }"></span>
+                                    <div data-bind="attr: { class: 'innerCircle' }">
+                                        <span data-bind="attr: { class: 'icon-star' }"></span>
+                                    </div>
                                 </div>
                             </div>
+                            <h1 class="text-center" data-bind="html: params.parent.quickViewTitle()"></h1>
+                            <div class="hide-for-small-only text-center intro-text" data-bind="html: params.parent.quickViewDescription()"></div>
+                            <p class="item-price price text-center"><span data-bind="html: params.parent.quickViewPrice()"></span></p>
                         </div>
-                        <h1 class="text-center" data-bind="text: params.parent.quickViewTitle()"></h1>
-                        <div class="hide-for-small-only text-center intro-text" data-bind="text: params.parent.quickViewDescription()"></div>
-                        <p class="item-price price text-center"><span data-bind="text: params.parent.quickViewPrice()"></span></p>
                     </div>
                 </div>
             </div>
@@ -203,7 +211,7 @@ ko.components.register('products', {
                     this.displayUpVoteSelected(true);
                 }
             }
-            this.isQuickViewShown = ko.observable(false);
+
             this.displayQuickView = function(product, itemId) {
                 this.params.parent.productParent(this);
                 var self = this;
@@ -212,6 +220,7 @@ ko.components.register('products', {
                     var itemId = itemdata[0].itemId;
                     var itemIdTrim = itemId.toString().slice(0, -2);
 
+                    self.params.parent.quickViewItemId(itemdata[0].itemId);
                     self.params.parent.quickViewImage(itemDir+itemIdTrim+'00/'+itemdata[0].itemId+'_1_640px.jpg');
                     self.params.parent.quickViewDescription(itemdata[0].metaDescr);
                     self.params.parent.quickViewTitle(itemdata[0].toDisplayname);
@@ -223,20 +232,50 @@ ko.components.register('products', {
 
                     self.params.parent.quickViewAltImg([]);
                     self.params.parent.quickViewMultiSku([]);
-                    self.params.parent.quickViewOffset(document.getElementById(''+itemdata[0].itemId+'').offsetTop + 80);
 
                     this.quickViewMultiSku = ko.observableArray();
 
-
-                    document.getElementById(''+self.itemId()+'').className = 'quickViewExpander';
-                    self.params.parent.isDisplayQuickView(true);
-                    $('html, body').animate({
-                        scrollTop: document.getElementById(''+self.itemId()+'').offsetTop + 80
-                    }, 350).on("transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",function() {
-                            document.getElementById('sunny').className = 'quickViewOpen';
+                    var position = window.pageYOffset;
+                    //Get an element's distance from the top of the page
+                    var getElemDistance = function ( elem ) {
+                        var location = 0;
+                        if (elem.offsetParent) {
+                            do {
+                                location += elem.offsetTop;
+                                elem = elem.offsetParent;
+                            } while (elem);
                         }
-                    );
-                    document.getElementById('quickView').className = 'animate';
+                        return location >= 0 ? location : 0;
+                    };
+                    var elem = document.getElementById(''+self.itemId()+'');
+                    var location = getElemDistance( elem );
+                    var productHeight = document.getElementById(''+self.itemId()+'').querySelector('.product').offsetHeight;
+                    var headerHeight = document.querySelector('header').offsetHeight + document.querySelector('.sunnyIcon').offsetHeight;
+                    var priceFilterHeight = document.querySelector('.priceFilterContainer').offsetHeight;
+                    var scrollPosition = priceFilterHeight + location + (productHeight/2);
+
+                    document.getElementById(''+self.itemId()+'').querySelector('.push').style.height = '100vh';
+
+                    var listElements = document.querySelectorAll('li');
+                    Array.from(listElements).forEach((el,index) => {
+                        el.className += ' fadeOut'
+                    })
+
+                    var scrollComplete = false;
+                    $('html, body').animate({
+                        scrollTop: scrollPosition
+                    },
+                    {
+                        complete : function(){
+                            if(!scrollComplete){
+                                scrollComplete = true;
+                                document.getElementById('sunny').className = 'quickViewOpen';
+                                self.params.parent.isDisplayQuickView(true);
+                                document.getElementById('quickView').querySelector('.content').className = 'content slideUp';
+
+                            }
+                        }
+                    }, 400)
 
                     // itemdata[0].itemMedia.forEach((mediaType, index) => {
                     //     mediaType.mediaTypeId === 1 ? self.params.parent.quickViewAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_640px.jpg') : '';
@@ -246,9 +285,6 @@ ko.components.register('products', {
                     //         sku.status === 'live' ? self.params.parent.quickViewMultiSku.push(sku.color + ' $'+sku.price) : '';
                     //     })
                     // }
-
-
-
             	})
             }
             this.exitDownVoteReason = function() {
@@ -292,7 +328,7 @@ ko.components.register('products', {
     },
     template: `
         <!-- ko if: params.data.display() -->
-            <li data-bind="attr: { id: itemId() }">
+            <li class="quickViewExpander" data-bind="attr: { id: itemId() }">
                 <div data-bind="attr: { class: 'product ' + displayBorderSelected() }">
                     <div class="responsively-lazy preventReflow">
                         <a data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL() }"/></a>
@@ -325,6 +361,7 @@ ko.components.register('products', {
                         <p class="body-small price" data-bind="text: price()"></p>
                     </div>
                 </div>
+                <div class="push"></div>
             </li>
         <!-- /ko -->`, synchronous: true
 });
@@ -361,7 +398,7 @@ ko.components.register('price-filiter', {
         }
     },
     template: `
-        <div class="small-12 columns prieFilterContainer">
+        <div class="small-12 columns priceFilterContainer">
             <div class="row">
                 <div class="small-12 medium-6 columns">
                     <h3 data-bind="text:'gifts for ' + recipient()"></h3>
@@ -601,6 +638,7 @@ ko.components.register('sunny-results-container', {
                 </div>
             </div>
         </header>
+        <!-- Header End -->
 
         <!-- Search Results -->
         <div id="sunnyResults" class="row fullwidth sunnySearchResults" data-bind="scroll, visible: displaySearchResultsToggle()">
