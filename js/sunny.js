@@ -38,9 +38,12 @@ class Dependents {
         this.quickViewAltImg = ko.observableArray();
         this.quickViewMultiSku = ko.observableArray();
 
+        this.toggleProductFade = ko.observable(false);
+
+        this.scrollPosToQuickView = ko.observable();
         this.isDisplayQuickView = ko.observable(false);
-        this.QuickViewElement = ko.observable();
-        this.QuickViewContentElement = ko.observable();
+        this.quickViewElement = ko.observable();
+        this.quickViewContentElement = ko.observable();
     }
 }
 
@@ -111,9 +114,29 @@ ko.components.register('quickview', {
             this.params = params;
             this.viewPortSize = ko.observable(breakpointValue());
             this.closeQuickView = function() {
-                console.log('close ',this.params.parent.QuickViewElement());
-                console.log('close ',this.params.parent.QuickViewContentElement());
-                this.params.parent.QuickViewContentElement().className = 'content transition slideDown';
+                var self = this;
+                var pfx = ["webkit", "moz", "MS", "o", ""];
+
+                this.params.parent.quickViewContentElement().className = 'content slideDown';
+                this.params.parent.quickViewElement().querySelector('.icon-close').className = 'icon-close icon-lg slideDown';
+
+                function prefixedEventListener(element, type, callback) {
+                	for (var p = 0; p < pfx.length; p++) {
+                		if (!pfx[p]) type = type.toLowerCase();
+                		element.addEventListener(pfx[p]+type, callback, false);
+                	}
+                }
+                document.getElementById('sunny').className = '';
+                self.params.parent.isDisplayQuickView(false);
+                self.params.parent.toggleProductFade(false);
+                prefixedEventListener(this.params.parent.quickViewContentElement(),"AnimationEnd",function(e){
+
+
+                });
+                document.getElementById(self.params.parent.quickViewItemId()).querySelector('.push').style.height = 0;
+                $('html, body').animate({
+                    scrollTop: self.params.parent.scrollPosToQuickView()
+                },500)
             }
         }
     },
@@ -239,7 +262,8 @@ ko.components.register('products', {
 
                     this.quickViewMultiSku = ko.observableArray();
 
-                    var position = window.pageYOffset;
+                    self.params.parent.scrollPosToQuickView(window.pageYOffset);
+
                     //Get an element's distance from the top of the page
                     var getElemDistance = function ( elem ) {
                         var location = 0;
@@ -259,11 +283,7 @@ ko.components.register('products', {
                     var scrollPosition = priceFilterHeight + location + (productHeight/2);
 
                     document.getElementById(''+self.itemId()+'').querySelector('.push').style.height = '100vh';
-
-                    var listElements = document.querySelectorAll('li');
-                    Array.from(listElements).forEach((el,index) => {
-                        el.className += ' fadeOut'
-                    })
+                    self.params.parent.toggleProductFade(true);
 
                     var scrollComplete = false;
                     $('html, body').animate({
@@ -275,9 +295,10 @@ ko.components.register('products', {
                                 scrollComplete = true;
                                 document.getElementById('sunny').className = 'quickViewOpen';
                                 self.params.parent.isDisplayQuickView(true);
-                                self.params.parent.QuickViewElement(document.getElementById('quickView'));
-                                self.params.parent.QuickViewContentElement(document.getElementById('quickView').querySelector('.content'));
-                                document.getElementById('quickView').querySelector('.content').className = 'content slideUp';
+                                self.params.parent.quickViewElement(document.getElementById('quickView'));
+                                self.params.parent.quickViewContentElement(document.getElementById('quickView').querySelector('.content'));
+                                self.params.parent.quickViewContentElement().className = 'content slideUp';
+                                self.params.parent.quickViewElement().querySelector('.icon-close').className += ' slideUp';
                             }
                         }
                     }, 400)
@@ -303,12 +324,13 @@ ko.components.register('products', {
             }
             this.toggleClick = function() {
                 this.toggleOnStar(!this.toggleOnStar());
+                console.log(this.toggleOnStar());
                 if (this.toggleOnStar()) {
                     this.upVote();
-                    if (this.params.parent.isUpVoteMessage1()) {
-                        $(event.target)[0].className += ' paused';
-                        $(event.target)[0].style.color = '#ffffff';
-                    }
+                    // if (this.params.parent.isUpVoteMessage1()) {
+                    //     $(event.target)[0].className += ' paused';
+                    //     $(event.target)[0].style.color = '#ffffff';
+                    // }
                 } else {
                     this.displayUpVoteSelected(false);
                     this.params.parent.upVotedResults().forEach((product, index) => {
@@ -333,7 +355,7 @@ ko.components.register('products', {
     },
     template: `
         <!-- ko if: params.data.display() -->
-            <li class="quickViewExpander" data-bind="attr: { id: itemId() }">
+            <li data-bind="attr: { id: itemId(), class: params.parent.toggleProductFade() ? 'quickViewExpander fadeOut' : 'quickViewExpander fadeIn' }">
                 <div data-bind="attr: { class: 'product ' + displayBorderSelected() }">
                     <div class="responsively-lazy preventReflow">
                         <a data-bind="event: { click: displayQuickView.bind($data) }"><img data-bind="attr: { src: imageURL() }"/></a>
@@ -486,43 +508,43 @@ ko.components.register('sunny-results-container', {
                 })
             })
 
-            ko.bindingHandlers.starBlinkToggle = {
-                update: function(element, valueAccessor, allBindingsAccessor) {
-                    var setIntervalId = setInterval(frame, 3500);
-                    animateStarsIn();
-                    function frame() {
-                        if (self.displaySearchResults().length > 18) {
-                            clearInterval(setIntervalId);
-                        } else {
-                            animateStarsIn();
-                        }
-                    }
-                    function animateStarsIn() {
-                        $.fn.extend({
-                            animateStarIn: function (animationName) {
-                                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                                this.addClass(animationName).one(animationEnd, function() {
-                                    $('#results').animateStarOut('onstate starBlinkOff');
-                                });
-                            },
-                            animateStarOut: function (animationName) {
-                                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                                this.addClass(animationName).one(animationEnd, function() {
-                                    var star = $(this);
-                                    setTimeout(function(){
-                                        star.removeClass('starBlinkOn');
-                                    }, 500);
-                                    setTimeout(function(){
-                                        star.removeClass('onstate starBlinkOff');
-                                    }, 1500);
-
-                                });
-                            }
-                        });
-                        $('#results').animateStarIn('starBlinkOn');
-                    }
-                }
-            }
+            // ko.bindingHandlers.starBlinkToggle = {
+            //     update: function(element, valueAccessor, allBindingsAccessor) {
+            //         var setIntervalId = setInterval(frame, 3500);
+            //         animateStarsIn();
+            //         function frame() {
+            //             if (self.displaySearchResults().length > 18) {
+            //                 clearInterval(setIntervalId);
+            //             } else {
+            //                 animateStarsIn();
+            //             }
+            //         }
+            //         function animateStarsIn() {
+            //             $.fn.extend({
+            //                 animateStarIn: function (animationName) {
+            //                     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            //                     this.addClass(animationName).one(animationEnd, function() {
+            //                         $('#results').animateStarOut('onstate starBlinkOff');
+            //                     });
+            //                 },
+            //                 animateStarOut: function (animationName) {
+            //                     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            //                     this.addClass(animationName).one(animationEnd, function() {
+            //                         var star = $(this);
+            //                         setTimeout(function(){
+            //                             star.removeClass('starBlinkOn');
+            //                         }, 500);
+            //                         setTimeout(function(){
+            //                             star.removeClass('onstate starBlinkOff');
+            //                         }, 1500);
+            //
+            //                     });
+            //                 }
+            //             });
+            //             $('#results').animateStarIn('starBlinkOn');
+            //         }
+            //     }
+            // }
             ko.bindingHandlers.scroll = {
                 init: function(element, valueAccessor, allBindingsAccessor) {
                     window.onbeforeunload = function () {
@@ -651,7 +673,7 @@ ko.components.register('sunny-results-container', {
             <price-filiter params='parent: $data'></price-filiter>
 
             <div class="small-12 columns">
-                <ul id="results" class="small-block-grid-2 medium-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-5" data-bind="foreach: { data: displaySearchResults() }, starBlinkToggle">
+                <ul id="results" class="small-block-grid-2 medium-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-5" data-bind="foreach: { data: displaySearchResults() }">
                     <!-- ko component: {name: 'products', params: { data: $data, parent: $parent  } } --><!-- /ko -->
                 </ul>
             </div>

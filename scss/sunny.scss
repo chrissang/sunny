@@ -406,11 +406,11 @@ $reviews-light-mix: #FEEFC7;
                 justify-content: center;
                 color: $inactive;
                 font-size: 1.125rem;
-                &.paused {
-                    -webkit-animation-play-state:paused;
-                    -moz-animation-play-state:paused;
-                    animation-play-state:paused;
-                }
+                // &.paused {
+                //     -webkit-animation-play-state:paused;
+                //     -moz-animation-play-state:paused;
+                //     animation-play-state:paused;
+                // }
             }
         }
         .outterCircle+.upvote::before {
@@ -510,107 +510,113 @@ $reviews-light-mix: #FEEFC7;
                         -moz-transition: 0.4s ease;
                         transition: 0.4s ease;
                     }
-                }
-                &.starBlinkOn {
-                    li:nth-child(-n+18) {
-                        .innerCircle {
-                            -webkit-animation-name: starBorderIn;
-                            -moz-animation-name: starBorderIn;
-                            animation-name: starBorderIn;
-                            -webkit-animation-duration: .5s;
-                            -moz-animation-duration: .5s;
-                            animation-duration: .5s;
-                            -webkit-animation-timing-function: ease;
-                            -moz-animation-timing-function: ease;
-                            animation-timing-function: ease;
-                            -webkit-animation-fill-mode:forwards;
-                            -moz-animation-fill-mode:forwards;
-                            animation-fill-mode:forwards;
-                            -webkit-animation-delay: 0.5s;
-                            -moz-animation-delay: 0.5s;
-                            animation-delay: 0.5s;
-                            .icon-star {
-                                -webkit-animation-name: starFadeIn;
-                                -moz-animation-name: starFadeIn;
-                                animation-name: starFadeIn;
-                                -webkit-animation-duration: .5s;
-                                -moz-animation-duration: .5s;
-                                animation-duration: .5s;
-                                -webkit-animation-timing-function: ease;
-                                -moz-animation-timing-function: ease;
-                                animation-timing-function: ease;
-                                -webkit-animation-fill-mode:forwards;
-                                -moz-animation-fill-mode:forwards;
-                                animation-fill-mode:forwards;
-                                -webkit-animation-delay: 0.5s;
-                                -moz-animation-delay: 0.5s;
-                                animation-delay: 0.5s;
-                            }
-                        }
-                        .outterCircle {
-                            .starExplode {
-                                -webkit-animation-name: starScale;
-                                -moz-animation-name: starScale;
-                                animation-name: starScale;
-                                -webkit-animation-duration: .5s;
-                                -moz-animation-duration: .5s;
-                                animation-duration: .5s;
-                                -webkit-animation-timing-function: ease;
-                                -moz-animation-timing-function: ease;
-                                animation-timing-function: ease;
-                                -webkit-animation-delay: 0.5s;
-                                -moz-animation-delay: 0.5s;
-                                animation-delay: 0.5s;
-                            }
-                        }
+                    &.fadeIn {
+                        opacity: 1;
+                        -webkit-transition: 1s ease;
+                        -moz-transition: 1s ease;
+                        transition: 1s ease;
                     }
                 }
-                &.onstate {
-                    li:nth-child(-n+18) {
-                        .innerCircle {
-                            border-color: $sunny-gold;
-                            .icon-star {
-                                color: $sunny-gold;
-                            }
-                        }
-                    }
-                }
-                &.starBlinkOff {
-                    .innerCircle {
-                        -webkit-animation-name: starBorderOut;
-                        -moz-animation-name: starBorderOut;
-                        animation-name: starBorderOut;
-                        -webkit-animation-duration: .5s;
-                        -moz-animation-duration: .5s;
-                        animation-duration: .5s;
-                        -webkit-animation-timing-function: ease;
-                        -moz-animation-timing-function: ease;
-                        animation-timing-function: ease;
-                        -webkit-animation-fill-mode:forwards;
-                        -moz-animation-fill-mode:forwards;
-                        animation-fill-mode:forwards;
-                        -webkit-animation-delay: 0.5s;
-                        -moz-animation-delay: 0.5s;
-                        animation-delay: 0.5s;
-                        .icon-star {
-                            -webkit-animation-name: starFadeOut;
-                            -moz-animation-name: starFadeOut;
-                            animation-name: starFadeOut;
-                            -webkit-animation-duration: .5s;
-                            -moz-animation-duration: .5s;
-                            animation-duration: .5s;
-                            -webkit-animation-timing-function: ease;
-                            -moz-animation-timing-function: ease;
-                            animation-timing-function: ease;
-                            -webkit-animation-fill-mode:forwards;
-                            -moz-animation-fill-mode:forwards;
-                            animation-fill-mode:forwards;
-                            -webkit-animation-delay: 0.5s;
-                            -moz-animation-delay: 0.5s;
-                            animation-delay: 0.5s;
-                        }
-                    }
-                }
+                // &.starBlinkOn {
+                //     li:nth-child(-n+18) {
+                //         .innerCircle {
+                //             -webkit-animation-name: starBorderIn;
+                //             -moz-animation-name: starBorderIn;
+                //             animation-name: starBorderIn;
+                //             -webkit-animation-duration: .5s;
+                //             -moz-animation-duration: .5s;
+                //             animation-duration: .5s;
+                //             -webkit-animation-timing-function: ease;
+                //             -moz-animation-timing-function: ease;
+                //             animation-timing-function: ease;
+                //             -webkit-animation-fill-mode:forwards;
+                //             -moz-animation-fill-mode:forwards;
+                //             animation-fill-mode:forwards;
+                //             -webkit-animation-delay: 0.5s;
+                //             -moz-animation-delay: 0.5s;
+                //             animation-delay: 0.5s;
+                //             .icon-star {
+                //                 -webkit-animation-name: starFadeIn;
+                //                 -moz-animation-name: starFadeIn;
+                //                 animation-name: starFadeIn;
+                //                 -webkit-animation-duration: .5s;
+                //                 -moz-animation-duration: .5s;
+                //                 animation-duration: .5s;
+                //                 -webkit-animation-timing-function: ease;
+                //                 -moz-animation-timing-function: ease;
+                //                 animation-timing-function: ease;
+                //                 -webkit-animation-fill-mode:forwards;
+                //                 -moz-animation-fill-mode:forwards;
+                //                 animation-fill-mode:forwards;
+                //                 -webkit-animation-delay: 0.5s;
+                //                 -moz-animation-delay: 0.5s;
+                //                 animation-delay: 0.5s;
+                //             }
+                //         }
+                //         .outterCircle {
+                //             .starExplode {
+                //                 -webkit-animation-name: starScale;
+                //                 -moz-animation-name: starScale;
+                //                 animation-name: starScale;
+                //                 -webkit-animation-duration: .5s;
+                //                 -moz-animation-duration: .5s;
+                //                 animation-duration: .5s;
+                //                 -webkit-animation-timing-function: ease;
+                //                 -moz-animation-timing-function: ease;
+                //                 animation-timing-function: ease;
+                //                 -webkit-animation-delay: 0.5s;
+                //                 -moz-animation-delay: 0.5s;
+                //                 animation-delay: 0.5s;
+                //             }
+                //         }
+                //     }
+                // }
+                // &.onstate {
+                //     li:nth-child(-n+18) {
+                //         .innerCircle {
+                //             border-color: $sunny-gold;
+                //             .icon-star {
+                //                 color: $sunny-gold;
+                //             }
+                //         }
+                //     }
+                // }
+                // &.starBlinkOff {
+                //     .innerCircle {
+                //         -webkit-animation-name: starBorderOut;
+                //         -moz-animation-name: starBorderOut;
+                //         animation-name: starBorderOut;
+                //         -webkit-animation-duration: .5s;
+                //         -moz-animation-duration: .5s;
+                //         animation-duration: .5s;
+                //         -webkit-animation-timing-function: ease;
+                //         -moz-animation-timing-function: ease;
+                //         animation-timing-function: ease;
+                //         -webkit-animation-fill-mode:forwards;
+                //         -moz-animation-fill-mode:forwards;
+                //         animation-fill-mode:forwards;
+                //         -webkit-animation-delay: 0.5s;
+                //         -moz-animation-delay: 0.5s;
+                //         animation-delay: 0.5s;
+                //         .icon-star {
+                //             -webkit-animation-name: starFadeOut;
+                //             -moz-animation-name: starFadeOut;
+                //             animation-name: starFadeOut;
+                //             -webkit-animation-duration: .5s;
+                //             -moz-animation-duration: .5s;
+                //             animation-duration: .5s;
+                //             -webkit-animation-timing-function: ease;
+                //             -moz-animation-timing-function: ease;
+                //             animation-timing-function: ease;
+                //             -webkit-animation-fill-mode:forwards;
+                //             -moz-animation-fill-mode:forwards;
+                //             animation-fill-mode:forwards;
+                //             -webkit-animation-delay: 0.5s;
+                //             -moz-animation-delay: 0.5s;
+                //             animation-delay: 0.5s;
+                //         }
+                //     }
+                // }
             }
             .product {
                 max-width: none;
@@ -1170,12 +1176,9 @@ $reviews-light-mix: #FEEFC7;
     @-webkit-keyframes fadeOutQuickView {
         from {
             opacity: 1;
-            -webkit-transform: translateY(0%);
-            -moz-transform: translateY(0%);
-            transform: translateY(0%);
         }
         to {
-            opacity: 0;
+            opacity: 0.3;
             -webkit-transform: translateY(100%);
             -moz-transform: translateY(100%);
             transform: translateY(100%);
@@ -1184,12 +1187,9 @@ $reviews-light-mix: #FEEFC7;
     @-moz-keyframes fadeOutQuickView {
         from {
             opacity: 1;
-            -webkit-transform: translateY(0%);
-            -moz-transform: translateY(0%);
-            transform: translateY(0%);
         }
         to {
-            opacity: 0;
+            opacity: 0.3;
             -webkit-transform: translateY(100%);
             -moz-transform: translateY(100%);
             transform: translateY(100%);
@@ -1198,12 +1198,9 @@ $reviews-light-mix: #FEEFC7;
     @keyframes fadeOutQuickView {
         from {
             opacity: 1;
-            -webkit-transform: translateY(0%);
-            -moz-transform: translateY(0%);
-            transform: translateY(0%);
         }
         to {
-            opacity: 0;
+            opacity: 0.3;
             -webkit-transform: translateY(100%);
             -moz-transform: translateY(100%);
             transform: translateY(100%);
@@ -1230,9 +1227,6 @@ $reviews-light-mix: #FEEFC7;
                 padding-top: .75rem;
                 background-color: $white;
                 box-shadow: 0 0 6px -1px $secondary;
-                &.transition {
-                    opacity: 1;
-                }
                 &.slideUp {
                     -webkit-animation-name: fadeInQuickView;
                     -moz-animation-name: fadeInQuickView;
@@ -1272,9 +1266,36 @@ $reviews-light-mix: #FEEFC7;
             }
             .icon-close {
                 position: absolute;
-                top: 1rem;
+                opacity: 0;
+                top: 100vh;
                 right: 1rem;
                 z-index: 201;
+                &.slideUp {
+                    opacity: 1;
+                    top: 1rem;
+                    -webkit-animation-duration: .5s;
+                    -moz-animation-duration: .5s;
+                    animation-duration: .5s;
+                    -webkit-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -moz-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -webkit-transition: top 0.5s ease;
+                    -moz-transition: top 0.5s ease;
+                    transition: top 0.5s ease;
+                }
+                &.slideDown {
+                    opacity: 0;
+                    top: 100vh;
+                    -webkit-animation-duration: .5s;
+                    -moz-animation-duration: .5s;
+                    animation-duration: .5s;
+                    -webkit-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -moz-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -webkit-transition: top 0.5s ease;
+                    -moz-transition: top 0.5s ease;
+                    transition: top 0.5s ease;
+                }
             }
         }
     }
