@@ -39,6 +39,8 @@ class Dependents {
         this.quickViewMultiSku = ko.observableArray();
 
         this.isDisplayQuickView = ko.observable(false);
+        this.QuickViewElement = ko.observable();
+        this.QuickViewContentElement = ko.observable();
     }
 }
 
@@ -109,7 +111,9 @@ ko.components.register('quickview', {
             this.params = params;
             this.viewPortSize = ko.observable(breakpointValue());
             this.closeQuickView = function() {
-                console.log('close');
+                console.log('close ',this.params.parent.QuickViewElement());
+                console.log('close ',this.params.parent.QuickViewContentElement());
+                this.params.parent.QuickViewContentElement().className = 'content transition slideDown';
             }
         }
     },
@@ -117,7 +121,6 @@ ko.components.register('quickview', {
         <div id="quickView">
             <div class="quickViewInner">
                 <div class="content">
-                    <span class="icon-close icon-lg"></span>
                     <div class="row">
                         <div class="small-12 medium-7 columns">
                             <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
@@ -138,6 +141,7 @@ ko.components.register('quickview', {
                         </div>
                     </div>
                 </div>
+                <a data-bind="event: { click: closeQuickView }"><span class="icon-close icon-lg"></span></a>
             </div>
         </div>`, synchronous: true
 })
@@ -271,8 +275,9 @@ ko.components.register('products', {
                                 scrollComplete = true;
                                 document.getElementById('sunny').className = 'quickViewOpen';
                                 self.params.parent.isDisplayQuickView(true);
+                                self.params.parent.QuickViewElement(document.getElementById('quickView'));
+                                self.params.parent.QuickViewContentElement(document.getElementById('quickView').querySelector('.content'));
                                 document.getElementById('quickView').querySelector('.content').className = 'content slideUp';
-
                             }
                         }
                     }, 400)

@@ -31,8 +31,7 @@
 	"borderfreemodal",
 	"itemPage",
 	"filter-and-sort",
-	"wishlist",
-    "homePage";
+	"wishlist";
 
 $sunny-light-blue: #3D69BC;
 $sunny-dark-blue: #233C6D;
@@ -499,26 +498,11 @@ $reviews-light-mix: #FEEFC7;
             ul {
                 li {
                     padding: 0 .75rem 1.5rem .5rem;
-                    // -webkit-transition: height 400ms ease;
-                    // -moz-transition: height 400ms ease;
-                    // transition: height 400ms ease;
-                    &.quickViewExpander {
-                        // -webkit-transition: height 400ms ease;
-                        // -moz-transition: height 400ms ease;
-                        // transition: height 400ms ease;
-                        // -webkit-transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
-                        // -moz-transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
-                        // transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
-
-                        //height: 1100px;
-                        //height: 100vh;
-
-                        // -webkit-transition: 400ms ease;
-                        // -moz-transition: 400ms ease;
-                        // transition: 400ms ease;
-                        // -webkit-transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
-                        // -moz-transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
-                        // transition-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    .push {
+                        height: 0;
+                        -webkit-transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
+                        -moz-transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
+                        transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
                     }
                     &.fadeOut {
                         opacity: 0;
@@ -750,11 +734,6 @@ $reviews-light-mix: #FEEFC7;
                     top: 0;
                     left: 0;
                     background-color: $offwhite-light-mix;
-                    // transform: translateY(100%);
-                    // -webkit-transform: translateY(100%);
-                    // -moz-transform: translateY(100%);
-                    // -ms-transform: translateY(100%);
-                    // transition: 0.5s ease-in-out;
                     &.animate {
                         transform: translateY(0%);
                         -webkit-transform: translateY(0%);
@@ -1140,44 +1119,95 @@ $reviews-light-mix: #FEEFC7;
             }
         }
     }
-
     &.quickViewOpen {
         height: 100%;
         overflow: hidden;
     }
-    .push {
-        height: 0;
-        -webkit-transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
-        -moz-transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
-        transition: height .4s cubic-bezier(0, 0.7, 0.5, 1);
+
+    @-webkit-keyframes fadeInQuickView {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+    }
+    @-moz-keyframes fadeInQuickView {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+    }
+    @keyframes fadeInQuickView {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
+        }
     }
 
-    @-webkit-keyframes fadeIn {
+    @-webkit-keyframes fadeOutQuickView {
         from {
-            opacity: 0;
-            -webkit-transform: translateY(50%);
-            -moz-transform: translateY(50%);
-            transform: translateY(50%);
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
         }
-        to {opacity: 1}
+        to {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
     }
-    @-moz-keyframes fadeIn {
+    @-moz-keyframes fadeOutQuickView {
         from {
-            opacity: 0;
-            -webkit-transform: translateY(50%);
-            -moz-transform: translateY(50%);
-            transform: translateY(50%);
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
         }
-        to {opacity: 1}
+        to {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
     }
-    @keyframes fadeIn {
+    @keyframes fadeOutQuickView {
         from {
-            opacity: 0;
-            -webkit-transform: translateY(50%);
-            -moz-transform: translateY(50%);
-            transform: translateY(50%);
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+            -moz-transform: translateY(0%);
+            transform: translateY(0%);
         }
-        to {opacity: 1}
+        to {
+            opacity: 0;
+            -webkit-transform: translateY(100%);
+            -moz-transform: translateY(100%);
+            transform: translateY(100%);
+        }
     }
 
     #quickView {
@@ -1197,12 +1227,30 @@ $reviews-light-mix: #FEEFC7;
                 overflow-y: scroll;
                 height: calc(100vh - 172px);
                 margin: calc(1.5rem + 124px) .5rem .5rem .5rem;
+                padding-top: .75rem;
                 background-color: $white;
                 box-shadow: 0 0 6px -1px $secondary;
+                &.transition {
+                    opacity: 1;
+                }
                 &.slideUp {
-                    -webkit-animation-name: fadeIn;
-                    -moz-animation-name: fadeIn;
-                    animation-name: fadeIn;
+                    -webkit-animation-name: fadeInQuickView;
+                    -moz-animation-name: fadeInQuickView;
+                    animation-name: fadeInQuickView;
+                    -webkit-animation-duration: .5s;
+                    -moz-animation-duration: .5s;
+                    animation-duration: .5s;
+                    -webkit-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -moz-animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    animation-timing-function: cubic-bezier(0, 0.7, 0.5, 1);
+                    -webkit-animation-fill-mode:forwards;
+                    -moz-animation-fill-mode:forwards;
+                    animation-fill-mode:forwards;
+                }
+                &.slideDown {
+                    -webkit-animation-name: fadeOutQuickView;
+                    -moz-animation-name: fadeOutQuickView;
+                    animation-name: fadeOutQuickView;
                     -webkit-animation-duration: .5s;
                     -moz-animation-duration: .5s;
                     animation-duration: .5s;
