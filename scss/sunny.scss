@@ -1411,6 +1411,7 @@ $reviews-light-mix: #FEEFC7;
             .quickViewInner {
                 height: calc(100vh - 108px);
                 .content {
+                    padding-top: .75rem;
                     margin: calc(1.5rem + 108px) .5rem .5rem .5rem;
                     .quickViewStar {
                         margin-top: 1.5rem;

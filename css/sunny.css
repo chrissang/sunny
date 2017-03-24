@@ -17389,35 +17389,36 @@ body:before {
   }
   /* line 1413, ../scss/sunny.scss */
   #sunny #quickView .quickViewInner .content {
+    padding-top: .75rem;
     margin: calc(1.5rem + 108px) 0.5rem 0.5rem 0.5rem;
   }
-  /* line 1415, ../scss/sunny.scss */
+  /* line 1416, ../scss/sunny.scss */
   #sunny #quickView .quickViewInner .content .quickViewStar {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
   }
 
-  /* line 1425, ../scss/sunny.scss */
+  /* line 1426, ../scss/sunny.scss */
   #sunnyForm.sunnyFormBkg #paginationDots {
     top: calc(44px + 1rem);
   }
 }
 @media (min-width: 64.063em) {
-  /* line 1442, ../scss/sunny.scss */
+  /* line 1443, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1448, ../scss/sunny.scss */
+  /* line 1449, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 3.5rem 0 3rem 1rem;
   }
 }
 @media (min-width: 90.063em) {
-  /* line 1464, ../scss/sunny.scss */
+  /* line 1465, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults ul li {
     padding: 0 1.75rem;
   }
-  /* line 1470, ../scss/sunny.scss */
+  /* line 1471, ../scss/sunny.scss */
   .sunnyResultsContainer #sunnyResults .sunnySearchResults .product .downVoteReason ul {
     padding: 4rem 0 4rem 1rem;
   }
