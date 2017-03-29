@@ -21,25 +21,51 @@ class Dependents {
         this.filterMaxPrice = ko.observable('');
 
         this.itemQuantity = ko.observableArray([0,1,2,3,4,5,6,7,8,9,10]);
-        this.productParent = ko.observable();
+        //this.productParent = ko.observable();
         this.upVotedResults = ko.observableArray([]);
         this.upVotedResultsLen = ko.observable(0);
         this.displayUpVotedResults = ko.observable(false);
         this.displaySearchResultsToggle = ko.observable(true);
 
-        this.quickViewItemId = ko.observable('');
-        this.quickViewImage = ko.observable('');
-        this.quickViewTitle = ko.observable('');
-        this.quickViewPrice = ko.observable('');
-        this.quickViewDescription = ko.observable('');
-        this.quickViewRating = ko.observable('');
-        this.quickViewNumberOfReviews = ko.observable('');
-        this.quickViewProductURL = ko.observable('');
-        this.quickViewAltImg = ko.observableArray();
-        this.quickViewMultiSku = ko.observableArray();
+        this.qvItemId = ko.observable('');
+        this.qvArtistId = ko.observable('');
+        this.qvImage = ko.observable('');
+        this.qvTitle = ko.observable('');
+        this.qvPrice = ko.observable('');
+        this.qvDescription = ko.observable('');
+        this.qvRating = ko.observable('');
+        this.qvNumberOfReviews = ko.observable('');
+        this.qvProductURL = ko.observable('');
+        this.qvMaxInventory = ko.observable('');
+        this.qvAltImg = ko.observableArray();
+        this.qvMultiSku = ko.observableArray();
+        this.qvGetLiveSku = function(itemdata) {
+            if (itemdata.skus.length > 1) {
+                itemdata.skus.forEach((sku, index) => {
+                    sku.status === 'live' ? this.qvMultiSku.push({ 'value': sku.sku ,'name': sku.color + ' $'+sku.price }) : '';
+                })
+            }
+        }
+        this.qvGetAltImg = function(itemdata,itemDir,itemId,itemIdTrim) {
+            itemdata.itemMedia.forEach((mediaType, index) => {
+                mediaType.mediaTypeId === 1 ? this.qvAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)) : '';
+            })
+        }
+
+        // storyTab
+        this.qvHeadline = ko.observable('');
+        this.qvItemDescription = ko.observable('');
+        this.qaIsUSA = ko.observable('');
+        this.qvHasDetail = ko.observable('');
+        this.qvEnvironment = ko.observable('');
+        this.qvIsHandMade = ko.observable('');
+        this.qvMaterials = ko.observable('');
+        this.qvSizeInfo = ko.observable('');
+        this.qvCareInstructions = ko.observable('');
+        this.qvSpecialNotes = ko.observable('');
+        this.qvAgeRecommendation = ko.observable('');
 
         this.toggleProductFade = ko.observable(false);
-
         this.scrollPosToQuickView = ko.observable();
         this.isDisplayQuickView = ko.observable(false);
         this.quickViewElement = ko.observable();
@@ -74,7 +100,7 @@ ko.components.register('upvoted-results', {
                             </div>
                             <div class="small-12 medium-6 text-center columns">
                                 <h1 data-bind="text: $data.title"></h1>
-                                <div class="intro-text itemDescription" data-bind="getItemDescription: $data.itemId()"></div>
+                                <div class="intro-text qvItemDescription" data-bind="getItemDescription: $data.itemId()"></div>
                                 <p class="item-price price">
                                     <span data-bind="text: $data.price()"></span>
                                 </p>
@@ -113,11 +139,17 @@ ko.components.register('quickview', {
             super(params);
             this.params = params;
             this.viewPortSize = ko.observable(breakpointValue());
+            this.starClass = ko.observable( this.params.parent.qvRating().split(".")[1] === "5" ? this.params.parent.qvRating().replace(".","_") : this.params.parent.qvRating().split(".")[0] );
+            this.goToDetails = function() {
+               $('html,body').animate({scrollTop: $(".tab-title a[href='#details']").offset().top}, 500, function(){
+                   $(".tab-title a[href='#details']").click();
+               });
+            }
             this.closeQuickView = function() {
                 var self = this;
                 var pfx = ["webkit", "moz", "MS", "o", ""];
 
-                this.params.parent.quickViewContentElement().className = 'content slideDown';
+                this.params.parent.quickViewContentElement().className = 'qvContent slideDown';
                 this.params.parent.quickViewElement().querySelector('.icon-close').className = 'icon-close icon-lg slideDown';
 
                 function prefixedEventListener(element, type, callback) {
@@ -129,26 +161,75 @@ ko.components.register('quickview', {
                 document.getElementById('sunny').className = '';
                 self.params.parent.isDisplayQuickView(false);
                 self.params.parent.toggleProductFade(false);
-                prefixedEventListener(this.params.parent.quickViewContentElement(),"AnimationEnd",function(e){
-
-
-                });
-                document.getElementById(self.params.parent.quickViewItemId()).querySelector('.push').style.height = 0;
+                document.getElementById(self.params.parent.qvItemId()).querySelector('.push').className = 'push';
                 $('html, body').animate({
                     scrollTop: self.params.parent.scrollPosToQuickView()
-                },500)
+                },400)
+
+                // prefixedEventListener(this.params.parent.quickViewContentElement(),"AnimationEnd",function(e){
+                //
+                //
+                // });
+            }
+            this.bindingHandlers = {
+                init: $(function () {
+                    $(document).foundation();
+                    var altSwiper = new Swiper ('#altImages', {
+                        // Optional parameters
+                        loop: false,
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',
+                        slidesPerView: 5,
+                        spaceBetween: 12,
+                        slidesOffsetBefore: 27,
+                        slidesOffsetAfter: 27,
+                        breakpoints: {
+                            1024: {
+                                slidesPerView: 5
+                            },
+                            640: {
+                                slidesPerView: 5
+                            },
+                            320: {
+                                slidesPerView: 5
+                            }
+                        }
+                    })
+                })
             }
         }
     },
     template: `
         <div id="quickView">
             <div class="quickViewInner">
-                <div class="content">
+                <div class="qvContent">
                     <div class="row">
+                        <!-- main/alt images -->
                         <div class="small-12 medium-7 columns">
-                            <img data-bind="attr:{ src: params.parent.quickViewImage() }"/>
+                            <a data-bind="attr: { href: params.parent.qvImage() + '_1_1200px.jpg' }" itemprop="image" id="mainImage" class="MagicZoom" data-options="zoomOn: click; zoomPosition: inner; hint: off;lazyZoom: true" >
+                                <img data-bind="attr:{ src: params.parent.qvImage() + '_1_640px.jpg', alt: params.parent.qvTitle()}" />
+                            </a>
+                            <div class="row">
+                                <div class="small-12 columns">
+                                    <div class="swiper-container" id="altImages">
+                                        <div class="swiper-wrapper">
+                                            <!-- ko foreach: params.parent.qvAltImg() -->
+                                                <div class="swiper-slide">
+                                                    <a data-bind="attr: { href: $data + '_1200px.jpg' }" class="mz-thumb-selected mz-thumb" data-image="/images/items/25500/25589_1_640px.jpg" data-zoom-id="mainImage">
+                                                        <img data-bind="attr: { src: $data + '_64px.jpg' }" alt="Morning, Noon and Night Coffee 1 thumbnail" data-altimagenumber="1">
+                                                    </a>
+                                                </div>
+                                            <!-- /ko -->
+                                        </div>
+                                        <div class="swiper-button-prev"><span class="icon-caret_left icon-lg"></span></div>
+                                        <div class="swiper-button-next"><span class="icon-caret_right icon-lg"></span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="small-12 medium-5 columns">
+                            <!-- upvote star -->
                             <div data-bind="attr: { class: 'starContainer text-center quickViewStar' }">
                                 <div data-bind="attr: { class: 'outterCircle' }">
                                     <div data-bind="attr:{ class: 'starExplode' }"></div>
@@ -158,11 +239,265 @@ ko.components.register('quickview', {
                                     </div>
                                 </div>
                             </div>
-                            <h1 class="text-center" data-bind="html: params.parent.quickViewTitle()"></h1>
-                            <div class="hide-for-small-only text-center intro-text" data-bind="html: params.parent.quickViewDescription()"></div>
-                            <p class="item-price price text-center"><span data-bind="html: params.parent.quickViewPrice()"></span></p>
+
+                            <!-- copy/price -->
+                            <h1 class="text-center" data-bind="html: params.parent.qvTitle()"></h1>
+                            <div class="hide-for-small-only text-center intro-text" data-bind="html: params.parent.qvDescription()"></div>
+
+                            <!-- artist copy for small -->
+                            <div class="row show-for-small-only">
+                    			<div class="small-12 text-center columns">
+                    				<span class="body-small-caps" style="display:inline-block;margin-bottom:.25rem;">created by</span>
+                    				<h3><a class="ug-activeColor">John, Rhonda and Harrison Jenkins</a></h3>
+                    			</div>
+                    		</div>
+
+                            <!-- price -->
+                            <p class="item-price price text-center"><span data-bind="html: params.parent.qvPrice()"></span></p>
+
+                            <!-- reviews -->
+                            <div class="row">
+                                <div class="small-12 large-10 small-centered columns">
+                                    <div class="pr-snippet">
+                                        <div class="pr-snippet-wrapper">
+                                            <div class="pr-snippet-stars">
+                                                <div data-bind="attr: { class: 'pr-stars pr-stars-small pr-stars-' + starClass() + '-sm' }">&nbsp;</div>
+                                            </div>
+                                            <div class="pr-snippet-read-write">
+                                                <div class="pr-snippet-read-reviews">
+                                                    <a data-bind="attr: { href: '#pr-review-engine-'+ params.parent.qvItemId() }" class="pr-snippet-link">Read <span data-bind="text: params.parent.qvNumberOfReviews()"></span> Reviews</a>
+                                                </div>
+                                                <div class="pr-snippet-write-review">
+                                                    <a data-bind="attr: { href: '/reviews/write?itemId=' + params.parent.qvItemId() }" class="pr-snippet-link">Write a Review</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- artist -->
+                            <div class="row">
+                                <!-- ko if: params.parent.qvArtistId() -->
+                                    <div class="row hide-for-small-only">
+                                        <div class="medium-12 large-10 medium-centered columns">
+                                            <div id="artistBlock" class="withPhoto">
+                                                <img data-bind="attr: { src: '/images/artist/Artist_28745.jpg' }" class="artistPhoto" alt="John, Rhonda and Harrison Jenkins">
+                                                <span class="body-small-caps">created by</span>
+                                                <h3 id="artistHeading">John, Rhonda and Harrison Jenkins</h3>
+                                                <span class="body-small a-tertiary" style="display:inline;">read more about the maker</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <!-- /ko -->
+                            </div>
+
+                            <!-- single/multi sku -->
+                            <form name="itemForm" id="itemForm" method="post">
+                                <!-- ko if: params.parent.qvMultiSku().length === 0 -->
+                                    <div class="row">
+                                        <div class="small-4 large-3 small-push-0 large-push-1 columns">
+                                            <select data-bind="foreach: new Array(params.parent.qvMaxInventory())" id="quantity" name="qty" class="urgent">
+                                                <option data-bind="text: $index() + 1"></option>
+                                            </select>
+                                        </div>
+
+                                        <div class="small-8 large-7 small-pull-0 large-pull-1 columns">
+                                            <input type="button" value="add to cart" id="a2c" class="urgent expand">
+                                        </div>
+                                    </div>
+                                <!-- /ko -->
+
+                                <!-- ko if: params.parent.qvMultiSku().length > 0 -->
+                                    <div class="small-8 large-7 small-push-0 large-push-1 columns">
+                                        <select data-bind="options: params.parent.qvMultiSku(), optionsText: 'name', optionsValue: 'value'" id="selectitem" class="multiSku"></select>
+                                    </div>
+
+                                    <div class="small-4 large-3 small-push-0 large-push-1 columns">
+                                        <select data-bind="foreach: new Array(params.parent.qvMaxInventory())" id="quantity" name="qty" class="urgent">
+                                            <option data-bind="text: $index() + 1"></option>
+                                        </select>
+                                    </div>
+
+                                    <div class="small-12 large-10 large-centered columns" style="clear:both">
+                                        <input type="button" value="add to cart" id="a2c" class="urgent expand">
+                                    </div>
+                                <!-- /ko -->
+                            </form>
+
+                            <!-- whish list -->
+                            <div class="row">
+                                <div class="small-12 large-10 large-centered columns text-center">
+                                    <div id="NEWwishlist" style="clear:both;" class="addMove notLoggedIn">
+                                        <input id="wishListPreviousAction" type="hidden">
+				                        <span id="iih" class="icon-heart_hollow icon-md icon-button" style=""></span>
+                                        <div class="moveBtn">
+                                            <span class="moveCopy ug-SecondaryColor icon-button " style="" data-oldcopy="add to wish list">add to wish list</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="row fullbleed collapse">
+                        <div class="small-12 columns">
+                            <ul class="tabs" data-tab>
+                                <li class="tab-title active"><a href="#the-story" class="theStoryTab"><span class="hide-for-small-only theStoryTab">the&nbsp;</span>story</a></li>
+                                <li class="tab-title"><a href="#details" id="theDetailsTab">details</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="unco">
+                        <div class="row">
+                            <div class="small-12 columns">
+                                <div class="tabs-content">
+                                    <div class="content active" id="the-story">
+                                        <div class="row">
+                                            <div class="small-12 medium-10 large-7 small-centered columns end">
+                                                <div class="theStoryCopy">
+                                                    <h2 data-bind="html: params.parent.qvHeadline()"></h2>
+                                                    <p data-bind="html: params.parent.qvItemDescription()"></p>
+                                                    <div style="padding-top:1.5rem;padding-bottom:3rem">
+                                                        <!-- ko if: params.parent.qvIsHandMade() -->
+                                                            <span class="icon-handmade icon-md"></span>
+                                                        <!-- /ko -->
+                                                        <!-- ko if: params.parent.qvEnvironment() -->
+                                                            <span class="icon-recycle icon-md"></span>
+                                                        <!-- /ko -->
+                                                        <!-- ko if: params.parent.qvHasDetail() -->
+                                                            <span class="icon-exclusive icon-md"></span>
+                                                        <!-- /ko -->
+                                                        <!-- ko if: params.parent.qaIsUSA() -->
+                                                            <span class="icon-usa icon-md"></span>
+                                                        <!-- /ko -->
+                                                        <a data-bind="event: { click: goToDetails }" class="body-small a-tertiary">get the details</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="content" id="details">
+                                        <div class="row">
+                                            <div class="small-12 medium-10 large-7 small-centered columns">
+                                                <div class="clearfix">
+                                                    <!-- ko if: params.parent.qvIsHandMade() -->
+                                                        <span class="body-small-caps"><span class="icon-handmade icon-md"></span>Handmade</span>
+                                                    <!-- /ko -->
+                                                    <!-- ko if: params.parent.qvEnvironment() -->
+                                                        <span class="body-small-caps"><span class="icon-recycle icon-md"></span>Recycled</span>
+                                                    <!-- /ko -->
+                                                    <!-- ko if: params.parent.qvHasDetail() -->
+                                                        <span class="body-small-caps"><span class="icon-exclusive icon-md"></span>Exclusive</span>
+                                                    <!-- /ko -->
+                                                    <!-- ko if: params.parent.qaIsUSA() -->
+                                                        <span class="body-small-caps"><span class="icon-usa icon-md"></span>Made in the USA</span>
+                                                    <!-- /ko -->
+                                                </div>
+
+                                                <div class="row">
+                                                    <!-- ko if: params.parent.qvAgeRecommendation() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">AGES</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                                                            <span data-bind="html: params.parent.qvAgeRecommendation()" class="body"></span>
+                                                        </div>
+                                                    <!-- /ko -->
+
+                                                    <!-- ko if: params.parent.qvMaterials() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">MADE FROM</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                                                            <span data-bind="html: params.parent.qvMaterials()" class="body"></span>
+                                                        </div>
+                                                    <!-- /ko -->
+
+                                                    <!-- ko if: params.parent.qvSizeInfo() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">Measurements</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                                                            <span data-bind="html: params.parent.qvSizeInfo()" class="body"></span>
+                                                        </div>
+                                                    <!-- /ko -->
+
+                                                    <!-- ko if: params.parent.qvCareInstructions() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">Care</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                        									<span data-bind="html: params.parent.qvCareInstructions()" class="body"></span>
+                        								</div>
+                                                    <!-- /ko -->
+
+                                                    <!-- ko if: params.parent.qvSpecialNotes() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">Notes</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                                                            <span data-bind="html: params.parent.qvSpecialNotes()" class="body"></span>
+                                                        </div>
+                                                    <!-- /ko -->
+
+                                                    <!-- ko if: params.parent.qvItemId() -->
+                                                        <div class="small-12 medium-3 columns shipTitle">
+                                                            <span class="body-small-caps">Item ID</span>
+                                                        </div>
+                                                        <div class="small-12 medium-9 columns shipDescr">
+                                                            <span data-bind="html: params.parent.qvItemId()" class="body"></span>
+                                                        </div>
+                                                    <!-- /ko -->
+                                                </div>
+                                                <p class="intro-text" style="margin-top:1.5rem;">Still haven't found the details you're looking for? Check out our <a>Product Q&amp;A</a>!</p>
+                                                <form id="registry" name="registry" method="get">
+                                                    <button id="registrybtn" class="btnShare btn-secondary" type="submit" value="Add To Gift Registry">add to registry</button>
+                                                    <input type="hidden" name="selectitemGR" id="selectitemGR" value="" />
+                                                    <input type="hidden" name="quantityGR" id="quantityGR" value="" />
+                                                    <input type="hidden" name="action" value="registry" />
+                								</form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="row collapse" style="padding-bottom:3rem;">
+                                <div class="small-6 medium-10 large-8 small-centered columns">
+                                    <hr class="dottedSpacer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <ul class="tabs" data-tab>
+                                <li class="tab-title active"><a href="#PRreviews">Reviews</a>
+                                <li class="tab-title"><a href="#PRQA" onclick="loadPRQA()">Product Q&amp;A</a>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="small-12 columns">
+                            <div class="tabs-content">
+                                <div class="content active" id="PRreviews">
+                                    <div id="inlinePR">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <a data-bind="event: { click: closeQuickView }"><span class="icon-close icon-lg"></span></a>
             </div>
@@ -240,29 +575,45 @@ ko.components.register('products', {
             }
 
             this.displayQuickView = function(product, itemId) {
-                this.params.parent.productParent(this);
+                //this.params.parent.productParent(this);
                 var self = this;
             	$.getJSON( "http://www.uncommongoods.com/assets/get/item/"+self.itemId(), function( itemdata ) {
                     var itemDir = '//www.uncommongoods.com/images/items/';
                     var itemId = itemdata[0].itemId;
                     var itemIdTrim = itemId.toString().slice(0, -2);
 
-                    self.params.parent.quickViewItemId(itemdata[0].itemId);
-                    self.params.parent.quickViewImage(itemDir+itemIdTrim+'00/'+itemdata[0].itemId+'_1_640px.jpg');
-                    self.params.parent.quickViewDescription(itemdata[0].metaDescr);
-                    self.params.parent.quickViewTitle(itemdata[0].toDisplayname);
-                    self.params.parent.quickViewPrice(itemdata[0].itemPrice);
-                    self.params.parent.quickViewRating(itemdata[0].avgRating);
-                    self.params.parent.quickViewNumberOfReviews(itemdata[0].noOfReviews);
-                    self.params.parent.quickViewProductURL(itemdata[0].url);
-                    self.params.parent.quickViewProductURL(itemdata[0].url);
-
-                    self.params.parent.quickViewAltImg([]);
-                    self.params.parent.quickViewMultiSku([]);
-
-                    this.quickViewMultiSku = ko.observableArray();
-
+                    self.params.parent.qvItemId(itemdata[0].itemId);
+                    self.params.parent.qvImage(itemDir+itemIdTrim+'00/'+itemdata[0].itemId);
+                    self.params.parent.qvDescription(itemdata[0].metaDescr);
+                    self.params.parent.qvTitle(itemdata[0].toDisplayname);
+                    self.params.parent.qvPrice(itemdata[0].itemPrice);
+                    self.params.parent.qvRating((Math.round(itemdata[0].avgRating * 2) / 2).toFixed(1));
+                    self.params.parent.qvNumberOfReviews(itemdata[0].noOfReviews);
+                    self.params.parent.qvProductURL(itemdata[0].url);
+                    self.params.parent.qvProductURL(itemdata[0].url);
                     self.params.parent.scrollPosToQuickView(window.pageYOffset);
+                    self.params.parent.qvArtistId(itemdata[0].artistId);
+                    self.params.parent.qvMaxInventory(itemdata[0].maxInventory);
+                    self.params.parent.qvMultiSku([]);
+                    self.params.parent.qvHeadline(itemdata[0].headline);
+                    self.params.parent.qvItemDescription(itemdata[0].itemDescription);
+                    self.params.parent.qaIsUSA(itemdata[0].USA);
+                    self.params.parent.qvHasDetail(itemdata[0].hasDetail);
+                    self.params.parent.qvEnvironment(itemdata[0].environment);
+                    self.params.parent.qvIsHandMade(itemdata[0].isHandMade);
+                    self.params.parent.qvMaterials(itemdata[0].materials);
+                    self.params.parent.qvSizeInfo(itemdata[0].sizeInfo);
+                    self.params.parent.qvCareInstructions(itemdata[0].careInstructions);
+                    self.params.parent.qvSpecialNotes(itemdata[0].specialNotes);
+                    self.params.parent.qvAgeRecommendation(itemdata[0].ageRecommendation);
+
+
+                    self.params.parent.qvAltImg([]);
+                    self.params.parent.qvGetLiveSku(itemdata[0]);
+                    self.params.parent.qvGetAltImg(itemdata[0],itemDir,itemId,itemIdTrim);
+
+
+                    console.log('item data ',itemdata[0]);
 
                     //Get an element's distance from the top of the page
                     var getElemDistance = function ( elem ) {
@@ -282,7 +633,8 @@ ko.components.register('products', {
                     var priceFilterHeight = document.querySelector('.priceFilterContainer').offsetHeight;
                     var scrollPosition = priceFilterHeight + location + (productHeight/2);
 
-                    document.getElementById(''+self.itemId()+'').querySelector('.push').style.height = '100vh';
+                    document.getElementById(''+self.itemId()+'').querySelector('.push').className = 'push pushAway';
+                    // document.getElementById(''+self.itemId()+'').querySelector('.push').style.height = '100vh';
                     self.params.parent.toggleProductFade(true);
 
                     var scrollComplete = false;
@@ -296,21 +648,12 @@ ko.components.register('products', {
                                 document.getElementById('sunny').className = 'quickViewOpen';
                                 self.params.parent.isDisplayQuickView(true);
                                 self.params.parent.quickViewElement(document.getElementById('quickView'));
-                                self.params.parent.quickViewContentElement(document.getElementById('quickView').querySelector('.content'));
-                                self.params.parent.quickViewContentElement().className = 'content slideUp';
+                                self.params.parent.quickViewContentElement(document.getElementById('quickView').querySelector('.qvContent'));
+                                self.params.parent.quickViewContentElement().className = 'qvContent slideUp';
                                 self.params.parent.quickViewElement().querySelector('.icon-close').className += ' slideUp';
                             }
                         }
                     }, 400)
-
-                    // itemdata[0].itemMedia.forEach((mediaType, index) => {
-                    //     mediaType.mediaTypeId === 1 ? self.params.parent.quickViewAltImg.push(itemDir+itemIdTrim+'00/'+itemId+'_'+(index+1)+'_640px.jpg') : '';
-                    // })
-                    // if (itemdata[0].skus.length > 1) {
-                    //     itemdata[0].skus.forEach((sku, index) => {
-                    //         sku.status === 'live' ? self.params.parent.quickViewMultiSku.push(sku.color + ' $'+sku.price) : '';
-                    //     })
-                    // }
             	})
             }
             this.exitDownVoteReason = function() {
@@ -699,10 +1042,10 @@ ko.components.register('sunny-results-container', {
 
 ko.applyBindings();
 
-var currState = history.state;
-history.pushState(history.state, null, document.URL);
-history.pushState(currState, null, document.URL);
-window.addEventListener('popstate', function (event) {
-    console.log("back button click");
-    history.pushState(event.state, null, document.URL);
-}, false);
+// var currState = history.state;
+// history.pushState(history.state, null, document.URL);
+// history.pushState(currState, null, document.URL);
+// window.addEventListener('popstate', function (event) {
+//     console.log("back button click");
+//     history.pushState(event.state, null, document.URL);
+// }, false);
